@@ -1,0 +1,234 @@
+/*顶部广告样式*/
+.head_banner{
+	height: 80px;
+	background-color: #d32338;
+}
+.head_banner .w{
+	position: relative;
+}
+.head_banner .close{
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 13px;
+	text-align: center;
+	line-height: 20px;
+	background-color: rgba(0,0,0,0.3);
+	color: rgba(255,255,255,0.3);
+}
+.head_banner .close:hover{
+	background-color: rgba(0,0,0,0.8);
+	color: rgba(255,255,255,0.8);
+}
+
+/*顶部广告样式ending*/
+
+
+/*头部导航条样式*/
+.head_nav{
+	height: 30px;
+	background-color: #e3e4e5;
+	border-bottom: 1px #dddddd solid;
+}
+.head_nav .w ul.fl li{
+	margin-left: 200px;
+	line-height: 29px;
+	padding: 0 9px;
+	text-align: center;
+	border:1px #e3e4e5 solid;
+	border-bottom: none;
+}
+.head_nav .w ul.fl li:hover{
+	background-color: #fff;
+	border:1px #ccc solid;
+	border-bottom: none;
+}
+.head_nav .w ul.fl li .iconfont{
+	color:#f10215;
+}
+
+
+
+/*命名空间*/
+.head_nav .w ul.fr li{
+	float: left;
+	padding: 0 6px;
+	line-height: 30px;
+}
+.head_nav .w ul.fr li .iconfont{
+	font-size: 9px;
+}
+.head_nav .w ul.fr li a.red{
+	color: red;
+}
+.head_nav .w ul.fr li a:hover{
+	color: #f10215;
+}
+.head_nav .w ul.fr li.line{
+	width: 1px;
+	height: 10px;
+	padding: 0;
+	margin:11px 6px 0 6px;
+	background-color: #cccccc;
+}
+.head_nav .w ul.fr li.public{
+	border:1px #e3e4e5 solid;
+	border-bottom: none;
+	height: 29px;
+}
+.head_nav .w ul.fr li.public:hover{
+	background-color: #fff;
+	border:1px #ccc solid;
+	border-bottom: none;
+}
+/*手机京东小三角*/
+.head_nav .w ul.fr li.moblie{
+	position: relative;
+}
+.head_nav .w ul.fr li.moblie:after{
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	border-top:8px transparent solid;
+	border-right:8px transparent solid;
+	border-left:8px transparent solid;
+	border-bottom: 8px #fff solid;
+	position: absolute;
+	left: 20px;
+    top: 18px;
+}
+/*二维码样式*/
+.head_nav .w ul.fr li.moblie i{
+	width: 58px;
+	height: 58px;
+	border:1px #ccc solid;
+	display: block;
+	background: url(../img/mobile_qrcode.png) no-repeat center center;
+	position: absolute;
+	left:0;
+}
+
+/*头部搜索区域*/
+.head_search{
+	height: 140px;
+}
+.head_search .w {
+	position: relative;
+}
+.head_search .w .logo{
+	float: left;
+	position: absolute;
+	top: -31px;
+	box-shadow: 0px 0px 8px #ccc;
+}
+.head_search .w .search{
+	width: 548px;
+	height: 33px;
+	float: left;
+	margin-top: 25px;
+	margin-left: 320px;
+	border:1px #f10215 solid;
+	position: relative;
+}
+.head_search .w .search .text{
+	width: 498px;
+	height: 33px;
+	float: left;
+	text-indent: 4px;
+}
+.head_search .w .search .btn{
+	width: 50px;
+	height: 33px;
+	float: left;
+	background-color: #f10215;
+}
+.head_search .w .search .iconfont{
+	position: absolute;
+	right: 13px;
+	top: 7px;
+	color: #fff;
+	font-size: 20px;
+}
+.head_search .w .shopcart{
+	float: left;
+	width: 188px;
+	height: 33px;
+	border:1px #e3e4e5 solid;
+	background-color: #ffffff;
+	margin-top: 25px;
+	margin-left: 35px;
+	line-height: 33px;
+	text-align: center;
+	color: #f10215;
+	position: relative;
+}
+.head_search .w .shopcart em{
+	font-style: normal;
+	width: 14px;
+	height: 14px;
+	display: block;
+	color: #fff;
+	border-radius: 50%;
+	background-color: #f10215;
+	position: absolute;
+	right: 34px;
+	top: 5px;
+	line-height: 14px;
+	text-align: center;
+}
+
+
+
+/*热词搜索样式*/
+.head_search .w .hotwords{
+	float: left;
+	margin-left:320px;
+	margin-top: 10px;
+}
+.head_search .w .hotwords ul li{
+	float: left;
+	margin-right: 10px;
+	font:12px/12px "微软雅黑";
+}
+.head_search .w .hotwords ul li a.hot{
+	color: red;
+}
+.head_search .w .hotwords ul li a:hover{
+	color: red;
+}
+/*主导航样式*/
+.head_search .w  .main_nav{
+	float: left;
+	margin-top: 31px;
+	margin-left: 230px;
+}
+.head_search .w  .main_nav ul li{
+	float: left;
+	margin-right: 30px;
+	font:16px/16px "微软雅黑";
+	font-weight: bold;
+
+}
+.head_search .w  .main_nav ul li.line{
+	width: 1px;
+	height: 10px;
+	background-color: #cccccc;
+	margin:3px 20px 0px -10px;
+}
+.head_search .w  .main_nav ul li a{
+	color: #555;
+}
+.head_search .w  .main_nav ul li a:hover{
+	color: red;
+}
+
+/*小广告*/
+.head_search .w .small_banner{
+	margin-top: 12px;
+	display: block;
+	float: right;
+}

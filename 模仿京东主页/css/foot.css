@@ -1,0 +1,191 @@
+.foot{
+	height: 567px;
+	padding-bottom: 50px;
+	background-color: #eaeaea;
+}
+.foot .foot_top{
+	height: 102px;
+	border-bottom: 1px #dedede solid;
+}
+.foot .foot_top .w ul li{
+	float: left;
+	width: 297px;
+	height: 102px;
+	line-height: 102px;
+	font-weight: bold;
+}
+.foot .foot_top .w ul li h5{
+	float: left;
+	width: 36px;
+	height: 42px;
+	margin-top: 30px;
+	margin-left: 36px;
+	line-height: 42px;
+	text-align: center;
+	font-size: 20px;
+	color: #e01121;
+	text-indent: -9999px;
+	background: url(../img/ico_service.png) no-repeat;
+}
+.foot .foot_top .w ul li:nth-child(2) h5{
+	background-position: 0 -42px;
+}
+
+.foot .foot_top .w ul li:nth-child(3) h5{
+	background-position: 0 -85px;
+}
+
+.foot .foot_top .w ul li:nth-child(4) h5{
+	background-position: 0 -128px;
+}
+
+
+.foot .foot_top .w ul li p{
+	margin-left: 10px;
+	float: left;
+	font-size:18px;
+	color:#444444;
+}
+
+
+
+
+
+/*中间服务列表以及地区样式*/
+.foot .service{
+	height: 200px;
+}
+.foot .service .w{
+	height: 200px;
+	border-bottom: 1px #ddd solid;
+}
+
+
+.foot .service .service_list dl{
+	width: 198px;
+	float: left; 
+}
+.foot .service .service_list dl dt{
+	margin-top: 26px;
+	margin-bottom: 15px;
+	font:13px/13px "微软雅黑";
+	font-weight: bold;
+	color: #666666;
+}
+.foot .service .service_list dl dd{
+	margin-bottom: 11px;
+	font:11px/11px "微软雅黑";
+}
+
+.foot .service .map{
+	width: 200px;
+	background: url(../img/ico_footer.png) no-repeat;
+	height: 172px;
+	background-position: 0 22px;
+}
+.foot .service .map h5{
+	margin-top: 25px;
+	text-align: center;
+	font:13px/13px "微软雅黑";
+	color: #666666;
+	font-weight: bold;
+}
+.foot .service .map p{
+	margin:19px 20px 0 10px;
+	font:11px/18px "微软雅黑";
+}
+.foot .service .map a{
+	float: right;
+}
+.foot .service .map a:hover{
+	color: red;
+}
+
+/*.foot .service .map{
+	width: 200px;
+	height: 150px;
+	margin-top: 25px;
+	background: url(../img/ico_footer.png) no-repeat;
+	font:13px/13px "微软雅黑";
+	color: #666;
+}
+.foot .service .map h5{
+	text-align: center;
+}
+.foot .service .map p{
+	margin:19px 20px 0 10px;
+	font:11px/18px "微软雅黑";
+}*/
+
+
+/*尾部的版权区域样式*/
+.foot .copyright p{
+	text-align: center;
+}
+.foot .copyright p{
+	margin-bottom: 9px;
+}
+.foot .copyright p:nth-child(1){
+	margin-top:19px;
+	margin-bottom: 17px;
+	font:12px/12px "微软雅黑";
+
+}
+.foot .copyright p a{
+	margin:0 9px;
+}
+.foot .copyright p:nth-last-child(2) a{
+	margin:0;
+}
+.foot .copyright p:nth-child(1) a {
+	color: #666;
+}
+.foot .copyright p.pic_href{
+	width: 678px;
+	margin:0 auto;
+}
+.foot .copyright p.pic_href a{
+	float: left;
+	display: block;
+	width: 103px;
+	height: 32px;
+	background: url(../img/ico_footer.png) no-repeat;
+	background-position: 0 -150px;
+	margin:0;
+	margin-right:10px;
+}
+.foot .copyright p.pic_href a:nth-child(2){
+	background-position: -104px -150px;
+}
+.foot .copyright p.pic_href a:nth-child(3){
+	background-position: 0px -183px;
+}
+.foot .copyright p.pic_href a:nth-child(4){
+	background-position: -104px -183px;
+}
+.foot .copyright p.pic_href a:nth-child(5){
+	background-position: 0px -216px;
+}
+.foot .copyright p.pic_href a:nth-child(6){
+	background-position: -104px -216px;
+}
+
+/*固定底部年货样式*/
+.box_fix{
+	width: 1334px;
+	height: 95px;
+	background: url(../img/footer-fix.png) no-repeat;
+	position: fixed;
+	left:50%;
+	bottom: 0;
+	margin-left:-667px;
+}
+.box_fix>img:nth-child(1){
+	margin-left: 100px;
+}
+.box_fix img{
+	margin-top:15px;
+}
+.box_fix a:nth-child(2){
+	margin-left:60px;
+}
