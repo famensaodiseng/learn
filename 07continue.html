@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		//需求：现在我们要把1-100中所有的偶数都输出。
+		//就是与2求余，余数为0
+		for (var i = 1; i < 10; i++) {
+		    var c = i % 2 == 0;
+		    if(c == false){
+		    	continue;//不结束当前循环但是结束本次循环，比如：现在我们在第50次循环中遇到了这个continue,那么程序会立即结束第50次循环（就算下面有再多的代码也不执行），直接执行第51次循环。
+		    }
+		    console.log(i);
+		}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
