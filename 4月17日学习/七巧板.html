@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .sjx div {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            /*border-right-color: red;*/
+            position: absolute;
+
+        }
+        .sjx .zsbox {
+            border-width: 98px;
+            top: 534px;
+            left: 734px;
+            border-right-color: red;
+            transform: rotate(225deg);
+        }
+        .sjx .xsbox {
+            border-width: 70px;
+            top: 429px;
+            left: 617px;
+            border-bottom-color: blueviolet;
+        }
+        .xsbox:nth-child(2) {
+            top: 353px;
+            left: 691px;
+            border-color: transparent;
+            border-right-color: darkorange;
+        }
+        .sjx .dsbox {
+            border-width: 140px;
+            top: 350px;
+            left: 550px;
+            border-top-color: cyan;
+        }
+        .dsbox:last-child {
+            left: 549px;
+            top: 352px;
+            transform: rotate(-90deg);
+            border-top-color: chartreuse;
+
+        }
+        .zbox {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 445px;
+            left: 709px;
+            transform: rotate(45deg);
+        }
+        .pxsbox {
+            width: 140px;
+            height: 61px;
+            transform:skew(-45deg) ;
+            background-color: blue;
+            position: absolute;
+            top: 571px;
+            left: 583px;
+        }
+      
+        
+
+    </style>
+</head>
+<body>
+<div class="box">
+    
+
+<div class="zbox"></div>
+<div class="sjx">
+    <div class="zsbox"></div>
+    <div class="xsbox"></div>
+    <div class="xsbox"></div>
+    <div class="dsbox"></div>
+    <div class="dsbox"></div>
+</div>
+<div class="pxsbox"></div>
+
+</div>
+</body>
+</html>

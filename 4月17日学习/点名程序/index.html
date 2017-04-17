@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+  <meta charset="UTF-8">
+<TITLE>随机点名程序</TITLE>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{
+  margin:0;padding:0;
+}
+body{
+  background: url(img/bg.jpg) no-repeat center center;
+  background-size: 100% 100%;
+  background-position: 2px -16px;
+}
+#box{
+  width:700px;
+  height: 500px;
+  margin:0 auto;
+  overflow: hidden;
+  background: url(img/imac.png) no-repeat;
+  background-size: 100% 100%;
+}
+.tit{
+  width:750px;
+}
+#result{
+  width:600px;
+  height:120px;
+  line-height:120px;
+  font-size:35px;
+  font-family:"微软雅黑";
+  margin: 15px auto;
+  color: #009A78;
+  font-weight: 100;
+  text-align: center;
+  background-color: rgba(153, 153, 153, 0.33);
+}
+.a{
+  width: 300px;
+  height: 45px;
+  margin: 0 auto;
+}
+.b{
+  width:140px;
+  height:120px;
+  margin: 40px auto 10px;
+}
+#count{
+  width:80px;
+  height:40px;
+  padding-left:18px;
+  font-size:16px;
+  color:rgba(130, 130, 130, 0.81);
+  border-radius: 20px;
+  border: 1px solid #eee;
+}
+#count option{
+  border: none;
+}
+#start{
+ width:80px;
+ height:40px;
+ border-radius: 20px;
+ margin: 0 20px 0;
+ color: #999;
+ background-color: rgba(236, 236, 236, 0.46);
+ border: 1px solid #eee;
+}
+#stop{
+  width:80px;
+  height:40px;
+  border-radius: 20px;
+  color:#999;
+  background-color: rgba(236, 236, 236, 0.46);
+  border: 1px solid #eee;
+}
+h1{
+  width: 590px;
+  height: 50px;
+  margin: 25px 0 0 40px;
+}
+h1 a{
+  display: block;
+  width: 600px;
+  height: 60px;
+  /*background: url("img/logo.jpg");*/
+  /*background-size: 100% 100%;*/
+  font-size:45px;
+  text-decoration:none;
+  color:#fff;
+  text-shadow:2px 3px 3px rgb(10, 7, 7);
+}
+h3{
+  width: 80%;
+  height: auto;
+  line-height: 60px;
+  color:#fff;
+  text-shadow:2px 3px 3px rgb(10, 7, 7);
+  font-size: 2rem;
+  font-family: "微软雅黑";
+  margin: 30px auto 10px;
+  font-weight: 400;
+  padding-left: 140px;
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+ function obj(id){
+  return document.getElementById(id);
+ }
+ var speed = 10;
+ var k;
+ function startLuck(){
+  var arry=['张三','李四','王五','赵六','多多的','啊啊啊','出大事','啊的','我的','试试水','宿舍','阮方法 ','的悦','我宇','张我我','张三','李四','王五','赵六','多多的','啊啊啊','出大事','啊的','我的','试试水','宿舍','阮方法 ','的悦','我宇','张我我','张三','李四','王五','赵六','多多的','啊啊啊','出大事','啊的','我的','试试水','宿舍','阮方法 ','的悦','我宇','张我我'];
+  var ld = [];
+  var n = obj("count").value;
+  if (n == 0)
+  {
+   alert("啊啊啊!!!");
+   return;
+  }
+  obj("stop").disabled = false;
+  obj("count").disabled = true;
+  obj("start").disabled = true;
+  var luckyA = "";
+  for (var j=0;j<n ;j++ )
+  {
+   var i = Math.floor(Math.random()*135);
+   if(luckyA.indexOf(arry[i]) == -1){
+    ld[j] = arry[i];
+   }else{
+    j--;
+   }
+   luckyA = ld.join("-");
+  }
+  k = Math.floor(Math.random()*102+1);
+  obj("result").innerHTML = luckyA;
+  obj("image").src = "img/"+k+".png"
+  timeId1 = setTimeout("startLuck()",speed);
+ }
+ function stopLuck(){
+  speed+=500;
+
+  timeId2 = setTimeout("stopLuck()",500);
+  if (speed>=1000)
+  {
+   obj("start").disabled = false;
+   obj("count").disabled = false;
+   obj("stop").disabled = true;
+   clearTimeout(timeId2);
+   clearTimeout(timeId1);
+   speed = 100;
+  }
+
+ }
+
+
+//-->
+</SCRIPT>
+</HEAD>
+<BODY>
+  <h1><a href="javascript:;">我就做一个测试</a></h1>
+  <h3>你今天的努力程度将决定你明天的生活方式。努力，奋斗！！！！</h3>
+<div id="box">
+  <div class="b">
+  <IMG id="image" src="./img/5.png">
+  </div>
+	<div class="tit">
+     <div class="a">
+     <SELECT id="count">
+      <option value="1">1名</option>
+      <option value="2">2名</option>
+      <option value="3">3名</option>
+      <option value="4">4名</option>
+      <option value="5">5名</option>
+     </SELECT>
+     <INPUT TYPE="button" value="启动" id="start" onClick="startLuck()">
+     <INPUT TYPE="button" value="停止" id="stop" onClick="stopLuck()" disabled>
+     </div>
+ </div>
+ <div id="result"></div>
+</div>
+</BODY>
+</HTML>
+
+
+

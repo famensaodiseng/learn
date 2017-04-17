@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            position: relative;
+            height: 400px;
+            width: 400px;
+            margin: 150px auto;
+            transform-style: preserve-3d;
+            animation: rotate 20s infinite linear;
+            transition: all 1s;
+
+        }
+        .box div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0.9;
+            top: 0;
+            left: 0;
+            transition: all 1s;
+        }
+        .box section {
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            /*opacity: 0.9;*/
+            background-color: black;
+            top:25%;
+            left:25%;
+
+        }
+        .left {
+            background-color: red;
+            transform: rotateY(90deg) translateZ(200px);
+        }
+        .right {
+            background-color: blue;
+            transform: rotateY(90deg) translateZ(-200px);
+        }
+        .top {
+            background-color: yellow;
+            transform: rotateX(90deg) translateZ(200px);
+        }
+        .bottom {
+            background-color: darkmagenta;
+            transform: rotateX(90deg) translateZ(-200px);
+        }
+        .back {
+            background-color: green;
+            transform:translateZ(-200px);
+        }
+        .front {
+            background-color: aqua;
+            transform:translateZ(200px);
+        }
+        .left1 {
+            /*background-color: red;*/
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .right1 {
+            /*background-color: blue;*/
+            transform: rotateY(90deg) translateZ(-100px);
+        }
+        .top1 {
+            /*background-color: yellow;*/
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .bottom1 {
+            /*background-color: darkmagenta;*/
+            transform: rotateX(90deg) translateZ(-100px);
+        }
+        .back1 {
+            /*background-color: green;*/
+            transform:translateZ(-100px);
+        }
+        .front1 {
+            /*background-color: aqua;*/
+            transform:translateZ(100px);
+        }
+        .box:hover .left{
+            transform: rotateY(90deg) translateZ(300px) rotateZ(90deg);
+        }
+        .box:hover .right{
+            transform: rotateY(90deg) translateZ(-300px) rotateZ(90deg);
+        }
+        .box:hover .top{
+            transform: rotateX(90deg) translateZ(300px) rotateZ(90deg);
+        }
+        .box:hover .bottom{
+            transform: rotateX(90deg) translateZ(-300px) rotateZ(90deg);
+        }
+        .box:hover .back{
+            transform:translateZ(-300px) rotateZ(90deg);
+        }
+        .box:hover .front{
+            transform:translateZ(300px) rotateZ(90deg);
+        }
+        @keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="right"></div>
+    <div class="left"></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+    <section class="right1"></section>
+    <section class="left1"></section>
+    <section class="top1"></section>
+    <section class="bottom1"></section>
+    <section class="front1"></section>
+    <section class="back1"></section>
+</div>
+    
+
+
+</body>
+</html>

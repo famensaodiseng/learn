@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>虚拟键盘</title>
+    <style type="text/css">
+        html {
+            font-family: 'Microsoft YaHei';
+        }
+
+        #main {
+            width: 1200px;
+            height: 430px;
+            border: 1px solid #ccc;
+            padding-left: 10px;
+            padding-top: 10px;
+            margin: 40px auto 0;
+        }
+
+        #main > div {
+            height: auto;
+            overflow: hidden;
+        }
+
+        span[keyCode] {
+            display: block;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        span[keyCode] {
+            box-shadow: 1px 1px 4px 0px #cfcfcf;
+            position: relative;
+            overflow: visible;
+        }
+
+        .active {
+            box-shadow: 0 0 0 #fff !important;
+            color: #fff;
+        }
+
+        .ball {
+            position: absolute;
+            min-width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            color: #fff;
+            border-radius: 15px;
+            background-color: #F53434;
+        }
+
+        .w60 {
+            width: 60px;
+        }
+
+        .w80 {
+            width: 80px;
+        }
+
+        .w100 {
+            width: 100px;
+        }
+
+        .w120 {
+            width: 120px;
+        }
+
+        .w140 {
+            width: 140px;
+        }
+
+        .w150 {
+            width: 150px;
+        }
+
+        .w405 {
+            width: 405px;
+        }
+
+        .liang {
+            background-color: cyan;
+        }
+        #defen {
+            margin-top: 50px;
+            text-align: center;
+            margin: 0 auto;
+            color: #3B5998;
+            font: 900 20px/30px "微软雅黑";
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="">
+        <span class="w60" keyCode="27">Esc</span>
+        <span class="w60" keyCode="112">F1</span>
+        <span class="w60" keyCode="113">F2</span>
+        <span class="w60" keyCode="114">F3</span>
+        <span class="w60" keyCode="115">F4</span>
+        <span class="w60" keyCode="116">F5</span>
+        <span class="w60" keyCode="117">F6</span>
+        <span class="w60" keyCode="118">F7</span>
+        <span class="w60" keyCode="119">F8</span>
+        <span class="w60" keyCode="120">F9</span>
+        <span class="w60" keyCode="121">F10</span>
+        <span class="w60" keyCode="122">F11</span>
+        <span class="w60" keyCode="123">F12</span>
+    </div>
+
+    <div class="">
+        <span class="w60" keyCode="192">`</span>
+        <span class="w60" keyCode="49">1</span>
+        <span class="w60" keyCode="50">2</span>
+        <span class="w60" keyCode="51">3</span>
+        <span class="w60" keyCode="52">4</span>
+        <span class="w60" keyCode="53">5</span>
+        <span class="w60" keyCode="54">6</span>
+        <span class="w60" keyCode="55">7</span>
+        <span class="w60" keyCode="56">8</span>
+        <span class="w60" keyCode="57">9</span>
+        <span class="w60" keyCode="48">0</span>
+        <span class="w60" keyCode="189">-</span>
+        <span class="w60" keyCode="187">=</span>
+        <span class="w140" keyCode="8">Backspace</span>
+    </div>
+
+    <div class="">
+        <span class="w100" keyCode="9">Tab</span>
+        <span class="w60" keyCode="81">Q</span>
+        <span class="w60" keyCode="87">W</span>
+        <span class="w60" keyCode="69">E</span>
+        <span class="w60" keyCode="82">R</span>
+        <span class="w60" keyCode="84">T</span>
+        <span class="w60" keyCode="89">Y</span>
+        <span class="w60" keyCode="85">U</span>
+        <span class="w60" keyCode="73">I</span>
+        <span class="w60" keyCode="79">O</span>
+        <span class="w60" keyCode="80">P</span>
+        <span class="w60" keyCode="219">[</span>
+        <span class="w60" keyCode="221">]</span>
+        <span class="w100" keyCode="220">\</span>
+    </div>
+
+    <div class="">
+        <span class="w120" keyCode="20">Caps Lock</span>
+        <span class="w60" keyCode="65">A</span>
+        <span class="w60" keyCode="83">S</span>
+        <span class="w60" keyCode="68">D</span>
+        <span class="w60" keyCode="70">F</span>
+        <span class="w60" keyCode="71">G</span>
+        <span class="w60" keyCode="72">H</span>
+        <span class="w60" keyCode="74">J</span>
+        <span class="w60" keyCode="75">K</span>
+        <span class="w60" keyCode="76">L</span>
+        <span class="w60" keyCode="186">;</span>
+        <span class="w60" keyCode="222">'</span>
+        <span class="w150" keyCode="13">Enter</span>
+    </div>
+    <div class="">
+        <span class="w150" keyCode="16">Shift</span>
+        <span class="w60" keyCode="90">Z</span>
+        <span class="w60" keyCode="88">X</span>
+        <span class="w60" keyCode="67">C</span>
+        <span class="w60" keyCode="86">V</span>
+        <span class="w60" keyCode="66">B</span>
+        <span class="w60" keyCode="78">N</span>
+        <span class="w60" keyCode="77">M</span>
+        <span class="w60" keyCode="188">,</span>
+        <span class="w60" keyCode="190">.</span>
+        <span class="w60" keyCode="191">/</span>
+        <span class="w120" keyCode="16">Shift</span>
+        <span class="w60" keyCode="38">Up</span>
+    </div>
+
+    <div class="">
+        <span class="w80" keyCode="17">Ctrl</span>
+        <span class="w60" keyCode="93">Fn</span>
+        <span class="w60" keyCode="91">Win</span>
+        <span class="w60" keyCode="18">Alt</span>
+        <span class="w405" keyCode="32"></span>
+        <span class="w60" keyCode="18">Alt</span>
+        <span class="w60" keyCode="93">Copy</span>
+        <span class="w60" keyCode="17">Ctrl</span>
+        <span class="w60" keyCode="37">Left</span>
+        <span class="w60" keyCode="40">Down</span>
+        <span class="w60" keyCode="39">Right</span>
+    </div>
+</div>
+<div id="defen">
+    得分：<strong>0</strong>
+</div>
+<script type="text/javascript" src="jQuery/jQuery/js/jquery-1.11.1.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var frequency = {};
+        var timer = null
+        var dai = 0
+        var num=0
+        var shu=0
+
+        timer = setInterval(function () {
+             num = Math.round(Math.random() * 77)
+            $("span").removeClass("liang")
+            shu=$("span").eq(num).addClass("liang").attr("keyCode")
+            console.log(shu)
+
+        }, 1500)
+//        console.log(shu)
+
+        $(document).on('keydown', function (e) {
+            var keyCode = e.keyCode;
+
+            var $this = $('span[keyCode=' + keyCode + ']');
+            $this.addClass('active');
+            if (frequency[keyCode]) {
+                frequency[keyCode] += 1;
+            } else {
+                frequency[keyCode] = 1;
+            }
+            var c = _.color();
+            $this.css({'background-color': c, 'border-color': c});
+            _.bubble($this, frequency[keyCode], c);
+            dai++
+            $("#defen strong").text(dai)
+            return false;
+        })
+        $(document).on('keyup', function (e) {
+            var keyCode = e.keyCode;
+            var $this = $('span[keyCode=' + keyCode + ']');
+            $this.removeClass('active');
+            $this.css({'background-color': '#fff', 'border-color': '#ccc'});
+
+            return false;
+        })
+        var _color = [
+            '#ed5565',
+            '#da4453',
+            '#fc6e51',
+            '#e9573f',
+            '#ffce54',
+            '#f6bb42',
+            '#a0d468',
+            '#8cc152',
+            '#48cfad',
+            '#37bc9b',
+            '#4fc1e9',
+            '#3bafda',
+            '#5d9cec',
+            '#4a89dc',
+            '#ac92ec',
+            '#967adc',
+            '#ec87c0',
+            '#d77oad',
+            '#656d78',
+            '#434a54'
+        ]
+        var _ = {
+            bubble: function ($target, n, c) {
+                var w = $target.innerWidth(),
+                        h = $target.innerHeight(),
+                        l = $target.offset().left,
+                        t = $target.offset().top,
+                        sl = l + ((w - 30) / 2),
+                        st = t + ((h - 30) / 2),
+                        $this = $('<span class="ball">+' + n + '</span>').css({
+                            'left': sl,
+                            'top': st,
+                            'background-color': c
+                        });
+                $this.appendTo('#main');
+                $this.stop(true, true).animate({
+                    top: st - 60
+                }, function () {
+                    $this.fadeOut(400, function () {
+                        $(this).remove()
+                    });
+                })
+            },
+            color: function () {
+                var l = _color.length;
+                var n = Math.floor(Math.random() * l);
+                return _color[n];
+            }
+        }
+    })
+</script>
+</body>
+</html>
