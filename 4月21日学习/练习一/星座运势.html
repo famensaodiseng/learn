@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+        .box {
+            width: 350px;
+            height: 250px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        .dt {
+            padding-left:10px;
+            line-height: 35px;
+            font-weight: 700;
+            color:#036;
+        }
+        .dd-t{
+            overflow: hidden;
+        }
+        .dd {
+            padding: 10px;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+            float: left;
+            background: url(images/Icon.png) no-repeat;
+            margin-right:10px;
+        }
+        .yunshi {
+            width: 80px;
+            height: 13px;
+            display: inline-block;
+            background:url(images/yunshi.png) no-repeat;
+            position: relative;
+        }
+        .star {
+            width:0;
+            height: 13px;
+            position: absolute;
+            top:0;
+            left:0;
+            background:url(images/yunshi.png) no-repeat left bottom;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="dt">星座运势</div>
+    <div class="dd">
+        <div class="dd-t">
+            <div class="icon" id="ico"></div>
+            <div class="right">
+                <select name="" id="sele">
+                    <option value="0">白羊座 03.21-04.19</option>
+                    <option value="1">金牛座 04.20-05.29</option>
+                    <option value="2">双子座 04.20-05.29</option>
+                    <option value="3">天秤座 04.20-05.29</option>
+                    <option value="4">巨蟹座 04.20-05.29</option>
+                </select>
+                <div> 今日运势:
+                    <span class="yunshi">
+                        <span class="star" id="stAr"></span>
+                   </span>
+                </div>
+            </div>
+        </div>
+        <div class="dd-b" id="content">
+            这几天的财运都很强，但是危机总在不知不觉之中发生了，例如：因为太过乐观而误判情势，导致投...[详细]
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var sele = document.getElementById("sele");
+    var ico = document.getElementById("ico");
+    var content = document.getElementById("content");
+    var star = document.getElementById("stAr");
+    var arr = [8,9,6,5,3];
+    star.style.width = 8 * arr[0] + "px";
+    var textArr = ["受到财帛宫内行星不利相位的影响，部份的人花钱较不节制，经常一不小心就把信用卡刷爆了，除此之...","最近你的学习能力相当好，领悟力也很高，可以在很短的时间内就对新的业务内容有通盘的了解，所以.","或许最近有些心事困扰着你，让你今天工作起来相当无力，甚至有些心不在焉，如果忙碌了一段时间后..","受到财帛宫内行星不利相位的影响，部份的人花钱较不节制，经常一不小心就把信用卡刷爆了，除此之...","最近你的学习能力相当好，领悟力也很高，可以在很短的时间内就对新的业务内容有通盘的了解，所以.","或许最近有些心事困扰着你，让你今天工作起来相当无力，甚至有些心不在焉，如果忙碌了一段时间后.."];
+    sele.onchange = function() {
+        ico.style.backgroundPosition = "0"+(-this.value*50)+"px";
+        content.innerHTML = textArr[this.value];
+        star.style.width = 8 * arr[this.value]+"px";
+    }
+</script>

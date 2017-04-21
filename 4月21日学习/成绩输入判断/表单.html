@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+        .box{
+            width:400px;
+            height:40px;
+            margin:100px auto;
+            font-size:14px;
+
+        }
+        .result{
+            display: inline-block;
+            width:150px;
+            height:20px;
+            border:1px solid #ccc;
+            line-height: 20px;
+            background-color: #e4e4e4;
+            text-align: center;
+            color:#888;
+        }
+        .right{
+            border:1px solid #B6FF9D;
+            background:url("right.png") no-repeat #DCFFD0 5px center;
+            color:green;
+        }
+        .wrong{
+            border:1px solid #FF9E7D;
+            background:url("wrong.png") no-repeat #FFD5C6 5px center;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label for="txt">语文：</label>
+        <input type="text" id="txt"/>
+        <span class="result" id="result_txt">请输入语文成绩</span>
+    </div>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        function $(id){
+            return document.getElementById(id);
+        }
+        $('txt').onblur = function(){
+
+            if(this.value == "")
+            {
+                $('result_txt').className = 'result wrong';
+                $('result_txt').innerHTML = '内容不能为空！'
+            }else if(isNaN(this.value)){
+                $('result_txt').className = 'result wrong';
+                $('result_txt').innerHTML = '请输入数字！'
+            }
+            else if(this.value >150 || this.value <0)
+            {
+                $('result_txt').className = 'result wrong';
+                $('result_txt').innerHTML = '不是合法的内容！'
+            }
+            else
+            {
+                $('result_txt').className = 'result right';
+                $('result_txt').innerHTML = '恭喜，输入正确！'
+            }
+        }
+    }
+
+</script>

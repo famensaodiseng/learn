@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .xiaomi {
+            width: 512px;
+            height: 400px;
+            border: 1px solid #f00;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .xiaomi span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            cursor: pointer;
+        }
+        .up {
+            top: 0;
+        }
+        .down {
+            bottom: 0;
+        }
+        .xiaomi img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="xiaomi">
+    <img src="mi.png" alt="" id="pic"/>
+    <span class="up" id="goUp"></span>
+    <span class="down" id="goDown"></span>
+</div>
+</body>
+</html>
+<script>
+    var goUp = document.getElementById("goUp");
+    var goDown = document.getElementById("goDown");
+    var pic = document.getElementById("pic");
+    var num = 0;  // 控制图片上下
+    var timer = null;  // 声明  空   定时器
+    goUp.onmouseover = function() {   // 上走
+        clearInterval(timer);  // 先清除以前的定时器
+       timer = setInterval(function() {  // 定时器就有了名字  定时器很多，每个有自己id名字
+           num-=3;  // 先 --
+           if(num<-1070) {   // 后判断
+              //  我们应该停止 定时器
+               clearInterval(timer);
+           }
+           //  再执行
+           pic.style.top = num + "px";  // 让他的top 值  是 num  2
+       },30)
+    }
+    goDown.onmouseover = function() {   // 上走
+       clearInterval(timer);  // 先清除以前的定时器
+       timer = setInterval(function() {  // 定时器就有了名字  定时器很多，每个有自己id名字
+           num++;  // 先 ++
+            if(num>=0)
+            {
+                clearInterval(timer);
+            }
+           //  再执行
+           pic.style.top = num + "px";  // 让他的top 值  是 num  2
+       },30)
+    }
+
+    goDown.parentNode.onmouseout = function() {   // 他的父亲是小米 最大的盒子
+        clearInterval(timer);
+    }
+</script>

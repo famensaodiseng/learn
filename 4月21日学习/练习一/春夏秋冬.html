@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+         background:url(images/chun1.jpg);
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<select name="" id="sele">
+    <option value="1">´ºÒâÃàÃà</option>
+    <option value="2">ÏÄÈÕÑ×Ñ×</option>
+    <option value="3">Çï·çÉªÉª</option>
+    <option value="4">¶¬Ñ©°¨°¨</option>
+</select>
+</body>
+</html>
+<script>
+    var sele = document.getElementById("sele");
+    sele.onchange = function(){
+        switch(this.value) {
+            case "1":
+                document.body.style.backgroundImage = "url(images/chun1.jpg)";
+                break;
+            case "2":
+                document.body.style.backgroundImage = "url(images/xia1.jpg)";
+                break;
+            case "3":
+                document.body.style.backgroundImage = "url(images/qiu1.jpg)";
+                break;
+            case "4":
+                document.body.style.backgroundImage = "url(images/dong1.jpg)";
+                break;
+        }
+    }
+</script>

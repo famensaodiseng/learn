@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="hd">
+        <button>全选</button>
+        <button>取消</button>
+        <button>反选</button>
+    </div>
+    <div id="db">
+        <ul>
+            <li>选项：<input type="checkbox" name/></li>
+            <li>选项：<input type="checkbox" name/></li>
+            <li>选项：<input type="checkbox" name/></li>
+            <li>选项：<input type="checkbox" name/></li>
+            <li>选项：<input type="checkbox" name/></li>
+            <li>选项：<input type="checkbox" name/></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var btns = document.getElementsByTagName("button");
+    var inputs = document.getElementsByTagName("input");
+    btns[0].onclick = function() {
+        for(var i=0;i<inputs.length;i++)
+        {
+            inputs[i].checked = true;
+        }
+    }
+        btns[1].onclick = function() {
+            for(var i=0;i<inputs.length;i++)
+            {
+                inputs[i].checked = false;
+            }
+        }
+        btns[2].onclick = function() {
+            for(var i=0;i<inputs.length;i++)
+            {
+                if(inputs[i].checked == true)
+                {
+                    inputs[i].checked = false;
+            }
+                else {
+                inputs[i].checked = true;
+            }
+        }
+        }
+</script>

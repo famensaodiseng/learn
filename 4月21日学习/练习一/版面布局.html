@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style-type: none;
+        }
+    .box {
+        width: 500px;
+        height: 300px;
+        border: 1px solid #ccc;
+        background-color: lightpink;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+    .hd {
+        height: 45px;
+    }
+    .hd span {
+        display: inline-block;
+        width: 90px;
+        background-color: pink;
+        line-height: 45px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .hd span.current {
+        background-color: #8CFF8C;
+    }
+    .bd li {
+        height: 255px;
+        background-color: #8CFF8C;
+        display: none;
+    }
+     .bd li.current {
+         display: block;
+     }   
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="hd">
+            <span class>娱乐版块</span>
+            <span class="current">新闻版块</span>
+            <span class>军事版块</span>
+            <span class>社会版块</span>
+            <span class>八卦版块</span>
+        </div>
+        <div class="bd">
+            <ul>
+                <li class>娱乐天地</li>
+                <li class>综艺新闻</li>
+                <li class>快乐大本营</li>
+                <li class>土耳其俄国</li>
+                <li class="show">时事政治</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="hd">
+            <span class>娱乐版块</span>
+            <span class="current">新闻版块</span>
+            <span class>军事版块</span>
+            <span class>社会版块</span>
+            <span class>八卦版块</span>
+        </div>
+        <div class="bd">
+            <ul>
+                <li class>娱乐天地</li>
+                <li class>综艺新闻</li>
+                <li class>快乐大本营</li>
+                <li class>土耳其俄国</li>
+                <li class="show">时事政治</li>
+            </ul>
+        </div>
+    </div>
+    <div class="box">
+        <div class="hd">
+            <span class>娱乐版块</span>
+            <span class="current">新闻版块</span>
+            <span class>军事版块</span>
+            <span class>社会版块</span>
+            <span class>八卦版块</span>
+        </div>
+        <div class="bd">
+            <ul>
+                <li class>娱乐天地</li>
+                <li class>综艺新闻</li>
+                <li class>快乐大本营</li>
+                <li class>土耳其俄国</li>
+                <li class="show">时事政治</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+    var spans = document.getElementsByTagName("span");
+    var lis = document.getElementsByTagName("li");
+    for(var i=0; i<spans.length;i++) {
+        spans[i].index = i ;
+        spans[i].onmouseover = function(){
+            for(var j = 0;j<spans.length;j++)
+            {
+                spans[j].className="";
+                lis[j].className="";
+            }
+            this.className = "current";
+            lis[this.index].className = "current";
+        }
+    }
+
+</script>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <style>
+    .current {
+        background-color: #ff4400;
+    }
+    </style>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+</body>
+</html>
+<script>
+    var btns = document.getElementsByTagName("button" );
+    for(var i=0;i<btns.length;i++) {
+        btns[i].onclick = function() {
+            for(var j=0;j<btns.length;j++)
+            {
+                btns[j].className = "";
+            }
+            this.className = "current";
+        }
+    }
+
+
+</script>
