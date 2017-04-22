@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            background: url(images/sky.png);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #game .pipeD {
+            background: url(images/pipe1.png) top center;
+            position: absolute;
+        }
+
+        #game .pipeU {
+            background: url(images/pipe2.png) bottom center;
+            position: absolute;
+        }
+
+        #bird {
+            width: 34px;
+            height: 26px;
+            /*border-radius: 10px;*/
+            /*background-color: red;*/
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background: url(images/birds.png) -8px -10px no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+<div id="game">
+    <div id="bird"></div>
+</div>
+<script>
+    var game = document.getElementById("game");
+    var birdEle = document.getElementById("bird");
+    var gameover = false;
+    var g = 1;
+    var sky = {
+        position: 0
+    }
+    var bird = {
+        entity: birdEle,
+        speedX: 5,
+        speedY: 0,
+        x: birdEle.offsetLeft,
+        y: birdEle.offsetTop
+    }
+    setInterval(function () {
+        if (!gameover) {
+            sky.position = sky.position - bird.speedX;
+            game.style.backgroundPositionX = sky.position + "px";
+            bird.speedY = bird.speedY + g;
+            var step = bird.speedY;
+            bird.y = bird.y + step;
+            if (bird.y < 0) {
+                bird.y = 0;
+                gameover = true;
+            }
+            if (bird.y > game.offsetHeight - birdEle.offsetHeight) {
+                bird.y = game.offsetHeight - birdEle.offsetHeight
+                gameover = true;
+            }
+            bird.entity.style.top = bird.y + "px";
+        }
+    }, 25)
+    document.onclick = function () {
+        bird.speedY = -10;
+    }
+    function Pipe(positionX) {
+        this.x = positionX;
+        this.width = 52;
+        this.upPipeY = 0;
+        this.upPipeH = parseInt(Math.random() * 175) + 100;
+        this.downPipeY = this.upPipeH + 200;
+        this.downPipeH = 600 - this.downPipeY;
+        var divUp = document.createElement("div");
+        divUp.className = "pipeU";
+        divUp.style.left = this.x + "px";
+        divUp.style.top = this.upPipeY + "px";
+        divUp.style.height = this.upPipeH + "px";
+        divUp.style.width = this.width + "px";
+        var divDown = document.createElement("div");
+        divDown.className = "pipeD";
+        divDown.style.left = this.x + "px";
+        divDown.style.top = this.downPipeY + "px";
+        divDown.style.height = this.downPipeH + "px";
+        divDown.style.width = this.width + "px";
+        game.appendChild(divUp);
+        game.appendChild(divDown);
+        console.log(this);
+        var that = this;
+        setInterval(function () {
+            that.x = that.x - 1;
+            if (that.x < -52) {
+                that.x = 800;
+            }
+            if (!gameover) {
+                divUp.style.left = that.x + "px";
+                divDown.style.left = that.x + "px";
+            }
+            var downCrash = (bird.x + 34 > that.x) && (bird.x < that.x + 52) && (bird.y + 25 > that.downPipeY);
+            var upCrash = (bird.x + 34 > that.x) && (bird.x < that.x + 52) && (bird.y < that.upPipeH);
+            if (downCrash || upCrash) {
+                gameover = true;
+            }
+        }, 10)
+    }
+    var arr = [];
+    for (var i = 0; i < 4; i++) {
+        var pipe = new Pipe(400 + 200 * i);
+        arr[i] = pipe;
+    }
+    console.log(arr);
+
+</script>
+</body>
+</html>

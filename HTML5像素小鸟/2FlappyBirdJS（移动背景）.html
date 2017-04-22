@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            background: url(images/sky.png);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #game .pipeD {
+            background: url(images/pipe1.png) top center;
+            position: absolute;
+        }
+
+        #game .pipeU {
+            background: url(images/pipe2.png) bottom center;
+            position: absolute;
+        }
+
+        #bird {
+            width: 34px;
+            height: 25px;
+            /*border-radius: 10px;*/
+            /*background-color: red;*/
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background: url(images/birds.png) -8px -10px no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+<div id="game">
+    <div id="bird"></div>
+</div>
+<script>
+    var birdEle = document.getElementById("bird");
+    var game = document.getElementById("game");
+    var gameover = false;
+    var g = 1;
+
+    var sky = {
+        x: 0
+    };
+
+    var bird = {
+        entity: birdEle,
+        x: 0,
+        y: 0,
+        speedX: 5,
+        speedY: 0
+    };
+
+    //移动背景
+    setInterval(function () {
+        // leader = leader + step
+        sky.x = sky.x - bird.speedX;
+        game.style.backgroundPositionX = sky.x + "px";
+    }, 25);//我觉得25比较合适 同学们可以自己调整
+
+</script>
+</body>
+</html>

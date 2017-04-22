@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #game {
+            width: 800px;
+            height: 600px;
+            border: 1px solid #000;
+            background: url(images/sky.png);
+            overflow: hidden;
+            position: relative;
+        }
+
+        #game .pipeD {
+            background: url(images/pipe1.png) top center;
+            position: absolute;
+        }
+
+        #game .pipeU {
+            background: url(images/pipe2.png) bottom center;
+            position: absolute;
+        }
+
+        #bird {
+            width: 34px;
+            height: 25px;
+            /*border-radius: 10px;*/
+            /*background-color: red;*/
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background: url(images/birds.png) -8px -10px no-repeat;
+        }
+
+    </style>
+</head>
+<body>
+<div id="game">
+    <div id="bird"></div>
+</div>
+<script>
+    var birdEle = document.getElementById("bird");
+    var game = document.getElementById("game");
+    var gameover = false;//记录有没有死翘翘
+    var g = 1;//重力加速度
+
+    //1找对象
+    var sky = {
+        x: 0
+    };
+
+    var bird = {
+        entity: birdEle,//小鸟的实体
+        x: 0,//水平位置
+        y: 0,//竖直位置
+        speedX: 0,//水平速度
+        speedY: 0//竖直速度
+    };
+
+    //管子 一会儿通过构造函数批量创建
+
+</script>
+</body>
+</html>
