@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">开始</button>
+<div id="box"></div>
+</body>
+</html>
+<script>
+    var btn = document.getElementById("btn");
+    var box =  document.getElementById("box");
+    btn.onclick = function() {
+        animate(box,{width:500,height:500,left:600}); // 调用  第一个给谁改     第二个 是 json
+    }
+    function animate(obj,json) {
+    // 第一参数 动的对象   2  attr  动的那个属性   3   属性值少多少
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            for(var k in json) {  // k  属性     json[k]
+                // leader = leader + (target - leader )  /10 ;
+                //  计算步长
+                // target 目标位置    leader 不清楚，我们不知道用户改那个属性
+                // 检测用户给我们了什么属性，  我们就用这个属性的值 来计算
+                // 我们怎么知道用户给我们属性，我们怎么又能得到属性的值呢？
+                //  var leader = obj.style[attr];  他只能得到行内式
+                var leader = parseInt(getStyle(obj,k));  //  去过来的是带有单位的 25px
+                //去掉px 的方法   parseInt(25px)   25
+                /* alert(leader);*/
+                var step = (json[k] - leader) / 10;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                leader = leader + step;
+                obj.style[k] = leader + "px";
+            }
+        },30)
+    }
+    function getStyle(obj,attr) {
+        if(obj.currentStyle) {
+            // 如果支持，返回改属性值
+            //  return  obj.style.left    只能得到行内式的
+            // return  obj.currentStyle["left"];   // 正确的写法，但是left 是传进来的
+            return  obj.currentStyle[attr];
+        }
+        else
+        {
+            return window.getComputedStyle(obj,null)[attr];
+        }
+    }
+
+</script>

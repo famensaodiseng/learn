@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        pre {
+            margin-top: 100px;
+            margin-left: 100px;
+            line-height: 20px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <button id="big">变大</button>
+    <button id="small">变小</button>
+    <pre id="verse">
+        泪湿罗衣脂粉满，
+        四叠阳关，唱到千千遍。
+        人道山长水又断，萧萧微雨孤馆。
+        惜别伤离方寸乱。
+        忘了临行，酒盏深和浅。
+        好把音书凭过雁，东莱不似蓬莱远。
+    </pre>
+</body>
+</html>
+<script>
+    var verse = document.getElementById("verse");
+    var width = verse.offsetHeight;
+    console.log(width);
+    var big = document.getElementById("big");
+    var small = document.getElementById("small");
+    var chanceSize = 12;
+    big.onclick = function() {
+        chanceSize++;
+        verse.style.fontSize = chanceSize + "px";
+        verse.style.lineHeight = chanceSize + 8 + "px";
+    }
+    small.onclick = function() {
+        chanceSize--;
+        verse.style.fontSize = chanceSize + "px";
+        if(chanceSize > 12){
+            verse.style.lineHeight = chanceSize + 8 + "px";
+
+        }
+    }
+</script>
