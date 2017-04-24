@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @charset "UTF-8";
+        /*css ��ʼ�� */
+        html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+            margin: 0;
+            padding: 0;
+        }
+
+        fieldset, img, input, button { 			/*fieldset��ϱ��е����Ԫ��*/
+            border: none;
+            padding: 0;
+            margin: 0;
+            outline-style: none;
+        }
+
+        ul, ol {
+            list-style: none;				/*����б���*/
+        }
+
+        input {
+            padding-top: 0;
+            padding-bottom: 0;
+            font-family: "SimSun", "����";
+        }
+
+        select, input {
+            vertical-align: middle;
+        }
+
+        select, input, textarea {
+            font-size: 12px;
+            margin: 0;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /*��ֹ�����ı����϶�*/
+        img {
+            border: 0;
+            vertical-align: middle;
+        }
+
+        /*  ȥ��ͼƬ�Ͳ�Ĭ�ϵ�3���ؿհ׷�϶*/
+        table {
+            border-collapse: collapse;			/*�ϲ������*/
+        }
+
+
+        body {
+            font: 12px/150% Arial, Verdana, "\5b8b\4f53";	/*���壬Unicode��ͳһ��*/
+            color: #666;
+            background: #fff
+        }
+
+        .clearfix:before, .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1; /*IE/7/6*/
+        }
+
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #C81623;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 100%;
+        }
+
+        s, i, em {
+            font-style: normal;
+            text-decoration: none;
+        }
+
+        .col-red {
+            color: #C81623 !important;
+        }
+
+        /*������*/
+        .w {
+            /*���� ��ȡ */
+            width: 1210px;
+            margin: 0 auto;
+        }
+
+        .fl {
+            float: left
+        }
+
+        .fr {
+            float: right
+        }
+
+        .al {
+            text-align: left
+        }
+
+        .ac {
+            text-align: center
+        }
+
+        .ar {
+            text-align: right
+        }
+
+        .hide {
+            display: none
+        }
+
+        .box {
+            width: 400px;
+            height: 500px;
+            margin: 200px;
+            border: 1px solid #ccc;
+        }
+        .box ul {
+            width: 500px;
+        }
+        .box li {
+            float: left;
+            width: 78px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border-bottom: 1px solid #333228;
+            background-color: #ccc;
+            padding: 0 1px;
+        }
+        .box li:hover {
+            background-color: #fff;
+            padding: 0;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            border-bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <ul>
+            <li><a href="#">你好</a></li>
+            <li><a href="#">我好</a></li>
+            <li><a href="#">她好</a></li>
+            <li><a href="#">您好</a></li>
+            <li><a href="#">不好</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

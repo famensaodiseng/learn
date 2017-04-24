@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .nodeSmall {
+            width: 50px;
+            height: 50px;
+            background: url(images/bgs.png) no-repeat -159px -51px;
+            position: fixed;
+            right: 10px;
+            top: 40%;
+        }
+        .erweima {
+            position: absolute;
+            top: 0;
+            left: -150px;
+            display: none;
+        }
+        .nodeSmall a {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="nodeSmall" id="node_small">
+    <a href="#"></a>
+    <div class="erweima" id="er">
+        <img src="images/456.png" alt=""/>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    var node_small = document.getElementById("node_small") ;  // 最大的盒子
+    var er = document.getElementById("er");
+    node_small.onmouseover = function() {
+         //  鼠标经过大盒子   里面 的二维码显示
+        er.style.display = "block";
+    }
+    node_small.onmouseout = function() {
+         //  鼠标离开大盒子   里面 的二维码隐藏
+        er.style.display = "none";
+    }
+
+</script>
