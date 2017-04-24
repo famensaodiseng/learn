@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .current {
+            background-color: #daa520;
+        }
+    </style>
+</head>
+<body>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+<button>按钮</button>
+</body>
+</html>
+<script>
+    var btns = document.getElementsByTagName("button");
+    for(var i=0;i<btns.length;i++) {
+
+        btns[i].index = i;  // 难点和重点
+         // btns[0].index = 0;
+         // btns[1].index = 1;
+        btns[i].onclick = function() {
+            //  alert(i);
+             // 先清除所有的盒子
+            alert(this.index);  // 单击那个按钮，就弹出 自己的当前的 index 索引号
+            for( var j= 0; j<btns.length;j++) {
+                btns[j].className = "";
+            }
+            // 留下我自己
+            this.className = "current" ;
+        }
+    }  // 遍历
+</script>

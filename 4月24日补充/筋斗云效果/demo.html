@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin:0; padding: 0}
+        ul {list-style: none;}
+        body {
+            background-color: #333;
+        }
+        .nav {
+            width: 800px;
+            height: 42px;
+            margin: 100px auto;
+            background: url(images/rss.png) right center no-repeat #fff;
+            border-radius: 10px;
+            position: relative;
+        }
+        .nav ul li{
+            width: 83px;
+            height: 42px;
+            float: left;
+            line-height: 42px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .nav span {
+            width: 83px;
+            height: 42px;
+            background: url(images/cloud.gif) no-repeat;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .nav  ul {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <span id="cloud"></span>
+    <ul>
+        <li>孙悟空</li>
+        <li>孙大圣</li>
+        <li>孙猴子</li>
+        <li>行者孙</li>
+        <li>孙行者</li>
+        <li>弼马温</li>
+        <li>孙大圣</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    var cloud = document.getElementById("cloud");   // 云彩有了
+
+    var lis = document.getElementsByTagName("li");
+    for(var i=0;i<lis.length;i++) {
+        lis[i].onmouseover = function() {
+            // 当我们鼠标放到某个li 上的时候，只需要 让 云彩的left 值 是  当前li 的offsetLeft
+            // cloud.style.left = this.offsetLeft + "px";
+            animate(cloud,this.offsetLeft);  // 第一个参数  谁动    第二个参数 动多少
+        }
+        lis[i].onmouseout = function() {
+            animate(cloud,0);
+        }
+    }
+
+
+
+    function animate(obj,target) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function() {
+            // 运动公式  leader = leader + (target - leadaer) / 10
+            var step = (target - obj.offsetLeft) / 10;
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            obj.style.left = obj.offsetLeft + step + "px";
+            if(target == obj.offsetLeft) {
+                clearInterval(obj.timer);
+            }
+        },10)
+    }
+</script>

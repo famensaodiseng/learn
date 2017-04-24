@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div class="demo"></div>
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div></div>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>
+<script>
+    //  分两部分 ，首先是浏览器支持de
+    function getClassName(classname) {   // 形参
+        //  先看看浏览器支不支持
+        if(document.getElementsByClassName) {   // 如果支持这个写法
+            return document.getElementsByClassName(classname);  // 直接返回所有元素
+        }
+        // 下面的语句是ie678 执行
+        // 核心思想   把所有的标签都取过来， 然后一个一个的判断当前元素的类名是不是  classname
+        //是就留下，不是 就走开
+        // alert(11);
+        var arr = [];  //数组用来存储满足条件的 元素
+        var dom = document.getElementsByTagName("*");  // 把所有的标签都取过来 *  所有的
+        for(var i=0;i<dom.length;i++) {  // 开始遍历
+            if(dom[i].className == classname) {    // 判断
+                arr.push(dom[i]);  // 往  数组后面追加
+            }
+        }
+        return arr;  // 返回总的数组
+    }
+    console.log(getClassName("demo").length);  // 实参
+</script>

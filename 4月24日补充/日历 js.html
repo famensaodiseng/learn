@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .date {
+            width: 200px;
+            height: 220px;
+            background-color: #369;
+            margin: 100px auto;
+            text-align: center;
+            padding-top:25px;
+        }
+        .date span {
+            color: white;
+        }
+        .date p {
+            width: 120px;
+            height: 120px;
+            background-color: darkorange;
+            margin:50px auto  0;
+            line-height: 120px;
+            font-size: 70px;
+        }
+    </style>
+</head>
+<body>
+<div class="date" id="date">
+    <span></span>
+    <p></p>
+</div>
+</body>
+</html>
+<script>
+    var box = document.getElementById("date");  // 最大盒子
+    var date = new Date();  // 声明 创建 日期
+    var arr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+    box.children[1].innerHTML = date.getDate();
+    box.children[0].innerHTML = date.getFullYear() + "年" + (date.getMonth()+1) + "月" +
+    date.getDate() + "日 " + arr[date.getDay()];
+</script>

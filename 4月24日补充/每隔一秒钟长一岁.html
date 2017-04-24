@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="demo"></div>
+</body>
+</html>
+<script>
+    var demo = document.getElementById("demo");
+    var num = 0; // 年龄
+    setInterval(fn,1000);  // 开始定时器   fn 一定是一个函数名
+    function fn() {
+        num++;
+        demo.innerHTML = "我今年"+num+"岁了";
+    }
+
+</script>

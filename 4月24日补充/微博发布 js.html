@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin:0; padding:0;}
+        ul{list-style: none;}
+        .box {
+            width: 600px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        textarea {
+            width: 450px;
+            height: 260px;
+            resize: none;
+            outline:  none;
+
+        }
+        #ul {
+            margin-left: 70px;
+        }
+        #ul li {
+            height: 35px;
+            width: 450px;
+            border-bottom:1px dashed #ccc;
+            line-height: 35px;
+        }
+        #ul li a {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    微博发布: <textarea name="" id="txt" cols="30" rows="10"></textarea>  <button id="btn">发布</button>
+    <ul id="ul">
+
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    //   获取元素
+    var btn = document.getElementById("btn");
+    var ul = document.getElementById("ul");
+    var txt = document.getElementById("txt");
+    btn.onclick = function() {
+       if(txt.value == "") {
+           alert("请输入内容,不能为空");
+           return false;
+       }
+        //  点击完毕后，  生成一个新的li  然后追加的  ul 里面去
+        var newli = document.createElement("li");
+           // li 里面的文字是 文本框里面的值
+        newli.innerHTML =  txt.value + "<a href='javascript:;'>删除</a>";
+        var lis = ul.children;  // ul  里面只能有li
+        //  后面发布的，会更优先显示
+        // 如果从来没有li  我们先放入一个li  后面有li 都是放到 第一个li 的前面
+        if(lis.length == 0) {
+            ul.appendChild(newli);
+        }
+        else {
+            ul.insertBefore(newli,lis[0]);  //  第一个孩子   lis[0]
+        }
+        txt.value = "";
+        // 获取 a 连接
+        var as = ul.getElementsByTagName("a");
+        //  alert(as.length);
+        for(var i=0;i<as.length;i++) {
+            as[i].onclick = function() {   // a点击完毕之后删除的是  他的父亲 li
+                   // li父亲.removeChlid(li)
+                ul.removeChild(this.parentNode);
+               // 父亲.removeChild(儿子)
+            }
+        }
+
+    }
+</script>
