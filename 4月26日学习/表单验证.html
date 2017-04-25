@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            background: #ccc;
+        }
+        label   {
+            width: 40px;
+            display: inline-block;
+        }
+        .container {
+            margin: 100px auto;
+            width: 400px;
+            padding: 50px;
+            line-height: 40px;
+            border: 1px solid #999;
+            background: #efefef;
+        }
+        span {
+            margin-left: 30px;
+            font-size: 12px;
+            padding: 2px 20px 0;
+            color: #ccc;
+        }
+        .wrong {
+            color: red;
+            background: url(images/error.png) no-repeat;
+        }
+        .right {
+            color: green;
+            background: url(images/right.png)no-repeat;
+        }
+        .pwd {
+            width: 220px;
+            height: 20px;
+            background: url(images/strong.jpg)no-repeat;
+        }
+        .str1 {
+            background-position: 0 -20px;
+        }
+        .str2 {
+            background-position: 0 -40px;
+        }
+        .str3 {
+            background-position: 0 -60px;
+        }
+        .str4 {
+            background-position: 0 -80px;
+        }
+    </style>
+</head>
+<body>
+<div class = "container">
+    <label>QQ</label><input type="text" id = "inp1"/><span>请输入正确的QQ号码</span><br/>
+    <label>手机</label><input type="text" id = "inp2"/><span>请输入11位手机号</span><br/>
+    <label>邮箱</label><input type="text" id = "inp3"/><span>请输入正确的邮箱</span><br/>
+    <label>座机</label><input type="text" id = "inp4"/><span>请输入正确的座机</span><br/>
+    <label>账号</label><input type="text" id = "inp5"/><span>请输入您的账号</span><br/>
+    <label>密码</label><input type="password" id = "inp6"/><span>请输入您的密码</span><br/>
+    <div class= "pwd" id = "password"></div>
+</div>
+</body>
+</html>
+<script>
+    function $(id) {return document.getElementById(id);}
+
+    function change(id,fn) {
+        $(id).onblur = fn;
+    }
+
+    function setText(obj,txt) {
+        obj.nextSibling.innerHTML =txt;
+    }
+
+    function setClassName(obj,classname) {
+        obj.nextSibling.className = classname;
+    }
+
+
+    change("inp1",function() {
+        if(/[1-9][0-9]{4,}$/.test(this.value)) {
+            setText(this,"恭喜输入正确");
+            setClassName(this,"right");
+        }
+        else {
+            setText(this,"对不起，输入有误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp2",function() {
+        if(/^((13[0-9])|(15[^4,\D])|(18[0,5-9]))\d{8}$/
+                        .test(this.value)) {
+            setText(this,"恭喜手机号正确");
+            setClassName(this,"right");
+        }
+        else {
+            setText(this,"手机号错了");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp3",function() {
+        if(/^[\w\-\.]+\@[\w]+\.[\w]{2,4}$/
+                        .test(this.value)) {
+            setText(this,"邮箱输入正确");
+            setClassName(this,"right");
+        }
+        else {
+            setText(this,"邮箱错咧");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp4",function() {
+        if( /^(0\d{2}-\d{8}$)|(0\d{2}-\d{8}$)/.test(this.value)) {
+            setText(this,"座机正确");
+            setClassName(this,"right");
+        }
+        else {
+            setText(this,"座机错误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp5",function() {
+        if(/^[a-zA-Z0-9_-]{3,16}$/.test(this.value)) {
+            setText(this,"账号正确");
+            setClassName(this,"right");
+        }
+        else {
+            setText(this,"对不起，输入有误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp6",function() {
+        if(/^[a-zA-Z0-9_-]{6,18}/
+                        .test(this.value)) {
+            setText(this,"密码正确");
+            setClassName(this,"right");
+        }
+        else {
+            setText(this,"对不起，密码错了");
+            setClassName(this,"wrong");
+        }
+    })
+
+
+
+
+
+</script>

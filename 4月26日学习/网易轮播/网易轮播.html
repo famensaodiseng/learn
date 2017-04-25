@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            vertical-align: top;
+        }
+        .w-slider {
+            width: 310px;
+            height: 265px;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .slider {
+            width: 310px;
+            height: 220px;
+            overflow: hidden;
+        }
+        .slider-block {
+            width: 620px;
+            height: 220px;
+        }
+        .slider-ctrl {
+            padding-top: 10px;
+            text-align: center;
+        }
+        .slider-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .slider-ctrl-con {
+            display: inline-block;
+            width: 24px;
+            height: 25px;
+            background: url(images/icon.png)no-repeat -24px -780px;
+            margin: 0 8px;
+            cursor: pointer;
+            text-indent:-2000em;
+            overflow: hidden;
+        }
+        .slider-ctrl-prev, .slider-ctrl-next {
+            position: absolute;
+            width: 30px;
+            height: 35px;
+            background:url(images/icon.png)no-repeat ;
+            top: 40%;
+            margin-top: -10px;
+            cursor: pointer;
+        }
+        .slider-ctrl-prev {
+            left: 10px;
+        }
+        .slider-ctrl-next {
+            right: 10px;
+            background-position: 0 -44px;
+        }
+        .slider-ctrl span.current {
+            background-position: -24px -760px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class = "w-slider" id="js_slider">
+        <div class = "slider">
+            <div class= "slider-block">
+            <div class="slider-img"><a href="#"><img src="images/1.jpg" alt=""/></a></div>
+            <div class="slider-img"><a href="#"><img src="images/2.jpg" alt=""/></a></div>
+            <div class="slider-img"><a href="#"><img src="images/3.jpg" alt=""/></a></div>
+            <div class="slider-img"><a href="#"><img src="images/4.jpg" alt=""/></a></div>
+            <div class="slider-img"><a href="#"><img src="images/5.jpg" alt=""/></a></div>
+            <div class="slider-img"><a href="#"><img src="images/6.jpg" alt=""/></a></div>
+            </div>
+        </div>
+        <div class="slider-ctrl">
+            <span class= "slider-ctrl-prev"></span>
+            <span class= "slider-ctrl-next"></span>
+        </div>
+    </div>
+</body>
+</html>
+<script src="js/animate.js" type="text/javascript"></script>
+<script src="js/slider.js" type="text/javascript"></script>
