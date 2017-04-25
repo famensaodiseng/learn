@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+*{ padding:0; margin:0; list-style:none;}
+.all{ width:330px; height:30px; background:url(img/bg.jpg) no-repeat; margin:100px auto; line-height:30px; text-align:center; padding-left:10px; margin-bottom:0;}
+.all ul li{ width:100px; height:30px; background:url(img/libg.jpg); float:left; margin-right:10px; position:relative; cursor:pointer;}
+.all ul ul{ position:absolute; left:0; top:30px; display:none;}
+</style>
+</head>
+
+<body>
+<div class="all" id="list">
+	<ul>
+		<li>一级菜单
+			<ul>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单
+			<ul>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+		<li>一级菜单
+			<ul>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+				<li>二级菜单</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</body>
+</html>
+<script>
+   window.onload = function() {
+	   var list = new List("list");
+	   list.init(); // 调用函数
+   }
+	//  我们这个程序   取值模块     处理模块      显示     隐藏
+	function List(id) {
+		this.eleId = document.getElementById(id);   //  取id
+		this.lis = this.eleId.children[0].children;
+	}
+	List.prototype.init = function() {    // 处理模块
+		var that = this;  // 先把当前 this 存储下来
+		for(var i=0;i<this.lis.length;i++) {
+			 this.lis[i].onmouseover = function() {
+				 that.show(this.children[0]);
+			 }
+			 this.lis[i].onmouseout = function() {
+				 that.hide(this.children[0]);
+			}
+		}
+	}
+	// 显示模块
+	List.prototype.show = function(obj) {
+		obj.style.display = "block";
+	}
+	List.prototype.hide = function(obj) {
+		obj.style.display = "none";
+	}
+</script>

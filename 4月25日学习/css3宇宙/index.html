@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动画宇宙</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background: #080e24 url(./bg.jpg) repeat;
+		}
+
+		ul {
+			width: 600px;
+			height: 600px;
+			margin: 40px auto;
+			position: relative;
+			list-style: none;
+		}
+
+		ul li {
+			border: 2px solid #394057;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			border-radius: 50%;
+			transform: translate(-50%, -50%);
+			box-sizing: border-box;
+
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+			animation-name: orbit;
+		}
+
+		ul li span {
+			display: block;
+			position: absolute;
+			left: 0;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+		}
+
+		ul li:nth-child(1) {
+			width: 60px;
+			height: 60px;
+			border: none;
+			box-shadow: 0 0 50px #c90;
+			background-color: #C90;
+			animation-duration: 5s;
+		}
+
+		ul li:nth-child(2) {
+			width: 120px;
+			height: 120px;
+			animation-duration: 6s;
+		}
+
+		ul li:nth-child(2) span {
+			background-color: yellow;
+			left: 80px;
+			top: 0;
+		}
+
+		ul li:nth-child(3) {
+			width: 180px;
+			height: 180px;
+			animation-duration: 10s;
+		}
+
+		ul li:nth-child(3) span {
+			background-color: blue;
+			left: 47px;
+			top: 0;
+		}
+
+		ul li:nth-child(4) {
+			width: 240px;
+			height: 240px;
+			animation-duration: 12s;
+		}
+
+		ul li:nth-child(4) > span {
+			background-color: green;
+			left: 209px;
+			top: 43px;
+			animation: orbit 2s infinite linear;
+		}
+
+		ul li:nth-child(4) > span span {
+			width: 6px;
+			height: 6px;
+			left: 16px;
+			background-color: yellow;
+		}
+
+		ul li:nth-child(5) {
+			width: 300px;
+			height: 300px;
+			background-image: url(./asteroids_meteorids.png);
+			background-size: cover;
+			animation-duration: 25s;
+		}
+
+		ul li:nth-child(5) span {
+			background-color: red;
+			left: 95px;
+			top: 0;
+		}
+
+		ul li:nth-child(6) {
+			width: 360px;
+			height: 360px;
+			animation-duration: 20s;
+		}
+
+		ul li:nth-child(6) span {
+			background-color: #CCC;
+			left: -5px;
+			top: 200px;
+		}
+
+		ul li:nth-child(7) {
+			width: 420px;
+			height: 420px;
+			animation-duration: 30s;
+		}
+
+		ul li:nth-child(7) > span {
+			background-color: green;
+			left: 300px;
+			top: 18px;
+		}
+
+		ul li:nth-child(7) > span span {
+			width: 15px;
+			height: 15px;
+			border: 2px solid #CCC;
+			left: -4px;
+			top: -4px;
+			transform: skew(0, 45deg);
+		}
+
+		ul li:nth-child(8) {
+			width: 480px;
+			height: 480px;
+			animation-duration: 35s;
+		}
+
+		ul li:nth-child(8) span {
+			background-color: pink;
+			left: 0;
+			top: 170px;
+		}
+
+		ul li:nth-child(9) {
+			width: 540px;
+			height: 540px;
+			animation-duration: 40s;
+		}
+
+		ul li:nth-child(9) span {
+			background-color: blue;
+			left: 47px;
+			top: 100px;
+		}
+
+		ul li:nth-child(10) {
+			width: 600px;
+			height: 600px;
+			animation-duration: 45s;
+		}
+
+		ul li:nth-child(10) span {
+			background-color: yellow;
+			left: 224px;
+			top: 0;
+		}
+
+		@keyframes orbit {
+			0% {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+
+			100% {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span><span></span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span><span></span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+	</ul>
+</body>
+</html>

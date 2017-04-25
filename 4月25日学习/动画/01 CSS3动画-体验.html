@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动画</title>
+	<style>
+
+		html, body {
+			height: 100%;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			position: relative;
+		}
+
+		.car {
+			width: 240px;
+			position: absolute;
+			top: 50%;
+			transform: translate(100px, -50%);
+
+			animation: run 2s forwards 1s;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		@keyframes run {
+			0% {
+				
+			}
+
+			15% {
+				transform: translate(0, -50%) skew(30deg);
+			}
+
+			90% {
+				transform: translate(800px, -50%) skew(-20deg);
+				animation-timing-function: ease-in;
+			}
+
+			100% {
+				transform: translate(800px, -50%) skew(0deg);
+				transform-origin: right bottom;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="car">
+		<img src="./images/car.jpg" alt="">
+	</div>
+</body>
+</html>

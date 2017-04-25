@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		body, ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		ul {
+			list-style: none;
+		}
+
+		.img-box {
+			width: 100%;
+			height: 100%;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.img-box li {
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			position: absolute;
+		}
+
+		.img-box li:first-child {
+			background-image: url(./images/bg1.jpg);
+			z-index: 3;
+		}
+
+		.img-box li:nth-child(2) {
+			background-image: url(./images/bg2.jpg);
+			z-index: 2;
+		}
+
+		.img-box li:nth-child(3) {
+			background-image: url(./images/bg3.jpg);
+			z-index: 1;
+		}
+
+		.handle {
+			width: 100%;
+			height: 120px;
+			text-align: center;
+			position: absolute;
+			bottom: 100px;
+			z-index: 5;
+		}
+
+		.handle li {
+			display: inline-block;
+			width: 120px;
+			height: 120px;
+			line-height: 120px;
+			margin: 0 10px;
+			font-size: 30px;
+			cursor: pointer;
+			border-radius: 60px;
+			background-color: pink;
+		}
+
+		.handle a {
+			display: inline-block;
+			width: 100%;
+			height: 100%;
+			color: #000;
+			text-decoration: none;
+		}
+
+		#bg1:target {
+			z-index: 4;
+			animation: slideleft 1s;
+		}
+
+		#bg1:not(:target) {
+			z-index: 3;
+		}
+
+		#bg2:target {
+			z-index: 4;
+			animation: rotate 1s;
+		}
+
+		#bg2:not(:target) {
+			z-index: 2;
+		}
+
+		#bg3:target {
+			z-index: 4;
+			animation: show 1s;
+		}
+
+		#bg3:not(:target) {
+			z-index: 1;
+		}
+
+		@keyframes slideleft {
+			0% {
+				transform: translate(-100%, 0);
+			}
+
+			100% {
+				transform: translate(0, 0);
+			}
+		}
+
+		@keyframes rotate {
+			0% {
+				transform: scale(0) rotate(0deg);
+			}
+
+			100% {
+				transform: scale(1) rotate(360deg);
+			}
+		}
+
+		@keyframes show {
+			0% {
+				transform: scale(0);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+	</style>
+</head>
+<body>
+	<ul class="img-box">
+		<li id="bg1" class="img"></li>
+		<li id="bg2" class="img"></li>
+		<li id="bg3" class="img"></li>
+	</ul>
+	<ul class="handle">
+		<li><a href="#bg1">1</a></li>
+		<li><a href="#bg2">2</a></li>
+		<li><a href="#bg3">3</a></li>
+	</ul>
+</body>
+</html>

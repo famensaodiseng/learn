@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 钟表</title>
+	<style>
+
+		.clock {
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 10px solid #000;
+			border-radius: 110px;
+			position: relative;
+		}
+
+		.line1, .line2, .line3, .line4, .line5, .line6 {
+			position: absolute;
+			left: 50%;
+			width: 4px;
+			height: 200px;
+			margin-left: -2px;
+			background-color: #CCC;
+		}
+
+		.line1, .line6 {
+			width: 6px;
+			margin-left: -3px;
+			background-color: #AAA;
+		}
+
+		.line2 {
+			transform: rotate(-30deg);
+		}
+
+		.line3 {
+			transform: rotate(60deg);
+		}
+
+		.line4 {
+			transform: rotate(-60deg);
+		}
+
+		.line5 {
+			transform: rotate(30deg);
+		}
+
+		.line6 {
+			transform: rotate(90deg);
+		}
+
+		.dotted {
+			width: 20px;
+			height: 20px;
+			background-color: #000;
+			border-radius: 10px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			z-index: 5;
+			margin: -10px 0 0 -10px;
+		}
+
+		.cover {
+			width: 160px;
+			height: 160px;
+			border-radius: 80px;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -80px 0 0 -80px;
+			background-color: #FFF;
+		}
+
+		.hour {
+			width: 6px;
+			height: 50px;
+			background-color: #000;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 2;
+			margin: -50px 0 0 -3px;
+			transform-origin: bottom center;
+			animation: rotate 43200s steps(60) infinite;
+		}
+
+		.minute {
+			width: 4px;
+			height: 60px;
+			background-color: #000;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 2;
+			margin: -60px 0 0 -2px;
+			transform-origin: bottom center;
+			animation: rotate 3600s steps(60) infinite;
+		}
+
+		.seconds {
+			width: 2px;
+			height: 70px;
+			background-color: red;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 2;
+			margin: -70px 0 -1px;
+			transform-origin: bottom center;
+			animation: rotate 60s steps(60) infinite;
+		}
+
+		@keyframes rotate {
+			from {
+
+			}
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="clock">
+		<div class="line1"></div>
+		<div class="line2"></div>
+		<div class="line3"></div>
+		<div class="line4"></div>
+		<div class="line5"></div>
+		<div class="line6"></div>
+		<div class="cover"></div>
+		<div class="hour"></div>
+		<div class="minute"></div>
+		<div class="seconds"></div>
+		<div class="dotted"></div>
+	</div>
+</body>
+</html>

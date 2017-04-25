@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    body {
+        background: #ccc;
+    }
+
+    label {
+        width: 40px;
+        display: inline-block;
+    }
+
+    .container {
+        margin: 100px auto;
+        width: 400px;
+        padding: 50px;
+        line-height: 40px;
+        border: 1px solid #999;
+        background: #efefef;
+    }
+
+    span {
+        margin-left: 30px;
+        font-size: 12px;
+        padding:2px 20px 0;
+        color: #ccc;
+    }
+
+    .wrong {
+
+        color: red;
+        background: url(images/error.png) no-repeat;
+        
+    }
+
+    .right {
+        color: green;
+        background: url(images/right.png) no-repeat;
+    }
+
+    .pwd {
+        width: 220px;
+        height: 20px;
+        background: url("images/strong.jpg") no-repeat;
+    }
+    .str1{
+        background-position: 0 -20px;
+    }
+    .str2{
+        background-position: 0 -40px;
+    }
+    .str3{
+        background-position: 0 -60px;
+    }
+    .str4{
+        background-position: 0 -80px;
+    }
+</style>
+<body>
+<div class="container">
+    <label>QQ</label><input type="text" id="inp1"><span>输入正确的QQ号码</span><br>
+    <label>手机</label><input type="text" id="inp2"><span>输入11位手机号码</span><br>
+    <label>邮箱</label><input type="text" id="inp3"><span>输入正确邮箱</span><br>
+    <label>座机</label><input type="text" id="inp4"><span>输入您的座机</span><br>
+    <label>账号</label><input type="text" id="inp5"><span>亲输入您的账号</span><br>
+    <label>密码</label><input type="text" id="inp6"><span>请输入您的密码</span><br>
+    <div id="password" class="pwd"></div>
+</div>
+</body>
+</html>
+<script>
+    // 获取id 函数
+    function $(id) {return document.getElementById(id);}
+    //  change 函数   验证表单
+    function change(id,fn) {
+        $(id).onblur = fn;   //  fn  函数的意思
+    }
+    //  设置文字函数
+    function setText(obj,txt) {
+        obj.nextSibling.innerHTML = txt;
+    }
+
+    // 设置 类名函数
+    function setClassName(obj,classname) {
+        obj.nextSibling.className = classname;
+    }
+
+    // 验证 QQ号码
+    // 我们的QQ号码  从1 开始的    10000
+    console.log(/andy/.test("andyandy"));
+    console.log(/^andy$/.test("andy"));
+    change("inp1",function() {
+        if(/^[1-9][0-9]{4,}$/.test(this.value)) {
+            // alert(11)
+            setText(this,"恭喜输入正确");
+            setClassName(this,"right");
+        }
+        else {
+           //  alert(22);
+            setText(this,"对不起，您输入有误");
+            setClassName(this,"wrong");
+        }
+    })
+      //    电话号码：  邮编   手机号码    文本型数字
+
+    change("inp2",function() {
+        if(/^((13[0-9])|(15[^4,\D])|(18[0-9]))\d{8}$/
+                        .test(this.value)) {
+            // alert(11)
+            setText(this,"手机号码正确");
+            setClassName(this,"right");
+        }
+        else {
+           //  alert(22);
+            setText(this,"对不起，是11位");
+            setClassName(this,"wrong");
+        }
+    })
+
+    change("inp3",function() {
+        if(/^[\w\-\.]+\@[\w]+\.[\w]{2,4}$/
+                        .test(this.value)) {
+            // alert(11)
+            setText(this,"邮箱输入正确");
+            setClassName(this,"right");
+        }
+        else {
+           //  alert(22);
+            setText(this,"对不起，邮箱输入错误");
+            setClassName(this,"wrong");
+        }
+    })
+
+    change("inp4",function() {
+        if(/^0\d{2}-\d{8}$|^0\d{3}-\d{7}$/
+                        .test(this.value)) {
+            // alert(11)
+            setText(this,"座机号码正确");
+            setClassName(this,"right");
+        }
+        else {
+           //  alert(22);
+            setText(this,"对不起，输入错误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp5",function() {
+        if(/^[a-zA-Z0-9_-]{3,16}$/
+                        .test(this.value)) {
+            // alert(11)
+            setText(this,"用户名正确");
+            setClassName(this,"right");
+        }
+        else {
+           //  alert(22);
+            setText(this,"对不起，输入错误");
+            setClassName(this,"wrong");
+        }
+    })
+    change("inp6",function() {
+        if(/^[a-zA-Z0-9_-]{6,18}/
+
+                        .test(this.value)) {
+            // alert(11)
+            setText(this,"密码正确");
+            setClassName(this,"right");
+        }
+        else {
+           //  alert(22);
+            setText(this,"对不起，输入错误");
+            setClassName(this,"wrong");
+        }
+    })
+
+
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动画</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		.view {
+			width: 882px;
+			height: 86px;
+			margin: 200px auto;
+			position: relative;
+			overflow: hidden;
+			border: 1px solid #CCC;
+		}
+
+		ul {
+			width: 1764px;
+			height: 86px;
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			position: absolute;
+			left: 0;
+			animation: scroll 10s linear infinite;
+		}
+
+		ul:hover {
+			animation-play-state: paused;
+		}
+
+		li {
+			float: left;
+			font-size: 0;
+		}
+
+		@keyframes scroll {
+			0% {
+				left: 0;
+			}
+
+			100% {
+				left: -882px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="view">
+		<ul>
+			<li><img src="./images/1.jpg" alt=""></li>
+			<li><img src="./images/2.jpg" alt=""></li>
+			<li><img src="./images/3.jpg" alt=""></li>
+			<li><img src="./images/4.jpg" alt=""></li>
+			<li><img src="./images/5.jpg" alt=""></li>
+			<li><img src="./images/6.jpg" alt=""></li>
+			<li><img src="./images/7.jpg" alt=""></li>
+			<li><img src="./images/1.jpg" alt=""></li>
+			<li><img src="./images/2.jpg" alt=""></li>
+			<li><img src="./images/3.jpg" alt=""></li>
+			<li><img src="./images/4.jpg" alt=""></li>
+			<li><img src="./images/5.jpg" alt=""></li>
+			<li><img src="./images/6.jpg" alt=""></li>
+			<li><img src="./images/7.jpg" alt=""></li>
+		</ul>	
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动画</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		#timer {
+			text-align: center;
+			line-height: 1;
+			padding: 20px 0;
+			font-size: 80px;
+			font-family: Arial;
+			color: red;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto;
+			background-color: green;
+
+			animation: change 10s forwards linear;
+		}
+
+		@keyframes change {
+			0% {
+				
+			}
+
+			20% {
+				width: 400px;
+				height: 200px;
+			}
+
+			40% {
+				width: 400px;
+				height: 400px;
+			}
+
+			80% {
+				width: 400px;
+				height: 400px;
+				background-color: yellow;
+			}
+
+			100% {
+				width: 200px;
+				height: 200px;
+				background-color: green;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">0</div>
+	<div class="box"></div>
+
+
+
+
+	<script>
+		var timer = document.getElementById('timer'),
+			end = 0;
+
+		setInterval(function () {
+			if(end >=10) return;
+			timer.innerHTML = ++end;
+		}, 1000);
+	</script>
+</body>
+</html>

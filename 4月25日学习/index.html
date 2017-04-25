@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 动态进度条</title>
+	<style>
+		.progress {
+			width: 500px;
+			height: 40px;
+			margin: 100px auto;
+			background-color: yellow;
+			border-radius: 5px;
+			background-image: linear-gradient(
+				135deg,
+                green 25%,
+                transparent 25%,
+                transparent 50%,
+                green 50%,
+                green 75%,
+                transparent 75%,
+                transparent 100%
+			);
+			background-size: 40px 40px;
+
+			background-position: 0 0;
+
+			animation: move 1s linear infinite;
+		}
+		
+		/*动画序列*/
+		@keyframes move {
+			0% {
+				background-position: 0 0;
+			}
+
+			100% {
+				background-position: 40px 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="progress"></div>
+</body>
+</html>
