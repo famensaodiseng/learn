@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS0.5边框</title>
+    <style>
+        html,body {
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 100px auto;
+        }
+        .box::after {
+            conter:'';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200%;
+            height: 200%;
+            border: 1px solid red;
+            box-sizing: border-box;
+            transform: scale(0.5) translate(-50%,-50%);
+            background-color: transparent;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="inner"></div>
+</div>
+</body>
+</html>

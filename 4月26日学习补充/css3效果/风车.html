@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+        .fenche {
+            width: 400px;
+            margin: 100px auto;
+            animation:rotate 4s linear infinite;
+        }
+        img {
+            width: 100%;
+            display:block;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotateZ(0);
+            }
+            100% {
+                transform: rotateZ(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="fenche">
+    <img src="./images/fengche.png" alt=""/>
+</div>
+</body>
+</html>
