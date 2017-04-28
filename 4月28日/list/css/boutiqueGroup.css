@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 窗口右边导航栏 */
+	.rightNav{ position:fixed;right:0px; top:0px; z-index:999; }
+	.rightNavIn{ width:50px; height:100%; background:url(../img/app_bar_bg.png); position:absolute; right:0px; top:0px;box-shadow: -5px 0 3px rgba(0,0,0,0.35);}
+/*box-shadow: h-shadow v-shadow blur spread color inset;  给盒子添加投影*/
+	.rnLoginIcon{ width:50px; height:53px; position:absolute; right:0px; top:183px; cursor:pointer;}
+	.userLogin{ width:30px; height:30px; border-radius:50%; position:absolute; right:11px; top:0px; border:2px solid #FFFFFD;}
+	.userLogin img{ border-radius:50%;}
+	.userLogin p{ font-size:12px; width:50px; margin:7px 0 0 0;}
+	.loginWindow{ width:240px; height:180px;  background:#fff; position:absolute; right:50px; top:0px;box-shadow: -4px 0 4px rgba(0,0,0,0.25); padding: 30px 40px 30px 40px;border: solid 1px #CCC; font-size:12px; font-family:'微软雅黑'; font-weight:bold; color:#666666;  display:none;}
+	.loginWindow input{ width:236px; height:26px; border:1px solid #ccc;}
+	.loginWindow .ok{ background:#D93600; border:none; cursor:pointer;}
+	.loginWindow .register{ display:block; text-align:right;}
+	.loginWindow a{ color:#005EA6; font-weight:normal;}
+	.loginWindow .x { display:block; width:20px; height:20px; position:absolute; top:10px; right:10px; text-decoration:none; text-align:center; font-weight:bold; color:#666;}
+	.rightNavIn ul{ position:absolute; top:40%;}
+	.rightNavIn ul li{width:50px; height:52px; text-align:center; margin:10px 0 0 0; cursor:pointer;}
+	.rightNavIn ul li a{ margin:10px auto; width:24px; height:24px; display:block; background:url(../img/toolbar.png) -13px -4px;}
+	.rightNavIn ul li i{ font-style:normal; font-size:12px; color:#333;}
+	.rightNavIn .closeX{ width:20px; height:20px; background:url(../img/appbar-hide.png) no-repeat; position:absolute; right:13px; bottom:10px;  cursor:pointer; margin:20px 0 0 0;}
+	.rightNav .hideBar{ position:fixed;right:-79px; bottom:0px; }
+	.rightNav .hideBar .hbBg{width:79px; height:36px; background:url(../img/toolbar.png) -100px -1px;  bottom:10px; right:0px; padding:0 0 20px 0; position:absolute;}
+	.rightNav .hideBar .plus{  background:url(../img/smallTou.jpg);height:40px; width:40px;position:absolute; bottom:20px; right:30px; display:block;}
+	.rightNav .hideBar .plus:hover{height:36px; width:36px; background:url(../img/toolbar.png) -140px -70px; position:absolute; bottom:20px; right:30px; display:block;}
+
+
+/*导航开始*/
+.navImg{ position:absolute; left:0px; top:100px; z-index:777;}
+.navImg button{ position:absolute; right:8px; bottom:8px; border:1px solid #CE0C70; border-radius:5px; background:#CE0C70; color:#fff;}
+
+.nav{ width:100%; height:40px; background:#F0378D;}
+.nav .navIn { width:1200px; height:40px; background:pink; margin:0 auto;}
+.niLeft{ width:194px; height:40px; background:#D8327E; float:left; line-height:40px; padding:0 13px 0 13px;}
+.niLeft h3{ display:block; float:left; color:#fff;}
+.niLeft img{ display:block; float:right; padding:18px 0 0 0;}
+.niCenter{ width:680px; background:#F1368D; font-size:14px; font-weight:bold; line-height:40px; float:left;}
+.niCenter a{ color:#ccc; float:left; padding:0 30px 0 30px;color:white;}
+.niCenter .current{ background:#CE0C70}
+.niCenter a:hover{ background:#CE0C6F; text-decoration:none; color:#fff; }
+#ncIcon { position:relative;}
+#ncIcon img{ position:absolute; right:0px; top:0px;}
+
+.niRight{ width:300px; float:left; background:#F1368D; height:40px; line-height:40px;}
+.niRight a{ display:inline-block; overflow:hidden; line-height:40px; height:40px; float:left; color:#fff; margin:0 18px 0 0 ; }
+.niRight a:hover{ color:#fff;}
+.niRight .nr_01 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -1px center; margin:5px 5px 0 0; float:left;}
+.niRight .nr_02 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -36px center; margin:5px 5px 0 0; float:left;}
+.niRight .nr_03 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -72px center; margin:5px 5px 0 0; float:left;}
+.niRight .nr_04 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -108px center; margin:5px 5px 0 0; float:left;}
+.niRight span{ height:40px; line-height:40px;  float:left; display:none;}
+/*导航结束*/
+
+/* banner开始 */
+	.banner{ position:relative;}
+	.bannerIn{ width:100%; height:340px;}
+	.bannerIn ul li{ height:340px; width:100%; position:absolute; left:0px; top:0px; display:none;}
+	.bannerIn ul .img01{ width:100%; height:340px; background:url(../img/04758558013183624.jpg) center center;}
+	.bannerIn ul .img02{ width:100%; height:340px; background:url(../img/04786914323009742.jpg) center center;}
+/* banner结束 */
+
+/* con开始 */
+.con{ width:1198px; overflow:hidden; /* background:pink; */ margin:0 auto;_zoom:1; clear:both;}
+.conTop{ width:1198px; height:44px; /* background:yellow; */ border-top:1px solid #E6E6E6; border-bottom:1px solid #E6E6E6;}
+.conTop a{ width:108px; height:44px; /* background:orange; */ line-height:44px; text-align:center; color:#333333; float:left; background:url(../img/line.png) no-repeat right center;}
+.conTop a:hover{ background:#F0378D; color:#fff;}
+.conTop a b{ font-size:13px; width:108px; height:44px;}
+.conTop .special{ background:#F0378D; color:#fff;}
+.conTop .a01 b{ width:108px; padding:0 15px;}
+.conTop .a01 .ing{ color:#F0378D;}
+.conTop .a01:hover{ background:none; color:#F0378D;}
+.conCenter{ width:1180px; height:69px; /* background:#3FF; */ margin:10px 0; border:1px solid #E4E4E4; padding:9px;}
+.conCenter dl{ display:block; padding:12px;border-bottom: dotted 1px #E6E6E6; font-size:13px; height:15px;}
+.conCenter dl dd{display: inline-block;margin: 0 8px; float:left; }
+.conCenter dl dt{ display:inline-block;}
+.conCenter .sort{ border:none;}
+.conCenter dl dt{ font-weight:bold; font-size:13px;text-align: right;display: inline-block;width: 60px; float:left;}
+.conCenter dl dd a{color: #666;display: inline-block;height: 13px;padding: 1px 6px;}
+.conCenter dl dd a:hover{ background:#F0378D;}
+.conCenter dl .select a{ background:#F0378D;}
+
+/* 产品简介 */
+.conBottomT{ overflow:hidden;_zoom:1; clear:both; /* background:yellow; */}
+.conBottomT dl{ border:1px solid #DEDEDE; width:384px; height:325px; /* background:orange; */ margin:0 10px 10px 0;_margin:0 20px 21px 0; float:left;_display:inline;}
+.conBottomT .special{ border:1px solid #DEDEDE; width:382px; height:325px; /* background:orange; */ float:left; margin:0;_display:inline;}
+.conBottomT dl dd span{ font-size:14px; width:325px; height:45px;/*  background:#9F9; */ display:block; font-family:"宋体";padding: 5px 10px; line-height:25px;}
+.conBottomT dl dd span a{ color:#666;}
+.conBottomT dl dd span a:hover{ text-decoration:none;}
+.conBottomT dl dd span em{ font-style:normal; font-weight:bold; color:#F0378D;}
+.conBottomT dl .price{ width:364px; height:30px;/*  background:yellow; */line-height:45px; padding:0 10px 15px 10px;}
+.conBottomT dl .price em{ font-style:normal; color:#F0378D; font-size:20px; font-weight:bold; float:left;}
+.conBottomT dl .price i{ font-style:normal; float:right; color:#999;}
+.conBottomT dl .price del{ float:left; padding:3px 0 0 10px; color:#999;}
+/* con结束 */
+
+/* 分页开始 */
+.con .page{ text-align:center; margin:20px auto 20px; height:30px;}
+.con .page ul{ overflow:hidden; margin:0 0 0 455px; }
+.con .page ul li{display:block; float:left; font-size:14px; font-family:"宋体"; color:#AAAAAA; font-weight:bold; text-align:center; width:50px; height:30px; line-height:30px;/*  background:red; */ border:1px solid #E7E7E7; border-radius:5px;}
+/* 分页结束 */

@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset='GB2312'>
+<title>亲亲网-精品团购</title>
+<link href="css/boutiqueGroup.css" rel="stylesheet" type="text/css" />
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="img/favicon.ico" />
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+</head>
+
+<body>
+<!-- 窗口右边导航栏 -->
+<div class="rightNav">
+    	<div class="rightNavIn">
+            <div class="rnLoginIcon">
+                <div class="userLogin">
+                    <img src="img/default_user_portrait.gif" width="30" height="30" />
+                    <p>未登录</p>
+                </div>
+                
+                <div class="loginWindow">
+                    登录名<br />
+                    <input type="text" /><br /><br />
+                    登录密码&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;">忘记登录密码？</a><br />
+                    <input type="text" /><br /><br /><br />
+                    <input class="ok" type="submit" value="确认" /><br />
+                    <a href="javascript:;" class="register">注册新用户</a>
+                    <a href="javascript:;" class="x">X</a>
+                </div>
+            </div>
+            
+            <ul>
+            	<li>
+                	<a href="javascript:;"></a>
+                    <i>聊天</i>
+                </li>
+            	<li>
+                	<a href="javascript:;"></a>
+                    <i>购物车</i>
+                </li>
+            	<li>
+                	<a href="javascript:;"></a>
+                    <i>客服</i>
+                </li>
+            	<li>
+                	<a href="javascript:;"></a>
+                    <i>顶部</i>
+                </li>
+            </ul>
+            <div class="closeX"></div>
+        </div> 
+</div>
+
+<div class="navImg">
+    <img src="img/zcjs.png" width="143" height="378" />
+    <button>关闭</button>
+</div>
+
+<!-- 头部-->
+<div class="header">
+    <div class="headerIn">
+        <div class="hiLeft">
+                <span>您好，欢迎来到</span> <a href="javascript:;">亲亲网</a> <a href="javascript:;">[登录]</a> <a href="javascript:;">[注册]</a>
+            </div>
+        <div class="hiRight">
+                <ul class="demo">
+                    <li id="li01">
+                        <a href="#">我的订单</a>
+                        <ul id="ul01">
+                            <li><a href="#">待付款订单</a></li>
+                            <li><a href="#">待确认收货</a></li>
+                            <li><a href="#">待评价交易</a></li>
+                        </ul>
+                    </li>
+                    <li id="li02">
+                        <a href="#"> 我的收藏</a>
+                        <ul id="ul02">
+                            <li><a href="#">品牌收藏</a></li>
+                            <li><a href="#">店铺收藏</a></li>
+                        </ul>
+        
+                    </li>
+                    <li id="li03">
+                        <a href="#">客户服务</a>
+                        <ul id="ul03">
+                            <li><a href="#">帮助中心</a></li>
+                            <li><a href="#">售后服务</a></li>
+                            <li><a href="#">客服中心</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>
+
+<!-- logo -->
+<div class="logo">
+    	<div class="logoIn">
+            <div class="logoLeft">
+            	<h1><a href="index.html" title="亲亲网"><img src="img/logo.png" width="186" height="60" />亲亲网</a></h1>
+            </div>
+            <div class="logoCenter">
+            	<div class="lcTop">
+                	<input type="text" placeholder="请输入您要搜索的关键字" />
+                    <a href="#">搜索</a>
+                </div>
+            	<div class="lcBottom">
+                	<p>热门搜索：</p>
+                    <ul>
+                    	<li><a href="javascript:;">保湿</a></li>
+                    	<li><a href="javascript:;">面膜</a></li>
+                    	<li><a href="javascript:;">洁面</a></li>
+                    	<li><a href="javascript:;">补水</a></li>
+                    	<li><a href="javascript:;">香水</a></li>
+                    	<li><a href="javascript:;">眼霜</a></li>
+                    	<li><a href="javascript:;">唇膏</a></li>
+                    	<li><a href="javascript:;">BB霜</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="logoRight">
+ 				<ul>
+                	<li>
+                        <a href="javasscript:;" class="myShangCheng">
+                            <span></span>
+                            我的商城
+                            <i></i>
+                        </a>
+                        <div class="scIn">
+                            <span><a href="javascript:;">我的用户中心></a></span>
+                            <div class="ciLi">
+                                <ul>
+                                    <li><a href="javascript:;">站内消息(0)</a></li>
+                                    <li><a href="javascript:;">资讯回复(0)</a></li>
+                                    <li><a href="javascript:;">代金券(0)</a></li>
+                                </ul>
+                                <ul>
+                                    <li><a href="javascript:;">我的订单 >></a></li>
+                                    <li><a href="javascript:;">我的收藏 >></a></li>
+                                    <li><a href="javascript:;">我的积分 >></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+<!-- 购物车结算  -->
+                        <a href="javasscript:;" class="myGouWuChe">
+                            <span></span>
+                            购物车结算
+                            <i></i>
+                        </a>
+                        <div class="gwcIn">
+                            <span>最新加入的商品</span>
+                            <p>您的购物车中暂无商品，赶快选择心爱的商品吧！</p>
+                            <div class="gwcGray">
+                                <div class="ggBtn">
+                                    <a href="javascript:;">结算购物车中的商品</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ </div>
+
+<!-- 导航-->
+<div class="nav">
+     <div class="navIn">
+         <div class="niLeft">
+                  <h3>所有分类商品</h3>
+                    <img src="img/arrow_down.png" />
+                </div>
+         <div class="niCenter">
+                	<a href="index.html">首页</a>
+                	<a href="list-boutiqueGroup.html" class="current">精品团购</a>
+                	<a href="list-brandSale.html">品牌特卖</a>
+                	<a href="list-overseasDirectMail.html" id="ncIcon">海外直邮
+                        <img src="img/ico_hot.gif" width="21" height="13"/>
+                    </a>
+                </div>
+         <div class="niRight">
+                    <a href="javascript:;" class="nr_01">
+                    	<i></i>
+                        <span>自营美妆198包邮</span>
+                    </a>
+                    <a href="javascript:;" class="nr_02">
+                    	<i></i>
+                        <span>30天无理由退货</span>
+                    </a>
+                    <a href="javascript:;" class="nr_03">
+                    	<i></i>
+                        <span>100%正品保证</span>
+                    </a>
+                    <a href="javascript:;" class="nr_04">
+                    	<i></i>
+                        <span>中华财险承保</span>
+                    </a>
+                </div>
+     </div>
+</div>
+
+<!-- banner -->
+<div class="banner">
+    <div class="bannerIn">
+        <ul>
+           <li><div class="img01"></div></li>
+           <li><div class="img02"></div></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 产品列表-->
+<div class="con">
+   <div class="conTop">
+        	<a href="javascript:;" class="special"><b>全部</b></a>
+        	<a href="javascript:;"><b>护肤</b></a>
+        	<a href="javascript:;"><b>彩妆</b></a>
+        	<a href="javascript:;"><b>护肤</b></a>
+        	<a href="javascript:;"><b>服装</b></a>
+        	<a href="javascript:;"><b>鞋靴</b></a>
+        	<a href="javascript:;"><b>包包</b></a>
+        	<a href="javascript:;"><b>配饰</b></a>
+        	<a href="javascript:;" class="a01"><b class="ing">正在进行</b></a>
+        	<a href="javascript:;" class="a01"><b>即将开始</b></a>
+        	<a href="javascript:;" class="a01"><b>已经结束</b></a>
+   </div>
+   <div class="conCenter">
+        	<dl>
+            	<dt>价格：</dt>
+                <dd class="select"><a href="javascript:;">不限</a></dd>
+                <dd><a href="javascript:;">0-50元</a></dd>
+                <dd><a href="javascript:;">50-100元</a></dd>
+                <dd><a href="javascript:;">100-200元</a></dd>
+                <dd><a href="javascript:;">200-300元</a></dd>
+                <dd><a href="javascript:;">300元以上</a></dd>
+            </dl>
+        	<dl class="sort">
+            	<dt>排序：</dt>
+                <dd class="select"><a href="javascript:;">默认</a></dd>
+                <dd><a href="javascript:;">价格</a></dd>
+                <dd><a href="javascript:;">折扣</a></dd>
+                <dd><a href="javascript:;">销量</a></dd>
+            </dl>
+   </div>
+   <div class="conBottomT" id='container'>
+            <dl>
+                <dt><a><img src="img/boutque01_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span><a><em>4.48折/</em>Avon雅芳小红裙套装（香体乳150ml+沐浴露150ml)</a></span>
+                </dd>
+                <dd class="price">
+                    <em>?43.00</em>
+                    <del>?96.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque02_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>3.97折/</em>  单子水漾优白BB霜60g单子水漾优白BB霜60g 自然色倍润型 &nbsp;&nbsp;&nbsp;
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?27.00</em>
+                    <del>?68.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="">
+                <dt><a href="javascript:;"><img src="img/boutque03_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>7.04折/</em>?典痘根尽痘抗痘疤修复膏25g
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?76.00</em>
+                    <del>?108.0</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque04_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>6.76折/</em>?典痘根尽尊贵礼盒版
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?188.00</em>
+                    <del>?278.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque05_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>8.78折/</em>欧莱雅美眸深邃自动眼线笔0.1g
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?79.00</em>
+                    <del>?90.0</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="">
+                <dt><a href="javascript:;"><img src="img/boutque06_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>7.16折/</em>?典痘根尽水剂25ml
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?78.00</em>
+                    <del>?109.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque07_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>3.5折/</em>Aussie美国袋鼠丰盈蓬松护发素400ml
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?42.00</em>
+                    <del>?120.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque08_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>3.2折/</em>丹姿他能量活力保湿男士霜50g
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?16.00</em>
+                    <del>?50.04</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="">
+                <dt><a href="javascript:;"><img src="img/boutque09_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>2.93折/</em>emma1997艾玛身体乳定制礼盒
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?146.00</em>
+                    <del>?499.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque10_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.07折/</em>SK-Ⅱ美之钥嫩肤清莹露40ml
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?33.00</em>
+                    <del>?81.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque11_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>5.76折/</em>lanbeirve蓝蓓丽不再孔慌清透冰膜28mlx5片
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?114.00</em>
+                    <del>?198.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="">
+                <dt><a href="javascript:;"><img src="img/boutque12_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>3.81折/</em>CHOISKYCN俏十岁安肌舒缓科技面膜贴3片/盒
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?122.00</em>
+                    <del>?320.00</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque13_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque14_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="">
+                <dt><a href="javascript:;"><img src="img/boutque15_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque16_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque17_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="">
+                <dt><a href="javascript:;"><img src="img/boutque18_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque19_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl>
+                <dt><a href="javascript:;"><img src="img/boutque20_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+            <dl class="special">
+                <dt><a href="javascript:;"><img src="img/boutque21_r2_c2.jpg" width="384" height="225" /></a></dt>
+                <dd>
+                    <span>
+                        <a href="javascript:;">
+                            <em>4.02折/</em>Coppertone水宝宝速干清爽防晒喷雾型45g SPF50
+                        </a>
+                    </span>
+                </dd>
+                <dd class="price">
+                    <em>?21.00</em>
+                    <del>?52.20</del>
+                    <i>销量：0天2时19分6秒</i>
+                </dd>
+            </dl>
+    </div>
+    <div class="page">
+    	<ul>
+        	<li>首页</li>
+        	<li>上一页</li>
+        	<li>1</li>
+        	<li>下一页</li>
+        	<li>末页</li>
+        </ul>
+    </div>
+ </div>
+
+</body>
+</html>
+<script src='index2.js'></script>

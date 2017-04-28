@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    function GF(option){
+        this._init(option);
+    }
+    GF.prototype = {
+        _init: function(option){
+            this.name = option.name;
+            this.age = option.age;
+        },
+        showLove : function(){
+            alert("I Love You");
+        },
+        jieShao : function(){
+            alert(this.name);
+        }
+    }
+    var gf = new GF({name: "zm",age : 18});
+    // 第一步：创建一个新的对象
+    // 第二步：把this指向了这个新对象
+    // 第三步：把新对象的内部原型指向构造函数的原型对象
+    // 第四步：当构造函数执行完成后，如果没有return就把当前新对象返回
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

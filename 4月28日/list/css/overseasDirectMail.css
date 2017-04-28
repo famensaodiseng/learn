@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* 右边窗口导航栏 */
+	.rightNav{ position:fixed;right:0px; top:0px; z-index:999;}
+	.rightNavIn{ width:50px; height:100%; background:url(../img/app_bar_bg.png); position:absolute; right:0px; top:0px;box-shadow: -5px 0 3px rgba(0,0,0,0.35);}
+/*box-shadow: h-shadow v-shadow blur spread color inset;  给盒子添加投影*/
+	.rnLoginIcon{ width:50px; height:53px; position:absolute; right:0px; top:183px; cursor:pointer;}
+	.userLogin{ width:30px; height:30px; border-radius:50%; position:absolute; right:11px; top:0px; border:2px solid #FFFFFD;}
+	.userLogin img{ border-radius:50%;}
+	.userLogin p{ font-size:12px; width:50px; margin:7px 0 0 0;}
+	.loginWindow{ width:240px; height:180px;  background:#fff; position:absolute; right:50px; top:0px;box-shadow: -4px 0 4px rgba(0,0,0,0.25); padding: 30px 40px 30px 40px;border: solid 1px #CCC; font-size:12px; font-family:'微软雅黑'; font-weight:bold; color:#666666;  display:none;}
+	.loginWindow input{ width:236px; height:26px; border:1px solid #ccc;}
+	.loginWindow .ok{ background:#D93600; border:none; cursor:pointer;}
+	.loginWindow .register{ display:block; text-align:right;}
+	.loginWindow a{ color:#005EA6; font-weight:normal;}
+	.loginWindow .x { display:block; width:20px; height:20px; position:absolute; top:10px; right:10px; text-decoration:none; text-align:center; font-weight:bold; color:#666;}
+	.rightNavIn ul{ position:absolute; top:40%;}
+	.rightNavIn ul li{width:50px; height:52px; text-align:center; margin:10px 0 0 0; cursor:pointer;}
+	.rightNavIn ul li a{ margin:10px auto; width:24px; height:24px; display:block; background:url(../img/toolbar.png) -13px -4px;}
+	.rightNavIn ul li i{ font-style:normal; font-size:12px; color:#333;}
+	.rightNavIn .closeX{ width:20px; height:20px; background:url(../img/appbar-hide.png) no-repeat; position:absolute; right:13px; bottom:10px;  cursor:pointer; margin:20px 0 0 0;}
+	.rightNav .hideBar{ position:fixed;right:-79px; bottom:0px; }
+	.rightNav .hideBar .hbBg{width:79px; height:36px; background:url(../img/toolbar.png) -100px -1px;  bottom:10px; right:0px; padding:0 0 20px 0; position:absolute;}
+	.rightNav .hideBar .plus{  background:url(../img/smallTou.jpg);height:40px; width:40px;position:absolute; bottom:20px; right:30px; display:block;}
+	.rightNav .hideBar .plus:hover{height:36px; width:36px; background:url(../img/toolbar.png) -140px -70px; position:absolute; bottom:20px; right:30px; display:block;}
+	
+/*导航开始*/
+.navImg{ position:absolute; left:0px; top:100px; z-index:777;}
+.navImg button{ position:absolute; right:8px; bottom:8px; border:1px solid #CE0C70; border-radius:5px; background:#CE0C70; color:#fff;}
+
+.nav{ width:100%; height:40px; background:#F0378D;}
+.nav .navIn { width:1200px; height:40px; background:pink; margin:0 auto;}
+.niLeft{ width:194px; height:40px; background:#D8327E; float:left; line-height:40px; padding:0 13px 0 13px;}
+.niLeft h3{ display:block; float:left; color:#fff;}
+.niLeft img{ display:block; float:right; padding:18px 0 0 0;}
+.niCenter{ width:680px; background:#F1368D; font-size:14px; font-weight:bold; line-height:40px; float:left;}
+.niCenter a{ color:#ccc; float:left; padding:0 30px 0 30px;color:white;}
+.niCenter .current{ background:#CE0C70}
+.niCenter a:hover{ background:#CE0C6F; text-decoration:none; color:#fff; }
+#ncIcon { position:relative;}
+#ncIcon img{ position:absolute; right:0px; top:0px;}
+
+.niRight{ width:300px; float:left; background:#F1368D; height:40px; line-height:40px;}
+.niRight a{ display:inline-block; overflow:hidden; line-height:40px; height:40px; float:left; color:#fff; margin:0 18px 0 0 ; }
+.niRight a:hover{ color:#fff;}
+.niRight .nr_01 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -1px center; margin:5px 5px 0 0; float:left;}
+.niRight .nr_02 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -36px center; margin:5px 5px 0 0; float:left;}
+.niRight .nr_03 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -72px center; margin:5px 5px 0 0; float:left;}
+.niRight .nr_04 i{ display:block; width:26px; height:25px; background:url(../img/sp_ve_icon1.png) -108px center; margin:5px 5px 0 0; float:left;}
+.niRight span{ height:40px; line-height:40px;  float:left; display:none;}
+/*导航结束*/
+
+/* banner开始 */
+.banner{ position:relative;}
+.bannerIn{ width:100%; height:340px;}
+.bannerIn ul li{ height:340px; width:100%; position:absolute; left:0px; top:0px; display:none;}
+.bannerIn ul .img01{ width:100%; height:340px; background:url(../img/04805268976774230.jpg) center center;}
+.bannerIn ul .img02{ width:100%; height:340px; background:url(../img/04805268976774230.jpg) center center;}
+/* banner结束 */
+
+/* con开始 */
+.con{ width:980px; /* background:pink; */ margin:0 auto 40px; overflow:hidden;_zoom:1;}
+.con a{ display:inline-block; width:978px; height:350px;/*  background:orange; */ border:1px solid #DDDDDD; margin:20px auto 0;_margin-right:50%; color:#666;}
+.con a:hover{ border:1px solid #F0378D;}
+.con .leftImg{ float:left;}
+.rightTxt{ width:588px; hetight:350px; /* background:yellow; */ float:right; padding:0 20px 0 0; font-family:"微软雅黑"；}
+.rightTxt h3{ color:#333333; height:60px; border-bottom:1px solid #EBEBEB; line-height:60px; font-size:18px; font-family:"微软雅黑";}
+.rightTxt p{ line-height:26px; color:#8D8D8D; font-family:"微软雅黑"; font-weight:normal; font-size:16px; width:590px; height:120px; padding:10px 0 0 0;}
+
+.money span{ color:#5E2BA0; font-size:30px;}
+.money em{ font-style:normal; color:#5E2BA0; font-size:40px;}
+.money del{ color:#999999; font-size:20px; margin:0 0 0 21px;}
+.money b{ margin:0 0 0 21px; padding:0 5px; border:1px solid #F0378D; height:26px; line-height:26px; border-radius:5px; color:#F0378D; font-size:15px;}
+.money strong{ margin:0 0 0 129px; color:#fff; font-size:10px; padding:5px 28px; background:#F0378D; border-radius:5px;}
+.info{ height:50px; margin:45px 0 0 0;}
+.info .infoLeft{ float:left; width:400px; line-height:26px; /* background:pink; */}
+.infoCenter{ float:left;}
+.infoCenter span{ color:#8D8D8D; text-align:right; width:75px; display:inline-block; font-size:20px;}
+.infoCenter b{ text-align:right; color:#575757; font-size:20px;}
+.infoRight{ float:left; border:1px solid #E2E2E2; margin:0 0 0 30px; _display:inline;}
+/* con结束 */

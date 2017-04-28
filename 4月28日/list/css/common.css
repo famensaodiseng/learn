@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+/* 初始化 */
+
+html,body{width:100%;}
+body{overflow-x:hidden;}
+*{ margin:0; padding:0; outline:none; border:none;}
+img{ display:block;}
+ul,ol{ list-style:none;}
+body{ font-size:12px; color:#6F6F6F;}
+a{ text-decoration:none;color:#6F6F6F;}
+a:hover{ text-decoration:none; color:#F0378D;}
+
+
+
+/* 头部开始 */
+.header{ width:100%; height:30px; background:#FAFAFA; border-bottom:1px solid #F0F0F0;}
+.headerIn{ width:1200px; height:30px;/*  background:pink; */ margin:0 auto; line-height:30px;}
+.hiLeft{ float:left;}
+.hiLeft span{ color:#777777;}
+.hiLeft a{ color:#333333;}
+.hiLeft a:hover{ text-decoration:underline;}
+.hiRight{ float:right; width:400px; height:30px; line-height:30px;}
+ul{list-style: none;}
+a{color:white; text-decoration: none; font-size: 12px;}
+.hiRight{width:300px;}
+.hiRight li{ width: 100px; height:30px; line-height: 30px; float: left; background: #fff; text-align: center; position:relative;}
+.hiRight li a{ display: block; width: 100px; height: 30px; line-height: 30px; color:#777777; }
+.hiRight ul li ul li a:hover{ color:#777777; width:100px; height:30px; background:#FAFAFA;}
+.hiRight ul li ul{display: none; position:absolute;top:30px; overflow:hidden; border:1px solid #F0F0F0; border-top:none; z-index:888;}
+
+/* logo开始 */
+.logo{ width:100%; height:100px; /* background:pink; */ overflow:hidden; _zoom:1;}
+.logoIn{ width:1200px; height:100px; /* background:orange; */ margin:0 auto;}
+.logoIn .logoLeft h1{ float:left;margin: 15px 10px auto 0;}
+.logoIn .logoLeft h1 a{ display:inline-block; overflow:hidden; width:186px; height:60px;}
+.logoCenter{ width:451px; height:100px;/*  background:#0FF; */ float:left; overflow:hidden; _zoom:1; margin:0 0 0 130px;}
+.lcTop{margin: 15px 10px auto 0;}
+.lcTop input{ width:350px; height:16px; border:3px solid #F0378D; display:inline-block; float:left; overflow:hidden; color:#ccc; padding:10px 0 10px 15px;}
+.lcTop a{ width:70px; height:42px; background:#F0378D; display:inline-block; float:left; text-align:center; line-height:42px; color:white; font-family:"微软雅黑"; font-weight:bold; font-size:16px;}
+.lcBottom{ margin:65px 10px 0 0; height:20px;}
+.lcBottom p{ float:left; color:#999999;}
+.lcBottom ul{ float:left;}
+.lcBottom ul li{ float:left; padding:0 0 0 10px;}
+.lcBottom ul li a{ color:#777777;}
+.lcBottom ul li a:hover{ text-decoration:underline;}
+.logoRight{ float:right; width:260px; height:100px;/*  background:#3F6; */margin: 15px 10px auto 0;}
+.logoRight ul{ width:260px; overflow:hidden;}
+.logoRight ul li{ width:130px; overflow:hidden;float:left;}
+.logoRight .myShangCheng{ width:110px; height:40px; background:#FAFAFA; display:block; border:1px solid #F0F0F0; line-height:40px; font-size:13px; color:#555555; /* border-bottom:none; */z-index:2; position:relative; float:left;}
+.logoRight .myGouWuChe{ width:125px; height:40px; background:#FAFAFA; display:block; border:1px solid #F0F0F0; line-height:40px; font-size:13px; color:#555555;/*  border-bottom:none; */z-index:2; position:relative; float:right;}
+.logoRight .myShangCheng:hover,.myGouWuChe:hover{ color:#555555; background:#fff;}
+.myShangCheng span{ width:16px; height:16px; background:url(../img/top_bg.png) -100px 0px; display:inline-block; margin:12px 0 0 10px;}
+.myGouWuChe span{width:20px; height:16px; background:url(../img/top_bg.png) -120px 0px; display:inline-block; margin:12px 0 0 10px;}
+.myShangCheng i,.myGouWuChe i{ background:url(../img/arrow-all-down.jpg) no-repeat left center; margin:0 0 2px 0; display:inline-block; width:8px; height:4px;}
+.scIn{ width:308px; height:196px; background:#fff;  border:1px solid #F0F0F0; z-index:2; position:absolute; top:86px; right:196px; display:none;}
+.scIn span{ width:308px; height:42px; display:block; line-height:42px; text-align:right; border-bottom:1px solid #DCDCDC;}
+.scIn span a{ color:#005EA5;}
+.scIn span a:hover{ text-decoration:underline;}
+.ciLi{ width:308px; height:79px; border-bottom:1px solid #DCDCDC; padding:8px 0 8px 0; }
+.ciLi ul{ width:138px; padding:5px 0 0 15px; border-right:1px solid #EDEDED; float:left;}
+.ciLi ul li{ line-height:26px;}
+.ciLi ul li a{ color:#1E58A1; text-decoration:none;}
+.ciLi ul li a:hover{ text-decoration:underline;}
+.gwcIn{ width:348px; height:150px; background:#fff; position:absolute; right:48px; top:86px; border:1px solid #DBDBDB; display:none; z-index:2;}
+.gwcIn span{ width:343xp; height:42px; display:block; border-bottom:1px solid #DBDBDB; line-height:42px; padding:0 0 0 5px; font-weight:bold; color:#6C6366;}
+.gwcIn p{ height:48px; line-height:48px; text-align:center;}
+.gwcIn .gwcGray{ width:348px; height:39px; background:#F0F0F0; padding:20px 0 0 0;}
+.gwcGray .ggBtn{ width:124px; height:28px; background:#DB3801; border-radius:5px; margin:0 0 0 200px; }
+.gwcGray .ggBtn a{ color:#fff; font-size:13px; line-height:28px; height:28px; text-align:center; width:124px; display:block;}
+.gwcGray .ggBtn a:hover{ text-decoration:underline;}
+/* logo结束 */
+
+/* 头部结束 */
+
+
+
+/* footer开始 */
+
+.fiTop{ width:100%; height:205px; background:#F9F9F9; border-top:1px solid #E5E5E5; }
+.fiTop a{color:#666666;}
+.fiTop a:hover{ color:#F03790;}
+.fiTop .ftIn{ width:1200px; height:175px; /* background:red;  */margin:0 auto; padding:30px 0 0 0;}
+.fiTop dl{ height:130px;/*  background:yellow; */ width:179px; border-left:1px solid #E1E1E1; float:left; padding:0 0 0 18px;}
+.fiTop dl dt{ font-size:16px; font-family:"微软雅黑"; padding:0 0 13px 0;}
+.fiTop .sale{ width:110px;}
+.fiTop dl dd{ padding:10px 0 0 0; width:84px;/*  background:red; */}
+.fiTop .weixin,.weixinline{ width:115px;}
+.fiTop .weixin strong{ width:78px; height:27px;/*  background:#339; */ display:block; text-align:center; border-bottom:1px dotted #7e7e7e;}
+.fiTop .weixinline{width:78px; border:none;}
+.fiTop .weixinline strong{ width:78px; height:27px;/*  background:#339;  */display:block; text-align:center; border-bottom:1px dotted #7e7e7e;}
+
+.fiBottom{ width:100%; height:140px;}
+.fiBottom p{  text-align:center; color:#666666; padding:19px 0 0 0;}
+.fiBottom p a{ padding:0 18px 0 15px; color:#666666;}
+.fiBottom span{display:block; margin:0 auto; width:650px; padding:19px 0 0 90px;}
+.fiBottom span a{ float:left;}
+/* footer结束 */
+

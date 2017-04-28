@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建对象的三种方式</title>
+    <script>
+    //第一种方法:通过json格式创建对象
+    var obj1 = {"name":"追命","age":18,"sayHi":function(){
+        alert("你好，美女。");
+    },"jieShao": function(){
+        alert("我叫" + this.name);
+    }};
+    //第二种创建方式：通过new方式来创建
+    var obj2 = new Object();
+    obj2.name = "追命";
+    obj2.age = "19";
+    obj2.sayHi = function(){
+        alert("你好，美女。");
+    }
+    obj2.jieShao = function(){
+        alert("我叫" + this.name);
+    };
+    //第三种方式：通过构造函数来创建（把对象先不创建，先给对象设置一个模板，然后通过这个模板来创建对象）
+    //这个模板就叫做构造函数，构造函数本质上来说就是一个function（方法）
+    //第一种表现形式：
+    // function GrilFriend(){
+    //     this.name = "刘亦菲";
+    //     this.age = 18;
+    //     this.showLove = function(){
+    //         alert("I Love You");
+    //     }
+    //     this.jieShao =function(){
+    //         alert("我叫" + this.name);
+    //     }
+    // }
+    // var grilFriend1 = new GrilFriend();
+    // // console.log(grilFriend1.name);
+    // // console.log(grilFriend1.age);
+    // // grilFriend1.showLove();
+    // // grilFriend1.jieShao();
+    // var grilFriend2 = new GrilFriend();
+    // //第三种的第二种表现形式：
+    // function GrilFriend(name,age){
+    //     this.name = name;
+    //     this.age = age;
+    //     this.showLove = function(){
+    //         alert("I Love You");
+    //     }
+    //     this.jieShao =function(){
+    //         alert("我叫" + this.name);
+    //     }
+    // }
+    //var grilFriend3 = new GrilFriend("菲菲姐",18);
+    // alert(grilFriend3.name);
+    // alert(grilFriend3.age);
+    // grilFriend3.showLove();
+    // grilFriend3.jieShao();
+    //第三种的第三种表现形式：
+    ////声明函数的时候传入的参数叫形参：形式参数，将来在调用的时候传入的参数叫做实参
+    function GrilFriend(option){
+        this.name = option.name;
+        this.age = option.age;
+        this.showLove = function(){
+            alert("I Love You");
+        }
+        this.jieShao =function(){
+            alert("我叫" + this.name);
+        }
+    }
+    // var options = {name: "杨紫", age: "23"}
+    // var grilFriend4 = new GrilFriend(options);
+    // alert(grilFriend4.name);
+    // alert(grilFriend4.age);
+    // grilFriend4.showLove();
+    // grilFriend4.jieShao();
+    //第三种的第四种表现形式：
+    // function GrilFriend(option){
+    //     this.name = option.name;
+    //     this.age = option.age;
+    //     this.sex = "男";
+    // }
+    // // ptototype本质上来说也是一个对象，所以也可以动态添加属性
+    // GrilFriend.prototype.sex = "女";
+    // GrilFriend.prototype.showLove = function(){
+    //     alert("I Love You");
+    // }
+    // GrilFriend.prototype.jieShao = function(){
+    //     alert("我叫" + this.name );
+    // }
+    // var g5 = new GrilFriend({
+    //     name: "杨紫", age: "23"
+    // });
+    // // alert(g5.sex);
+    // // alert(g5.name);
+    // // alert(g5.age);
+    // // g5.showLove();
+    // // g5.jieShao("哈哈哈");
+    // var g6 = new GrilFriend({
+    //     name: "杨紫", age: "23"
+    // });
+    // g6.jieShao = function(){
+    //     alert("哈哈哈哈");
+    // }
+    // g6.jieShao();
+    // var g7 = new GrilFriend({
+    //     name: "杨紫", age: "23"
+    // });
+    // g7.jieShao();
+    //
+    //第三种的第五种表现形式：
+    function GrilFriend(option){
+        this.name = option.name;
+        this.age = option.age;
+        this.sex = "男";
+    }
+     GrilFriend.prototype = {
+        showLove : function(){
+            alert("I Love You");
+        },
+        jieShao : function(){
+         alert("我叫" + this.name );
+        }
+     }
+    //第三种的第六种表现形式(终极形态)：
+    function GrilFriend(option){
+        this._init(option);
+    }
+    GrilFriend.prototype = function(){
+        _init: function(option){
+          this.name = option.name;
+          this.age = option.age;
+        },
+        showLove : function(){
+            alert("I Love You");
+        },
+        jieShao : function(){
+         alert("我叫" + this.name );
+        }
+    }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
