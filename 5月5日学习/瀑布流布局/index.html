@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>瀑布流无限加载</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<style type="text/css">
+    body, ul, li { margin:0;padding:0;list-style-type:none;}
+    #main {position:relative;margin:5px;width:90%;}
+    #main ul li {position:absolute;border:1px solid #CCCCCC;text-align:center;padding:10px;left:0;top:0;}
+    #main ul li img {width:237px;display:block;}
+</style>
+</head>
+    <body>
+        <div id="main">
+            <ul id="m">
+                <li><img src="images/20.jpg" /></li>
+                <li><img src="images/4.jpg" /></li>
+                <li><img src="images/9.jpg" /></li>
+                <li><img src="images/7.jpg" /></li>
+                <li><img src="images/6.jpg" /></li>
+                <li><img src="images/14.jpg" /></li>
+                <li><img src="images/22.jpg" /></li>
+                <li><img src="images/18.jpg" /></li>
+                <li><img src="images/20.jpg" /></li>
+                <li><img src="images/13.jpg" /></li>
+                <li><img src="images/15.jpg" /></li>
+                <li><img src="images/9.jpg" /></li>
+                <li><img src="images/2.jpg" /></li>
+                <li><img src="images/4.jpg" /></li>
+                <li><img src="images/7.jpg" /></li>
+                <li><img src="images/3.jpg" /></li>
+            </ul>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    function waterFall() {
+        var margin = 10; // 调置列表间距
+        var lis = document.getElementsByTagName('li'); // 获取页面上所有的列表
+        var li_w = lis[0].offsetWidth + margin; // 获取列宽度
+        var n = Math.floor(document.documentElement.offsetWidth / li_w); // 计算出每屏最多显示多少列
+        var h = []; // 定义数组记录每列高度
+
+        for(var i=0; i<lis.length; i++) {
+            var li_h = lis[i].offsetHeight; // 记录每个列表的高度
+            if(i < n) {
+                h[i] = li_h; // 存储列高度
+                lis[i].style.top = 0;
+                lis[i].style.left = i * li_w + 'px';
+            } else {
+                var min_h = h[0];
+                var min_i = 0;
+                for(var j=0; j<h.length; j++) {
+                    if(h[j] < min_h) {
+                        min_h = h[j];
+                        min_i = j;
+                    }
+                }
+                h[min_i] += li_h + margin;
+                lis[i].style.top = min_h + margin + 'px';
+                lis[i].style.left = min_i * li_w + 'px';
+            }
+        }
+    }
+    var msg = document.getElementById('msg');
+    var m = document.getElementById('m');
+    window.onload = waterFall;
+    window.onscroll = function () {
+        if(document.documentElement.scrollHeight - document.documentElement.scrollTop - document.documentElement.clientHeight - 500 < 0) {
+            for(var i=0; i<5; i++) {
+                var liObj = document.createElement('li');
+                var imgObj = document.createElement('img');
+                imgObj.src = 'Images/' + (Math.floor(Math.random() * 21) + 1) + '.jpg';
+                liObj.appendChild(imgObj);
+                m.appendChild(liObj);
+                waterFall();
+            }
+        }
+    }
+</script>

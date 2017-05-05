@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>焦点图</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<script type="text/javascript">
+    window.onload = function () {
+        var imgObj = document.getElementById('img');
+        var lis = document.getElementById('lis').getElementsByTagName('li');
+        var i = 1;
+        var imgs = [1,2,3,4,5,6];
+        var len = imgs.length;
+        function changeImg() {
+            i = i % len;
+            imgObj.src = 'Images/' + imgs[i] + '.jpg';
+            for(var j=0; j<len; j++) {
+                lis[j].style.background = 'gray';
+            }
+            lis[i].style.background = 'red';
+            i++;
+        }
+        var timer = window.setInterval(changeImg,2000);
+        imgObj.onmouseover = function () {
+            clearInterval(timer);
+        }
+        imgObj.onmouseout = function () {
+            timer = window.setInterval(changeImg,2000);
+        }
+
+        for(var i=0; i<lis.length; i++) {
+            lis[i].onmouseover = (function () {
+                var n = i;
+                return function () {
+                    clearInterval(timer);
+                    imgObj.src = 'Images/' + imgs[n] + '.jpg';
+                    for(var j=0; j<len; j++) {
+                        lis[j].style.background = 'gray';
+                    }
+                    lis[n].style.background = 'red';
+                }
+            })()
+        }
+    }
+</script>
+
+<style type="text/css">
+    #main {
+        width:670px;
+        height:240px;
+        margin:auto;
+        position:relative;
+    }
+    #main ul {
+        list-style-type:none;
+        margin:0;
+        padding:0;
+        position:absolute;
+        right:10px;
+        bottom:10px;
+        overflow:hidden;
+    }
+    #main ul li {
+        width:20px;
+        height:20px;
+        text-align:center;
+        line-height:20px;
+        float:left;
+        background:gray;
+        color:white;
+        cursor:pointer;
+        border-radius:18px;
+        margin-left:10px;
+    }
+</style>
+</head>
+    <body>
+        <div id="main">
+            <img src="Images/1.jpg" id="img" />
+            <ul id="lis">
+                <li style="background:red;">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+    </body>
+</html>
