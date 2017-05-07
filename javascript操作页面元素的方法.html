@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+	<style>
+	div {
+		width: 200px;
+		height: 200px;
+		background: red;
+		margin-bottom: 20px;
+	}
+	#box2{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<div id="box1" onmouseover="jin()" onmouseout="chu()"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	function jin() {
+		document.getElementById("box1").style.backgroundColor = "blue";
+		document.getElementById("box2").style.display = "block";
+	}
+	function chu() {
+		document.getElementById("box1").style.backgroundColor = "red";
+		document.getElementById("box2").style.display = "none";
+	}
+</script>
+<!-- 比较综合的例子。
+鼠标进入盒子1的时候，盒子1自己变成蓝色，盒子2显示
+鼠标离开盒子1的时候，盒子1自己编程红色，盒子2隐藏、 -->
+</html>

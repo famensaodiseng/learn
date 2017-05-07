@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+	<style>
+	div {
+		width: 200px;
+		height: 200px;
+		background:red;
+		margin-bottom: 20px;
+	}
+	</style>
+</head>
+<body>
+	<div onclick="bianse()"></div>
+	<div id ="box2"></div>
+</body>
+<script>
+	function bianse(){
+		document.getElementById("box2").style.backgroundColor = "blue";
+	}
+</script>
+</html>
+//事件源：有监听的HTML标签，能响应事件的html标签，就是事件源、
+//事件名：用户的特定行为，比如onclick
+//事件的响应：就是一个个function
+//事件的响应，就是function，响应中最重要的就是被操作的对象。
+//页面上两个盒子，点击第一个盒子，让第二个盒子变蓝，第一个盒子就是事件源。
+//那么第二个盒子可以被称作被操作的对象。

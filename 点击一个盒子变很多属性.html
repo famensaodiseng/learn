@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title></title>
+	<style>
+	div {
+		width: 200px;
+		height: 200px;
+		background: green;
+		margin-bottom: 20px;
+	}
+	</style>
+</head>
+<body>
+	<div onclick = "bianse()"></div>
+	<div id = "box2"></div>
+</body>
+<script>
+	function bianse() {
+		document.getElementById("box2").style.backgroundColor="red";
+		document.getElementById("box2").style.width="400px";
+		document.getElementById("box2").style.heigth="600px";
+		document.getElementById("box2").style.borderTop="10px solid yellow";
+	}
+</script>
+</html>
+//找准事件源，用户点击那个盒子，会有事情发生，这个盒子就是事件源，
+//谁是被操作的对象，被操作的对象可能就不止是一个了。并且事件源也有可能自己就是被操作的事件源。被操作的身上一定要有ID。
+//document.getElementById("")通过ID来得到这个元素。、

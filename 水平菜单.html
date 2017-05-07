@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>水平菜单</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#caidan {
+		width: 800px;
+		margin: 50px auto;
+	}
+	#caidan ul {
+		list-style: none;
+	}
+	#caidan ul li a {
+		text-decoration: none;
+	}
+	#caidan ul li .mu{
+		float: left;
+		width: 90px;
+		margin-right: 10px;
+		background: pink;
+		height: 40px;
+		text-align: center;
+		line-height: 40px;
+		position: relative;
+	}
+	.caidan{
+		width: 150px;
+		background: green;
+		position: absolute;
+	}
+	</style>
+</head>
+<body>
+	<div id="caidan">
+		<ul>
+			<li class="mu">
+			<a href="#">网站栏目</a>
+			<div class="caidan">
+				<ul>
+					<li><a href="#">子菜单</a></li>
+					<li><a href="#">子菜单</a></li>
+					<li><a href="#">子菜单</a></li>
+				</ul>
+			</div>
+			</li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+			<li class="mu"><a href="#">网站栏目</a></li>
+		</ul>
+	</div>
+	<div style="clear:both ">文字，文字，文字</div>
+</body>
+</html>
+<!-- 一个绝对定位的元素，如果不写left，top值，是不等同于left:0,top：0;
+效果就是"脱标，留在原地" -->

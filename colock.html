@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>时钟显示</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<script type="text/javascript">
+    window.onload = function () {
+        function showTime() {
+            var time = new Date();
+            var obj = document.getElementById('colock');
+            obj.innerHTML = time.toLocaleString();            
+        }
+        new_showTime = showTime;
+    }
+    window.setInterval('new_showTime()',600);
+
+    
+</script>
+
+<style type="text/css">
+    #colock {
+        width:300px;
+        height:25px;
+        color:#09ACF7;
+        font-size:20px;
+        text-align:center;
+        padding:5px;
+        margin:20px auto 0;
+        border:1px solid #C0C0C0;
+    }
+</style>
+</head>
+    <body>
+        <div id="colock"></div>
+    </body>
+</html>
