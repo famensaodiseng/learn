@@ -1,0 +1,144 @@
+/*用来写网站相同的头部和尾部的*/
+/*
+杨方涛：2017年5月10日于西安
+QQ；58267980
+*/
+/*shoutcut begin*/
+.shortcut {
+    height: 30px;
+    background-color: #F1F1F1;
+    line-height:30px;
+}
+.dorpdown {
+    padding: 0 20px;
+}
+.dorpdown i {
+    position: relative;
+    width: 15px;
+    height: 7px;
+    line-height:15px;  /*行高是15px*/
+    display:inline-block;
+    overflow: hidden;
+}
+.dorpdown s {
+    text-decoration: none;
+    font-size: 15px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -7px;
+    left: 0;
+}
+.shortcut li {
+    float: left;
+    padding:0 10px;
+}
+.shortcut .line {
+    width: 1px;
+    height: 12px;
+    background: #ddd;
+    padding: 0;
+    margin-top:9px;
+}
+.style-red {
+    color: #c81623;
+}
+.tel em {
+    width: 15px;
+    height: 20px;
+    display: inline-block;
+    background: url(../images/jd2015img.png) no-repeat;
+    margin-top: -1px;
+    vertical-align: middle;
+    margin: 0 2px;
+}
+/*shoutcut end*/
+/*head  ---s*/
+.logo {
+    width: 360px;
+    height: 60px;
+    /*background-color: pink;*/
+    padding: 20px 0;
+    float: left;
+}
+.logo a {
+    display: block;
+    width: 270px;
+    height: 60px;
+    background: url(../images/logo1.png) no-repeat;
+    text-indent: -20000px;
+}
+.search {
+    float: left;
+    margin-top: 25px;
+}
+.search input {
+    width: 446px;
+    height: 24px;
+    /*background: pink;*/
+    border: 2px solid #B61D1D;
+    border-right:0;
+    outline: none;
+    float: left;
+    color: #666666;
+    font-size: 14px;
+    font:  bold 12px "微软雅黑";
+    padding: 4px;
+}
+.search button{
+    width: 82px;
+    height: 36px;
+    background: #B61D1D;
+    float: left;
+    border: 0;
+    font:  bold 16px "微软雅黑";
+    color: #fff;
+}
+.car {
+    width: 139px;
+    height: 34px;
+    border:1px solid #DFDFDF;
+    float: right;
+    margin-top: 25px;
+    line-height:34px;
+    position: relative;
+}
+.car i {
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    background: url(../images/jd2015img.png)no-repeat 0 -90px;
+    vertical-align: middle;
+    margin-left:8px;
+    margin: 0 8px 0 20px;
+}
+.car em {
+    font: 400 13px/13px simsun;
+    margin: 5px;
+
+}
+.car s {
+    width: 16px;
+    height: 14px;
+    background: #B61D1D;
+    position: absolute;
+    top: -3px;
+    right: 20px;
+    text-decoration: none;
+    line-height:14px;
+    text-align: center;
+
+    color: #fff;
+    border-radius: 50% 50% 50% 0;/*左上，右上，右下，左下*/
+}
+.hotwords {
+    width: 538px;
+    height: 32px;
+    float: left;
+    /*background: red;*/
+}
+.hotwords a{
+    margin: 0 3px;
+    white-space: nowrap;/*强制文字一行内显示*/
+}
+/*head  ---e*/

@@ -1,0 +1,289 @@
+﻿/*
+杨方涛：2017年5月10日于西安
+QQ；58267980
+*/
+body,h1,h2,h3,h4,h5,h6,p,div,ul,dl,ol,li,dt,dd{
+	margin:  0;
+	padding:  0;
+	font-size: 12px;
+	font-family: 宋体;
+	list-style: none;
+	color: #666;
+}
+a{
+	 text-decoration: none;
+	 color: #666;
+}
+a:hover{
+    color: #EE2222;
+}
+input,img{
+	 margin:  0;
+	 padding:  0;
+	 border:  0 none;
+	 outline-style: none;
+}
+.w {
+	 width: 1210px;
+	 margin:  0 auto;
+}
+
+.clearfix:after {
+	 content: "";
+	 height: 0;
+	 line-height: 0;
+	 clear: both;
+	 display: block;
+	 visibility: hidden;
+}
+.clearfix {
+	 zoom: 1;
+}
+
+s,i {
+	 font-style: normal;
+	 text-decoration: none;
+}
+
+/* 头部开始 */
+.header {
+	 height: 98px;
+	 background: url(../images/headbg.jpg) repeat-x left bottom;
+}
+
+.header .l-logo {
+	 float: left;
+	 padding-top: 26px;
+}
+.header .l-logo a {
+	 width: 160px;
+	 height: 46px;
+	 display: block;
+	 background: url(../images/icon.png) no-repeat;
+	 text-indent: -2000px;
+	 float: left;
+}
+
+.header .l-logo .line {
+	 width: 1px;
+	 height: 34px;
+	 background-color: #BBBBBB;
+	 float: left;
+	 margin-left: 26px;
+	 margin-top: 10px;
+}
+.header .l-logo span {
+	 float: left;
+	 margin-left: 26px;
+	 margin-top: 14px;
+	 font-size: 18px;
+	 color: #000000;
+	 font-family: 微软雅黑;
+}
+
+.header .r-login {
+	 float: right;
+	 padding-top: 48px;
+	 font-size: 18px;
+	 font-family: 微软雅黑;
+	 color: #999999;
+}
+.header .r-login a {
+	color: #000;
+}
+
+/* 主体盒子 */
+.mainbox {
+
+}
+
+.regist-box {
+	width: 808px;
+	height: 625px;
+	margin: 52px auto 58px;
+}
+
+.regist-list {
+	 float: left;
+	 width: 400px;
+	 height: 623px;
+}
+
+.public {
+	 width: 398px;
+	 height: 52px;
+	 border:  1px solid #DDDDDD;
+	 margin-bottom: 32px;
+}
+.public label {
+	 width: 125px;
+	 height: 52px;
+	 display: inline-block;
+	 float: left;
+	 line-height: 52px;
+	 text-align: center;
+	 font-size: 16px;
+	 font-family: 微软雅黑;
+}
+.public  input {
+	 width: 267px;
+	 height: 52px;
+	 float: left;
+	 color: #CCCCCC;
+	 padding-left: 5px;
+	 font-size: 14px;
+	 font-family: 微软雅黑;
+}
+.set-phone {
+	 position: relative;
+}
+
+.set-phone label {
+	 border-right: 1px solid #E4E4E4;
+}
+.set-phone i {
+	 width: 15px;
+	 height: 15px;
+	 display: block;
+	 position: absolute;
+	 overflow: hidden;
+	 left: 103px;
+	 top: 23px;
+}
+.set-phone s {
+	 width: 15px;
+	 height: 15px;
+	 display: block;
+	 position: absolute;
+	 top: -7px;
+}
+
+.set-code {
+	position: relative;
+}
+
+.set-code img {
+	 position: absolute;
+	 right: 3px;
+	 top:  3px;
+}
+.validate {
+	 position: relative;
+}
+.validate a {
+	 width: 110px;
+	 height: 46px;
+	 display: block;
+	 background-color: #F2F2F2;
+	 line-height: 46px;
+	 position: absolute;
+	 text-align: center;
+	 right: 3px;
+	 top: 3px;
+}
+
+
+.agree input {
+	 vertical-align: middle;
+	 width: 18px;
+	 height: 18px;
+	 
+}
+.agree a {
+	 color: blue;
+}
+
+.btn a {
+	 width: 400px;
+	 height: 54px;
+	 background-color: #EE2222;
+	 line-height: 54px;
+	 text-align: center;
+	 display: block;
+	 color: white;
+	 font-size: 16px;
+	 font-family: 微软雅黑;
+	 margin-top: 15px;
+}
+
+
+.border {
+	 width: 1px;
+	 height: 605px;
+	 background-color: #E6E6E6;
+	 float: left;
+	 margin-left: 104px;
+}
+
+.r-textreg {
+	 float: left;
+	 margin-left: 88px;
+}
+
+.r-textreg .phone {
+	 width: 213px;
+	 height: 270px;
+	 background: url(../images/phone.jpg) no-repeat;
+}
+
+.r-textreg .company {
+
+	 margin-top: 50px;
+	 margin-left: 89px;
+	 display: block;
+	 font-size: 16px;
+	 font-family: 微软雅黑;
+	 position: relative;
+}
+.r-textreg .company:hover {
+	 color: #000;
+	 font-weight: 700;
+}
+.r-textreg .company i {
+	 width: 30px;
+	 height: 30px;
+	 display: block;
+	 background: url(../images/icon.png) no-repeat 0 -49px;
+	 position: absolute;
+	 left: -46px;
+	 top: -4px;
+}
+
+.global {
+	 width: 114px;
+	 border-top:  1px solid #DDDDDD;
+	 margin-top: 30px;
+	 margin-left: 38px;
+	 position: relative;
+	 padding-top: 32px;
+	 padding-left: 45px;
+}
+
+.global i {
+	 width: 30px;
+	 height: 30px;
+	 display: block;
+	 background: url(../images/icon.png) no-repeat -50px -50px;
+	 position: absolute;
+	 top:  38px;
+	 left: 6px;
+}
+.global a {
+	 font-size: 16px;
+	 font-family: 微软雅黑;
+}
+.global a:hover{
+	color: #000;
+}
+
+
+/* 结尾部分开始 */
+.footer {
+	 border-top: 1px solid #ddd;
+	 height: 80px;
+	 text-align: center;
+}
+
+.footer p {
+	 margin-top: 10px;
+}
