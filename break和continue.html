@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //求1到100之间不能被7整除的整数的和
+
+    var sum  = 0;
+    for (var i = 1; i<=100; i++){
+        if(i %7 !==0){
+            continue;
+        }
+        sum +=i;
+    }
+    console.log(sum);
+
+
+    //200-300之间第一个能被7整除的数字
+    for (var i =200;i<=300;i++){
+        if (i % 7 ===0){
+            console.log(i);
+            break;
+        }
+    }
+
+
+    //求1-100之间所有不能被3整除的整数的第一个大于2000的和
+    sum = 0;
+    for(var i = 1; i<=100;i++){
+    if (i%3 ===0){
+        continue;
+    }
+    sum +=i;
+    if(sum>2000){
+        console.log(sum);
+        break;
+    }
+    }
+</script>
+
+</html>
