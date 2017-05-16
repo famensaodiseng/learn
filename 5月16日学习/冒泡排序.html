@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //将一个数组的值从小到大排列。
+    var arr=[11,222,335,452,86,552];
+    for (var i=0;i<arr.length-1;i++){
+        for (j=0;j<arr.length-1;j++){
+            if(arr[j]>arr[j+1]){
+                var temp = arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</html>

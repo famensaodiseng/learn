@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arr = [12,66,34,445,654,23,0,41];
+
+    //外层循环比较的是趟数
+    for (var i = 0; i<arr.length-1;i++){
+        //内层循环比较是循环的次数
+        for(var j = 0;j<arr.length-1;j++){
+            if(arr[j]>arr[j+1]){
+                var temp = arr[j];
+                arr[j]= arr [j+1];
+                arr[j+1]=temp;
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</html>

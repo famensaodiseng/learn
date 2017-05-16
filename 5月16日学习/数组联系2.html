@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //求一组数中的所有数的和和平均值
+
+   /* var arr =[11,426,12,412,22,77];
+    var sum = 0;
+    for (var i = 0;i<arr.length;i++){
+        sum +=arr[i];
+    }
+    console.log(sum);
+    console.log(sum / arr.length);*/
+    //求一组数中最大值
+   /* var arr =[22,33,66,44,28,97,465];
+    var max = arr [0];
+    for(var i = 0;i<arr.length;i++){
+        if(max <arr[i]){
+            max = arr[i];
+        }
+    }
+    console.log(max);*/
+   //求一个数组中的最小值以及索引
+    /*var arr = [55,11,22,34,63,97,64,45];
+    var min = arr[0];
+    var minIndex = 0;
+    for(var i = 0;i <arr.length;i++){
+        if(min >arr[i]){
+            min =arr[i];
+            minIndex = i;
+        }
+    }
+    console.log(min);
+    console.log(minIndex);*/
+
+
+//    求一组书中的最大值和最小值以及所在位置
+    var arr = [33,45,0,112,456,212,344,71,25,44];
+    var max = arr[0];
+    var maxIndex = 0;
+    var min = arr[0];
+    var minIndex= 0;
+    for(var i = 0;i<arr.length;i++){
+        if(max<arr[i]){
+            max = arr[i];
+            maxIndex = i;
+        }
+        if (min >arr[i]){
+            min = arr[i];
+            minIndex = i;
+        }
+    }
+    console.log(max);
+    console.log(maxIndex);
+    console.log(min);
+    console.log(minIndex);
+</script>
+</html>
