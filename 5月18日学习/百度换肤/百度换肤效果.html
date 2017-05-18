@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>百度换肤</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url(images/1.jpg) no-repeat center top;
+        }
+        .mask {
+            height: 200px;
+            background: #fff;
+            background: rgba(255,255,255,0.3);
+            text-align: center;
+            padding-top: 50px;
+        }
+        .mask img {
+            width: 200px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="mask">
+    <img src="images/1.jpg" alt="" id = "pic1">
+    <img src="images/2.jpg" alt="" id = "pic2">
+    <img src="images/3.jpg" alt="" id = "pic3">
+</div>
+</body>
+</html>
+<script>
+    var pic1 = document.getElementById("pic1");
+    var pic2 = document.getElementById("pic2");
+    var pic3 = document.getElementById("pic3");
+
+    pic2.onmouseover = function () {
+        document.body.style.background = "url(images/2.jpg)";
+    }
+    pic1.onmouseover = function () {
+        document.body.style.background = "url(images/1.jpg)";
+    }
+    pic3.onmouseover = function () {
+        document.body.style.background = "url(images/3.jpg)";
+    }
+
+
+</script>
