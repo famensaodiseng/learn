@@ -55,10 +55,10 @@
 </h2>
 
 <ul id="imagegallery">
-    <li><a href="images/1.jpg" onclick="return changePic();"  title="美女A">
+    <li><a href="images/1.jpg" title="美女A">
         <img src="images/1-small.jpg" width="100" alt="美女1"/>
     </a></li>
-    <li><a href="images/2.jpg" onclick="return changePic();" title="美女B">
+    <li><a href="images/2.jpg" title="美女B">
         <img src="images/2-small.jpg" width="100" alt="美女2"/>
     </a></li>
     <li><a href="images/3.jpg" title="美女C">
@@ -75,14 +75,18 @@
 
 <p id="des">选择一个图片</p>
 
-</body>
 <script>
-    //点击小图片，让下面的大图片和小图片显示一致
-    function changePic() {
-        var img = document.getElementById("image");
-        img.src = "images/1.jpg";
-        return false;
-    }
-
+    //点击上面的小图片，让下面的大图片显示
+        var ul  = document.getElementById("imagegallery");
+        var links = ul.getElementsByTagName("a");
+        for (var i = 0; i <links.length; i++){
+            var link = links[i];
+            link.onclick = function () {
+                image.src = this.href;
+                des.innerText =this.title;
+                return false;
+            };
+        }
 </script>
+</body>
 </html>

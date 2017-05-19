@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .nodeSmall {
+            width: 50px;
+            height: 50px;
+            background: url(images/bgs.png) no-repeat -159px -51px;
+            position: fixed;
+            right: 10px;
+            top: 40%;
+        }
+
+        .erweima {
+            position: absolute;
+            top: 0;
+            left: -150px;
+        }
+
+        .nodeSmall a {
+            display: block;
+            width: 50px;
+            height: 50px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="nodeSmall" id="node_Small">
+    <a href="#"></a>
+
+    <div class="erweima hide" id="er">
+        <img src="images/456.png" alt=""/>
+    </div>
+</div>
+<script>
+
+    var node = document.getElementById("node_Small");
+    var er = document.getElementById("er");
+    node.onmouseover = function () {
+        er.className = "erweima show";
+    };
+    //让二维码显示，把hide替换成show.
+//    er.className.replace("hide","show");
+    er.className = er.className.replace("hide","show");
+    node.onmouseout = function () {
+        //让二维码隐藏。
+     er.className=   er.className.replace("show","hide");
+       // er.className = "erweima hide";
+
+    };
+
+//    var str = "erweima show";
+//    str.replace("show","hide");replace替换类名
+//    console.log(str);
+</script>
+</body>
+</html>

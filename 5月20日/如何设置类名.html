@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cls {
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮" id= "btn">
+
+<div id="box"></div>
+<script>
+    //点击按钮显示盒子
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        var box = document.getElementById("box");
+        box.className = "cls";
+    }
+</script>
+</body>
+</html>
