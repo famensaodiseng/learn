@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [22, 33, 56, 23, 46, 26, 456, 22];
+    function sort(arr) {
+        //控制循环的趟数
+        for (var i = 0; i < arr.length - 1; i++) {
+            var sorted = true;
+            //内层循环控制两两比较的次数
+            for (var j = 0; j < arr.length - 1- i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    sorted = false;
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+            if(sorted){
+                break;
+            }
+        }
+        return arr;
+    }
+    console.log(sort(arr));
+</script>
+</body>
+</html>

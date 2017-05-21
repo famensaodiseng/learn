@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .current {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<input type="button" value="按钮">
+<script>
+    var inputs = document.getElementsByTagName("input");
+    for (var i = 0;i<inputs.length;i++){
+        inputs[i].onclick = function (){
+            //先把所有人的类名都干掉，
+            for (var i = 0; i<inputs.length;i++){
+                inputs[i].className = "";
+            }
+            //然后再把当前的对象类名加上
+          this.className = "current";
+        };
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [11,323,32,6,5,9,21];
+    function getMax(arr) {
+        var max = arr[0];
+        for (var i = 0;i<arr.length;i++){
+            if(max <arr[i]){
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+    console.log(getMax(arr));
+</script>
+</body>
+</html>
