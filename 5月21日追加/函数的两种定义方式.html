@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    console.log(fn1(1, 2));
+    //正常使用
+    //函数声明提升，会吧函数声明提升到最顶端。
+    console.log(fn2(1, 2));
+    //函数的声明
+    //变量声明提升，会吧变量的声明也会提升到最顶端。
+    //注意，变量值提升声明，不提升赋值。
+    function fn1(a,b) {
+        return a+b;
+    }
+
+    //函数的表达式
+    var fn2 = function (a, b) {
+        return a+b;
+    };
+</script>
+</body>
+</html>

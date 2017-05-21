@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	//死递归
+
+	/*	function story(){
+			console.log("老和尚去画展")；
+			story();
+		}
+		story();
+*/
+
+
+
+
+
+
+		var i = 0;
+		function story(){
+			console.log("从前有座山，山里有座庙，庙里有老和尚");
+			i++;
+			if(i<10){
+			story();
+			}
+			
+		}
+		story();
+	</script>
+</body>
+</html>

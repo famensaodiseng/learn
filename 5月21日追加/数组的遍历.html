@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var arr = [11,22,33,44,55];
+		console.log(arr[0]);    //索引为0的数值
+		console.log(arr[3]);    //索引为3的数值
+
+		//但是如果有300个了呢？
+
+		//循环：
+		//数组的遍历。第一版本
+		for( var i = 0; i <=arr.length-1;i++){
+			console.log(arr[i]);		//从第0项目开始计算。	
+		}
+		//数组的精简版，第二个版本
+		for(var i = 0; i<arr.length;i++){
+			console.log(arr[i]);
+		}
+		//反向遍历
+		for (var i = arr.length - 1; i >= 0; i--) {
+			console.log(arr[i]);
+		}
+	</script>
+</body>
+</html>
