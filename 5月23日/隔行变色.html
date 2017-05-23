@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .even {
+        background: #999;
+    }
+    .odd {
+        background: #ccc;
+    }
+</style>
+<body>
+<ul id="list">
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+    <li>ddd</li>
+</ul>
+<script>
+    var ul = document.getElementById("list");
+    var lis = ul.getElementsByTagName("li");
+    for (var i = 0; i<lis.length;i++){
+        //lis[i].className = "even"
+        if (i % 2 ===0){
+            lis[i].className = "even";
+        }else {
+            lis[i].className = "odd";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        span  {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id=  "txtName"><span></span><br>
+<input type="text" id = "txtPwd">
+<span></span><br>
+<input type="button" id = "btn" value="注册">
+<script>
+    var txtName = document.getElementById("txtName");
+    var txtPwd  = document.getElementById("txtPwd");
+
+    txtName.onkeyup = function() {
+      //判断是否符合要求
+        if(this.value.length <3 || this.value.length > 10){
+            this.nextSibling.innerHTML = "用户名必须在3-20左右之间";
+        }else {
+            this.nextSibling.innerHTML = "";
+        }
+    };
+</script>
+</body>
+</html>

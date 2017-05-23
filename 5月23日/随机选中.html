@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select name="" id="sel">
+    <option value="">A</option>
+    <option value="">B</option>
+    <option value="">C</option>
+    <option value="">D</option>
+    <option value="">E</option>
+</select>
+<input type="button" value="按钮" id= "btn">
+<script>
+    //
+    var btn = document.getElementById("btn");
+    var sel = document.getElementById("sel");
+    var options = sel.children;
+    btn.onclick = function () {
+        //产生0123中的随机数，
+        //[0,1)*4   [0,4)parseInt
+        var random = parseInt(Math.random()* options.length);
+        options[random].selected = true;
+    };
+</script>
+</body>
+</html>
