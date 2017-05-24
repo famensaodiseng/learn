@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0px;
+            font-size: 12px;
+            background: url(images/bg.gif) repeat center 36px;
+            text-align: center;
+            background-color: #c30230;
+        }
+
+        #content {
+            margin: 0 auto;
+            width: 960px;
+            background: url(images/content_bg.jpg) no-repeat left top;
+            height: 627px;
+        }
+
+        #content .tip1, #content .tip2, #content .tip3, #content .tip4, #content .tip5, #content .tip6, #content .tip7, #content .tip8 {
+            position: absolute;
+            width: 227px;
+            left: 200px;
+            top: 100px;
+        }
+
+        #content .tip1 .tip_h {
+            background: url(images/tip1_h.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_h, #content .tip2 .tip_h, #content .tip3 .tip_h, #content .tip4 .tip_h, #content .tip5 .tip_h, #content .tip6 .tip_h, #content .tip7 .tip_h, #content .tip8 .tip_h {
+            width: 227px;
+            padding-top: 45px;
+            height: 23px;
+            text-align: left;
+            cursor: move;
+        }
+
+        #content .tip1 .tip_c {
+            background: url(images/tip1_c.gif) repeat-y;
+        }
+
+        #content .tip1 .tip_c, #content .tip2 .tip_c, #content .tip3 .tip_c, #content .tip4 .tip_c, #content .tip5 .tip_c, #content .tip6 .tip_c, #content .tip7 .tip_c, #content .tip8 .tip_c {
+            width: 200px;
+            padding-left: 12px;
+            padding-right: 15px;
+            min-height: 40px;
+            text-align: left;
+            line-height: 20px;
+            max-height: 160px;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+        }
+
+        #content .tip1 .tip_f {
+            background: url(images/tip1_f.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_f, #content .tip2 .tip_f, #content .tip3 .tip_f, #content .tip4 .tip_f, #content .tip5 .tip_f, #content .tip6 .tip_f, #content .tip7 .tip_f, #content .tip8 .tip_f {
+            width: 227px;
+            height: 53px;
+            padding-top: 20px;
+        }
+
+        #content .close, #content .close2 {
+            float: left;
+            font-size: 12px;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .clr {
+            clear: both;
+            overflow: auto;
+            display: block;
+            height: 0px;
+        }
+
+        #content .icon {
+            float: left;
+            width: 35px;
+            padding-left: 15px;
+            height: 35px;
+            text-align: center;
+        }
+
+        #content .name {
+            float: right;
+            padding-right: 15px;
+            text-align: right;
+            font-size: 14px;
+            line-height: 35px;
+            color: #C0F;
+        }
+
+        #content .num {
+            float: left;
+            padding-left: 7px;
+            width: 195px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+
+</div>
+<script>
+    var zIndex = 0;//记录层级的最大值
+    var content = document.getElementById("content");
+    var messages = [
+        {"id": 1, "name": "mahu", "content": "今天你拿苹果支付了么", "time": "2016-02-17 00:00:00"},
+        {"id": 2, "name": "haha", "content": "今天天气不错，风和日丽的", "time": "2016-02-18 12:40:00"},
+        {"id": 3, "name": "jjjj", "content": "常要说的事儿是乐生于苦", "time": "2016-03-18 12:40:00"},
+        {"id": 4, "name": "9.8的妹纸", "content": "把朋友家厕所拉堵了 不敢出去 掏了半小时了都", "time": "2016-03-18 12:40:00"},
+        {"id": 5, "name": "雷锋ii.", "content": "元宵节快乐", "time": "2016-02-22 12:40:00"},
+        {"id": 6, "name": "哎呦哥哥.", "content": "据说今晚央视的元宵晚会导演和春晚导演是同一个人，真是躲得过初一，躲不过十五。", "time": "2016-02-22 01:30:00"},
+        {"id": 7, "name": "哎呦杰杰.", "content": "真搞不懂你们地球人，月亮有什么好看的，全是坑，还是对面那哥们好看，", "time": "2016-02-22 01:30:00"},
+        {"id": 8, "name": "哎呦哎呦", "content": "今天哪里的烟花最好看！！？答：朋友圈。。。", "time": "2016-02-22 02:30:00"},
+        {
+            "id": 9,
+            "name": "没猴哥，不春晚",
+            "content": "班主任:“小明，你都十二岁了，还是三年级，不觉得羞愧吗”？。小明:“一点也不觉得，老师你都四十多岁了，不也是年年在三年级混日子吗？羞愧的应该是你”。老师:……",
+            "time": "2016-02-22 01:30:00"
+        }
+    ];
+    // //根据数据动态创建结构,messages就是模拟假数据
+    for (var i = 0; i<messages.length;i++){
+        var msg = messages[i];//每一条数据
+        //最外层的div用对象的方式创建，是为了绑定事件。
+        var tip = document.createElement("div");
+        tip.className = "tip1";
+        tip.id = "cc" + msg.id;
+        var str  = '<div class="tip_h" title="双击关闭纸条">'
+            + '<div class="num">第['+msg.id+']条 '+msg.time+' </div>'
+            + '<div class="close" title="关闭纸条">×</div>'
+            + '<div class="clr"></div>'
+            + '</div>'
+            + '<div class="tip_c">'
+            + msg.content
+            + '</div>'
+            + '<div class="tip_f">'
+            + '<div class="icon">'
+            + '<img src="images/bpic_1.gif" alt="" title="">'
+            + '</div>'
+            + '<div class="name">'+msg.name+'</div>'
+            + '<div class="clr"></div>'
+            + '</div>';
+        tip.innerHTML = str ;
+        content.appendChild(tip);//追加到content容器里。
+        //动态生成位置
+        //水平位置  x
+        var x = parseInt(Math.random() * 400 +400);
+        //竖直位置  y
+        var y  = parseInt(Math.random()*400)
+        //设置位置
+        tip.style.left = x + "px";
+        tip.style.top = y + "px";
+        //3.添加一些功能
+        //1.点击当前纸条，让纸条层级最高
+        tip.onclick = function () {
+            zIndex++;
+            this.style.zIndex = zIndex;
+        };
+        //3.2双击纸条的头部关闭纸条
+        var header = tip.firstElementChild;
+        header.ondblclick = function () {
+            //把当前双击的这个头部所属的纸条关闭掉
+            var tip = this.parentNode;
+            content.removeChild(tip);
+        };
+
+        //点击小X，关闭。
+        var close = tip.getElementsByClassName("close")[0];
+        close.onclick  = function () {
+           var tip = this.parentNode.parentNode;
+           content.removeChild(tip);
+        };
+    }
+        //封装函数
+        function getElementsByClassName(element,className) {
+        if(element.getElementsByClassName){
+            return element.getElementsByClassName(className);
+        }else {
+            //不支持
+            var filterArr = [];
+            var elements = element.getElementsByTagName("*");
+            //把每一个标签从集合中取出
+            for(var i = 0;i<elements.length;i++){
+               if( elements[i].className.indexOf(className)!== 1){
+                   filterArr.push(elements[i]);
+               }
+            }
+            return filterArr;
+        }
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value = "跳转" id="btn">
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        console.log(window.location.hash);
+        console.log(window.location.search);
+        console.log(window.location.host);
+        console.log(window.location.port);
+        console.log(window.location.hostname);
+
+    }
+</script>
+</body>
+</html>
