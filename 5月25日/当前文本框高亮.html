@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</div>
+<script>
+    var inputs = document.getElementById("box").getElementsByTagName("input");
+    //给每一个文本框绑定事件，获取焦点的家背景色，失去焦点的去掉背景色
+    for (var i = 0; i<inputs.length;i++){
+        inputs[i].onfocus = function () {
+            this.style.backgroundColor = "red";
+        };
+        inputs[i].onblur = function () {
+            this.style.backgroundColor = "";
+        };
+    }
+</script>
+</body>
+</html>

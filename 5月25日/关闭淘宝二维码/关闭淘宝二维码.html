@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            border:1px solid #D9D9D9;
+            margin: 100px auto;
+            position: relative;
+            width: 107px;
+
+        }
+        #x{
+            display: block;
+            border:1px solid #D9D9D9;
+            width: 14px;
+            height: 14px;
+            float: right;
+            line-height: 14px;
+            color: #d6d6d6;
+            cursor: pointer;
+            position: absolute;
+            top: -1px;
+            left: -16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="images/taobao.jpg" alt="">
+        <span id="x">X</span>
+    </div>
+    <script>
+        document.getElementById("x").onclick  = function () {
+            this.parentNode.style.display = "none";
+        };
+    </script>
+</body>
+</html>
