@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="father">
+    <div class="aaa bbb ccc show"></div>
+    <div class="aaa bbb ccc hide"></div>
+    <div class="aaa bbb ccc showcase"></div>
+</div>
+<script>
+
+    var father =document.getElementById("father");
+    console.log(getElementsByClassName(father, "show"));
+    //console.log(father.getElementsByClassName("show"));
+    //封装通过类名来获取元素
+    function getElementsByClassName(element,className) {
+       // if(element,getElementsByClassName){
+       //   return  element,getElementsByClassName(className);
+       // }else{
+            //使用自己的方式。然后判断类名是否符合要求
+            var filterArr = [];
+            var elements = element.getElementsByTagName("*");
+            //遍历伪数组，把每一个标签都取出来
+            for(var i = 0;i<elements.length;i++){
+              if( elements[i].className.indexOf(className)!==-1){
+                  filterArr.push(elements[i]);
+              }
+                  }
+        return filterArr;
+     //   }
+    }
+</script>
+</body>
+</html>

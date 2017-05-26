@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //全局变量  局部变量
+    //在最外层声明的变量就是全局变量，
+    var a = "a";
+    console.log(a);
+
+
+
+    function fn() {
+        console.log(a);
+    }
+    fn();
+
+    function fn1() {
+        var b = "b";
+        //局部变量只能在当前函数内部使用
+        console.log(b);
+    }
+    fn1();
+</script>
+</body>
+</html>

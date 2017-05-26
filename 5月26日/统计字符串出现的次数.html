@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var str = "jksandansjhwnxmxkwa";
+    var j = {};
+    for (var i = 0;i <str.length;i++){
+        //var item= str[i];
+        var item = str.charAt(i);
+        if(j[item]){
+           j[item]++;//之前出现过，就让出现次数加一
+        }else {
+            j[item]=1;
+        }
+    }
+    //console.log(j);
+     for(var k in j){
+         console.log((k + "出现了"+ j[k]+"次"));
+     }
+
+</script>
+</body>
+</html>
