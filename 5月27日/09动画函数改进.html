@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #demo {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute; /*一定要记得加定位*/
+        }
+    </style>
+</head>
+<body>
+<button id="btn1">奔跑到200吧盒子</button>
+<button id="btn2">奔跑到400吧盒子</button>
+<div id="demo"></div>
+<script>
+    var timer = null;
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    var demo = document.getElementById("demo");
+    //点击按钮 让盒子跑
+    btn1.onclick = function () {
+        animate(demo, 200);
+    };
+    btn2.onclick = function () {
+        animate(demo, 400);
+    };
+
+    //需求 能够让任意对象移动到指定位置
+    function animate(obj, target) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var leader = obj.offsetLeft;
+            var step = 10;
+            step = leader < target ? step : -step;//step有了正负
+            if (Math.abs(leader - target) >= Math.abs(step)) {
+                leader = leader + step;
+                obj.style.left = leader + "px";
+            } else {
+                obj.style.left = target + "px";//手动放到终点
+                clearInterval(obj.timer);
+            }
+        }, 15);
+    }
+</script>
+</body>
+</html>

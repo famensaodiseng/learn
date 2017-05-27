@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<button id= "btn1">200</button>
+<button id= "btn2">400</button>
+<div id = "box"></div>
+<script>
+    var btn1  =  document.getElementById("btn1");
+    var btn2  =  document.getElementById("btn2");
+    var box  =  document.getElementById("box");
+    btn1.onclick = function () {
+        animate(box,200);
+    }
+    btn2.onclick = function () {
+        animate(box,400);
+    }
+    //基本封装
+    function animate(obj,target) {
+        clearInterval(obj.timer);//要开启定时器先清掉定时器
+        //这里的两个参数一个是谁做动画，另一个是距离
+        //如果offserLest大于  target,那就按照反方向走
+        var speed= obj.offsetLeft <target?10:-10;
+        obj.timer = setInterval(function () {
+            var result = target -obj.offsetLeft;//如果他们的值等于0,就完全相等了。
+            //动画原理
+            obj.style.left = obj.offsetLeft + speed + "px";
+            if(Math.abs(result) <=10){
+                obj.style.left = target + "px";//解决抖动问题
+            }
+        },30);
+    }
+</script>
+</body>
+</html>

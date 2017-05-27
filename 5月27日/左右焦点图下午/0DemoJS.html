@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body, ul, ol, li, img {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 490px;
+            height: 270px;
+            padding: 5px;
+            position: relative;
+            border: 1px solid #ccc;
+            margin: 100px auto 0;
+        }
+
+        .ad {
+            width: 490px;
+            height: 270px;
+            /*overflow: hidden;*/
+            position: relative;
+        }
+
+        #box img {
+            width: 490px;
+        }
+
+        .ad ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        .ad ol li {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+            background: #fff;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+            _display: inline;
+        }
+
+        .ad ol li.current {
+            background: yellow;
+        }
+
+        .ad ul li {
+            float: left;
+        }
+
+        .ad ul {
+            position: absolute;
+            top: 0;
+            width: 2940px;
+        }
+
+        .ad ul li.current {
+            display: block;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box" class="all">
+    <div class="ad">
+        <ul id="imgList">
+            <li><img src="images/1.jpg"/></li>
+            <li><img src="images/2.jpg"/></li>
+            <li><img src="images/3.jpg"/></li>
+            <li><img src="images/4.jpg"/></li>
+            <li><img src="images/5.jpg"/></li>
+        </ul>
+    </div>
+    <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+</div>
+<script>
+    //需求 点击左右箭头 以动画效果移动ul到指定位置
+    //找人
+    var box = document.getElementById("box");
+    var ad = box.children[0];
+    var ul = document.getElementById("imgList");
+    var lis = ul.children;
+    var arr = document.getElementById("arr");
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+    var imgWidth = ad.offsetWidth;//图片宽度
+    //alert(imgWidth);
+    //1.鼠标经过盒子 显示arr 鼠标离开后隐藏
+    box.onmouseover = function () {
+        arr.style.display = "block";
+    };
+    box.onmouseout = function () {
+        arr.style.display = "none";
+    };
+    //2.点击右箭头 以动画的形式 把ul移动到指定的位置
+    var pic = 0;//记录当前显示的图片的索引
+    right.onclick = function () {
+        //先判断 然后再去执行 移动ul的代码
+        if (pic === lis.length - 1) {//如果是最后一个图片的索引 就不能再执行了
+            return;
+        }
+        pic++;//计算出接下来要显示的图片的索引
+        //目标 和pic有关 和 图片宽度有关 而且是负数
+        var target = -pic * imgWidth;
+        animate(ul, target);
+    };
+    left.onclick = function () {
+        //先判断 然后再去执行 移动ul的代码
+        if (pic === 0) {//如果是第一个图片的索引 就不能再执行了
+            return;
+        }
+        pic--;//计算出接下来要显示的图片的索引
+        //目标 和pic有关 和 图片宽度有关 而且是负数
+        var target = -pic * imgWidth;
+        animate(ul, target);
+    };
+
+    function animate(obj, target) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var leader = obj.offsetLeft;
+            var step = 30;
+            step = leader < target ? step : -step;//step有了正负
+            if (Math.abs(leader - target) >= Math.abs(step)) {
+                leader = leader + step;
+                obj.style.left = leader + "px";
+            } else {
+                obj.style.left = target + "px";//手动放到终点
+                clearInterval(obj.timer);
+            }
+        }, 15);
+    }
+</script>
+</body>
+</html>

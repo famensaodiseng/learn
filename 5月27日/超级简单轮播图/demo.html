@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {margin:0; padding:0;}
+        ul {list-style: none;}
+        img {
+            vertical-align: top;  /*除去 图片底部有3像素空白缝隙的问题 */
+        }
+        .box {
+            width: 490px;
+            height: 170px;
+            margin:100px auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .inner {
+            width: 490px;
+            height: 170px;
+            background-color: pink;
+            position: relative;
+            overflow: hidden;
+        }
+        .inner ul {
+            width: 1000%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .inner ul li {
+            float: left;
+        }
+        .square {
+            position: absolute;
+           right: 10px;
+            bottom:10px;
+        }
+        .square span {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border:1px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+            line-height: 16px;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .square span.current {
+            background-color: darkorange;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id = "box">
+    <div class="inner">
+        <ul>
+            <li><a href="#"><img src="images/01.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/02.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/03.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/04.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/05.jpg" alt=""/></a></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </div>
+</div>
+<script>
+    //获取元素
+        var box=  document.getElementById("box");//大盒子
+        var inner = box.children[0];//获得inner
+        var ul = inner.children[0];//ul
+        var spans = inner.children[1].children;//得到所有的span
+        var scrillWidth  = inner.offsetWidth;//得到490
+        for (var i =0;i<spans.length;i++){
+            spans[i].index= i;
+            spans[i].onmouseover = function () {
+
+                //清除所有人
+                for(var j=0;j<spans.length;j++){
+                    spans[j].className = "";
+                }
+                this.className = "current";
+                //只需要span的当前索引号*-490就可以了
+                animate(ul,-this.index*scrillWidth);
+            }
+        }
+
+
+    //基本封装
+        function animate(obj,target) {
+        clearInterval(obj.timer);//要开启定时器先清掉定时器
+        //这里的两个参数一个是谁做动画，另一个是距离
+        //如果offserLest大于  target,那就按照反方向走
+        var speed= obj.offsetLeft <target?15:-15;
+        obj.timer = setInterval(function () {
+            var result = target -obj.offsetLeft;//如果他们的值等于0,就完全相等了。
+            //动画原理
+            obj.style.left = obj.offsetLeft + speed + "px";
+            if(Math.abs(result) <=15){
+                obj.style.left = target + "px";//解决抖动问题
+            }
+        },30);
+    }
+</script>
+</body>
+</html>

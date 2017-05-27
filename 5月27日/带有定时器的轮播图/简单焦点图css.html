@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+*{ padding:0; margin:0; list-style:none; border:0;}
+.all{
+  width:500px;
+  height:200px;
+  padding:7px;
+  border:1px solid #ccc;
+  margin:100px auto;
+  position:relative;
+}
+.screen{
+	width:500px;
+	height:200px;
+	 overflow:hidden; 
+	position:relative;
+}
+.screen li{ width:500px; height:200px; overflow:hidden; float:left;}
+.screen ul{ position:absolute; left:0; top:0px; width:3000px;}
+.all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
+.all ol li{ float:left; width:20px; height:20px; background:#fff; border:1px solid #ccc; margin-left:10px; cursor:pointer;}
+.all ol li.current{ background:yellow;}
+
+</style>
+<script type="text/javascript">
+
+</script>
+
+</head>
+
+<body>
+<div class="all" id='all'>
+	<div class="screen">
+        <ul id="ul">
+            <li><img src="images/1.jpg" width="500" height="200" /></li>
+            <li><img src="images/2.jpg" width="500" height="200" /></li>
+            <li><img src="images/3.jpg" width="500" height="200" /></li>
+            <li><img src="images/4.jpg" width="500" height="200" /></li>
+            <li><img src="images/5.jpg" width="500" height="200" /></li>
+        </ul>
+        <ol></ol>
+    </div>
+</div>
+</body>
+</html>

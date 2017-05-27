@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+            overflow: hidden;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr {
+            display: none;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="all" id='box'>
+    <div class="screen">
+        <ul>
+            <li><img src="images/1.jpg" width="500" height="200"/></li>
+            <li><img src="images/2.jpg" width="500" height="200"/></li>
+            <li><img src="images/3.jpg" width="500" height="200"/></li>
+            <li><img src="images/4.jpg" width="500" height="200"/></li>
+            <li><img src="images/5.jpg" width="500" height="200"/></li>
+        </ul>
+        <ol>
+        </ol>
+    </div>
+    <div id="arr"><span id="left">&lt;</span><span id="right">&gt;</span></div>
+</div>
+<script>
+    var box = document.getElementById("box");
+    var screen = box.children[0];
+    var ul = screen.children[0];
+    var ol = screen.children[1];
+    var ulLis = ul.children;
+    var imgWidth = screen.offsetWidth
+    var arr = document.getElementById("arr");
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+    //1.动态生成结构
+    for(var i = 0;i<ulLis.length;i++){
+        var li =document.createElement("li");
+        li.innerHTML = i+1;
+        ol.appendChild(li);
+    }
+    var olLis = ol.children;
+    olLis[0].className = "current";
+    var firstImg = ulLis[0].cloneNode(true);
+    ul.appendChild(firstImg);
+    //2.鼠标经过显示按钮
+    for (var j = 0;j<olLis.length;j++){
+        olLis[j].index  = j;
+        olLis[j].onmouseover = function () {
+            for(var k =0;k<olLis.length;k++){
+                olLis[k].className= "";
+            }
+            this.className = "current";
+            var target = -this.index * imgWidth;
+            animate(ul,target);
+        };
+    }
+        //鼠标经过显示箭头
+    box.onmouseover = function () {
+        arr.style.display = "block";
+    };
+    box.onmouseout = function () {
+        arr.style.display = "none";
+    };
+    //3.2鼠标点击右箭头，动画改编。
+    var pic = 0;
+    var square = 0;
+    right.onclick = function () {
+        if(pic ===ulLis.length -1){
+            ul.style.left = 0+"px";
+            pic = 0;
+        }
+        pic++;
+        var target = -pic*imgWidth;
+        animate(ul,target);
+
+        //按钮也要跟着走，
+        if (square <olLis.length-1){
+            square++;
+        }else {
+            square =0;
+        }
+        //干掉所有人
+        for (var i=0;i<olLis.length;i++){
+            olLis[i].className = "";
+        }
+        olLis[square].className = "current";
+    };
+
+    left.onclick = function () {
+        if(pic ===0){
+            ul.style.left =-(ulLis.length-1)*imgWidth+"px";
+            pic = ulLis.length-1;
+        }
+        pic--;
+
+
+        var target = -pic*imgWidth;
+        animate(ul,target);
+        //按钮和数字同步自动播放
+        if (square>0){
+            square--;
+        }else {
+            square = olLis.length -1;
+        }
+        //干掉所有人
+        for(var i =0;i<olLis.length;i++) {
+            olLis[i].className = "";
+        }
+            //留下对应的
+            olLis[square].className ="current";
+    };
+        setInterval(right.onclick,2000);
+
+
+    function animate(obj, target) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            var leader = obj.offsetLeft;
+            var step = 30;
+            step = leader < target ? step : -step;//step有了正负
+            if (Math.abs(leader - target) >= Math.abs(step)) {
+                leader = leader + step;
+                obj.style.left = leader + "px";
+            } else {
+                obj.style.left = target + "px";//手动放到终点
+                clearInterval(obj.timer);
+            }
+        }, 15);
+    }
+</script>
+</body>
+</html>
