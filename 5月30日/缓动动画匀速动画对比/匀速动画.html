@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute; /*必须是绝对定位的对象才能做动画*/
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<button id="btn">奔跑吧盒子</button>
+<div id="box"></div>
+</body>
+</html>
+<script>
+    //获取元素
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    var timer = null;
+    var target = 900;
+    btn.onclick = function () {
+        timer = setInterval(function () {
+            if (box.offsetLeft < target) {
+                var step = 10;
+                //leader = leader + step
+                box.style.left = box.offsetLeft + step + "px";
+            } else {
+                clearInterval(timer);
+            }
+        }, 30)
+    }
+
+</script>
