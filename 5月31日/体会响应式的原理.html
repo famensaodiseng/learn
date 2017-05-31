@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onresize = function () {
+    responsive();
+    };
+    responsive();
+    //响应式函数
+    function responsive() {
+        if(client().width>960){
+            //说明是电脑，针对电脑做布局
+            document.body.style.backgroundColor = "red";
+            document.body.innerHTML = "我是电脑";
+        }else if (client().width>640){
+            document.body.style.backgroundColor = "green";
+            document.body.innerHTML = "我是平板";
+        }else {//剩下的是手机
+            document.body.style.backgroundColor = "yellow";
+            document.body.innerHTML = "我是手机";
+        }
+    }
+
+
+
+
+    //动画
+    function client() {
+        // console.log(clientWidth);
+        return {
+            width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth||0,
+            height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight||0
+        };
+    }
+</script>
+</body>
+</html>
