@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn1"></button>
+<button id="btn2"></button>
+</body>
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    addEvent(btn1, "click", function () {
+        alert("绑定事件");
+    })
+
+    //封装 兼容所有浏览器的添加事件的函数
+    //element要绑定事件的元素对象 eventName是字符串而且不加on listener事件处理函数
+    function addEvent(element, eventName, listener) {
+        if (element.addEventListener) {
+            element.addEventListener(eventName, listener, false);
+        } else if (element.attachEvent) {
+            element.attachEvent("on" + eventName, listener);
+        } else {
+            //element.onclick = listener;
+            //element["onclick"] = listener;
+            element["on" + eventName] = listener;
+        }
+    }
+
+</script>
+</html>

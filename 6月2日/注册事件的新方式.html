@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn1">按钮</button>
+<button id="btn2">按钮</button>
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    //同一个对象身上的时间，会相互覆盖。
+
+    //1.事件类型 (字符串，不加On) 2.监听器 3.是否使用捕获
+ /*   btn2.addEventListener("click",function () {
+        alert("第一个人的代码");
+    },false);//添加事件监听器
+    btn2.addEventListener("click",function () {
+        alert("第二个人的代码");
+    },false);//添加事件监听器*/
+
+    //IE678
+    btn2.attachEvent("onclick",function () {
+     alert("第一个人的代码");
+    })
+    btn2.attachEvent("onclick",function () {
+        alert("第一个人的代码");
+    })
+
+
+
+</script>
+</body>
+</html>

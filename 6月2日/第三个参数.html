@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #father {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        #son {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="father">
+    <div id="son"></div>
+</div>
+<script>
+    var son = document.getElementById("son");
+    var father = document.getElementById("father");
+    var arr = [son, father, document.body, document.documentElement, document, window];
+    for (var i = 0; i < arr.length; i++) {
+        /*arr[i].onclick = function () {
+         console.log(this);
+         };//从子级到父级的过程 自下而上 冒泡的顺序*/
+        /*arr[i].addEventListener("click", function () {
+         console.log(this);
+         }, false);//不使用捕获的方式 也就是使用冒泡的顺序*/
+        arr[i].addEventListener("click", function () {
+            console.log(this);
+        }, true);//使用捕获的方式 自上而下 捕获的顺序
+
+    }
+
+</script>
+</body>
+</html>

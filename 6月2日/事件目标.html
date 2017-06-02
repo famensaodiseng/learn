@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button id= "btn">
+        按钮
+    </button>
+</div>
+</body>
+<script>
+    document.onclick = function (event) {
+        //alert("文档被点击");
+        var event= event || window.event;
+        //event.target//事件目标
+        var target  = event.target||event.srcElement;
+        console.log(target);
+
+    };
+</script>
+</html>

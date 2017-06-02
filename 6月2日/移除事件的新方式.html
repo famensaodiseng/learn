@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<button id="btn1">按钮</button>
+<button id="btn2">按钮</button>
+<script>
+    var btn1 = document.getElementById("btn1");
+    var btn2 = document.getElementById("btn2");
+    btn1.onclick = function () {
+        alert("第一个人的代码");
+    };
+    btn1.onclick = null;//同一个对象身上的同类事件 会相互抵消
+    function fn() {
+        alert("第一个人的代码");
+    }
+    btn2.addEventListener("click", fn, false);
+    //btn2.addEventListener("click", null, false);//因为事件是追加的 所以不会把之前的抵消
+    //btn2.removeEventListener("click", fn, false);
+    //btn2.attachEvent("onclick", fn);
+    //btn2.detachEvent("onclick", fn);
+
+</script>
+</body>
+</html>

@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
-<button id=  "btn">按钮</button>
+<button id="btn">
+    按钮
+</button>
 </body>
 <script>
     document.onclick = function () {
-        alert("文档被点击了");
-    }
+        alert("文档被点击了")
+    };
     var btn = document.getElementById("btn");
     btn.onclick = function (event) {
-        alert("按钮被点击了");
-        var event = event||window.event;
-        event.stopPropagation();
+        alert("按钮被点击");
+      var event = event ||window.event;
+      event.stopPropagation();
     };
+
 </script>
 </html>
