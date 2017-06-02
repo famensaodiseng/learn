@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //求N的阶乘
+    //getJC(n) = n*getJC(n-1);
+    function getJC(n) {
+        if(n===1){
+            return  1;
+        }
+        var jc = n * getJC(n-1);
+        return jc;
+    }
+    console.log(getJC(10));
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //简单类，就是有我想要的就可以。
+    //负向类。取反。就是有我想要的就可以
+
+    console.log(/[^abc]/.test("a"));//false;
+    console.log(/[^abc]/.test("d"));//true;
+
+    //范围类
+    console.log(/[a-z]/.test("a"));//所有小写字母
+    console.log(/[a-zA-z0-9]/.test(""));//范围
+
+
+</script>
+</html>

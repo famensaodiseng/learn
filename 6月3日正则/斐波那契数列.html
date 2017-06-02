@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function getFib(n) {
+        if(n ===1||n===2){
+            return 1;
+        }
+        var fib = getFib(n - 2) + getFib(n - 1);
+        return fib;
+    }
+    console.log(getFib(12));//144
+</script>
+</html>
