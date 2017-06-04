@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script>
+//        .html()方法,设置标签中间显示其他标签及内容,类似于innerHTML
+//        .text()方法,设置标签中间显示的文本内容,类似于innerText
+//        .val()方法.设置input标签中value的值,类似于value
+//        .css()方法,.设置元素的样式,类似于style
+
+    </script>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        //点击按钮设置div中的文字内容
+        $(function () {
+            $("#btn").click(function () {
+                //.text();如果小括号中写内容,就是设置文字内容
+                //如果.text();小括号什么也不写,表示的是获取这个元素中的文字内容
+                //$("#dv").text("这是一个div");//设置
+                //console.log($("#dv").text());//获取
+                //.text()方法相当于DOM中的innerText
+
+                //点击按钮的时候向div中添加一个p标签
+                //.html();小括号中可以直接写标签的字符串内容,就是设置div中的元素内容
+                //.html();小括号中什么也没有,表示的时候获取div中的元素内容
+
+//                $("#dv").html("<p>这是一个p标签</p>");
+//                console.log($("#dv").html());
+                //.html()方法相当于DOM中的innerHTML
+
+                //点击按钮设置文本框中的值
+//                $("#txt").val("哈哈,我又变帅了");
+//                console.log($("#txt").val());
+                /*
+                * .val()方法，小括号中写内容就是设置元素的value属性
+                * .val()方法,小括号中什么也不写,获取元素的value属性的值
+                * 就是元素的value属性
+                *
+                * */
+
+                //.css();方法,该方法如果只是设置一个样式的属性和值,那么这个方法写两个参数,第一个参数是属性,第二个参数是值
+                //$("#dv").css("backgroundColor","yellow");
+                //.css();方法,里面可以直接写键值对的方式
+//                $("#dv").css({"width":"300px","height":"200px","backgroundColor":"yellow"});
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id="btn"/>
+<input type="text" value="这是文本框" id="txt" />
+<div id="dv"></div>
+</body>
+</html>
