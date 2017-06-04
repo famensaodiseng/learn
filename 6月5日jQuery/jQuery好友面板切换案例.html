@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title></title>
+    <meta charset="UTF-8">
+    <style type="text/css">
+
+        #u1 li {
+            margin-bottom: 10px;
+            background-color: Orange;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+        #u1 li ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #u1 li ul li {
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+    $(function () {
+       $("#ul>li>ul>li").hide();
+
+    });
+    </script>
+</head>
+<body>
+
+<div style=" width:200px; height:500px; border:1px solid red;">
+    <ul id="u1" style=" list-style-type:none; margin:0; padding:0; text-align:center;">
+        <li>
+            幼儿园同学
+            <ul>
+                <li>鼻涕虫</li>
+                <li>爱哭鬼</li>
+                <li>张大胆</li>
+            </ul>
+        </li>
+        <li>小学同学
+            <ul>
+                <li>张三丰</li>
+                <li>张无忌</li>
+                <li>乔布斯</li>
+            </ul>
+        </li>
+        <li>
+            初中同学
+            <ul>
+                <li>盖茨</li>
+                <li>川普</li>
+                <li>奥巴马</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

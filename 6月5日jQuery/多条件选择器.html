@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #3CBD58;
+        }
+    </style>
+    <script src = "jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+        $("#btn").click(function () {
+           $("span,p,li,div").css("backgroundColor","red");
+        });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id = "btn">
+<span>这是一个span</span>
+<p>哈哈嘿嘿</p>
+<ul>
+    <li>爱疯</li>
+    <li>三星</li>
+    <li>手机</li>
+</ul>
+<div></div>
+</body>
+</html>
