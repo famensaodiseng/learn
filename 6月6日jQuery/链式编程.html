@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background-color: #3CBD58;
+        }
+    </style>
+    <script src = jquery-1.12.2.js></script>
+    <script>
+        //页面中有一个按钮，还有一个div，点击按钮的时候添加P标签，还有点击按钮的时候修改这个盒子的北京颜色
+    $(function () {
+       //获取按钮，调用点击事件，获取div设置p标签内容，点击按钮，再设置背景颜色
+        $("#btn").click(function () {
+         //  $("#dv").html("<p>这是一个P</p>");
+         //  $("#dv").css("backgroundColor","red");
+            $("#dv").html("<p>这是一个P</p>").css("backgroundColor","red");
+        //链式编程，就是对象.方法（），方法（）。
+            var obj=   $("#dv").html("<p>这是一个P</p>");
+            console.log(obj);
+        });
+    });
+    </script>
+</head>
+<body>
+<input type="button" value="显示效果" id = "btn">
+<div id="dv"></div>
+</body>
+</html>

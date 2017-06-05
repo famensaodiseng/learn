@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style-type: none;
+            width: 200px;
+            position: absolute;
+            left: 500px;
+        }
+
+        ul li {
+            margin-top: 10px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 20px;
+
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+    $(function () {
+       $("#uu>li").mouseenter(function () {
+           $(this).css("backgroundColor","red").siblings().css("backgroundColor","");
+       }).mouseleave(function () {
+            $(this).css("backgroundColor","").siblings().css("backgroundColor","");
+       }).click(function () {
+       // $(this).prevAll().css("backgroundColor","yellow");
+       // $(this).nextAll().css("backgroundColor","pink");
+           $(this).prevAll().css("backgroundColor","yellow").end().nextAll().css("backgroundColor","pink");
+    });
+    });
+    </script>
+</head>
+<body>
+<ul id = "uu">
+    <li>青岛啤酒（TsingTao）</li>
+    <li>瓦伦丁（Wurenbacher）</li>
+    <li>雪花（SNOW）</li>
+    <li>奥丁格教士（Franziskaner）</li>
+    <li>科罗娜喜力柏龙（Paulaner）</li>
+    <li>嘉士伯Kaiserdom</li>
+    <li>罗斯福（Rochefort）</li>
+    <li>粉象（Delirium）</li>
+    <li>爱士堡（Eichbaum）</li>
+    <li>哈尔滨牌蓝带</li>
+</ul>
+
+</body>
+</html>

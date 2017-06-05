@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background-color: red;
+        }
+        .cls {
+            background-color: green;
+        }
+    </style>
+    <script src = jquery-1.12.2.js></script>
+    <script>
+        $(function () {
+           //获取按钮
+            $("#btn").click(function () {
+              $("#dv").addClass("cls");
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="btn" id  =  "btn">
+<div id = "dv"></div>
+</body>
+</html>
