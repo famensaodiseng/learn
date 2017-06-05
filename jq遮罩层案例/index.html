@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery鼠标滑过图片显示说明遮罩层动画特效</title>
+<meta name="keywords" content="jQuery特效,鼠标滑过,鼠标悬停,遮罩层动画,jQuery hover,"/>
+<meta name="description" content="一款jQuery鼠标滑过图片显示说明遮罩层动画特效"/>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="web"> 
+  <div class="con">
+    <ul>
+      <li> <img src="picture/class1.jpg"/>
+        <div class="txt">
+          <h3>1111</h3>
+          <p>为学习之路</p>
+        </div>
+      </li>
+      <li> <img src="picture/class2.jpg"/>
+        <div class="txt">
+          <h3>2222</h3>
+          <p>英语一网打尽</p>
+        </div>
+      </li>
+      <li> <img src="picture/class3.jpg"/>
+        <div class="txt">
+          <h3>3333</h3>
+          <p>传授考证学习宝典</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript" src="jquery.js"></script> 
+<script type="text/javascript">
+$(".con ul li").hover(function(){
+	$(this).find(".txt").stop().animate({height:"198px"},400);
+	$(this).find(".txt h3").stop().animate({paddingTop:"60px"},400);
+},function(){
+	$(this).find(".txt").stop().animate({height:"45px"},400);
+	$(this).find(".txt h3").stop().animate({paddingTop:"0px"},400);
+})
+</script>
+</body>
+</html>
