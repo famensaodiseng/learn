@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            //slideUp和slideDown和slideToggle方法中都可以写参数
+            //参数:可以写数字类型  1000毫秒---1秒
+            //参数:字符串:  slow   normal  fast
+            //点击第一个按钮
+            $("#btn1").click(function () {
+                $("#dv").slideUp(1000);
+            });
+            //点击第二个按钮
+            $("#btn2").click(function () {
+                $("#dv").slideDown(1000);
+            });
+            //点击第三个按钮
+            $("#btn3").click(function () {
+                $("#dv").slideToggle(1000);
+            });
+
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="滑入" id="btn1"/>
+<input type="button" value="滑出" id="btn2"/>
+<input type="button" value="切换" id="btn3"/>
+<div id="dv"></div>
+</body>
+</html>

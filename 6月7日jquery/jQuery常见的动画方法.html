@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            //点击按钮 隐藏div
+            $("#btnHide").click(function () {
+                //$("#dv").hide();//隐藏
+                //hide方法中可以写参数:参数类型:1.数字类型,2字符串类型
+                //1数字类型:1000表示的是毫秒  ---1秒
+                //2字符串类型: "slow"  "normal"  "fast"
+                $("#dv").hide(1000);
+                //$("#dv").hide("normal");
+            });
+            $("#btnShow").click(function () {
+                //$("#dv").show();//显示
+                //show方法中可以写参数:参数类型:1.数字类型,2字符串类型
+                //1数字类型:1000表示的是毫秒  ---1秒
+                //2字符串类型: "slow"  "normal"  "fast"
+                //$("#dv").show(1000);
+                $("#dv").show("fast");
+            });
+        });
+
+    </script>
+</head>
+<body>
+<input type="button" value="隐藏" id="btnHide"/>
+<input type="button" value="显示" id="btnShow"/>
+<div id="dv"></div>
+</body>
+</html>

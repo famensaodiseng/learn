@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+            //slow  normal  fast
+            $("#btn1").click(function () {
+                $("#dv").fadeIn(1000);
+            });
+            //点击第二个按钮
+            $("#btn2").click(function () {
+                $("#dv").fadeOut(1000);
+            });
+            //点击第三个按钮
+            $("#btn3").click(function () {
+                $("#dv").fadeToggle(1000);
+            });
+
+            $("#btn4").click(function () {
+                //一秒钟 透明度达到0.3
+                $("#dv").fadeTo(1000,0);
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="淡入" id="btn1"/>
+<input type="button" value="淡出" id="btn2"/>
+<input type="button" value="切换" id="btn3"/>
+<input type="button" value="透明度变化" id="btn4"/>
+<div id="dv"></div>
+</body>
+</html>
