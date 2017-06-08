@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: #3CBD58;
+        }
+    </style>
+    <script src = "jquery-1.12.2.js"></script>
+    <script>
+        $(function () {
+           $("#dv").on("click","input",function (event) {
+              // console.log(arguments[0]);
+               console.log(event);
+              // event.currentTarget  ---input
+           });
+        });
+    </script>
+</head>
+<body>
+ <div id="dv">
+     <input type="button" value="显示效果" id= "btn">
+ </div>
+</body>
+</html>
