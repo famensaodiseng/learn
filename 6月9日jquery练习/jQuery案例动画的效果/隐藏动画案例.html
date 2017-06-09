@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 400px;
+        }
+        img{
+            width:90px ;
+            height:90px;
+            vertical-align: top;
+        }
+
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+
+    <script>
+//        $(function () {
+//            $("#btn1").click(function () {
+//                //回调函数
+//                $("div>img").hide(1000,function () {
+//                    alert("结束了");
+//                });
+//            });
+//
+//            $("#btn2").click(function () {
+//                //回调函数
+//                $("div>img").show(1000,function () {
+//                    alert("结束了====");
+//                });
+//            });
+//        });
+    </script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                //获取div,最后一个图片,隐藏
+                $("div>img").last("img").hide(800,function () {
+                    //arguments.callee相当于递归
+                    $(this).prev().hide(800,arguments.callee);
+                });
+            });
+            //显示
+            $("#btn2").click(function () {
+                $("div>img").first("img").show(800,function () {
+                    //arguments.callee相当于递归
+                    $(this).next().show(800,arguments.callee);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<input type="button" value="隐藏动画" id="btn1"/>
+<input type="button" value="显示动画" id="btn2"/>
+<div>
+    <img src="images/1.jpg"/>
+    <img src="images/2.jpg"/>
+    <img src="images/3.jpg"/>
+    <img src="images/4.jpg"/>
+</div>
+</body>
+</html>
