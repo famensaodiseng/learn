@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 20px;
+            width: 0%;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+<!--展示图片：-->
+<!--src:指定路径(资源定位--url):src请求的是外部文件，一般来说是服务器资源。意味着它需要向服务器发送请求，它占用服务器资源-->
+<!--<img src="../images/l1.jpg" alt="">-->
+
+<!--需求：即时预览：
+即时：当用户选择完图片之后就立刻进行预览的处理 >>onchange
+预览：通过文件读取对象的readAsDataURL()完成-->
+<form action="">
+    文件： <input type="file" name="myFile" id="myFile" onchange="getFileContent();"> <br>
+    <div></div>
+    <input type="submit">
+</form>
+<img src="" alt="">
+<script>
+    var div=document.querySelector("div");
+    /*FileReader:读取文件内容
+    * 1.readAsText():读取文本文件(可以使用Txt打开的文件)，返回文本字符串，默认编码是UTF-8
+    * 2.readAsBinaryString():读取任意类型的文件。返回二进制字符串。这个方法不是用来读取文件展示给用户看，而是存储文件。例如：读取文件的内容，获取二进制数据，传递给后台，后台接收了数据之后，再将数据存储
+    * 3.readAsDataURL():读取文件获取一段以data开头的字符串，这段字符串的本质就是DataURL.DataURL是一种将文件(这个文件一般就是指图像或者能够嵌入到文档的文件格式)嵌入到文档的方案。DataURL是将资源转换为base64编码的字符串形式，并且将这些内容直接存储在url中>>优化网站的加载速度和执行效率。
+    * abort():中断读取*/
+    function getFileContent(){
+       /*1.创建文件读取对象*/
+        var reader=new FileReader();
+        /*2.读取文件，获取DataURL
+        * 2.1.说明没有任何的返回值:void：但是读取完文件之后，它会将读取的结果存储在文件读取对象的result中
+        * 2.2.需要传递一个参数 binary large object:文件(图片或者其它可以嵌入到文档的类型)
+        * 2.3:文件存储在file表单元素的files属性中，它是一个数组*/
+        var file=document.querySelector("#myFile").files;
+        reader.readAsDataURL(file[0]);
+        /*获取数据*/
+        /*FileReader提供一个完整的事件模型，用来捕获读取文件时的状态
+        * onabort:读取文件中断片时触发
+        * onerror:读取错误时触发
+        * onload:文件读取成功完成时触发
+        * onloadend:读取完成时触发，无论成功还是失败
+        * onloadstart:开始读取时触发
+        * onprogress:读取文件过程中持续触发*/
+        reader.onload=function(){
+            //console.log(reader.result);
+            /*展示*/
+            document.querySelector("img").src=reader.result;
+        }
+
+        reader.onprogress = function (e) {
+            //var percent= e.loaded/ e.total*100+"%";
+            console.log(e);
+            div.style.width = percent;
+        };
+    }
+</script>
+</body>
+</html>
