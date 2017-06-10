@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .red{
+            color: red;
+        }
+        .green{
+            color: green;
+        }
+        .blue{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>请选择</li>
+    <li class="red">前端</li>
+    <li class="green">java</li>
+    <li class="blue">javascript</li>
+    <li id="c">c++</li>
+</ul>
+<script>
+    /*获取第一个li标签*/
+    window.onload=function(){
+        /*ElementsByTagName获取的是数组*/
+        /*索引：不直观 以后的数据都是从后台动态获取，前台动态生成添加*/
+        /*var cli=document.getElementsByTagName("li")[1];
+        console.log(cli);*/
+
+        /*query:查询  Selector：选择器   querySelector(传入选择器名称)*/
+        /*querySelector:获取单个元素，如果获取的元素不止一个，那么只会返回满足条件的第一个元素*/
+        /*参数要求：如果是类选择器，必须添加.  如果是id选择器， 必须添加# ,否则当成标签处理*/
+        var javaLi=document.querySelector(".green");
+        //var javaLi=document.querySelector("#c");
+        console.log(javaLi);
+
+        /*querySelectorAll获取满足条件的所有元素--数组*/
+        var allLi=document.querySelectorAll("li")[0];
+        console.log(allLi);
+    }
+</script>
+</body>
+</html>

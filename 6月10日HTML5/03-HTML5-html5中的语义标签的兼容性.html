@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        header{
+             display: block;
+             width: 100%;
+             height: 100px;
+             background-color: red;
+         }
+        nav{
+            display: block;
+            width: 100%;
+            height: 36px;
+            background-color: green;
+        }
+        /*IE9:行级元素在设置宽度的时候是失效
+        IE8:完全不支持语义标签(不支持html5):在IE8中，它不认识语义标签，所以无法解析这些标签，也就意味着所写的样式无效。*/
+        main{
+            /*将行级元素转换为块级元素*/
+            display: block;
+            width: 100%;
+            height: 500px;
+            background-color: #ccc;
+        }
+        main > article{
+            width: 80%;
+            height: 100%;
+            background-color: purple;
+            float: left;
+        }
+        main > aside{
+            width: 20%;
+            height: 100%;
+            background-color: pink;
+            float: right;
+        }
+        footer{
+            display: block;
+            width: 100%;
+            height: 80px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<!--第一种方式：手动创建标签-->
+
+<!--[if gte IE 8]>
+<script>
+    alert("这段js代码执行了");
+    document.createElement("header");
+    document.createElement("nav");
+    document.createElement("main");
+    document.createElement("article");
+    document.createElement("aside");
+    document.createElement("footer");
+</script>
+<![endif]-->
+
+<script>
+    /*手动创建标签:默认的标签的类型都是行级元素*/
+
+</script>
+<!--第二种方式：引入第三方插件-->
+<!--html5shiv.min.js:在默认情况下，IE8及以下的IE版本不支持HTML5,引入这个文件就可以做到兼容-->
+<!--<script src="../js/html5shiv.min.js"></script>-->
+<header>头部</header>
+<nav>导航</nav>
+<main>
+    <article>左边</article>
+    <aside>右边</aside>
+</main>
+<footer>底部</footer>
+<!--<div class="header"></div>
+<div class="nav"></div>
+<div class="mainContent">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+<div class="footer"></div>-->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <!--专业：
+    <select name="" id="">
+        <option value="1">前端与移动开发</option>
+        <option value="2">java</option>
+        <option value="3">javascript</option>
+        <option value="4">c++</option>
+    </select>-->
+    <!--不仅可以选择，还应该可以输入-->
+    <!--建立输入框与datalist的关联  list="datalist的id号"-->
+    专业：<input type="text" list="subjects"> <br>
+    <!--通过datalist创建选择列表-->
+    <datalist id="subjects">
+        <!--创建选项值：value:具体的值 label:提示信息，辅助值-->
+        <!--option可以是单标签也可以是双标签-->
+        <option value="英语" label="不会"/>
+        <option value="前端与移动开发" label="前景非常好"></option>
+        <option value="java" label="使用人数多"></option>
+        <option value="javascript" label="做特效"></option>
+        <option value="c" label="不知道"></option>
+    </datalist>
+
+    网址：<input type="url" list="urls">
+    <datalist id="urls">
+        <!--如果input输入框的type类型是url,那么value值必须添加http://-->
+        <option value="http://www.baidu.com" label="百度"></option>
+        <option value="http://www.sohu.com"></option>
+        <option value="http://www.163.com"></option>
+    </datalist>
+</form>
+</body>
+</html>
