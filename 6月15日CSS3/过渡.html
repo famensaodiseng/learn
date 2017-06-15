@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            background: red;
+            left: 100px;
+            top: 100px;
+            /*添加过渡样式的属性，。你要为那个属性设置*/
+            transition-property: left;
+            /*过渡耗时。过渡的时常*/
+            transition-duration: 2s;
+            /*过渡的函数*/
+            transition-timing-function: linear;
+            /*过渡效果，执行以后，默认会还原效果*/
+            transition-delay: 2s;
+
+
+
+
+            /*简写*/
+            transition: left 2s linear 0s;
+
+        }
+
+        div:active{
+            left: 1000px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
