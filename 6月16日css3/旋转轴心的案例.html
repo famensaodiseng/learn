@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .pkbox{
+            width: 155px;
+            height: 219px;
+            position: relative;
+            margin: 300px auto;
+        }
+        .pkbox >img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*添加过渡效果*/
+           transition: transform 3s;
+
+            /*添加轴心旋转*/
+            transform-origin:right top ;
+
+        }
+
+
+
+
+
+
+        /*添加旋转。*/
+        .pkbox:hover >img:nth-of-type(1){
+            transform: rotate(60deg);
+        }
+        .pkbox:hover >img:nth-of-type(2){
+            transform: rotate(120deg);
+        }
+        .pkbox:hover >img:nth-of-type(3){
+            transform: rotate(180deg);
+        }
+        .pkbox:hover >img:nth-of-type(4){
+            transform: rotate(240deg);
+        }
+        .pkbox:hover >img:nth-of-type(5){
+            transform: rotate(300deg);
+        }
+        .pkbox:hover >img:nth-of-type(6){
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+<div class="pkbox">
+    <img src="images/pk1.png" alt="">
+    <img src="images/pk2.png" alt="">
+    <img src="images/pk1.png" alt="">
+    <img src="images/pk2.png" alt="">
+    <img src="images/pk1.png" alt="">
+    <img src="images/pk2.png" alt="">
+</div>
+</body>
+</html>

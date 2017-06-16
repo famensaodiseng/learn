@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin-left: 200px;
+            margin-top:10px;
+            /*添加过渡*/
+            transition: transform 2s;
+        }
+        /*添加三维移动--3D移动*/
+        div:first-of-type:active{
+            /*translate3d(X方向的偏移，Y方向的偏移，Z方向的偏移)*/
+            /*transform: translate3d(400px,0,0);*/
+            /*transform: translate3d(400px,400px,0);*/
+            transform: translate3d(0px,0px,400px);
+        }
+        /*添加三维缩放*/
+        div:nth-of-type(2):active{
+            /*scale3d(x方向上的缩放，y方向的缩放，z方向的缩放)
+            >1.01 放大   <0.99 缩小*/
+            /*transform:scale3d(2,0.5,10);*/
+            transform:scale3d(1,1,10);
+        }
+        /*添加三维旋转*/
+        div:nth-of-type(3):active{
+            /*rotate3d(x,y,z,angle):
+            x:代表x轴方向上的一个向量值
+            y:代表y轴方向上的一个向量值
+            z:代表z轴方向上的一个向量值*/
+            transform: rotate3d(1,1,1,330deg);
+        }
+    </style>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<div>4</div>
+</body>
+</html>
