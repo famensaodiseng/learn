@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 882px;
+            height: 86px;
+            margin:100px auto;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        div >ul{
+            width: 200%;
+            list-style: none;
+            /*1.设置的名称*/
+            animation-name: move;
+            /*2.设置动画的耗时*/
+            animation-duration: 7s;
+            /*3.市场无限循环*/
+            animation-iteration-count: infinite;
+            /*4.设置时间函数*/
+            animation-timing-function: linear;
+        }
+
+        div > ul > li{
+            width:126px;
+            float: left;
+        }
+        div > ul > li　> img{
+            width:100%;
+        }
+        /*鼠标上移，停止动画*/
+        div:hover > ul{
+            cursor: pointer;
+            animation-play-state: paused;
+        }
+
+        /*创建动画*/
+        @keyframes move {
+            from{
+                transform:translateX(0);
+            }
+            to{
+                transform:translateX(-882px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/6.jpg" alt=""></li>
+        <li><img src="images/7.jpg" alt=""></li>
+        <li><img src="images/1.jpg" alt=""></li>
+        <li><img src="images/2.jpg" alt=""></li>
+        <li><img src="images/3.jpg" alt=""></li>
+        <li><img src="images/4.jpg" alt=""></li>
+        <li><img src="images/5.jpg" alt=""></li>
+        <li><img src="images/6.jpg" alt=""></li>
+        <li><img src="images/7.jpg" alt=""></li>
+    </ul>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /*添加动画*/
+            /*1.animation-name 指定动画名称*/
+            animation-name: moveTest;
+            /*设置动画总耗时*/
+           animation-duration: 3s;
+            /*设置动画的播放次数，默认为1次，infinite永无至尽的*/
+            animation-iteration-count: infinite;
+            /*4.交替动画*/
+            animation-direction: alternate;
+            /*设置动画的延迟*/
+            animation-delay:2s;
+            /*设置动画结束 时的状态*/
+            /*默认情况下动画结束以后，会回到原始状态*/
+            animation-fill-mode: both;
+        }
+        /*创建动画*/
+        @keyframes  moveTest {
+            /*百分比就是整个动画耗时的百分比*/
+            0%{ /*也可以写from*/
+            transform: translate(0,0 );
+            }
+           20%{
+                transform: translate(200px,100px );
+            }
+            50%{
+                 transform: translate(400px,135px );
+             }
+            80%{
+                 transform: translate(40px,-410px );
+             }
+            100%{  /*也可以写to*/
+                 transform: translate(710px,210px );
+             }
+
+        }
+    </style>
+</head>
+<body>
+<div>
+
+</div>
+</body>
+</html>

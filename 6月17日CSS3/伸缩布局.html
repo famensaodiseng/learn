@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 1000px;
+            height: 200px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+
+            /*伸缩布局*/
+            display: flex;
+            /*justify-content: flex-start;*/
+            /*justify-content: flex-end;*/
+            /*justify-content: center;*/
+            /*justify-content: space-between;*/
+            justify-content: space-around;
+            /*justify-content: inherit;*/
+        }
+        .first{
+            width: 200px;
+            height: 100%;
+            background-color: red;
+
+        }
+        .second{
+            width: 200px;
+            height: 100%;
+            background-color: green;
+
+        }
+        .third{
+            width: 200px;
+            height: 100%;
+            background-color: #bd18b6;
+        }
+        .fourth {
+            width: 200px;
+            height: 100%;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="first">1</div>
+    <div class="second">2</div>
+    <div class="third">3</div>
+    <div class="fourth">4</div>
+</div>
+</body>
+</html>
