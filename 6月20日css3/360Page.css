@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#360Page{
+
+}
+.section{
+    overflow: hidden;
+}
+/*第一屏样式*/
+ .first{
+     padding-top: 80px;
+ }
+.first .logo{
+     background: url("images/logo.png");
+     height: 186px;
+     width: 251px;
+     margin: 0 auto;
+ }
+.first .text{
+    text-align: center;
+    width: 100%;
+    margin-top: 80px;
+}
+.first .text > img   {
+    margin:0 20px;
+    opacity: 0.2;
+    transition: margin 1s,opacity 1s;
+}
+.first .intro{
+    background: url("images/info_1.png");
+    height: 49px;
+    width: 772px;
+    margin: 40px auto;
+}
+.first.current .text > img   {
+     margin:0 5px;
+    /*添加过渡效果*/
+    opacity: 1;
+ }
+
+/*第二屏样式*/
+.second{
+
+}
+.second >div {
+    display: flex;
+    /*设置主轴方向上的排列方式*/
+    justify-content: space-around;
+    align-items: center;
+}
+.second .shield{
+    width: 440px;
+    font-size: 0;
+}
+.second .info {
+    width: 635px;
+    height: 309px;
+    background: url("images/info_2.png");
+}
+.second .shield>img{
+    /*添加过渡效果*/
+    transition: transform 1s;
+}
+.second .shield >img:nth-of-type(1){
+    transform: translate(100px,100px) rotate(30deg);
+}
+.second .shield >img:nth-of-type(2){
+    transform: translate(100px,100px) rotate(40deg);
+}
+.second .shield >img:nth-of-type(3){
+    transform: translate(-100px,100px) rotate(30deg);
+}
+.second .shield >img:nth-of-type(4){
+    transform: translate(100px,200px) rotate(340deg);
+}
+.second .shield >img:nth-of-type(5){
+    transform: translate(200px,100px) rotate(210deg);
+}
+.second .shield >img:nth-of-type(6){
+    transform: translate(-180px,100px) rotate(-130deg);
+}
+.second .shield >img:nth-of-type(7){
+    transform: translate(130px,100px) rotate(190deg);
+}
+.second .shield >img:nth-of-type(8){
+    transform: translate(-200px,100px) rotate(-300deg);
+}
+.second .shield >img:nth-of-type(9){
+    transform: translate(160px,-100px) rotate(30deg);
+}
+/*添加第二屏过渡效果*/
+.second.current .shield >img{
+    transform: none;
+}
+/*第三瓶*/
+.third{
+    position: relative;
+}
+.third .info{
+    width: 631px;
+    height: 278px;
+    background: url("images/info_3.png");
+    position: absolute;
+    /*定位的参照是父容器的宽高*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-100%,-50%);
+
+}
+.third .circle {
+    height: 449px;
+    width: 453px;
+    background: url("images/circle.png");
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(120%,-50%);
+}
+.third .circle>.rocket{
+    height: 204px;
+    width: 203px;
+    background: url("images/rocket.png");
+    position: absolute;
+    left: -600px;
+    top: 700px;
+    transition: left 1s, top 1s;
+}
+/*添加第三屏动画*/
+.third.current .circle>.rocket{
+    left:125px;
+    top: 125px;
+}
+
+/*第四屏样式*/
