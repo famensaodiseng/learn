@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .jd_banner {
+            width: 300px;
+            overflow: hidden;
+            /*默认不可见*/
+            visibility: hidden;
+            position: relative;
+        }
+        .jd_bannerImg {
+            overflow: hidden;
+            position: relative;
+        }
+        .jd_bannerImg >li {
+            float: left;
+            width: 100%;
+            position: relative;
+        }
+        .jd_bannerImg >li img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id = "jd_banner" class="jd_banner">
+    <!--图片-->
+    <ul class="jd_bannerImg">
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l1.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l2.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l3.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l4.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l5.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l6.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l7.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="javascript:;">
+                <img src="./uploads/l8.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+
+</div>
+<input type="button" value="上一张" id = "prev">
+<input type="button" value="下一张" id = "next">
+</body>
+<script src= "swipe.js"></script>
+<script>
+    window.mySwipe = Swipe(document.getElementById("jd_banner"),{
+        auto:2000
+    });
+    document.getElementById("prev").onclick =function () {
+        window.mySwipe.prev();
+    }
+    document.getElementById("next").onclick =function () {
+        window.mySwipe.next();
+    }
+</script>
+</html>

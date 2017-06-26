@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <!--如果页面加载使用了jquery或者zepto，那么可以选择swiper.jquery.min.js-->
+    <link rel="stylesheet" href="./swiper/dist/css/swiper.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container{
+            width: 300px;
+        }
+        ul {
+            list-style: none;
+        }
+        .swiper-container {
+            width: 300px;
+        }
+        .swiper-slide img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id = "jd_banner" class="swiper-container">
+    <!--图片-->
+    <ul class="swiper-wrapper">
+        <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l1.jpg" alt="">
+            </a>
+        </li>
+       <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l2.jpg" alt="">
+            </a>
+        </li>
+         <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l3.jpg" alt="">
+            </a>
+        </li>
+         <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l4.jpg" alt="">
+            </a>
+        </li>
+         <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l5.jpg" alt="">
+            </a>
+        </li>
+         <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l6.jpg" alt="">
+            </a>
+        </li>
+         <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l7.jpg" alt="">
+            </a>
+        </li>
+         <li class ="swiper-slide">
+            <a href="javascript:;">
+                <img src="./uploads/l8.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+
+</div>
+</body>
+<script src="./swiper/dist/js/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper (".swiper-container",{
+        autoplay:1000,
+        loop:true
+    });
+</script>
+</html>
