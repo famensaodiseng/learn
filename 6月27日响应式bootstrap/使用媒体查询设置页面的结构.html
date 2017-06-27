@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>媒体查询设置页面结构</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 100%;
+            height: 200px;
+            background-color: #CCCCCC;
+        }
+        .box >div{
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            box-sizing: border-box;
+            border-right: 2px solid blue;
+            border-bottom: 2px solid blue;
+            float: left;
+        }
+        /*需求  当屏幕小于768，子元素快递为父容器的100%。*/
+        /*宽度在768-992之间放2个元素*/
+        /*宽度在992-1200的时候放置3个元素*/
+        /*宽度》1200的时候放置4个元素*/
+        @media screen and (min-width: 768px){
+            .box >div{
+                width: 50%;
+            }
+        }
+         @media screen and (min-width: 992px){
+            .box >div{
+                width: 33.33%;
+            }
+        }
+         @media screen and (min-width: 1200px){
+            .box >div{
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class = "box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</div>
+</body>
+</html>

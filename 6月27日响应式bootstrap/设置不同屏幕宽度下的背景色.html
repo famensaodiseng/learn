@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        /*添加媒体查询，设置不同屏幕宽度下的背景色*/
+        @media screen and (max-width: 768px){
+            body{
+                background-color: green;
+            }
+        }
+        /*w768-992*/
+        @media screen and (min-width: 768px) and (max-width: 992px){
+            body{
+                background-color: blue;
+            }
+        }
+         @media screen and (min-width:992px) and (max-width: 1200px){
+            body{
+                background-color:pink;
+            }
+        }
+          @media screen and (min-width:1200px) {
+            body{
+                background-color:yellow;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!--需求-->
+<!--默认情况下，body的背景色是red-->
+<!--w<768 green-->
+<!--w768-992blue-->
+<!--w992-1200 pink-->
+<!--w>1200 purple-->
+
+</body>
+</html>

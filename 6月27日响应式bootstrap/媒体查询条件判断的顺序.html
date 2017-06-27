@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: red;
+        }
+        @media screen and (min-width: 768px){
+            body{
+                background-color: green;
+            }
+        }
+        @media screen and (min-width: 992px){
+            body{
+                background-color: blue;
+            }
+        }
+         @media screen and (min-width: 1200px){
+            body{
+                background-color: pink;
+            }
+        }
+        /*当你判断最小值，并且从小到大进行判断，*/
+        /*向上兼容，向下覆盖，宽度更大的样式会将前面宽度更小的样式覆盖*/
+    </style>
+</head>
+<body>
+
+<!--
+w<768 red
+w768-992 green
+w992-1200 blue
+w>1200 pink-->
+
+
+
+<!--书写建议-->
+<!--1.如果是判断最小值，那么应该从小到大写-->
+<!--2.如果是判断最大值，那么就应该从大到小写-->
+</body>
+</html>
