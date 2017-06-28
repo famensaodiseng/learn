@@ -1,0 +1,54 @@
+/*注释  才会编译*/
+/*变量  @变量名:值; */
+a {
+  color: #e92322;
+}
+/*混入:可以将一个定义好的样式引入到另外一个样式中  类似于函数的调用*/
+/*.addRadius{
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}*/
+/*相当于定义一个函数的参数*/
+div {
+  width: 200px;
+  height: 200px;
+  /*引入已经写好的圆角样式*/
+  /*传入参数*/
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+/*嵌套:实现选择器的继承，可以减少代码量，同时使用代码结构更加清晰*/
+.jd_header {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+.jd_header > div {
+  width: 100%;
+}
+.jd_header > div::before {
+  content: "";
+}
+.jd_header > div > a {
+  text-decoration: underline;
+}
+.jd_header > div > a:hover {
+  text-decoration: none;
+}
+.jd_header > div > h3 {
+  height: 20px;
+}
+.jd_header > div ul {
+  list-style: none;
+}
+/*
+.jd_header{}
+.jd_header > div{}
+.jd_header > div > h3{}
+.jd_header > div > h3::before{}
+.jd_header > div > a{}
+.jd_header > div > a:hover{}*/

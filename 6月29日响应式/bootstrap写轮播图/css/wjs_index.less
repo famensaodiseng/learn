@@ -1,0 +1,115 @@
+/*定义变量*/
+@baseColor:#e92322;
+
+/*头部块样式*/
+.wjs_header{
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+  .row{
+    height: 100%;
+    text-align: center;
+    > div:nth-of-type(-n+3){
+      border-right: 1px solid #ccc;
+      > .wjs_code{
+        position: relative;
+        display: block;
+        > img{
+          display: none;
+          position: absolute;
+          top: 49px;
+          left: 50%;
+          transform: translateX(-50%);
+          border: 1px solid #ccc;
+          border-top:none;
+        }
+        &:hover{
+          > img{
+            display: block;
+          }
+        }
+      }
+    }
+    >div:nth-last-of-type(1){
+      > .btn-danger{
+        background-color: @baseColor;
+        border-color: @baseColor;
+      }
+      > .btn{
+        padding:3px 15px;
+      }
+      > .btn-link{
+        color: #333;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/*导航样式*/
+.wjs_nav{
+  &.navbar{
+    margin-bottom: 0;
+  }
+  .navbar-brand{
+    height: 80px;
+    line-height:50px;
+    > .wjs_icon{
+      font-size: 40px;
+    }
+    > span:first-of-type{
+      color: @baseColor;
+    }
+    > span:last-of-type{
+      color: #333;
+    }
+  }
+  /*修改导航项的样式*/
+  .navbar-nav{
+    > li{
+      > a{
+        line-height: 50px;
+        font-size: 16px;
+      }
+      > a:hover,a:focus{
+        color: #777;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+    .active{
+      > a,a:hover,a:focus{
+        background-color:transparent;
+        border-bottom: 3px solid @baseColor;
+      }
+    }
+  }
+
+  .navbar-toggle{
+    margin-top:23px;
+  }
+}
+
+/*轮播图样式*/
+.wjs_banner{
+  .mobileImg{
+    width: 100%;
+    display: block;
+  }
+  .mobileImg > img{
+    width: 100%;
+    display: block;
+  }
+  .pcImg{
+    width: 100%;
+    height: 410px;
+    display: block;
+    /*设置背景图片了*/
+
+    /*设置图片居中显示*/
+    background-position: center center;
+    /*设置背景图片的大小*/
+    background-size: cover;
+  }
+}

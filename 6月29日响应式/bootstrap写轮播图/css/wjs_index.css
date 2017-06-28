@@ -1,0 +1,100 @@
+/*定义变量*/
+/*头部块样式*/
+.wjs_header {
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.wjs_header .row {
+  height: 100%;
+  text-align: center;
+}
+.wjs_header .row > div:nth-of-type(-n+3) {
+  border-right: 1px solid #ccc;
+}
+.wjs_header .row > div:nth-of-type(-n+3) > .wjs_code {
+  position: relative;
+  display: block;
+}
+.wjs_header .row > div:nth-of-type(-n+3) > .wjs_code > img {
+  display: none;
+  position: absolute;
+  top: 49px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.wjs_header .row > div:nth-of-type(-n+3) > .wjs_code:hover > img {
+  display: block;
+}
+.wjs_header .row > div:nth-last-of-type(1) > .btn-danger {
+  background-color: #e92322;
+  border-color: #e92322;
+}
+.wjs_header .row > div:nth-last-of-type(1) > .btn {
+  padding: 3px 15px;
+}
+.wjs_header .row > div:nth-last-of-type(1) > .btn-link {
+  color: #333;
+}
+.wjs_header .row > div:nth-last-of-type(1) > .btn-link:hover {
+  text-decoration: none;
+}
+/*导航样式*/
+.wjs_nav {
+  /*修改导航项的样式*/
+}
+.wjs_nav.navbar {
+  margin-bottom: 0;
+}
+.wjs_nav .navbar-brand {
+  height: 80px;
+  line-height: 50px;
+}
+.wjs_nav .navbar-brand > .wjs_icon {
+  font-size: 40px;
+}
+.wjs_nav .navbar-brand > span:first-of-type {
+  color: #e92322;
+}
+.wjs_nav .navbar-brand > span:last-of-type {
+  color: #333;
+}
+.wjs_nav .navbar-nav > li > a {
+  line-height: 50px;
+  font-size: 16px;
+}
+.wjs_nav .navbar-nav > li > a:hover,
+.wjs_nav .navbar-nav > li a:focus {
+  color: #777;
+  border-bottom: 3px solid #e92322;
+}
+.wjs_nav .navbar-nav .active > a,
+.wjs_nav .navbar-nav .active a:hover,
+.wjs_nav .navbar-nav .active a:focus {
+  background-color: transparent;
+  border-bottom: 3px solid #e92322;
+}
+.wjs_nav .navbar-toggle {
+  margin-top: 23px;
+}
+/*轮播图样式*/
+.wjs_banner .mobileImg {
+  width: 100%;
+  display: block;
+}
+.wjs_banner .mobileImg > img {
+  width: 100%;
+  display: block;
+}
+.wjs_banner .pcImg {
+  width: 100%;
+  height: 410px;
+  display: block;
+  /*设置背景图片了*/
+  /*设置图片居中显示*/
+  background-position: center center;
+  /*设置背景图片的大小*/
+  background-size: cover;
+}
