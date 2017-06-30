@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        .product-container{
+            width:100%;
+            height:400px;
+        }
+        .product-container .left,.product-container .right{
+            float:left;
+        }
+        .product-container .right{
+            width:500px;
+        }
+
+        .product-container .right{
+            margin-left: 10px;
+        }
+        .product-container .right div{
+            display: inline-block;
+        }
+
+        .product-container .topic{
+            width:100%;
+            margin-top: 5px;
+            margin-bottom:10px;
+        }
+
+        .product-container .topic .title{
+            color:gray;
+            width:70px;
+        }
+
+        .product-container .topic .data[labelName]{
+            border:1px solid #B8B7BD;
+            padding:2px 5px;
+            cursor: pointer;
+        }
+        .product-container .topic .data[labelName]:hover{
+            border-color:red;
+        }
+
+        .product-container .addcart{
+            background-color: red;
+            color:white;
+            padding:5px 10px;
+            cursor: pointer;
+        }
+        .product-container input{
+            width:60px;
+        }
+
+        .cart-container{
+            clear:left;
+        }
+
+
+    </style>
+    <script src="jquery-2.1.4.js"></script>
+</head>
+<body>
+<div class="product-container">
+    <div class="left">
+        <img src="" alt=""/>
+    </div>
+    <div class="right">
+        <div class="topic">
+            <div class="title">版本</div>
+            <div class="data" labelName="version"></div>
+        </div>
+        <div class="topic">
+            <div class="title">网络类型</div>
+            <div class="data" labelName="netType"></div>
+        </div>
+        <div class="topic">
+            <div class="title">机身颜色</div>
+            <div class="data" labelName="color"></div>
+        </div>
+        <div class="topic">
+            <div class="title">套餐类型</div>
+            <div class="data" labelName="taocanType"></div>
+        </div>
+        <div class="topic">
+            <div class="title">内存</div>
+            <div class="data" labelName="ram"></div>
+        </div>
+        <div class="topic">
+            <div class="title">数量</div>
+            <div class="data"><input type="text"/>件</div>
+        </div>
+        <div class="topic">
+            <div class="addcart">加入购物车</div>
+        </div>
+    </div>
+</div>
+<div class="cart-container">
+购物车商品数量：<span class="count">0</span>件
+</div>
+</body>
+<script>
+    //苹果手机
+    var iphone={
+        version:"非合约6s plus",
+        ram:"16GB",
+        color:"金色",
+        netType:"移动2G3G4G",
+        taocanType:"官方标配",
+        imgSrc:"6s plus.jpg"
+    };
+    //购物车
+    var cart={
+        productCount:0
+    };
+
+    //页面对象
+    var productInfo={
+        /**
+         * 页面初始化
+         */
+        init:function(){
+            //this：productInfo
+            //绑定DOM
+            //this.bindDom();
+            productInfo.bindDom();
+            //绑定事件
+            productInfo.bindEvents();
+        },
+        /**
+         * 用来将对象数据显示在页面中
+         */
+        bindDom:function(){
+            //for...in：用来遍历对象的属性
+            for (var attName in iphone) {
+                if(attName!="imgSrc"){
+                    $(".product-container .data[labelName="+attName+"]").html(iphone[attName]);
+                }
+
+            }
+
+
+
+            //绑定iphone对象的imgSrc属性
+            //$().attr("src")：用来获取src属性
+            //$().attr("src","1.jpg")：用来设置属性
+            $(".product-container img").attr("src",iphone.imgSrc);
+            //iphone.version
+            //1、先查找具有product-container样式的元素
+            //2、对上面找出的结果查找他的子孙元素
+            //3、这些子孙元素都具有data这个样式
+            // --这些子孙元素还有labelName这个自定义属性，并且自定义属性的值是version
+            /*$(".product-container .data[labelName=version]").html(iphone.version);
+            //iphone.version
+            $(".product-container .data[labelName=ram]").html(iphone.ram);
+            //iphone.version
+            $(".product-container .data[labelName=netType]").html(iphone.netType);
+            //iphone.version
+            $(".product-container .data[labelName=taocanType]").html(iphone.taocanType);
+            //iphone.color
+            $(".product-container .data[labelName=color]").html(iphone.color);*/
+
+        },
+        bindEvents:function(){
+            //绑定购物车按钮的click事件
+            $(".addcart").on("click",function(){
+                var $cartCount=$(".cart-container .count");
+                //1、先要获取需要购买的iphone数量
+                var count=$(".product-container input").val();//是字符串
+                count=parseInt(count);
+                if(isNaN(count)){
+                    count=0;
+                }
+                //2、还要获取购物车已有的商品数量
+                var cartCount=$cartCount.html();//字符串
+                cartCount=parseInt(cartCount);
+                if(isNaN(cartCount)){
+                    cartCount=0;
+                }
+                //3、更新购物车商品数量
+                cartCount+=count;//"0"+"555"="0555"
+
+                $(".product-container input").val("");
+                $cartCount.html(cartCount);
+            });
+        },
+        addCart:function(){
+
+        }
+
+    };
+
+    productInfo.init();
+</script>
+</html>

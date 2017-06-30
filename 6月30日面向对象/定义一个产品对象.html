@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //属性和名称
+
+//    我们一般讲属性放在上面，
+//    将方法放下下面
+    function Product(){
+        this.name = ''
+        this.price = ''
+        this.description = ''
+        this.comments = ''
+    }
+        Product.prototype ={
+//        购买
+        buy:function () {},
+//            添加到购物车
+        addCart:function () {}
+    }
+    var iphone6s = new Product()
+    iphone6s.price = "4888.8"
+    iphone6s.name = "乱七八糟的一段注释"
+    iphone6s.comments = "6222"
+
+    console.log(iphone6s.name);
+</script>
+</html>
