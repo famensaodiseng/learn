@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="" id="txt" cols="30" rows="10"></textarea>
+</body>
+<script>
+//    要求在textarea中写代码，并且实时的执行该代码
+    var txt =document.getElementById("txt");
+    txt.onkeyup = function () {
+//        console.log(this.value);
+        try{
+            eval(this.value);
+        }catch (e){
+            console.log(e);
+        }
+    };
+
+</script>
+</html>

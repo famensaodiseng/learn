@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function max () {
+        var args = arguments;  //为了减少代码的瓶邪错误
+        var maxNum = args[ 0 ] ;
+        for (var i=1;i<args.length;i++){
+            if(maxNum<args[i]){
+                maxNum=args[i];
+            }
+        }
+        return maxNum;
+    }
+    console.log( max(1,232,65,6,56,32,4,12,22));
+</script>
+</html>
