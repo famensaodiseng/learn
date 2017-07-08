@@ -8,9 +8,13 @@
 
 </body>
 <script>
-    function foo() {}
-//        函数也是一个对象，也就是说foo也是对象
-        console.log(foo.length);
+    //in 运算符
 
+    if (!'a' in window){
+        var a = 123;
+
+    }
+    console.log(a);
+    //打印出 undefined
 </script>
 </html>

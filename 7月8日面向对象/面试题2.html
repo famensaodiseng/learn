@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var num = 123;
+    function num () {
+        console.log(456);
+    }
+    num();
+
+
+    function  num() {
+        console.log(456);
+    }
+    var num = 123;
+    num();
+
+
+/*
+* 分析；
+* 代码运行的时候需要预解析。首先观察有两个声明，一个是变量。
+* num，另一个是函数num声明，从上往下预解析，看到变量num记录下来，在全局变量中有一个变量叫num
+* 往下继续走，看到函数num.
+* 声明一个以函数名同名的变量。但是该变量已经存在，这里是重复声明。
+*2.开始执行代码，首先执行的事复制语句，给num赋值为123，此时
+*
+* */
+</script>
+</html>
