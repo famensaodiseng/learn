@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    #container{
+        width: 400px;
+        min-height: 300px;
+        background-color: lightgreen;
+        margin: auto;
+        padding: 10px;
+        text-align: center;
+    }
+    #container li{
+        list-style: none;
+        text-align: left;
+    }
+    </style>
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btn").click(function(){
+                var code = $("#code").val();
+                $.ajax({
+                    // url : 'https://sp0.baidu.com/9_Q4sjW91Qh3otqbppnN2DJv/pae/channel/data/asyncqury',
+                    url : 'http://study.com/0715/ems.php',
+                    data : {code:code},
+                    jsonp:'cb',
+                    dataType:'jsonp',
+                    success:function(data){
+                        if(data.data.info.status == 0){
+                            $("#info").html(data.msg);
+                            return ;
+                        }
+                        var ems = data.data.info.context;
+                        var tag = '<ul>';
+                        $.each(ems,function(i,e){
+                            var time = e.time;
+                            // 2015年12月12日 上午10:39:20
+                            var t = new Date();
+                            t.setTime(time + '000');
+                            var date = t.getFullYear() + '年' + (t.getMonth()+1) + '月' + t.getDay() + '日' + (t.getHours() > 12?' 下午':' 上午') + (t.getHours()%12) + ':' + t.getMinutes() + ':' + t.getSeconds();
+                            tag += '<li><div>'+date+'</div><div>'+e.desc+'</div></li>'
+                        });
+                        tag += '</ul>';
+                        $("#info").html(tag);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="container">
+        快递单号：<input type="text" name="code" id="code">
+        <input type="button" value="查询" id="btn">
+        <div id="info"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> 原生的</title>
+	<script src = "./template.js"></script>
+	<script>
+	window.onload= function(){
+		function success(data){
+
+			//这里就相当于回调函数
+			var title = data.title;
+			var books = data.books;
+			var tag ='<h1>'+title+'<h1>';
+			for(var i=0;i<books.length;i++){
+				tag +='<div>'+books[i]+'</div>';
+			}
+			var con = document.getElementById('container');
+			con.innerHTML = tag;
+		}
+		var data ={
+			title:'图书信息',
+			books:['三国演义','水浒传','红楼梦','西游记']
+		}
+		success(data); 
+	}
+		
+	</script>
+</head>
+<body>
+	<div id="container"></div>
+</body>
+</html>

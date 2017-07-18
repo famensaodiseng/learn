@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>智能搜索提示</title>
+	<style>
+	#container {
+		width: 400px;
+		min-height:300px;
+		background-color: lightgreen;
+		margin:auto;
+		text-align: center;
+		padding: 10px;
+	}
+	#container ul {
+		margin: 0;
+	}
+	#cpontainer li{
+		list-style: none;
+		background-color: lightGray;
+		text-align:left;
+		padding-left: 45px;
+		height: 25px;
+		line-height: 25px;
+		cursor:pointer;
+
+			}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<input type="text" name="keyword" id = "keyword">
+		<input type="button" value="搜索" id = "query">
+		<div id="info"></div>
+	</div>
+</body>
+<script src = "./jquery.js"></script>
+<script>
+	$(function(){
+		$("#keyword").keyup(function(){
+			var kw = $(this).val();
+			$.ajax({
+				 url:'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+				 jsonp:'cb',
+				 data:{wd:kw},
+				 dataType:'jsonp',
+				 success:function(data){
+				 	var sug = data.s;
+				 	var tag ='ul';
+				 	$.each(sug,function(i,e){
+				 		tag += '<li>'+e+'</li>'
+				 	});
+				 tag += '</ul>';
+				 $("info").html(tag);
+				 $("info").find("li").hover(function(){
+				 	$(this).css('backgroundColor',"lightblue");
+				 },function(){
+					$(this).css('backgroundColor',"lightgray");
+				 });
+				 }
+			});
+
+		});
+	});
+</script>
+</html>

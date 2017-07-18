@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h4>计算数组最小值</h4>
+	<script>
+		var arr = [32,26,262,46,454,62,323];
+	var min_val = arr[0];
+	var min_key = 0;
+	 for (var i = 0;i<arr.length;i++){
+	 if(arr[i]<min_val){
+	 min_val = arr[i];
+	 min_key = i;
+	 }
+	 }
+	 console.log('最小值为'+min_val,'最小下标为:'+min_key);
+	</script>
+	
+</body>
+</html>

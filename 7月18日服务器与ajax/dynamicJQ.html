@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#btn").click(function(){
+                $.ajax({
+                    type:"get",
+                    url:"http://study.com/0715/dynamicJQ.php",
+                    dataType:"jsonp",
+                    jsonp:"abc",
+                    jsonpCallback:"love",
+                    success:function(data){
+                        console.log(data);
+                    }
+                })
+            })
+        })    
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+</html>
