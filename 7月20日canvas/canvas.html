@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--<style type="text/css">
+        #deom {
+            width: 600px;
+            height: 600px;
+        }
+    </style>-->
+</head>
+<body>
+    <canvas id="deom"  >
+        您的浏览器不支持canvas请升级浏览器
+    </canvas>
+    <!--画布-->
+    <script>
+     //拿到画布对象
+    var canvas = document.getElementById("deom");
+   canvas.width = 600;
+   canvas.height = 600;
+    //取得这个对象的控制权
+   //var ctx = canvas.getContext("2d");//只能在这个控制权中操作2d图形，如果要操作3d，应该传入webgl
+   canvas.style.backgroundColor = "red";
+   // canvas.style.border = "1px solid #000";
+  // canvas默认是300*150的宽高、
+    </script>
+</body>
+</html>

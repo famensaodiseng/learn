@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "demo">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("demo");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		ctx.moveTo(100,100);						
+		ctx.lineTo(400,100);						
+		ctx.lineTo(400,200);						
+		ctx.lineTo(100,200);
+		ctx.closePath();
+		ctx.stroke();		
+
+
+
+		//绘制一个填充的矩形
+		
+		ctx.beginPath();
+		ctx.moveTo(100,400);						
+		ctx.lineTo(600,500);						
+		ctx.lineTo(600,500);						
+		ctx.lineTo(300,500);
+		ctx.closePath();
+		ctx.fill();	
+	</script>
+</body>
+</html>

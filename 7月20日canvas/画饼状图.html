@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "demo">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("demo");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		var data = [{
+			"value":.4,
+			"color":"red",
+			"title":"周杰伦"
+		},{
+			"value":.2,
+			"color":"blue",
+			"title":"冰糖雪梨"
+		},{
+			"value":.3,
+			"color":"pink",
+			"title":"那英"
+		},{
+			"value":.1,
+			"color":"green",
+			"title":"许嵩"
+		}];		
+		var cenX= canvas.width/2;
+		var cenY = canvas.height/2;
+		var beginAngle=0;
+		var endAngle=0;
+		for(var i=0;i<=data.length;i++){
+			ctx.beginPath();
+			ctx.moveTo(cenX,cenY);
+			  endAngle += data[i].value * 360;
+
+			ctx.arc(cenX,cenY,200,beginAngle*Math.PI/180,endAngle*Math.PI/180);
+			ctx.fillStyle = data[i].color;
+			ctx.fill();
+			beginAngle =endAngle;
+		}
+
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>案例</title>
+</head>
+<body>
+	<canvas id = "demo"></canvas>
+	<script>
+		var canvas = document.getElementById("demo");
+		canvas.width = 600;
+		canvas.height = 600;
+		canvas.style.border = "1px solid #000";
+		var ctx = canvas.getContext("2d");
+
+
+		//画第一条线
+		ctx.beginPath();
+		ctx.moveTo(100,100);
+		ctx.lineTo(200,100);
+		ctx.strokeStyle = "red";
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(200,200);
+		ctx.lineTo(300,200);
+		ctx.strokeStyle = "blue";
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.moveTo(100,300);
+		ctx.lineTo(200,300);
+		ctx.strokeStyle = "green";
+		
+		
+
+		ctx.stroke();
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制圆弧</title>
+</head>
+<body>
+	<canvas id = "demo">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("demo");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+	//	ctx.arc(300,300,200,0,1); 
+		//弧度=角度*π/180
+	//	ctx.stroke(); 		
+	ctx.moveTo(300,300);
+	ctx.arc(300,300,200,0,30*Math.PI/180);
+	ctx.fill();					
+	</script>
+</body>
+</html>

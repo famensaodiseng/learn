@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>画线</title>
+</head>
+<body>
+	<canvas id = "demo">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("demo");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		
+		//开始画线
+		//1.0找到起始点。
+		ctx.moveTo(100,100);
+		//2.0设计一条线到结束点。
+		ctx.lineTo(200,100);
+		ctx.lineTo(100,200);
+		//闭合
+		ctx.closePath();
+		//3.0将线描边出来
+		
+
+		//设置描边的颜色
+		ctx.strokeStyle = "red";
+		//4.0给图形设置一个填充色
+		ctx.fillStyle = "blue";
+		//设置描边的宽度
+		ctx.lineWidth = 4;
+
+	
+		ctx.fill();
+		ctx.stroke();
+			
+	</script>
+</body>
+</html>
