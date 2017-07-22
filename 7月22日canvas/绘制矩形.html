@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		//1.rect
+		ctx.strokeStyle = "red";
+		ctx.fillStyle = 'red';
+		ctx.rect(100,20,200,100);
+		ctx.stroke();
+
+		//2.strokeRect
+		ctx.beginPath();
+		ctx.strokeStyle = "green";
+		ctx.fillStyle="green";
+		ctx.strokeRect(100,140,200,100);	
+		//3.fillRect
+		ctx.beginPath();
+		ctx.strokeStyle="blue";
+		ctx.fillStyle="blue";
+		ctx.fillRect(100,260,200,100);
+					
+	</script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	function toAngle ( radian ) {
+		return radian * 180 / Math.PI; 
+	}
+	function toRadian ( angle ) {
+		return angle * Math.PI / 180;
+	}
+
+
+
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+	var x0= cas.width/2,
+		y0= cas.height/2;
+		//绘制第一张饼
+		// ctx.fillStyle="green";
+		// ctx.moveTo(x0,y0);
+		// ctx.arc(x0,y0,100,toRadian(-90),toRadian(30));
+		// ctx.fill();
+
+		// ctx.beginPath();
+		// ctx.fillStyle="red";
+		// ctx.moveTo(x0,y0);
+		// ctx.arc(x0,y0,100,toRadian(30),toRadian(150));
+		// ctx.fill();
+
+		// ctx.beginPath();
+		// ctx.fillStyle="blue";
+		// ctx.moveTo(x0,y0);
+		// ctx.arc(x0,y0,100,toRadian(150),toRadian(270));
+		// ctx.fill();
+
+
+
+		//
+		var colors = "red,green,blue".split(',');
+		var starAngle = -90;
+		for(var i=0;i<3;i++){
+			ctx.beginPath();
+			ctx.fillStyle = colors[i];
+			ctx.moveTo(x0,y0);
+			ctx.arc(x0,y0,100,
+				toRadian(starAngle),toRadian(starAngle+=120));
+			ctx.fill();
+		}
+
+		//没做完
+	</script>
+</body>
+</html>

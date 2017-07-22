@@ -5,11 +5,20 @@
 	<title></title>
 </head>
 <body>
-	<canvas id = "demo">
+	<canvas id = "cas">
 		
 	</canvas>
 	<script>
-	var canvas= document.getElementById("demo");
+	function toAngle ( radian ) {
+		return radian * 180 / Math.PI; 
+	}
+	function toRadian ( angle ) {
+		return angle * Math.PI / 180;
+	}
+
+
+
+	var canvas= document.getElementById("cas");
 		canvas.width =600;
 		canvas.height =600;
 		canvas.style.border ="1px solid #000";

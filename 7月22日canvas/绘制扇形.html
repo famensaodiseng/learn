@@ -9,29 +9,28 @@
 		
 	</canvas>
 	<script>
+	function toAngle ( radian ) {
+		return radian * 180 / Math.PI; 
+	}
+	function toRadian ( angle ) {
+		return angle * Math.PI / 180;
+	}
+
 	var canvas= document.getElementById("demo");
 		canvas.width =600;
 		canvas.height =600;
 		canvas.style.border ="1px solid #000";
 		var ctx = canvas.getContext("2d");
-		ctx.moveTo(100,100);						
-		ctx.lineTo(400,100);						
-		ctx.lineTo(400,200);						
-		ctx.lineTo(100,200);
+		//绘制一个-90到-30度的扇形
+
+		var x0 = demo.width/2;
+			y0= demo.height/2;
+			radius = 100;
+		ctx.moveTo(x0,y0);
+		ctx.arc(x0,y0,radius,toRadian(-90),toRadian(-30))	;
 		ctx.closePath();
-		ctx.stroke();		
+		ctx.stroke();
 
-
-
-		//绘制一个填充的矩形
-		
-		ctx.beginPath();
-		ctx.moveTo(100,400);						
-		ctx.lineTo(600,500);						
-		ctx.lineTo(600,500);						
-		ctx.lineTo(300,500);
-		ctx.closePath();
-		ctx.fill();	
 	</script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		ctx.fillRect(100,250,100,80);
+		ctx.fillRect(250,150,100,80);
+		ctx.beginPath();
+		ctx.fillStyle= "red";
+		ctx.fillRect(150,160,150,100);
+		//擦除
+		ctx.clearRect(260,170,30,10);							
+		ctx.clearRect(160,170,20,150);							
+	</script>
+</body>
+</html>

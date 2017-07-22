@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		//处理角度和弧度的计算
+		function tiAngle (radian){
+			return radian*180/Math.PI;
+		}					
+		function toRadian (angle){
+			return angle *Math.PI/180;
+		}
+
+	// 绘制出, 圆心在 canva 正中心, 半径为 100, 角度从 -60度 到 120 度的圆弧
+		var x=cas.width/2;
+			y=cas.height/2;
+			r=100;
+			start =-60;
+			end =120;
+
+			ctx.moveTo(x,y);
+			ctx.arc(x,y,r,toRadian(start),toRadian(end));
+			ctx.closePath();
+			ctx.stroke();
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		//在100,100的地方绘制文字
+		//在100,300的地方绘制文字
+		//绘制参考点
+		ctx.fillStyle = "red";
+		ctx.arc(100,100,4,0,2*Math.PI);						
+		ctx.arc(100,300,4,0,2*Math.PI);	
+		ctx.fill();
+
+
+
+		ctx.beginPath();
+
+
+		ctx.font = "30px consolas"
+		ctx.fillStyle = "black";
+		ctx.fillText("hellow javascript",100,100);					
+		ctx.strokeText("hellow javascript",100,300);					
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		//从100，100移动到400,100
+		var x= 100,
+			y=100,
+			w=100,
+			h=100,
+			step=3;
+			var intervalId= setInterval(function(){
+				ctx.clearRect(x,y,w,h);
+				x+=step;
+				if(x>=400){
+					x=400;
+					clearInterval(intervalId);
+				}
+				ctx.fillRect(x,y,w,h);
+				ctx.fillStyle="red";
+			},30);
+	</script>
+</body>
+</html>

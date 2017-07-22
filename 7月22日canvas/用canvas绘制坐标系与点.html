@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制坐标系与点</title>
+	<style>
+		canvas {
+			border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas width="600" height = "600" id = "cas"></canvas>
+</body>
+<script>
+	var cas = document.getElementById("cas");
+	var ctx = cas.getContext("2d");
+
+	//一般有两种方法存储这些点
+	//1.使用数组，然后每一个点又构成数组。
+	//2.直接使用数组，偶数表示x,奇数表示y。
+	var padding = 30;
+	var x0=  padding;
+	y0= cas.height-padding;
+	var arrowHeight = 20;
+	var arrowWidth = 20;
+	var maxX= cas.width-padding *2-arrowHeight,
+	maxY= cas.height-padding*2-arrowHeight;
+	//绘制直线。
+	ctx.moveTo(x0,y0);
+	ctx.lineTo(x0+maxX+arrowHeight,y0);
+	ctx.moveTo(x0,y0);
+	ctx.lineTo(x0,y0-maxY-arrowHeight);
+	ctx.stroke();
+	//绘制箭头
+	ctx.beginPath();
+	//绘制x的
+	ctx.moveTo(x0+maxX+arrowHeight,y0);
+	ctx.lineTo(x0+maxX,y0-arrowWidth/2);
+	ctx.lineTo(x0+maxX+arrowHeight/2,y0);
+	ctx.lineTo(x0+maxX,y0+arrowWidth/2);
+	ctx.closePath();
+
+	//绘制Y的
+	ctx.moveTo(x0,padding);
+	ctx.lineTo(x0-arrowWidth/2,padding+arrowHeight);
+	ctx.lineTo(x0,padding+arrowHeight/2);
+	ctx.lineTo(x0+arrowWidth/2,padding+arrowHeight);
+	ctx.closePath();
+
+	ctx.fill();
+
+	//绘制点
+		var data1 = [ [ 10, 20 ], [ 15, 13 ], [ 17, 30 ], [ 30, 10 ], [ 20, 15 ] ];
+
+	// 排序
+	for ( var i = 0; i < data1.length - 1; i++ ) {
+		for ( var j = 0; j < data1.length - 1 - i; j++ ) {
+			if ( data1[ j ][ 0 ] > data1[ j + 1 ][ 0 ] ) {
+				var t = data1[ j ][ 0 ];
+				data1[ j ][ 0 ] = data1[ j+1 ][ 0 ];
+				data1[ j+1 ][ 0 ] = t;
+			}
+		}
+	}
+
+
+	var data3 = []; // 用于存储计算后的坐标.
+
+	// 需要计算出最大值, 和比例
+	var dataMaxX = Math.max.apply(null, data1.map( function ( v ) { return v[ 0 ]}));
+
+	var dataMaxY = data1[ 0 ][ 1 ];
+	for ( var i = 0; i < data1.length; i++ ) {
+		if ( dataMaxY < data1[ i ][ 1 ] ) {
+			dataMaxY = data1[ i ][ 1 ]
+		}
+	}
+
+
+
+	// 使用循环绘制点
+ 	ctx.beginPath();
+ 	ctx.fillStyle = 'red';
+
+	for ( var i = 0; i < data1.length; i++ ) {
+		// 每一个点 都是 边长为 8 的小矩形
+		var tmpX = data1[ i ][ 0 ],
+			tmpY = data1[ i ][ 1 ];
+		// 此时得到的是数据中的参考坐标
+
+		// 实际在 Canvas 中的坐标应该 比上 maxXY = 数据中的坐标 比上 dataMaxXY
+
+		// 转换成 Canvas 中的坐标
+		tmpX = tmpX * maxX / dataMaxX;
+		tmpY = tmpY * maxY / dataMaxY;
+
+
+		// 将坐标原点从左上角转换到坐标轴的原点
+		tmpX = tmpX + x0;
+		tmpY = y0 - tmpY;
+
+
+		// ctx[ [ 'moveTo', 'lineTo' ][ i==0?0:1 ] ]( tmpX, tmpY );
+		data3.push( [ tmpX, tmpY ] );
+
+
+
+		ctx.moveTo( tmpX - 4, tmpY - 4 );
+		ctx.lineTo( tmpX + 4, tmpY - 4 );
+		ctx.lineTo( tmpX + 4, tmpY + 4 );
+		ctx.lineTo( tmpX - 4, tmpY + 4 );
+		ctx.closePath();
+	}
+	ctx.fill();
+
+
+	// 连线
+	ctx.beginPath();
+
+	ctx.strokeStyle = 'red';
+	data3.forEach( function ( v ) {
+		ctx[ [ 'moveTo', 'lineTo' ][ i==0?0:1 ] ]( v[ 0 ], v[ 1 ] );
+	});
+	ctx.stroke();
+
+
+</script>
+</html>
