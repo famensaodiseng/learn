@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id = "cas">
+		
+	</canvas>
+	<script>
+	var canvas= document.getElementById("cas");
+		canvas.width =600;
+		canvas.height =600;
+		canvas.style.border ="1px solid #000";
+		var ctx = canvas.getContext("2d");
+		function Rect (config){
+			this.ctx=config.ctx;
+			this.x = config.x;
+			this.y = config.y;
+			this.width = config.width;
+			this.height = config.height;
+			this.lineWidth =config.lineWidth;
+			this.strokeStkye =config.strokeStkye;
+			this.fillStyle = config.strokeStkye;
+
+		}	
+		Rect.prototype = {
+			constructor:Rect,
+			stroke:function(){
+				var ctx = this.ctx;
+				ctx.lineWidth =this.lineWidth;
+				if(this.strokeStkye){
+					ctx.strokeStkye = this.strokeStkye;
+				}
+				ctx.strokeRect(this.x,this.y,this.width,this.height);
+			},
+			fill:function(){
+				var ctx = this.ctx;
+				ctx.lineWidth =this.lineWidth;
+				if(this.fillStkye){
+					ctx.fillStkye = this.fillStkye;
+				}
+				ctx.fillRect(thi.x,this.y,this,width.this.height);
+			}
+		}	
+		var rect1 =new Rect({
+			ctx:ctx,
+			y:10,
+			x:10,
+			width:100,
+			height:50,
+			strokeStkye:"red",
+			lineWidth:10
+		});
+		rect1.stroke();
+	</script>
+</body>
+</html>

@@ -14,22 +14,26 @@
 		canvas.height =600;
 		canvas.style.border ="1px solid #000";
 		var ctx = canvas.getContext("2d");
-		//从100，100移动到400,100
-		var x= 100,
-			y=100,
-			w=100,
-			h=100,
-			step=3;
-			var intervalId= setInterval(function(){
-				ctx.clearRect(x,y,w,h);
-				x+=step;
-				if(x>=400){
-					x=400;
-					clearInterval(intervalId);
-				}
-				ctx.fillRect(x,y,w,h);
-				ctx.fillStyle="red";
-			},30);
+		var step =10;
+		var start = 100;
+		while ( true ) {
+
+		if ( start >= 500 ) break;
+
+		// 绘制虚线的 实线部分
+		ctx.moveTo( start, 100 );
+		ctx.lineTo( start+=step, 100 )
+
+		// 绘制空白部分
+		start+=step;
+
+	}
+
+
+
+
+	ctx.stroke();
+				
 	</script>
 </body>
 </html>

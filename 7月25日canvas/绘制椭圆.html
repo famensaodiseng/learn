@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制椭圆</title>
+	<style>
+	canvas {
+		border: 1px solid black;
+	}
+	</style>
+</head>
+<body>
+	<canvas width="600" height="400" id  = "cas"></canvas>
+</body>
+<script>
+	//处理弧度与角度的计算
+	function toAngle(radian){
+		return radian *180 /Math.PI;
+	}
+	function toRadian (angle){
+		return angle *Math.PI/180;
+	}
+	var cas = document.getElementById('cas');
+	var ctx = cas.getContext('2d');
+	//绘制一个圆，在画布的左半边
+	var x1 =cas.width/4;
+	var y1 = cas.height/2;
+	var radius1 = 100;
+
+	ctx.strokeStyle = 'red';
+	ctx.arc(x1,y1,radius1,0,2*Math.PI);
+	ctx.stroke();
+
+
+	//2.在右半边绘制一个等大的圆
+	//1.讲x圆心坐标增加三倍
+	ctx.beginPath();
+	ctx.scale(0.5,1);
+	ctx.strokeStyle = "green";
+	ctx.arc( x1, y1, radius1, 0, 2 * Math.PI );
+
+	ctx.stroke();
+</script>
+</html>

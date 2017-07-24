@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src = "js/konva.js"></script>
+</head>
+<body>
+	
+	<div id="dv"></div>
+</body>
+<script>
+//konvas是一个完全面向对象的框架，将所有的东西都看做是对象，
+	//
+	//konva是一个命名空间
+	//所有的构造函数都是他的成员
+	//创建舞台使用konva.Stage参数必须有width,height,container
+
+	var stage = new Konva.Stage({
+		width:600,
+		height:400,
+		container:'dv'
+	});
+	var layer = new Konva.Layer();
+	//在层中创建矩形
+	var rect= new Konva.Rect({
+		x:100,
+		y:100,
+		width:200,
+		height:100,
+		fill:"blue"
+	});
+	//将矩形放置到层中
+	//使用add方法
+	layer.add(rect);
+	stage.add(layer);
+</script>
+</html>
