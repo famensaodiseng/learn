@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>注册页面</title>
+	<style>
+	.f1{
+		font-weight: bold;
+		color: red;
+	}
+	a {
+		color: pink;
+	}
+	</style>
+	<script>
+	var name = prompt("请输入你的名字");
+	var welcome = "欢迎来到我的世界"+name;
+	alert(welcome);
+	document.write("<h1>"+welcome+"</h1>");
+</script>
+</head>
+<body>
+	<h1>注册页面</h1>
+	<hr />
+	<form action="111.php" method="get">
+	 <p>用户名：<input type="text" name="username" /></p>
+	 <p>密码：<input type="password" name="password" /></p>
+	 <p>性别：男:<input type="radio" checked="checked"  name="gender"/> 
+	 女:<input type="radio" name="gender"/></p>
+	 <p>
+	 	<span class = "f1">爱好：</span>
+	 	爬山<input type="checkbox" name = "hobby"/>
+	 	唱歌<input type="checkbox" name = "hobby" checked="checked" />
+	 	打游戏<input type="checkbox" name = "hobby"/>
+	 	旅游<input type="checkbox" name = "hobby"	checked="checked"/>
+	 	画画<input type="checkbox" name = "hobby"/>
+	 </p>
+	 <p>籍贯:
+	 <select name="" id="">
+	 	<option value="">陕西省</option>
+	 	<option value="">甘肃省</option>
+	 	<option value="">河南省</option>
+	 	<option value="">山西省</option>
+	 </select>	
+	 <select name="" id="">
+	 	<option value="">太原市</option>
+	 	<option value="">兰州市</option>
+	 	<option value="" selected="selected">西安市</option>
+	 	<option value="">宝鸡市</option>
+	 </select>	
+	 </p>	
+	 <p>
+	 	<p>自我评价：</p>
+	 	<textarea name="" id="" cols="30" rows="10">请输入自我评价</textarea>
+	 </p>
+	 <p>
+	 	<input type="submit" value="提交" />
+	 	<input type="reset" value="重置" />
+	 </p>
+	</form>
+	友情链接：<a href="http://www.baidu.com">谷歌</a>
+</body>
+
+</html>
