@@ -1,0 +1,1 @@
+window.onload=function(){searchEffect(),timeBack(),bannerEffect()},setIndicator(index),setTimeout(function(){isEnd=!0,clearInterval(timerId),startTime()},100);
