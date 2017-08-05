@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angular加一</title>
+</head>
+<!--约定，需要在我们的页面上加上ng-app属性
+在angualr中我们以ng-开头的为指令-->
+<body ng-app>
+<!--获取文本框的值-->
+<input type="text" id = "num" ng-model="val">
+<input ng-click = "val=(val-0) +1" type="button" id = "add" value="值+1">
+</body>
+<script src = "angular.js"></script>
+<script>
+
+</script>
+</html>

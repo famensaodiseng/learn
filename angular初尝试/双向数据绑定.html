@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向数据绑定</title>
+</head>
+<body ng-app="hello">
+<div ng-controller="helloController">
+    <input type="text" ng-model="name">
+    <h1>hello:{{name}}</h1>
+    <input type="button" ng-click="setName()" value="设置$scope.name的值">
+    <input type="button" ng-click="getName()" value="设置$scope.name的值">
+</div>
+
+</body>
+<script src= "angular.js"></script>
+<script>
+    //创建模块
+    var app=angular.module('hello',[])
+    //创建控制器
+    app.controller('helloController',function($scope) {
+        //初始化数据模型
+        $scope.name ="小明"
+
+        //初始化行为模型
+        $scope.getName = function() {
+            console.log($scope.name)
+        }
+        $scope.setName =function() {
+            $scope.name="小红"
+        }
+    })
+</script>
+</html>
