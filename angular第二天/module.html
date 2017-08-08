@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>controller</title>
+</head>
+<body ng-app="window">
+    <div ng-controller="demoController">{{testName}}</div>
+</body>
+<script src= "libs/angular.js"></script>
+<script>
+  var win = angular.module('window',[])
+//    console.log(tmp);
+//    angular.module('stack',[])
+    win.controller('demoController',function($scope) {
+    $scope.testName="小明"
+    })
+</script>
+</html>
+
+

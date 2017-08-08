@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向对象的方法</title>
+</head>
+<body ng-app="myApp">
+<div ng-controller="demoController as obj">
+    <p>{{myname}}</p>
+    <p>{{obj.name}}</p>
+</div>
+
+</body >
+<script src = "libs/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[])
+    //angular会吧这两个参数当做构造函数使用
+    app.controller('demoController',function($scope) {
+        $scope.myname='小红'
+        this.name='小明'
+//    面向对象的方式创建控制器
+    })
+</script>
+</html>

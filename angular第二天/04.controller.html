@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app='myApp'>
+    <div ng-controller="demoController">
+        {{msg}}
+        <!--使用ng-bind指令，作用与表达式类似，是写在标签的属性位置。
+         -->
+        <p ng-bind="msg"></p>
+    </div>
+
+</body>
+<script src= "libs/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[])
+    //回调函数就写在数组的最后一个元素上，
+    app.controller('demoController',['$scope',"$log",function($scope,$log) {
+        $scope.msg="hello word"
+        $log.log('哈哈哈哈')
+    }])
+</script>
+</html> 

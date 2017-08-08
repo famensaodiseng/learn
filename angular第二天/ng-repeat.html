@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>repeat</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <ul>
+            <!--ng-repeat遍历生成数据-->
+            <li ng-repeat="item in users">
+            {{item.name}},{{item.age}}
+            </li>
+        </ul>
+    </div>
+</body >
+<script src = "libs/angular.js"></script>
+<script>
+    var app=angular.module('myApp',[])
+    app.controller('demoController',['$scope',function ($scope) {
+    $scope.users= [
+        {name:'小明',age:23},
+        {name:'小花',age:65},
+        {name:'小强',age:18},
+        {name:'小污',age:12},
+        {name:'狗蛋',age:34},
+
+    ]
+    }])
+</script>
+</html>

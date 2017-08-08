@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show.hide</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="demoController">
+        <!--ng-show控制元素显示和隐藏-->
+        <p ng-show="true">我是中国人</p>
+        &nbsp;
+        <p ng-hide="false">我是陕西人</p>
+        <button ng-click="showOrHide()">显示/隐藏</button>
+    </div>
+</body>
+<script src="libs/angular.js"></script>
+<script>
+    var app = angular.module('myApp',[])
+    app.controller('demoController',['$scope',function ($scope) {
+            $scope.isShowing=true;
+            $scope.showOrHide=function () {
+                $scope.isShowing =!$scope.isShowing
+            }
+    }])
+</script>
+</html>

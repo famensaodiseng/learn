@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加法计算器</title>
+</head>
+<body ng-app="myapp" ng-controller="caclController">
+<input type="text" ng-model="A">+
+<input type="text" ng-model="B">
+<input type="button" value="=" ng-click="add()">
+<input type="text" ng-model="result">
+</body>
+<script src = "libs/angular.js"></script>
+<script>
+    var app= angular.module('myapp',[])
+    app.controller('caclController',function($scope) {
+    $scope.A=0
+    $scope.B=0
+    $scope.result=0
+    $scope.add=function () {
+        $scope.result =  ($scope.A-0 )+ ($scope.B-0)
+    }
+
+    })
+
+
+//    数据模型的改变，会影响内容的显示。
+    //我们改变了文本框的值，数据模型也就发生了改变。
+
+</script>
+</html>

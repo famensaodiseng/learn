@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body ng-app="hello" >
+<div ng-controller="helloController">
+    <input type="text" ng-model="name">
+    <h1>hellp:{{name}}</h1>
+    <input type="button" ng-click="getName()" value="得到getName的值">
+    <input type="button" ng-click="setName()" value="设置setName的值">
+</div>
+</body>
+<script src= "libs/angular.js"></script>
+<script>
+    //创建模块
+    var app = angular.module("hello",[])
+    //创建控制器
+    app.controller('helloController',function ($scope) {
+        $scope.name="小明"
+        $scope.getName=function () {
+            console.log($scope.name);
+        }
+         $scope.setName=function () {
+            $scope.name="小红"
+        }
+
+    })
+</script>
+</html>
