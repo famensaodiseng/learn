@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src= "vue1026.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model:value="msg">
+
+
+
+    <!--场景举例-->
+    <form action="#">
+        账号：<input type="text" v-model.trim="uname" number>
+        密码：<input type="text" v-model.trim="upwd" number>
+        <button @click="login">登录</button>
+    </form>
+    </div>
+</body> 
+<script>
+    var vm=new Vue ({
+        el:"#app",
+        data:{
+            msg:'我哎租出',
+            uname:'',
+            upwd:''
+        },
+        methods:{
+            login:function () {
+                //实现登录逻辑
+                //1.0获取文本框的值
+                alert("uname="+this.uname+",pwd="+this.upwd);
+            }
+        }
+    });
+</script>
+</html>

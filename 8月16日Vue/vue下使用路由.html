@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue1026.js"></script>
+    <script src="vue-router1.0.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="#" v-link="{path:'/login'}">登录</a>
+        <a href="#" v-link="{path:'/register/200'}">注册</a>
+        <router-view></router-view>
+    </div>
+</body>
+<script>
+    //开始路由的规则
+    var App=Vue.extend({});
+    var login=Vue.extend({
+        template:'<h1>登录页面<h1>'
+    });
+    var register=Vue.extend({
+        template:'<h1>注册页面{{id}}<h1>',
+        data:function () {
+            return{
+                id:0
+            }
+        },
+        created:function () {
+            this.id=this.$route.params.id;
+        }
+    });
+
+    //设定路由规则
+    var router =new VueRouter();
+    router.map({
+        'login':{component:login},
+        'register/:id':{component:register}
+    });
+    //开启路由
+    router.start(App,'#app');
+
+
+    router.redirect({'/':'login'});
+</script>
+</html>

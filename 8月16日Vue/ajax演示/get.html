@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue1026.js"></script>
+    <script src="../vue-resource121.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{obj |json}}
+        <button @click='getdata'>get请求</button>
+    </div>
+</body>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            obj:null
+        },
+    methods:{
+            getdata:function () {
+                //1.0请求的url
+                var url= ''
+                this.$http.get(url)//发出请求
+                    .then(function (response) {
+                       response.body;
+                    })//获取服务器响应回来的数据
+            }
+    }
+    });
+</script>
+</html>

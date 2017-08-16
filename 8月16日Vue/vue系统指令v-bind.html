@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-bind:value="name">
+        <input type="text" :value="name">
+        <!--v-bind 的缩写:-->
+        <a v-bind="{href:'http://www.baidu.com/index/a'+id}">跳转 </a>
+    </div>
+</body>
+<script src="vue1026.js"></script>
+<script>
+        new Vue({
+        el:'#app',
+        data:{
+            name:'法门扫地僧',
+            id:1
+        }
+    });
+</script>
+</html>
