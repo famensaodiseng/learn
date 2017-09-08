@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>尚合官网</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    ul{
+            list-style: none;
+        }
+    .header{
+        height: 62px;
+        border-bottom: 1px solid #e1e1e1;
+    }
+     .header-in{
+         width: 980px;
+         height: 62px;
+         margin: 0 auto;
+        }
+     .logo{
+         width: 179px;
+         height: 25px;
+         float: left;
+         background: url(images/logo.png);
+         margin-top: 20px;
+     }
+        .search{
+            width: 199px;
+            height: 31px;
+            float: right;
+            margin-top: 20px;
+            margin-right: 8px;
+        }
+        .search input{
+            width: 158px;
+            height: 31px;
+            border: none;
+            background: url(images/input.png) no-repeat;
+            outline:none;
+            color: #111;
+            padding-left:8px;
+            float: left;
+        }
+        .search button{
+            width: 33px;
+            height: 31px;
+            background: url(images/button.png);
+            border:none;
+            outline:none;
+            float: left;
+        }
+        .nav{
+            height: 55px;
+            background: url(images/nav-bg.png);
+        }
+        .nav-in{
+            width: 980px;
+            height: 55px;
+            margin: 0 auto;
+        }
+       .nav-in li{
+           width: 130px;
+           height: 55px;
+           text-align: center;
+           line-height:55px ;
+           float: left;
+           list-style: none;
+           background: url(images/nav-line.png) no-repeat right;
+       }
+     .nav-in a{
+           font:700 14px "微软雅黑";
+           text-decoration: none;
+           color: #000000;
+         }
+        .nav-in a:hover{
+            color: aquamarine;
+        }
+        .banner{
+            width: 980px;
+            margin: 0 auto;
+        }
+        .notice{
+            height: 29px;
+            background-color: #fbfbfb;
+            border-top: 1px solid #efefef;
+            border-bottom: 1px solid #efefef;
+        }
+        .notice-in{
+            width: 980px;
+            height: 29px;
+            margin: 0 auto;
+            line-height: 29px;
+        }
+        .notice-in  p {
+            font-size: 12px;
+            float: left;
+        }
+    .notice-in  p a{
+        color: #000;
+        text-decoration: none;
+    }
+    .notice-in  p a:hover{
+        color: #91bb35;
+    }
+    .notice-in span{
+        float: right;
+        margin-top: 5px;
+    }
+     .main{
+         width: 980px;
+         height: 228px;
+         margin:14px auto 50px auto;
+
+        }
+        .product{
+            width: 310px;
+            height: 224px;
+            border: 1px solid #efefef;
+            float: left;
+        }
+        .news{
+            width: 373px;
+            height: 224px;
+            border: 1px solid #efefef;
+            float: left;
+            margin-left: 12px;
+        }
+        .net{
+            width: 267px;
+            height: 224px;
+            border: 1px solid #efefef;
+            float: right;
+        }
+        .main h4{
+            height: 38px;
+            line-height: 38px;
+            font-size: 12px;
+            color: greenyellow;
+            margin-left: 6px;
+            background: url(images/arrow.png) no-repeat left center;
+            padding-left: 22px;
+        }
+        .more{
+            float: right;
+            margin-right: 20px;
+            text-decoration: none;
+            color: black;
+
+        }
+        .pic{
+            text-align: center;
+        }
+        .news ul{
+            padding: 0px 22px;
+        }
+        .news ul li {
+
+            height: 27px;
+            line-height: 27px;
+            border-bottom: 1px dashed #dcdcdc;
+        }
+        .news ul a{
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        .news ul a:hover{
+            color: #91bb35;
+        }
+        .news  .hot{
+            color: red;
+            font-weight: 700;
+        }
+        .net ul {
+            padding: 0 22px;
+        }
+        .net li {
+            height: 14px;
+            line-height: 14px;
+            border-left: 2px solid #98c823;
+            margin-bottom: 8px;
+        }
+        .net a{
+            text-decoration: none;
+            color: #666666;
+            margin-left:5px;
+        }
+        .net ul a:hover{
+        color: #91bb35;
+    }
+        .net p{
+            font-size: 12px;
+            color: #666666;
+            padding: 40px 22px 0;
+            line-height: 22px;
+        }
+        .footer{
+            background-color: #666666;
+        }
+        .footer-conter{
+            width: 980px;
+            height: 220px;
+            margin: 0 auto;
+
+        }
+        .footer-conter dl{
+            float: left;
+            width: 110px;
+            padding: 15px 0 0 20px;
+
+    }
+        .footer-conter dt{
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+            padding-bottom: 20px;
+        }
+        .footer-conter dd{
+            color: #e1e1e1;
+        }
+        .footer-b {
+            width: 980px;
+            margin: 0 auto;
+            height: 100px;
+            text-align: center;
+        }
+    .footer-b .hei{
+        margin-bottom:10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <div class="header-in">
+        <div class="logo"></div>
+        <div class="search">
+            <input type="text" value="请输入...">
+            <button></button>
+        </div>
+    </div>
+    </div>
+    <div class="nav">
+        <div class="nav-in">
+            <ul>
+                <li><a href="javascript:;">首页</a></li>
+                <li><a href="javascript:;">智能手机</a></li>
+                <li><a href="javascript:;">平板电脑</a></li>
+                <li><a href="javascript:;">配电</a></li>
+                <li><a href="javascript:;">服务支持</a></li>
+                <li><a href="javascript:;">关于尚合</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="images/banner.png" alt="手机">
+    </div>
+    <div class="notice">
+    <div class="notice-in">
+        <div class="left">
+          <p><strong>最新公告：</strong>
+              <a href="#">尚合大魔王手机老年人专用</a> </p>
+        </div>
+        <div class="right">
+            <span><img src="images/share.png" alt=""></span>
+        </div>
+    </div>
+    </div>
+    <div class="main">
+        <div class="product">
+            <h4>新品发布</h4>
+            <div class="pic">
+                <img src="images/pic.png" alt="">
+            </div>
+        </div>
+        <div class="news">
+            <h4>新闻中心
+                <strong><a href="#" class="more">更多</a></strong></h4>
+            <ul>
+                <li><a href="#" class="hot">第一二三四五六七八</a></li>
+                <li><a href="#">第一二三四五六七八</a></li>
+                <li><a href="#">第一二三四五六七八</a></li>
+                <li><a href="#">第一二三四五六七八</a></li>
+                <li><a href="#">第一二三四五六七八</a></li>
+                <li><a href="#">第一二三四五六七八</a></li>
+            </ul>
+        </div>
+        <div class="net">
+            <h4>技术支持</h4>
+            <ul>
+                <li><a href="#">售后五福</a></li>
+                <li><a href="#">投诉与建议</a></li>
+                <li><a href="#">联保网点</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+            <p>
+                杨方涛有限责任公司 <br>
+                服务热线：110-119-120
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-t">
+            <div class="footer-conter">
+            <dl>
+                <dt>尚合首页</dt>
+                <dd>返回首页</dd>
+            </dl>
+            <dl>
+                    <dt>尚合首页</dt>
+                    <dd>返回首页</dd>
+                    <dd>返回首页</dd>
+                    <dd>返回首页</dd>
+                    <dd>返回首页</dd>
+            </dl>
+            <dl>
+                <dt>尚合首页</dt>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+            </dl>
+            <dl>
+                <dt>尚合首页</dt>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+            </dl>
+            <dl>
+                <dt>尚合首页</dt>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+            </dl>
+                <dl>
+                    <dt>尚合首页</dt>
+                    <dd>返回首页</dd>
+                    <dd>返回首页</dd>
+                    <dd>返回首页</dd>
+                </dl> <dl>
+                <dt>尚合首页</dt>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+                <dd>返回首页</dd>
+            </dl>
+
+
+            </div>
+        </div>
+        <div class="footer-b">
+           <p class= "hei">&copy;法门扫地僧制作，哇咔咔咔。。。好好弄。</p>
+
+            <img src="images/icon1.png" alt="">
+            <img src="images/icon2.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
