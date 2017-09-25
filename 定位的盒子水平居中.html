@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 700px;
+            height: 500px;
+            background-color: pink;
+            padding: 100px auto;
+            position: relative;
+        }
+        .son{
+            width: 100px;
+            height:20px;
+            background-color: aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -50px;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son">
+
+    </div>
+</div>
+</body>
+</html>

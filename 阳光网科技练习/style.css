@@ -1,0 +1,237 @@
+/*css初始化*/
+body {margin:0; padding:0; font:12px/1.5 "微软雅黑",\5b8b\4f53,Arial,sans-serif; color: #3b3b3b;}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,blockquote,p{padding:0; margin:0;}
+table,td,tr,th{font-size:12px;}
+ol,ul {list-style:none;}
+li{list-style-type:none;}
+img{vertical-align:top;border:0;}
+h1,h2,h3,h4,h5,h6{font-size:inherit; font-weight:normal;}
+address,cite,code,em,th,i{font-weight:normal; font-style:normal;}
+.clearfix{*zoom:1;}
+.clearfix:after{display:block; overflow:hidden; clear:both; height:0; visibility:hidden; content:".";}
+a {color:#252525; text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {color:#ba2636;text-decoration:underline;}
+a:active {color:#ba2636;}
+
+
+/*顶部开始*/
+.top{
+    height: 40px;
+    background-color: #3b3b3b;
+}
+.w{
+    width: 1000px;
+    margin: 0 auto;
+}
+.top-content{
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+}
+.wecome{
+    float: left;
+    margin-left: 5px;
+}
+.login{
+    float: right;
+    margin-right: 5px;
+}
+.login a{
+    color:#fff;
+    margin-left: 10px;
+}
+/*顶部结束*/
+/*头部开始*/
+.head{
+    height: 100px;
+    overflow: hidden;
+}
+.logo {
+    width: 303px;
+    height: 82px;
+    background: url(images/logo.png) no-repeat;
+    margin: 9px 0 0 9px;
+    float: left;
+}
+.nav{
+    float: right;
+}
+.nav li{
+    float: left;
+    margin-left: 20px;
+    margin: 0 20px;
+    margin-top: 20px;
+}
+.nav li a{
+    color: #3b3b3b;
+    font-family: "微软雅黑";
+    display: block;
+    height: 32px;
+    line-height: 32px;
+    text-decoration: none;
+}
+.nav .current{
+    color: #55ff6c;
+    border-bottom: 3px solid #55ff6c;
+}
+/*头部结束*/
+/*banner开始*/
+.banner{
+    height: 600px;
+    background: url(images/banner.jpg) top center;
+}
+/*banner结束*/
+/*info开始*/
+.info{
+    height: 290px;
+    background-color: #f2f2f2;
+}
+.info-content{
+    height: 268px;
+
+    padding-top: 22px;
+}
+.info-content li {
+    width: 243px;
+    height: 238px;
+    float: left;
+    border-left: 1px solid #fff;
+    border-right:1px solid #000;
+}
+.info-content li div{
+    margin-top: 8px;
+    text-align: center;
+}
+.info-content h4{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-family: "微软雅黑";
+    font-size:20px;
+}
+.info-content li p{
+    margin: 0 18px;
+    text-align: center;
+}
+.info-content .info01{
+    border-left: 0;
+}
+/*info结束*/
+.hotline{
+    height: 117px;
+    background-color: #08ffb7;
+    text-align: center;
+    overflow: hidden;
+}
+.hotline h3{
+    margin-top: 30px;
+    font-size: 18px;
+    font-family: "微软雅黑";
+}
+.hotline p{
+    margin-top: 15px;
+    font-family: "微软雅黑";
+}
+.download{
+    height: 684px;
+    background-color:#69ae5b;
+    position: relative;
+}
+.download a{
+    position: absolute;
+    width: 342px;
+    height: 80px;
+    top: 190px;
+    right: 288px;
+}
+
+.main  {
+    height: 400px;
+    padding:24px 15px 0;
+    width: 970px;
+}
+.news-t{
+    text-align: center;
+}
+.news-m dl{
+    float: left;
+    margin-top: 15px;
+}
+.news-m dt{
+    float: left;
+}
+.news-m dd{
+    float: left;
+    width: 290px;
+    margin-left: 16px;
+    line-height:30px;
+}
+.news-m dd h4{
+    font-size: 16px;
+}
+.news-b{
+    margin-top: 35px;
+}
+.first-ul{
+    margin-right: 40px;
+}
+.news-b ul{
+    float: left;
+}
+.news-b li{
+    width: 448px;
+    height: 35px;
+    line-height: 35px;
+    background: url(images/square.jpg) no-repeat left center;
+    padding-left: 10px;
+}
+.news-b li a{
+    float: left;
+}
+.news-b li span{
+    float: right;
+}
+.footer{
+    height: 310px;
+    background-color: #333333;
+}
+.footer-content{
+    height: 268px;
+    background-color: pink;
+    padding: 42px 0 0 50px;
+    width: 950px;
+}
+.contact{
+    height: 180px;
+}
+.sunav{
+    text-align: center;
+
+}
+.message{
+    float: left;
+    position: relative;
+}
+.us{
+    float: right;
+}
+.message h4, .us h4{
+    height: 26px;
+    line-height: 26px;
+    padding-left: 30px;
+    background:url(images/mail.jpg) no-repeat left center;
+}
+.message textarea {
+    width: 564px;
+    height: 84px;
+    background-color: #7fd20f;
+    border: 1px solid #3b3b3b;
+    resize: none;
+    outline: 0;
+    color:#5d5d5d;
+    padding: 10px;
+}
+.sunav a{
+    margin-left: 10px;
+}
