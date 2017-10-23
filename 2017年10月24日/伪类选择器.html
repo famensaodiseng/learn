@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类选择器</title>
+	<style>
+	a:link{
+		font-size: 20px;
+		color: black;
+		font-weight: bold;
+
+	}
+	a:visited {
+		font-size: 10px;
+		color: orange;
+		font-weight: 700;
+	}
+	a:hover{
+		font-size: 10px;
+		color: red;
+		font-weight: 700;
+	}
+	a:active{
+		font-size: 80px;
+		color: green;
+		font-weight: 700;
+		/*鼠标按下去，没有取开*/
+	}
+	</style>
+</head>
+<body>
+我想写一个秒杀！
+	<div><a href="#">秒杀</a></div>
+
+	顺序不能乱
+
+	link  visited  hover   active
+</body>
+</html>

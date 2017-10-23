@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>综合表单</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>学生档案</legend>
+			<label for="">姓名：<input type="text" placeholder="请输入姓名"> <br></label>
+			<label for="">手机: <input type="tel" name="" id=""> <br></label>
+			<label for="">邮箱： <input type="email" name="" id="">  <br></label>
+			<label for="">所属学院： <input type="text" placeholder="请选择学院" list="xueyuan"></label>
+			<datalist id="xueyuan">
+				<option >java学院</option>
+				<option >前端学院</option>
+				<option >PHP学院</option>
+				<option >全栈学院</option>
+			</datalist>
+
+			<br>
+			出生日期：<input type="time" name="" id="">	<br>
+			成绩: <input type="number" name="" id="">	<br>
+			毕业时间：<input type="date" name="" id="">		<br>
+			<input type="submit" value="提交">
+		</fieldset>
+	</form>
+</body>
+</html>
