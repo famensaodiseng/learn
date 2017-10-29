@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>背景缩放</title>
+	<style>
+		div{
+			width: 500px;
+			height: 500px;
+			background: pink url(images/l.jpg) no-repeat ;
+			/*background-size: 200px;*/
+			/*background-size: cover;*/
+			background-size: contain;
+			为了防止失真，所以一般只写一个值。
+		}
+	</style>
+</head>
+<body>
+	<div>
+		cover	保证图片按照比例缩放。
+		contain	图片按照宽度或者高度任意一个满足盒子大小。
+	</div>
+</body>
+</html>
