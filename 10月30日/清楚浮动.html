@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.box1{
+			/*height: 200px;*/		/*很多情况下我们不给父亲给高度*/
+			width: 600px;
+			background-color: pink;
+			/*overflow: hidden;*/
+		}
+		.box2{
+			width: 600px;
+			height: 240px;
+			background-color: red;
+		}
+		.son1{
+			width: 150px;
+			height: 100px;
+			background-color: skyblue;
+			float: left;
+		}
+		.son2{
+			width: 100px;
+			height: 50px;
+			background-color: yellow;
+			float: left;
+		}
+		.clear{
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<!-- 清楚浮动的影响，而不是真的清除浮动 -->
+
+	<div class="box1">
+		<div class="son1"></div>
+		<div class="son2"></div>
+		<div class="clear"></div>
+	</div>
+	<div class="box2"></div>
+</body>
+</html>
