@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.slider {
+			width: 520px;
+			height: 280px;
+			background-color: pink;
+			margin: 200px auto;
+			position: relative;
+		}
+		.arrow-l,
+		.arrow-r{
+			position: absolute;
+			width: 24px;
+			height: 36px;
+			display: block;
+			top: 50%;
+			margin-top: -18px;
+		}
+		.arrow-l{
+			left: 0;
+		}
+		.arrow-r {
+			right: 0;
+		}
+		.circle {
+			width: 65px;
+			height: 13px;
+			background-color: rgba(255,255,255,0.2);
+			position: absolute;
+			bottom: 15px;
+			left: 100px;
+			left: 50%;
+			margin-left: -32px;
+			border-radius: 6px;
+		}
+		.circle li{
+			width: 9px;
+			height: 9px;
+			background-color: #b7b7b7;
+			float: left;
+			margin: 2px;
+			border-radius: 50%;
+		}
+		.slider .current{
+			background-color: #f40;
+		}
+	</style>
+</head>
+<body>
+	<div class="slider">
+		<img src="images/taobao.jpg" alt="">
+		<a href="#" class="arrow-l"><img src="images/left.png" alt=""></a>
+		<a href="#" class="arrow-r"><img src="images/right.png" alt=""></a>
+		<ul class="circle">
+			<li class="current"><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+	</div>
+</body>
+</html>

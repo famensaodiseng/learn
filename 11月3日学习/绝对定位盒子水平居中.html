@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.father{
+			width: 800px;
+			height: 500px;
+			background-color: pink;
+			margin: 0 auto;
+			position: relative;
+		}
+		.son {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			/*margin: 0 auto;	*//*加了绝对定位的盒子，margin0 auto就无效了*/
+			left: 400px;	
+			margin-left: -50px;		
+			top: 50%;
+			margin-top: -50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+
+	</div>
+</body>
+</html>
