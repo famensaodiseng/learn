@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>移动</title>
+	<style>
+	body{
+		perspective:500px;
+	}
+		div{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin: 200px auto;
+			transition: all 0.7s;
+		}
+		div:hover {
+			/*transform: translateX(100px);
+			transform: translateY(100px);*/
+			transform: translateZ(100px);
+
+			/*Z轴必须加透视*/
+			/*透视只是一种展示形式，是有3d效果的意思*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>
