@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		ul{
+			list-style: none;
+			width: 300px;
+		
+			margin: 300px auto;
+		}
+		ul li{
+			height: 50px;
+			background-color: pink;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li id="onmouseover">鼠标经过</li>
+		<li id="onclick">鼠标单击</li>
+		<li id="ondbclick">鼠标双击</li>
+		<li id="onmouseout">鼠标离开</li>
+	</ul>
+	<script>
+		var over = document.getElementById("onmouseover");
+		over.onmouseover = function() {
+				alert("鼠标经过我了");
+			}
+
+	</script>
+</body>
+</html>

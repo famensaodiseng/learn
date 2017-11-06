@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">显示</button>
+	<div id="box">
+		
+	</div>
+	<script>
+		var box = document.getElementById("box");
+		var btn = document.getElementById("btn");
+
+			btn.onclick=function() {
+				box.style.display="block";
+			}
+
+	</script>
+</body>
+</html>
