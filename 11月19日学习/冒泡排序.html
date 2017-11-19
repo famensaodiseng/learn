@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var numbers = [11 , 23 , 33 , 6, 23 , 99 , 19 , 34];
+	// var count = 0;
+	// 外层循环，控制趟数
+	for (var i = 0; i < numbers.length - 1; i++) {
+	// 内层循环比较的次数。比较两个数的大小
+	// count++;
+	for (var j = 0; j<numbers.length -1-i;j++){
+		//两两比较，从小到大
+		if (numbers[j]>numbers[j+1]) {
+			//交换位置
+			var tmp = numbers[j];
+			numbers[j]=numbers[j+1];
+			numbers[j+1] = tmp;
+		}
+	}
+	}
+	console.log(numbers);
+	// console.log(count);
+
+
+	
+	</script>
+</body>
+</html>

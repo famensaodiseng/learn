@@ -6,19 +6,14 @@
 </head>
 <body>
 	<script>
-		// 1-100所有数字的和
-		// do {
-		// 	循环体
-		// }
-		// while ();
-
-		var i = 1;
-		var sum = 0;
-		do {
-				sum +=i;
-				i++;
+	var sum= 0;
+		for (var i = 1;i<=100;i++){
+			if(i%10===3){
+					//如果找到个位为3的数字，继续执行。
+					continue;
 		}
-		while (i<=100);
+		sum +=i;
+		}
 		console.log(sum);
 	</script>
 </body>
