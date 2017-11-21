@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	
+		// 1.在函数中的this指向windows
+		function fn() {
+			console.log(this);
+		}
+		fn();
+
+
+		//2.在方法中见过this
+		//指的事这个方法所属的对象
+
+		var obj = {
+			name:'zs',
+			fn:function (){
+				console.log(this);
+			}
+		}
+		obj.fn();
+		//构造函数
+
+		//命名的时候要大写。
+
+		function Fn() {
+			this.name = 'zs';
+			this.age = 18;
+			console.log(this);
+		}
+		var o = new fn();
+
+		// this就是构造函数创建的对象。
+	</script>
+</body>
+</html>

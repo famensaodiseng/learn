@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//函数可以封装一段代码
+
+		//对象可以封装一组属性和方法。
+
+		//创建dog对象
+
+		var dog = {
+			name:'gouzi',
+			type:'yegou',
+			age:2,
+			color:'yellow',
+			//this：指的事当前的对象
+			eat:function () {
+				console.log(this.name+'啃骨头');
+			}
+
+		}
+		console.log(dog.eat);
+		dog.eat();
+
+
+
+	</script>
+</body>
+</html>

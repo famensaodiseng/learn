@@ -6,16 +6,12 @@
 </head>
 <body>
 	<script>
-		//功能：求两个数相加
-
-		// 参数
-		// 返回值
-
-		function getSun(x,y) {
-			var z= x+y;
-			return z;
+		var numbers = [1,2,3,4,5,6];
+		var arr =[];
+		for (var i=numbers.length-1;i>=0;i--){
+			arr[arr.length] = numbers[i];
 		}
-		console.log(getSun(1,3));
+		console.log(arr);
 	</script>
 </body>
 </html>

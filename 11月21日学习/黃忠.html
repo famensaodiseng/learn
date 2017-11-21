@@ -6,16 +6,15 @@
 </head>
 <body>
 	<script>
-	var str ="";
-	for (var j=0; j<=10;j++){
-
-
-		for (var i=0;i<=10;i++){
-			str += "* ";
+		var hero  ={
+			name:'黃忠',
+			weapon:'弓箭',
+			run:function () {
+				console.log(this.name+'加速跑');
+			}
 		}
-		str +="\n"
-		}
-		console.log(str);
+
+		hero.run();
 	</script>
 </body>
 </html>
