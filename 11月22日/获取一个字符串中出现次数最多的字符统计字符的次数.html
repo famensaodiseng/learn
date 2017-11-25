@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	var s = 'jncknsdnnjsecjdnjo'
+		var ch;
+		//这个字符出现的次数
+		var num;
+		//记录字符串中每一个字符出现的次数
+		var o  = {};
+
+		for (var i = 0;i<s.length;i++) {
+			var item = s.charAt(i);
+			if(o[item]) {
+				//已经有该属性。
+				o[item]++;
+			} else {
+				o[item] = 1;
+			}
+
+		}
+		num = 1;
+		for (var key in o ){
+			if(num <o[key]) {
+				num =o[key];
+				ch= key;
+			}
+		}
+
+
+		console.log(num);
+		console.log(ch);
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function formatDate(date) {
+
+			//判断date是否是日期对象
+
+			// instanceof 实例的对象
+			// console.log(date.getFullYear());
+			// console.log(date.getMonth() + 1);
+			if (!(date instanceof Date)) {
+				console.error('date不是日期对象');
+				return;
+			}
+			var year = date.getFullYear(),
+				month = date.getMonth () +1,
+				day=  date.getDate(),		
+				hour = date.getHours(),
+				minute = date.getMinutes(),
+				second = date.getSeconds();
+				// if(month <10) {
+				// 	month='0'+month;
+				// } 
+				month = month<10?'0' + month:month;
+				day = day<10?'0' + day:day;
+				minute = minute<10?'0' + minute:minute;
+				second = second<10?'0' + second:second;
+
+
+
+			return year +'-'+month+'-'+day+' ' +hour+':'+minute+':'+second;
+  
+		}
+		var d =new Date(2017,3,2,23,3,23);
+		var dateStr=formatDate(d);
+		console.log(dateStr);
+	</script>
+</body>
+</html>

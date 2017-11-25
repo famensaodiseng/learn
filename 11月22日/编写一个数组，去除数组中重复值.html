@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		//1.如何获取数组中每一个元素出现的次数。
+		//遍历每一个元素。
+
+		//2.创建一个对象，把数组的元素作为对象的属性，记录次数
+	//	var o = {};
+		function clear(arr) {
+			var o = {};   //记录数组中元素出现的次数
+			for (var i = 0;i<arr.length;i++) {
+				var item = arr[i];	//数组中的每一个元素
+				//判断o对象是否有当前遍历的属性
+				if (o[item]) {
+					o[item]++;
+				}else {
+					o[item] = 1;
+				}
+
+			}
+		//	console.log(o);
+			//2.生成一个新数组，存储不重复元素
+			var newArray = [];
+			for (var key in o) {
+				//判断o对象属性的值是否为1
+				if (o[key] ===1) {
+					newArray.push[key];
+				}else {
+					if (newArray.indexOf(key) === -1) {
+						newArray.push(key);
+					}
+				}
+			}
+			return newArray;
+		}
+		var array =['c','s','d','c','w','f','w'];
+		var newArray= clear(array);
+		console.log(newArray);
+	</script>
+</body>
+</html>

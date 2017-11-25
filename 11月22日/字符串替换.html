@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var s = 'hjhjhfsszkmnjcn';
+		// s =s.replace('h','!');
+		var index = -1;
+		do{
+			index = s.indexOf('h',index+1);
+			if(index !==-1) {
+				s = s.replace('h','!');
+			}
+		}while(index !==-1);
+
+		console.log(s);
+	</script>
+</body>
+</html>
