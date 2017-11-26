@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="隐藏" id = 'btn'>
+	<div id='div'></div>
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		var div = document.getElementById('div');
+		var flag = 1
+		btn.onclick = function() {
+			if (flag ===1) {
+				btn.value = '显示';
+				div.style = 'display:none';
+				flag =2;
+			} else {
+				btn.value = '隐藏';
+				div.style = 'display:block';
+				flag =1;
+			}
+			
+		};
+	</script>
+</body>
+</html>
