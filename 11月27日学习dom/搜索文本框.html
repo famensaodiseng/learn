@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.black {
+			color: black;
+		}
+		.gray {
+			color: gray;
+		}
+	</style>
+</head>
+<body>
+	<input type="" name="" value="请输入你的银行卡密码" id='txtSearch' class='gray' >
+	<input type="button" name="" value="取钱" id = 'btnSearch'>
+	<script type="text/javascript">
+		var txtSearch = document.getElementById('txtSearch');
+		var btnSearch = document.getElementById('btnSearch');
+		txtSearch.onfocus = function () {
+			if (this.value  === '请输入你的银行卡密码') {
+				this.value =' ';
+				this.className = 'black';
+			}
+		}
+		txtSearch.onblur = function () {
+			if (this.value  === 0 || value==='请输入你的银行卡密码') {
+				this.value ='请输入你的银行卡密码';
+				this.className = 'gray';
+		}
+	}
+	</script>
+</body>
+</html>

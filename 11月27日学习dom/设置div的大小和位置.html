@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+		}
+		.cls {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			top: 100px;
+			left: 100px;
+
+		}
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="按钮" id= 'btn'><br>
+	<div id="box" >杨方涛</div>
+	<script type="text/javascript" src='common.js'></script>
+	<script type="text/javascript">
+		my$('btn').onclick = function () {
+			var box = my$('box');
+			//改变box的大小和位置
+			//box.className = "cls";	选择器的优先级
+			box.style.width = '200px';
+			box.style.height = '200px';
+			box.style.position = 'absolute';
+			box.style.left = '200px';
+			box.style.top = '200px';
+		}
+	</script>
+</body>
+</html>

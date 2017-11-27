@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" ><br>
+	<input type="text" ><br>
+	<input type="text" ><br>
+	<input type="text" ><br>
+	<input type="text" ><br>
+	<input type="text" ><br>
+	<input type="text" ><br>
+	<script type="text/javascript">
+
+
+
+
+
+
+		var inputs = document.getElementsByTagName('input');
+
+		for (var i = 0; i < inputs.length; i++) 
+		{
+			var input = inputs[i];
+			if (input.type !== 'text') {
+				continue;
+			}
+
+
+			input.onfocus = function () {
+				//让当前文本框高亮
+			//	this.style.backgroundColor =  'gray';
+			for (var i=0;i<inputs.length;i++) {
+				var input = inputs[i];
+				if (input.type !== 'text') {
+					continue;
+				}
+				//去除所有高亮
+				input.style.backgroundColor =  '';
+			}
+			this.style.backgroundColor = 'skyblue';
+			}
+		}
+
+
+
+
+
+	</script>
+</body>
+</html>
