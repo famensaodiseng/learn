@@ -97,49 +97,44 @@
       <input type="button" value="  反 选  " id="btn">
   </div>
   <script>
-        var j_tb  = document.getElementById('j_tb');
-        var inputs = j_tb.getElementsByTagName('input');
-     //找到全选的checkbox
-     var  j_cbAll  = document.getElementById('j_cbAll');
-      j_cbAll.onclick = function () {
-  
-        for (var i =0;i<inputs.length;i++) {
-          var input = inputs[i];
-          if (input.type === 'checkbox') {
-            input.checked = this.checked;
-          } 
-        }
-      }
+     var j_tb = document.getElementById('j_tb');
+     var inputs = j_tb.getElementsByTagName('input');
+     // 1 全选
+     // 1.1 获取父checkbox，注册点击事件
+     var j_cbAll = document.getElementById('j_cbAll');
+     j_cbAll.onclick = function () {
+       // 1.2 找到所有子的checkbox，让这些checkbox的状态跟父checkbox保持一致
+      
+       for (var i = 0; i < inputs.length; i++) {
+         var input = inputs[i];
+         if (input.type === 'checkbox') {
+          // 让子的checkbox的选中状态，和父checkbox的选中状态一致
+           input.checked = this.checked;
+         }
+       }
+     }
+     
+     // 2 当点击子的checkbox，如果所有的子的checkbox都被选中了，让父的checkbox也选中
+     // 如果有一个子的checkbox没有被选中，父的checkbox也不被选中
+     
+     // 此处的循环，是遍历所有子的checkbox，注册点击事件
+     for (var i = 0; i < inputs.length; i++) {
+       var input = inputs[i];
+       // 判断是否是checkbox
+       if (input.type !== 'checkbox') {
+        // 结束当前循环，继续下一次循环
+         continue;
+       }
+       // 给子的checkbox注册点击事件
+       input.onclick = function () {
+         checkAllCheckBox();
+       }
+     }
+     
 
-      //如果有一个子元素没被选中，那么父元素也不被选中
-      for (var i =0;i<inputs.length;i++) {
-        var input = inputs[i];
-        if (input.type !== 'checkbox') {
-          continue;
-        }
-        input.onclick = function () {
-          var isAllChecked = true;
-          //判断是否所有的cheeckbox都被选择中
-          for (var i = 0;i<inputs.length;i++) {
-            var input = inputs[i];
-            if(input.type !== 'checkbox') {
-              continue;
-            }
-            //假设所有的都被选中
-            if(!input.checked){
-              isAllChecked = false;
-
-            }
-          }
-          //去设置父的checkbox的状态
-          j_cbAll.checked  = isAllChecked;
-        }
-      }
-
-
-      //判断父的checkbox的状态，封装成函数
-      function checkAllCheckBox()  {
-         // 假设所有的子的checkbox都被选中了
+     // 判断父的checkbox的状态 封装成函数
+     function checkAllCheckBox() {
+       // 假设所有的子的checkbox都被选中了
          var isAllChecked = true;
          // 判断是否所有的子的checkbox都被选中了
          for (var i = 0; i < inputs.length; i++) {
@@ -154,25 +149,26 @@
          }
          // 设置父的checkbox的状态
          j_cbAll.checked = isAllChecked;
+     }
 
-      }
- 
-
-
-
-      //反选
-      var btn = document.getElementById('btn');
-      btn.onclick = function () {
-        for (var  i=0;i<inputs.length;i++) {
+     // 3 反选
+     // 3.1 给反选按钮注册点击事件
+     var btn = document.getElementById('btn');
+     btn.onclick = function () {
+        // 3.2 找到所有的子的checkbox，让其反选
+        for (var i = 0; i < inputs.length; i++) {
           var input = inputs[i];
+          // 判断是否是checkbox
           if (input.type !== 'checkbox') {
             continue;
           }
-          //让子的反选
+          // 让子的checkbox反选
           input.checked = !input.checked;
+          // 设置父的checkbox的状态
           checkAllCheckBox();
         }
-      }
+     }
+    
   </script>
 </body>
 </html>

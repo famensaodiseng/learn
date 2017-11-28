@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="mv">
+    <li>西施</li>
+    <li>貂蝉</li>
+    <li>王昭君</li>
+    <li>杨玉环</li>
+    <li>芙蓉姐姐</li>
+  </ul>
+  <script>
+    //隔行变色
+      var mv = document.getElementById('mv');
+      var lists = mv.getElementsByTagName('li');
+      for (var i =0;i<lists.length;i++) {
+        var li = lists[i];
+        if (i%2 ===0) {
+          //设置奇数行的北京颜色
+          li.style.backgroundColor = 'skyblue';
+        } else {
+           li.style.backgroundColor = 'pink';
+        }
+      }
+      //鼠标放在li上，高亮显示当前的li
+      for (var i =0;i<lists.length;i++) {
+        var li = lists[i];
+        var bg;
+        li.onmouseover = function () {
+         bg= this.style.backgroundColor;
+         this.style.backgroundColor = 'yellow';
+        } 
+        li.onmouseout = function () {
+          this.style.backgroundColor = bg;
+          }
+        
+      }
+  </script>
+ 
+</body>
+</html>

@@ -26,30 +26,31 @@
         .hide {
             display: none;
         }
-
         .show {
             display: block;
         }
     </style>
 </head>
 <body>
-<div class="nodeSmall" id="node_small">
-    <a href="#"></a>
-    <div class="erweima hide" id="er">
-        <img src="images/456.png" alt=""/>
+    <div class="nodeSmall" id="node_small">
+        <div class="erweima hide" id="er">
+            <img src="images/456.png" alt=""/>
+        </div>
     </div>
-</div>
-    <script type="text/javascript" src='common.js'></script>
-    <script type="text/javascript">
-        // 当鼠标移入，移出
-        var nodeSmall  = my$('node_small');
+    <script src="common.js"></script>
+    <script>
+        // 当鼠标移入  onmouseover
+        // 当鼠标移出  onmouseout
+        var nodeSmall = my$('node_small');
         nodeSmall.onmouseover = function () {
-            // my$('er').className = 'show';
-            my$('er').className = my$('er').className.replace('hide','show');
+            // my$('er').className = 'erweima show';
+            my$('er').className = my$('er').className.replace('hide', 'show'); 
         }
+
+
         nodeSmall.onmouseout = function () {
-            // my$('er').className = 'hide';
-             my$('er').className = my$('er').className.replace('show','hide');
+            // my$('er').className = 'erweima hide';
+            my$('er').className = my$('er').className.replace('show', 'hide');
         }
     </script>
 </body>
