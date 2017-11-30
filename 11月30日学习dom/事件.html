@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" name="" value="点击" id='btn'>
+	<!-- <script type="text/javascript">
+		var btn = document.getElementById('btn');
+		btn.onclick = function () {
+			alert('hello world');
+		}
+	</script> -->
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		btn.addEventListener('click',function() {
+			alert('hello world');
+		})
+		btn.addEventListener('click',function() {
+			alert('你好，世界');
+		})
+
+	</script>
+
+
+</body>
+</html>
