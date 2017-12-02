@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="ul">
+    <li>西施</li>
+    <li>貂蝉</li>
+    <li>昭君</li>
+    <li>凤姐</li>
+    <li>芙蓉姐姐</li>
+  </ul>
+  <script>
+    // 事件委托： 原理事件冒泡
+    var ul = document.getElementById('ul');
+    ul.onclick = function (e) {
+      // e 事件参数（事件对象）: 当事件发生的时候，可以获取一些和事件相关的数据
+      // 获取到当前点击的li
+      // e.target 是真正触发事件的对象
+      // console.log(e.target);
+      // 让当前点击的li高亮显示
+      e.target.style.backgroundColor = 'red';
+    }
+  </script>
+</body>
+</html>

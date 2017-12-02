@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin: 0;
+		padding: 0;
+	}
+		div {
+			margin-top: 200px;
+			margin-left: 100px;
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+	<div id='box'>
+		
+	</div>
+	<script src = 'common.js'></script>
+	<script>
+		// e.clientX  和 e.clientY 没兼容性问题
+		   // e.pageX  和  e.pageY	有兼容性问题
+		   var  box=document.getElementById('box');
+		   box.onclick = function (e) {
+		   		//获取盒子在页面的距离
+		   		// console.log(this.offsetLeft);
+		   		// console.log(this.offsetTop);
+		   		e = e || window.event;
+
+		   	var x = getPage(e).pageX - this.offsetLeft;
+		   	var y = getPage(e).pageY - this.offsetTop;
+		   	console.log(x);
+		   	console.log(y);
+		   }
+	</script>
+</body>
+</html>
