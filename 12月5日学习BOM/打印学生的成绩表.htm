@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+
+	<script>
+		var stu1 = {name:'zs',subject:'语文',score:90};
+		var stu2 = {name:'ls',subject:'数学',score:90};
+
+		console.log(stu1.name,stu1.subject,stu1.score);
+
+
+
+		//使用面向对象
+		// 、、创建一个模版
+		function Student (name,subject,score) {
+			this.name= name;
+			this.subject= subject;
+			this.score = score;
+
+			this.printScore = function () {
+				console.log(this.name,this.subject,this.score)	;		
+			} 
+		}
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

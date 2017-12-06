@@ -1,0 +1,267 @@
+/*
+* @Author: apple
+* @Date:   2017-07-26 23:27:21
+* @Last Modified by:   apple
+* @Last Modified time: 2017-07-27 14:30:23
+*/
+/* 中间分类模块开始 */
+.grid {
+	height: 480px;
+}
+.grid-col1 {
+	width: 190px;
+	height: 100%;
+	background-color: #6e6568;
+	color: #fff;
+	font-size: 14px;  /* 不是给字的，给 /  */
+	position: relative;
+}
+.ad {
+	width: 250px;
+	height: 480px;
+/* 	background-color: pink;
+ */	position: absolute;
+	top: 0;
+	left: -250px;
+}
+.ad-r {
+	position: absolute;
+	top: 0;
+	left: 250px;
+	z-index: 999;
+	width: 0;
+	height: 480px;
+	background: url(../images/ad-r.jpg);
+	/* z这个盒子做动画，所以给它添加过渡 */
+	transition: all 0.8s;
+}
+.ad:hover .ad-r {  
+	/* 鼠标经过 ad 这个广告大盒子的时候， 里面的这个叫 ad-r的盒子的宽度由0变为 990 */
+	width: 990px;
+}
+.grid-col1 a {
+	color: #fff;
+	font-size: 14px;  /* 是给链接文字  */
+	margin: 0 3px;
+}
+.grid-col1 a:hover {
+	color: #f10215;
+}
+.grid-col1 ul {
+	padding: 10px 0;
+}
+.grid-col1 ul li {
+	padding-left: 12px;
+	height: 29px;
+	line-height: 26px;
+	/* margin-left: 12px; 同学们体会下 这里为什么不用 margin  就是因为下面有鼠标经过的效果*/
+}
+.grid-col1 ul li:hover {
+	background-color: #9c9698;
+}
+
+.grid-col2 {
+	width: 790px;
+	height: 100%;
+	margin-left: 10px;
+}
+/* banner部分 */
+.grid-col2-b div {
+	float: left;
+	margin-top: 10px;
+}
+.grid-col2-b div:last-child {
+	float: right;
+	margin-top: 10px;
+}
+/* 箭头部分 */
+.grid-col2-t {
+	position: relative;
+}
+.arrow-l,
+.arrow-r {
+	position: absolute;
+	top: 50%;
+	width: 30px;
+	height: 60px;
+	background: rgba(0, 0, 0, 0.3);
+	transform: translateY(-50%);
+	text-align: center;
+	line-height: 60px;
+	font-size: 20px;
+	color: rgba(255, 255, 255, .6);
+	font-family: arial;
+	font-weight: normal;
+}
+.arrow-r {
+	right: 0;
+}
+.circle {
+	width: 167px;
+	height: 20px;
+	background: rgba(255, 255, 255, .3);
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform: translateX(-50%);
+		border-radius: 10px;
+		padding-left: 8px;
+}
+.circle li {
+	width: 12px;
+	height: 12px;
+	background-color: #fff;
+	border-radius: 50%;
+	float: left;
+	margin: 4px;
+	cursor: pointer;  /* 鼠标经过li 的时候变成小手 */
+}
+.circle .current {
+	background-color: #f10215;
+}
+
+.grid-col3 {
+	width: 190px;
+	height: 100%;
+}
+/* 右边模块 */
+.login {
+	height: 85px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	padding: 15px;
+}
+.login-t {
+	width: 95px;
+	height: 60px;
+	line-height: 20px;
+	font-size: 12px;
+	white-space: nowrap;  /* 强制一行内显示 */
+	overflow: hidden;  /* 溢出隐藏 */
+	text-overflow: ellipsis; /* 超出的部分显示 省略号 */
+	color: #666;
+	padding-left: 60px;  /* 这里给padding 把文字挤过来 */
+	position: relative;
+}
+.login-t a {
+	color: #666;
+}
+.login-t a:hover {
+	color: #f10512;
+}
+.user-info {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(../images/sprite_userinfo@1x.png) no-repeat -70px 0;
+	
+}
+.login-b a {
+	display: inline-block;
+	width: 70px;
+	height: 20px;
+	line-height: 20px;
+	border: 2px solid #f10215;
+	margin-right: 3px;
+	text-align: center;
+	color: #f10215;
+}
+.login-b a:hover {
+	background-color:  #f10215;
+	color: #fff;
+}
+.user-info img {
+	width: 40px;
+	border-radius: 50%;
+	margin: 5px;
+}
+.news {
+	height: 154px;
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	padding: 7px 13px 0;
+	box-sizing: border-box;
+}
+.news-t {
+	height: 19px;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+}
+.news-t a {
+	float: left;
+	height: 17px;
+	line-height: 17px;
+}
+.cuxiao {
+	width: 38px;
+
+	border-right: 1px solid #ccc;
+}
+.gg {
+	margin-left: 15px;
+}
+.news-t .more {
+	float: right;
+}
+.news-t div {
+	height: 2px;
+	width: 28px;
+	background-color: #f10215;
+	position: absolute;
+	bottom: -1px;
+	left: -3px;
+}
+.news-b {
+	padding-top: 15px ;
+}
+.hide {
+	display: none;
+}
+.show {
+	display: block;
+}
+.news-b li {
+	height: 23px;
+	line-height: 23px;
+}
+.expand {
+	height: 209px;
+	background-color: #fff;
+	overflow: hidden; /* expand 这个宽度继承了 父亲 190宽度 */
+}
+.expand ul {
+	width: 195px; /*  父亲是 190 但是里面的li 宽度超过了190 摆放不开 4个li 此时 让ul 宽度变大 */ 
+}
+.expand  li {
+	width: 47px;
+	height: 69px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	float: left;
+}
+.expand  li a {
+	display: block;
+	padding-top: 15px;
+	text-align: center;
+}
+.expand  li i {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	background: url(../images/sprite_fs@1x.png) no-repeat;
+	width: 18px;
+	height: 23px;
+	background-position: -5px -88px;
+}
+.expand  li:first-child i {
+	width: 18px;
+	height: 23px;
+	background-position: -5px -88px;
+}
+
+
+
+
+
