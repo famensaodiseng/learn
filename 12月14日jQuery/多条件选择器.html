@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多条件选择器</title>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+
+	<input type="button" name="" value='按钮' id='btn'>
+	<span>这是一个span</span>
+	<span>这是一个span</span>
+	<p>这是一个p标签 </p>
+	<span>这是一个span</span>
+	<span>这是一个span</span>
+	<ul>
+		<li>哈哈哈</li>
+		<li>哈哈哈</li>
+		<li>哈哈哈</li>
+		<li>哈哈哈</li>
+	</ul>
+	<div>
+		
+	</div>
+	<script type="text/javascript" src='jquery-1.12.2.js'></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#btn').click(function () {
+				$("span,p,li,div").css('backgroundColor','green');
+			});
+		});
+	</script>
+</body>
+</html>

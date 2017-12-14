@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>P</title>
+</head>
+<body>
+	<input type="button" value="按钮" id='btn'>
+	<p>这是一个p</p>
+	<p>哈哈哈哈</p>
+	<p>嘿嘿</p>
+	<p>我的哥神啊</p>
+	<p>动次打次</p>
+	<p>小时</p>
+	<p></p>
+	<script type="text/javascript" src='jquery-1.12.2.js'></script>
+	<script type="text/javascript">
+		$(function () {
+				//获取按钮，调用点击事件，
+				$('#btn').click(function () {
+						$("p").text('我们都是P');
+				});
+		});
+	</script>
+</body>
+</html>
