@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<ul id="ul">
+		<li>红烧土豆</li>
+		<li>清真豆腐坊</li>
+		<li>凉拌黄瓜</li>
+		<li>动次打次</li>
+		<li>哈哈哈</li>
+		<li>没啥特殊的</li>
+	</ul>
+	<script src="jquery-1.12.2.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('#ul>li').mouseenter(function () {
+			//	$(this).next().css('backgroundColor', 'green');
+				//next获取当前元素的下一个元素
+		//	$(this).nextAll().css('backgroundColor', 'green');	
+			$(this).prev().css('backgroundColor', 'green');	
+
+			//prev前一个元素。
+			});
+		});
+	</script>
+</body>
+</html>
