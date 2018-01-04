@@ -2,9 +2,9 @@
 * @Author: yangfangtao
 * @Date:   2017-12-30 01:29:41
 * @Last Modified by:   yangfangtao
-* @Last Modified time: 2017-12-30 01:42:13
+* @Last Modified time: 2017-12-30 02:56:10
 */
-html,body,ul,li,img,p,a,div{
+html,body,ul,li,img,p,a,div,form,input{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -47,7 +47,7 @@ input {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50% -50%);
+	transform: translate(-50%,-50%);
 }
 .clearfix::before,
 .clearfix::after {
