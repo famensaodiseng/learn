@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>学生列表</title>
+	<style>
+		div{
+			width: 800px;
+			margin: 20px auto;
+		}
+		table{
+			width: 800px;
+			margin: 20px auto;
+			border-collapse: collapse;
+		}
+		th{
+			background-color: #0094ff;
+			color:white;
+			font-size: 16px;
+			padding: 5px;
+			text-align: center;
+			border: 1px solid black;
+		}
+		td{
+			padding: 5px;
+			text-align: center;
+			border: 1px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var xhr = new XMLHttpRequest();
+			xhr.open("get","./server/getStudents.php",true);
+			xhr.send(null);
+
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4){
+					if(xhr.status == 200){
+						var result = xhr.responseText;
+						result = JSON.parse(result);
+						var newHtml = document.getElementById("container").innerHTML;
+						for(var i=0;i<result.length;i++){
+							var item = result[i];
+							var name = item.name;
+							var sex = item.sex;
+							var age = item.age;
+
+							console.log(name,sex,age);
+							var tempHtml = "<tr><td>"+name+"</td><td>"+age+"</td><td>"+sex+"</td></tr>";
+
+							newHtml += tempHtml;
+
+						}
+						document.getElementById("container").innerHTML = newHtml;
+					}
+				}
+			};
+		};
+	</script>
+</head>
+<body>
+	<div>
+		<table id="container">
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+			</tr>
+			
+		</table>
+	</div>
+</body>
+</html>
