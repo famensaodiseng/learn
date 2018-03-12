@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <p v-cloak>{{msg}}</p> 
+
+       <h4 v-text="msg"></h4>
+
+       <div v-text="msg2">
+
+       </div>
+
+
+       <div v-html="msg3"></div>
+    </div>
+    <script>
+       var vm = new Vue({
+            el:"#app",
+            data:{
+                msg:'123',
+                msg2:'<h1>haha我是杨方涛dddd </h1>',
+                msg3:'<h1>今天下雨了</h1>'
+            }
+        })
+    </script>
+</body>
+</html>
