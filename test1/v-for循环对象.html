@@ -11,20 +11,21 @@
 
 <body>
   <div id="app">
-    <!-- 还是使用 标签形式,引入自己的组件 -->
-    <mycom2></mycom2>
+    <!-- 注意：在遍历对象身上的键值对的时候， 除了 有  val  key  ,在第三个位置还有 一个 索引  -->
+    <p v-for="(val, key, i) in user">值是： {{ val }} --- 键是： {{key}} -- 索引： {{i}}</p>
   </div>
 
   <script>
-    // 注意:不论是哪种方式创建出来的组件,组件的 template 属性指向的模板内容,必须有且只能有唯一的一个根元素
-    Vue.component('mycom2', {
-      template: '<div><h3>这是直接使用 Vue.component 创建出来的组件</h3><span>123</span></div>'
-    })
-
     // 创建 Vue 实例，得到 ViewModel
     var vm = new Vue({
       el: '#app',
-      data: {},
+      data: {
+        user: {
+          id: 1,
+          name: '托尼·屎大颗',
+          gender: '男'
+        }
+      },
       methods: {}
     });
   </script>
