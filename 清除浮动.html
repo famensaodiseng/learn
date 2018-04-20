@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>清除浮动的本质</title>
+	<style type="text/css">
+	.father {
+		border: 1px solid #000;
+
+	}
+	.damao {
+		width: 200px;
+		height: 200px;
+		background-color: pink;
+		float: left;
+	}
+	.ermao {
+		width: 100px;
+		height: 100px;
+		background-color: green;
+		float: left;
+	}
+	.xiaomi {
+		width: 150px;
+		height: 150px;
+		background-color: black;
+		/*float: left;*/
+	}
+	.clear {
+		clear: both;
+	}
+</style>
+</head>
+<body>
+	<div class="father">
+		<div class="damao">大猫</div>
+		<div class="ermao">二毛</div>
+		<div class="clear"></div>
+	</div>
+	<div class="xiaomi"></div>
+</body>
+</html>
