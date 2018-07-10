@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	.box {
+		width: 300px;
+		height: 400px;
+	}
+	#box1 {
+		background-color: red;
+	}
+</style>
+</head>
+<body>
+	<!-- <svg viewBox="0 0 120 120 " version="1.1" width="200" height="200">
+		<circle cx="50" cy="30" r ="30"><circle>
+	</svg>
+ -->
+
+<h2>html5的拖放</h2> 
+<div id="box1" class="box">
+	
+</div>
+<div id="msg"></div>
+<img src="1.jpg" width="50">
+</body>
+<script type="text/javascript">
+	var box,msg;
+	window.onload = function () {
+		box = document.getElementById("box1");
+		msg = document.getElementById("msg");
+		box.ondragenter = function(e) {
+			showObj(e);	
+		}
+	}
+	function showObj(obj){
+		var s = "";
+		for (var k in obj) {
+			s+=k+":"+obj[k]+"</br>"
+		}
+		msg.innerHTML = s;
+	}
+</script>
+
+
+
+
+
+
+
+
+</html>
