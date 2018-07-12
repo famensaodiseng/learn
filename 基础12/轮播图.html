@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>淘宝轮播图</title>
+	<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	ul {
+		list-style: none;
+	}
+	.slider {
+		width: 520px;
+		height: 280px;
+		background-color: pink;
+		margin: 0 auto;
+		position: relative;
+
+	}
+	.slider a {
+		position: absolute;
+		top: 50%;
+		width: 24px;
+		height: 36px;
+		display: inline-block; 
+		margin-top: -18px;
+	}
+	.left {
+		left: 0;
+
+	}
+	.right {
+		right: 0;
+	
+	}
+	.dian {
+		width: 100px;
+		height: 10px;
+	}
+	.circle {
+		width: 100px;
+		height: 20px;
+		/*background-color: rgba(0,0,0,.4);*/
+		position: absolute;      
+		bottom: 15px;
+		left: 50%;
+		margin-left: -33px;
+	}
+	.circle li {
+		width: 15px;
+		height: 15px;
+		background-color: skyblue;
+		float: left;
+		margin-left: 10px;
+		border-radius: 50%;
+	}
+	.circle .current {
+		background-color: #F40;
+	}
+</style>
+</head>
+<body>
+		<h1>轮播图</h1>
+
+		<div class="slider">
+			<a href="#"></a>
+			<img src="images/taobao.jpg">
+			<a href="#" class="left"><img src="images/left.png"></a>
+			<a href="#" class="right"><img src="images/right.png"></a>
+			<div class="dian">
+				<ul class="circle">
+					<li><a href="#"></a></li>
+					<li class="current"><a href="#" ></a></li>
+					<li><a href="#"></a></li>
+					<li><a href="#"></a></li>
+				</ul>
+			</div>	
+		</div>
+</body>
+</html>
