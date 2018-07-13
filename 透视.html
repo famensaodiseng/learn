@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开门大吉</title>
+	<style type="text/css">
+		section {
+			width: 450px;
+			height: 300px;
+			background-color: red;
+			border: 1px solid #000;
+			margin: 100px auto;
+			background: url(images/3.jpg ) no-repeat;
+			position: relative;
+			perspective: 1000px;
+		}
+		.door-l ,.door-r {
+			position: absolute;
+			top: 0;
+			width: 50%;
+			height: 100%;
+			/*background-color: pink;*/
+			background: url(images/bg.png);
+		}
+		.door-l {
+			left: 0;
+			border-right:1px solid green;
+			transform-origin: left;
+		}
+		.door-r {
+			border-left:1px solid green;
+			right: 0;
+			transform-origin: right;
+		}
+		.door-l::before {
+			content:"";
+			position: absolute; 
+			right: 0;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			border: 2px solid #000; 
+			border-radius: 50%;
+			transform: translateY(-50%);
+			margin-right: 20px;
+			transition: all 2s;
+			
+		}
+		.door-r::before {
+			content:"";
+			position: absolute; 
+			left: 0;
+			top: 50%;
+			width: 20px;
+			height: 20px;
+			border: 2px solid #000; 
+			border-radius: 50%;
+			transform: translateY(-50%);
+			margin-left: 20px;
+			transition: all 2s;
+		}
+		section:hover .door-l {
+			transform: rotateY(-130deg);
+		}
+		section:hover .door-r {
+			transform: rotateY(130deg);
+		}
+
+</style>
+</head>
+<body>
+	<section>
+		<div class="door-l"></div>
+		<div class="door-r"></div>
+	</section>
+</body>
+</html>
