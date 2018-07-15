@@ -1,0 +1,68 @@
+/*
+* @Author: yangfangtao
+* @Date:   2018-06-08 13:32:16
+* @Last Modified by:   yangfangtao
+* @Last Modified time: 2018-06-08 16:53:04
+*/
+/*首页的样式*/
+.main {
+	width: 980px;
+	height: 455px;
+	background-color: pink;
+	margin-left: 219px;
+	margin-top: 10px;
+}
+.focus {
+	width: 720px;
+	height: 455px;
+	background-color: blue;
+	float: left;
+	position: relative;
+	
+}
+.newsflash {
+	width: 250px;
+	height: 455px;
+	background-color: skyblue;
+	float: right;
+}
+.arrow-l,.arrow-r {
+	position: absolute;
+	top: 0;
+	width: 24px;
+	height: 40px;
+	background-color: rgba(0,0,0,.3);
+	/*top: 50%;*/
+	line-height: 40px;
+	text-align: center;
+	top: 50%;
+	margin-top: -12px;
+	font-size: 16px;
+	color: #fff;
+
+}
+.arrow-r {
+	right: 0;
+}
+.arrow-l,.arrow-r:hover {
+	background-color: rgba(0,0,0,.7);
+}
+.circle {
+	position: absolute;
+	bottom: 10px;
+	left: 50px;
+}
+.circle li {
+	width: 8px;
+	height: 8px;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 0 5px;
+	border-radius: 50%;
+	box-shadow: 1px 1px 1px 1px rgba(1,1,2,.5);
+	cursor: pointer;
+}
+.circle .liha {
+	background-color: red;
+
+}

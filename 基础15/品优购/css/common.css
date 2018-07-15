@@ -1,0 +1,261 @@
+ /*
+* @Author: yangfangtao
+* @Date:   2018-06-04 10:58:52
+* @Last Modified by:   yangfangtao
+* @Last Modified time: 2018-06-08 15:20:07
+*/
+
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.w {
+	width: 1200px;
+	margin: 0 auto;
+}
+/*字体图标*/
+	@font-face {
+			/*1. 这个字体名称要注意 icomoon*/
+		  font-family: 'icomoon';
+		  /*2. 一定要注意路径的问题*/
+		  src:  url('../fonts/icomoon.eot?7kkyc2');
+		  src:  url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+		    url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+		    url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+		    url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+		  font-weight: normal;
+		  font-style: normal;
+	}
+span,i {
+	font-family: 'icomoon';
+	font-size: 18px;
+	line-height: 23px;
+}
+.w {
+	width: 1200px;
+	margin: 0 auto;
+}
+.shortcut {
+	height: 31px;
+	background-color: #f1f2f3;
+	line-height: 31px;
+}
+.shortcut li{
+	float: left;
+}
+.style-red {
+	color: #c81623;
+}
+.spacer {
+	width: 1px;
+	height: 12px;
+	background-color: #666;
+	margin: 8px 16px 0px;
+
+}
+.header {
+	height: 105px;
+	/*background-color: pink;*/
+	/*line-height: 105px;*/
+	position: relative;
+}
+.logo {
+	width: 175px;
+	height: 56px;
+	position: absolute;
+	top: 25px;
+}
+.logo a {
+	display: inline-block;
+	width: 175px;
+	height: 56px;
+	background: url(../img/logo.png);
+	text-indent: -999px;
+	overflow: hidden;
+}
+.search  {
+	position: absolute;
+	top: 25px;
+	left: 348px;
+}
+.search input {
+	width: 440px;
+	height: 32px;
+	border: 2px solid #000;
+	padding-left: 5px;
+	color: #ccc;
+	float: left;
+}
+.search button {
+	width: 82px;
+	height: 36px;
+	background-color: #b1191a;
+	border: 0;
+	float: left;
+	font-size: 16px;
+	color: #fff;
+}
+.hotwords {
+	position: absolute;
+	top: 65px;
+	left: 348px;
+}
+.hotwords a {
+	margin: 0 12px;
+}
+.shortcar {
+	width: 118px;
+	height: 34px;
+	position: absolute;
+	top: 25px;
+	right: 64px;
+	border: 1px solid #dfdfdf;
+	line-height: 34px;
+	padding: 5px 0 0 20px;
+}
+.car {
+	color: red;
+	margin-right: 10px;
+}
+.arrow {
+	color: #ccc;
+	/*margin-top: 10px;*/
+}
+.count {
+	position: absolute;
+	top: -5px;
+	/*right: 18px;*/
+	left: 100px;
+	background-color: #e60012;
+	height: 14px;
+	line-height: 14px;
+	padding: 0 5px;	
+	border-radius: 7px 7px 7px 0;
+	color :#fff;
+	font-size: 12px;
+}
+.nav {
+	height: 45px;
+	border-bottom: 2px solid #b11911;
+}
+.dropdwon {
+	width: 209px;
+	height: 45px;
+	background-color: pink;
+}
+.dropdwon .dt {
+	/*width: 100%;*/
+	/*height: 100%;*/
+	background-color: #b1191a;
+	line-height: 45px;
+	text-align: center;
+	font-size: 16px;
+	color:#fff;
+}
+.dropdwon .dd {
+	height: 465px;
+	background-color: #c81623;
+	margin-top: 2px;
+	/*display: none;*/
+}
+.dropdwon .dd i {
+	float: right;
+	padding-right: 30px;
+}
+.item a,i{
+	color: #fff;
+	font-size: 14px;
+}
+.dropdwon .dd .item {
+	/*height: 31px;*/
+	line-height: 30px;
+	padding-left: 10px;
+	}
+.dropdwon .item:hover {
+	background-color: #fff;
+}
+.dropdwon .item:hover a{
+	color: #c81623;
+}
+.navitems {
+	margin-left: 10px;
+}
+.navitems li {
+	float: left;
+}
+.navitems li a {
+	display: block;
+	line-height: 45px;
+	padding: 0 25px;
+	font-size: 16px;
+	color: #333;
+}
+footer {
+	height: 386px;
+	background-color: #f5f5f5;
+	padding: 30px;
+}
+.mod_service {
+	height: 79px;
+	/*background-color: pink;*/
+	border-bottom: 1px solid #ccc;
+}
+.mod_service ul li {
+	width: 240px;
+	float: left;
+}
+.mod_service_zheng {
+	float: left;
+	width: 50px;
+	height: 50px;
+	background: url(../img/icons.png) -253px -3px;
+	margin-left: 35px;
+}
+.mod_service_title {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+.mod_service_title h5 {
+	margin: 5px 0;
+}
+.mod_help {
+	height: 187px;
+	/*background-color: pink;*/
+	border-bottom: 1px solid #ccc;
+}
+.mod_help_list {
+	width:150px;
+	padding: 20px 0 0 50px; 
+	float: left;
+}
+.mod_help_list dt {
+	height: 25px;
+	font-size: 16px;
+}
+.mod_help_list dd {
+	height: 22px;
+}
+.app dt,p {
+	padding-left: 15px;
+}
+.app p{
+	padding-top: 10px;
+}
+.mod_copyright a {
+	display: line-block;
+	margin-left: 10px;
+	/*text-align: center;*/
+}
+.mod_copyright em {
+	margin-left: 3px;
+}
+.mod_copyright p {
+	text-align: center;
+	margin-top: 10px;
+}
+.footer {
+	margin-top: 10px;
+}
