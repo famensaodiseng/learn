@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 求最大值和最小值的位置
+    var numbers =[33,33,6,78,33,21,3];
+
+    var max= numbers[0];
+    var min= numbers[0];
+    var minIndex =0;
+    var maxIndex =0;
+    for (var i=1;i<numbers.length;i++) {
+    if(max<numbers[i] ){
+        max =numbers[i];
+        maxIndex=i;
+    }
+    if (min<numbers[i] ){}
+        min =numbers[i];
+        minIndex=i;
+    }
+    console.log(max);
+    console.log(min);
+    console.log(minIndex,maxIndex);
+
+
+</script>
+</body>
+</html>
