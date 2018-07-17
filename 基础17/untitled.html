@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+		var  arr = [11,33,54,64,78,95];
+		var max = arr[0];
+		var min = arr[0];
+		minindex =  0;
+		maxindex =  0;
+
+		for (var i = 1;i < arr.length; i++) {
+			if (max < arr[i]) {
+				max = arr[i];
+				minindex = i;
+			}
+			if (min > arr[i]) {
+				min = arr[i];
+				maxindex = i;
+			}
+		}
+		console.log(max);
+		console.log(min);
+		console.log (minindex);
+		console.log (maxindex);
+
+
+	</script>
+</body>
+</html>

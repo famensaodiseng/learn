@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+		
+    // new Object();
+    // new Hero();
+    // 帕斯卡命名  第一个单词的第一个字母大写，后续的每一个单词的第一个字母都大写
+    // 自定义构造函数
+    function Hero(name, weapon, equipment, blood,attack) {
+      // this 动态的给对象增加成员
+      // this 指向了当前对象
+      this.name = name;
+      this.weapon = weapon;
+      this.equipment = equipment;
+      this.blood = blood;
+
+      this.attack = function () {
+        console.log(this.name + '：攻击');
+      }
+      this.run = function () {
+        console.log(this.name + ': 加速跑');
+      }
+    }
+
+    var hero1 = new Hero('黄忠', '弓箭', ['头盔', '靴子'], 100);
+    var hero2 = new Hero('刘备', '剑', ['头盔', '盔甲'], 100);
+    
+    console.log(hero1);
+    console.log(hero1["attack"]);
+	</script>
+</body>
+</html>
