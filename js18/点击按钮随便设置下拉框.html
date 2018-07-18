@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id= 'btn'>按钮</button>	<br>	
+
+	<select name="" id="sel">
+			<option value="">北京</option>
+			<option value="">西安</option>
+			<option value="">宝鸡</option>
+			<option value="">成都</option>
+			<option value="">南州</option>
+	</select>
+
+	<script>
+			var btn = document.getElementById('btn');
+			btn.onclick =  function  () {
+				var sel = document.getElementById('sel');
+				var opts = sel.getElementsByTagName('option');
+				var random = parseInt(Math.random() * opts.length);
+				var option = opts[random];
+				option.selected  = true;
+			}
+	</script>
+</body>
+</html>

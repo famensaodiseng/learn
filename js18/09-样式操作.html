@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .cls {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <input type="button" id="btn" value=" 点我 "> <br>
+  <div id="box"></div>  
+
+  <script src="common.js"></script>
+  <script>
+    // 操作样式的时候，使用类样式 使用style？
+    // 当设置多个样式属性的时候使用类样式方便
+    // 当设置样式属性比较少的时候使用style比较方便
+    // 
+    // 
+    // 
+    // 1 类样式
+    // my$('btn').onclick = function () {
+    //   my$('box').className = 'cls';
+    // }
+    // 2 使用style
+    my$('btn').onclick = function () {
+      // 当设置宽度和高度的时候必须带单位，如果不带单位，有错误
+      var box = my$('box');
+      box.style.width = '200px';
+      box.style.height = '200px';
+      box.style.backgroundColor = 'red';
+    }
+
+
+  </script>
+</body>
+</html>

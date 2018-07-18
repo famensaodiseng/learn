@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id = 'btn'>关灯</button>
+
+	
+</body>
+<script>
+	var isOpen = true;
+	var btn  = document.getElementById('btn');
+	btn.onclick  = function () {
+		if (isOpen) {
+			document.body.style.backgroundColor =  'black';
+		this.innerText  = '开灯';
+		isOpen = false;
+	}	else {
+		document.body.style.backgroundColor =  'white';
+		this.innerText  = '关灯';
+		isOpen = true;
+	}
+
+		
+	}
+</script>
+</html>

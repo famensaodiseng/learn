@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.bgc {
+			background-color: pink;
+		}
+</style>
+</head>
+<body>
+	<input type="text" id = 'txtName'>
+	<input type="password" id = 'txtPassword'>
+	<input type="button" id = 'btn' value = '按钮'>
+	<script>
+		var  btn = document.getElementById('btn');
+		btn.onclick = function () {
+			var  txtName = document.getElementById('txtName');
+			var  txtPassword = document.getElementById('txtPassword');
+			if (txtName.value.length <3 ||txtName.value.length>6) {
+				txtName.className = 'bgc';
+				return;
+			} else {
+				txtName.className = '';
+			}
+			if (txtPassword.value.length <6 ||txtPassword.value.length>8) {
+				txtPassword.className = 'bgc';
+				return;
+			} else {
+				txtPassword.className = '';
+			}
+			console.log('登陆');
+		}
+	</script>
+
+</body>
+</html>

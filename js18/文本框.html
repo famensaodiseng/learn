@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input {
+			color: gray;
+		}
+		.black {
+			color: black;
+		}
+</style>
+</head>
+<body>
+	<input type="text" class  = 'color' value ='请输入搜索内容' id = 'txt'>
+	<button id = 'btn'>搜索</button>
+
+	<script>
+		var  btn = document.getElementById('btn');
+		
+
+		txt.onfocus = function () {
+			//var txt  = document.getElementById('txt');
+
+			if (this.value === '请输入搜索内容') {
+				this.value = '';
+				this.className = 'black';
+			}
+			}
+
+		txt.onblur = function () {
+			//var txt  = document.getElementById('txt');
+
+			if (this.value.length === 0||this.value ==='请输入搜索内容') {
+				this.value = '请输入搜索内容';
+				this.className = 'input';
+			}
+			}
+
+	</script>
+</body>
+</html>

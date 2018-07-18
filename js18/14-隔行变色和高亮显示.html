@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="mv">
+    <li>西施</li>
+    <li>貂蝉</li>
+    <li>王昭君</li>
+    <li>杨玉环</li>
+    <li>芙蓉姐姐</li>
+  </ul>
+  <script>
+    var mv = document.getElementById('mv');
+    var lis = mv.getElementsByTagName('li');
+      for (var i= 0;i<lis.length;i++) {
+        li = lis[i];
+        if( i % 2 === 0) {
+          li.style.backgroundColor = 'pink';
+          li.style.width='300px';
+        } else {
+           li.style.backgroundColor = 'skyblue';
+           li.style.width='300px';
+        }
+      }
+
+
+      //鼠标放上去高亮显示，鼠标离开恢复
+      for (var i= 0;i<lis.length;i++) {
+        li = lis[i];
+        var bg;
+        li.onmouseover = function () {
+          //记录当前的颜色
+          bg = this.style.backgroundColor;
+          this.style.backgroundColor = 'yellow';
+        }
+        li.onmouseout = function () {
+          this.style.backgroundColor = bg;
+        }
+
+      }
+  </script>
+</body>
+</html>

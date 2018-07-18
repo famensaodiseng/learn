@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box" age="18" personId="1">张三</div>
+  <script>
+    var box = document.getElementById('box');
+    // // 自有的属性
+    // console.log(box.id);
+    // // 自定义属性  -- 不能使用下面的方式获取到box元素对应的div标签的的自定义属性
+    // console.log(box.age);
+    // console.log(box.personId);
+
+    // 获取自定义属性的值 getAttribute()
+    // console.log(box.getAttribute('age'));
+    // console.log(box.getAttribute('personId'));
+
+    // 设置自定义属性
+    // box.setAttribute('sex', 'male');
+    // box.setAttribute('class', 'test');
+
+    // 移除属性 
+    box.removeAttribute('age');
+    box.removeAttribute('id');
+
+
+  </script>
+</body>
+</html>

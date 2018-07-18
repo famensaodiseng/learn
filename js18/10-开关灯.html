@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="关灯" id="btn">
+
+  <script src="common.js"></script>
+  <script>
+    // 是否开灯  false 关灯状态  true 开灯状态
+    var isOpen = true;
+    my$('btn').onclick = function () {
+      if (isOpen) {
+        document.body.style.backgroundColor = 'black';
+        this.value = '开灯';
+        isOpen = false;
+      } else {
+        document.body.style.backgroundColor = 'white';
+        this.value = '关灯';
+        isOpen = true;
+      }
+    }
+  </script>
+  
+</body>
+</html>
