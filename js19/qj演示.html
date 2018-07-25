@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id= "dv"></div>
+	<button id= "btn">按钮</button>
+	
+	<script src = 'jq/jquery-1.8.3.min.js'></script>
+	<script>
+		$(function () {
+			$('#btn').click(function() {
+				$('#dv').css({'width':'100px','height':'100px','backgroundColor':'pink'});
+			});
+		});
+	</script>
+</body>
+</html>

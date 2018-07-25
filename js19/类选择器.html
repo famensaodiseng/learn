@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.cls {
+		/* width: 300px;
+		height: 300px; */
+		background-color: pink;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="显示效果" id='btn'>
+	<div class="cls">哈哈哈</div>
+	<span class="clas">jkjkjj</span>
+	<script src = 'jq/jquery-1.8.3.min.js'></script>
+	<script>
+		$(function () {
+			$('#btn').click(function () {
+				$('.cls').css('backgroundColor','blue');
+				// $('.cls').css('width','200px');
+			});
+		});
+	</script>
+</body>
+</html>

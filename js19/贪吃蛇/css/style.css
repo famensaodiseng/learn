@@ -1,0 +1,27 @@
+/*
+* @Author: yang fangtao
+* @Date:   2018-07-19 14:22:37
+* @Last Modified by:   famensaodiseng
+* @Last Modified time: 2018-07-19 14:32:40
+*/
+* {
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	color: pink;
+	font-size: 28px;
+	text-align: center;
+	margin-top: 50px;
+}
+span {
+	display: block;
+	text-align: center;
+}
+.map {
+	width: 800px;
+	height: 600px;
+	background-color: skyblue;
+	margin: 0 auto;
+	position: relative;
+}

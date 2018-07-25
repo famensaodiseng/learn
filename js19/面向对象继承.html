@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	面向对象三大特性：封装，继承，多态（抽象）
+
+	<script>
+		var wjl = {
+			name :'王健林',
+			money:1000000,
+			cars:['玛莎拉蒂','特斯拉'],
+			hours:['别墅','大别墅'],
+			play:function () {
+				console.log('打高尔夫');
+			}
+		}
+
+		var wsc = {
+			name :'王思聪'
+		}
+
+
+		// for(var key in wjl) {
+		// 	if (wsc[key]) {
+		// 		continue;
+		// 	}
+		// 	wsc[key] =  wjl[key];
+		// }
+		// console.log(wsc);
+
+
+
+		function exc(parent,child) {
+		for(var key in parent) {
+			if (child[key]) {
+				continue;
+			}
+			child[key] =  parent[key];
+		}
+		}
+
+		exc(wjl,wsc);
+		console.dir(wsc)
+	</script>
+</body>
+</html>
