@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+body {
+    font-size: 100px;
+    color: white;
+    text-shadow: 0 1px 0 black, 0 0 5px black;
+    text-align: center;
+	line-height: 600px;
+}
+p {
+    padding: 0 0.5em;
+    margin: 0;
+}
+.content {
+    background-attachment: fixed;
+
+}
+#content1 {
+    background-image: url("images/1.jpg");
+}
+#content2 {
+    background-image: url("images/2.jpg");
+}
+#content3 {
+    background-image: url("images/3.jpg");
+}
+#content4 {
+   background-image: url("images/4.jpg");
+}
+.slow {
+	position: absolute;
+	top: 600px;
+	left: 200px;
+}
+.fast {
+	position: absolute;
+	top: 600px;
+	right: 200px;
+}
+</style>
+
+</head>
+<body>
+<img src="images/big.png" alt="" class="slow" data-stellar-ratio="2.2">
+<img src="images/big-01.png" alt="" class="fast" data-stellar-ratio="0.8">
+
+<div class="content" id="content1"  data-stellar-background-ratio="0.3">
+    <p>TEXT HERE</p>
+</div>
+<div class="content" id="content2" data-stellar-background-ratio="0.3">
+    <p>TEXT HERE</p>
+</div>
+
+<div class="content" id="content3" data-stellar-background-ratio="0.3">
+    <p class="one">TEXT HERE</p>
+</div>
+<div class="content" id="content4" data-stellar-background-ratio="0.3">
+    <p >TEXT HERE</p>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script>
+	$(function() {
+		// 让content 的高度Wie为当前屏幕的高度
+	
+	$(".content").height($(window).height());
+	$.stellar({
+   	 			horizontalScrolling: false,  // 设置垂直 视差滚动效果  不是水平的
+    			responsive: true,
+    			
+    			//data-stellar-background-ratio="0.3"  设置背景滚动速度
+    			//data-stellar-ratio="2"              设置元素滚动速度
+		});
+	})
+
+	
+</script>
+</html>

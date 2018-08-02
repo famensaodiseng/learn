@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>jQuery产品图片360度3D旋转展示代码</title>
+    <link href="css/page.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div id="circlr">
+
+            <div id="loader"></div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var circlr = document.getElementById("circlr");
+    for (var i = 1; i <= 71; i++) {
+        var pic = document.createElement("img");
+        circlr.appendChild(pic);
+        pic.setAttribute("data-src", "picture/" + i + ".png");
+
+    }
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/circlr.min.js"></script>
+<script type="text/javascript">
+    var crl = circlr('circlr', {
+        scroll: true,
+        loader: 'loader',
+    });
+</script>
+
+</html>
