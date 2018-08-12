@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div data-index = 'school'></div>
+	<p data-date-no = 'haha'></p>
+</body>
+<script>
+	var div =document.querySelector('div');
+	var p =document.querySelector('p');
+	console.log(div.dataset.index);
+	console.log(p.dataset.dateNo);
+	console.log(div.dataset['index'],p.dataset['dateNo']);
+</script>
+</html>
