@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <h2>京东商城</h2>
+<ul>
+</ul>
+<script src="./js/ajaxTool.js"></script>
+<script>
+    $.ajax({
+        type:'post',
+        url:'./server/nav-json.php',
+        data:{},
+        success:render
+    });
+
+    function render(result){
+        var html = "";
+        for(var i=0;i<result.length;i++){
+            html += "<li>";
+            html +='<a href="#">';
+            html += '<img src="'+result[i].src+'" alt="">';
+            html += '<p>'+result[i].text+'</p>';
+            html += '</a>';
+            html += '</li>';
+        }
+        console.log(html);
+        // 将生成的页面结构添加到dom元素中
+        document.querySelector("ul").innerHTML = html;
+    }
+</script>
+<!-- <script>
+    console.log(location.href);
+    function ajax(type,url,data,callback){
+        // 让异步对象发送异步请求
+        // 1.创建对象
+        var xhr = new XMLHttpRequest();
+        // 2.设置请求行
+        xhr.open(type,url,data?url+data:url);
+        // 3.设置请求头:get不需要设置
+        // 3.设置请求体
+        xhr.send();
+
+        // 让异步对象接收服务器响应数据:一个成功的响应包含两个条件：1.服务器成功响应了  2.数据解析完毕可以使用了
+        xhr.onreadystatechange = function(){
+            if(xhr.status == 200 && xhr.readyState == 4){
+                // 获取响应头
+                // getAllResponseHeaders:获取所有响应头
+                console.log(xhr.getAllResponseHeaders());
+                var rh = xhr.getResponseHeader("Content-Type");
+                console.log(rh);
+                console.log(typeof rh);
+                var result = xhr.responseText;
+                // 在js中通过JSON.parse方法将json格式的字符串转换为js数组或者对象(
+                    // 如果文件以[]来描述数据，那么就转换为数组
+                    // 如果文件以{}来描述数据，那么就转换为对象)
+                // 和php中的json_decode方法的功能大致一样
+                // render(result);
+                callback(result);
+            }
+        }
+    }
+    // 实现动态结构的渲染
+    function render(result){
+        var data = JSON.parse(result);
+                var html = "";
+                for(var i=0;i<data.length;i++){
+                    html += "<li>";
+                    html +='<a href="#">';
+                    html += '<img src="'+data[i].src+'" alt="">';
+                    html += '<p>'+data[i].text+'</p>';
+                    html += '</a>';
+                    html += '</li>';
+                }
+                console.log(html);
+                // 将生成的页面结构添加到dom元素中
+                document.querySelector("ul").innerHTML = html;
+    }
+
+    // function render1(){}
+
+    ajax("get","./server/nav-json.php",null,render);
+</script> -->
+</body>
+</html>

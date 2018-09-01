@@ -1,0 +1,18 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+h2{
+    padding: 20px 20px;
+}
+a{
+    text-decoration: none;
+    text-align:center;
+}
+ul{
+    list-style: none
+}
+ul > li {
+    float: left;
+    padding: 0px 20px
+}

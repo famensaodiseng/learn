@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <h2>京东商城</h2>
+<ul>
+</ul>
+<script src="./js/ajaxTool.js"></script>
+<script>
+    $.ajax({
+        type:'get',
+        url:'./server/nav-xml.php',
+        success:function(result){
+            var items = result.querySelectorAll("item");
+            var html = "";
+            for(var i=0;i<items.length;i++){
+                var src = items[i].querySelector("src").innerHTML;
+                var text = items[i].querySelector("text").innerHTML;
+                console.log(src+":"+text);
+                html += "<li>";
+                html += '<a href="#">';
+                html += '<img src="'+src+'" alt="">';
+                html += '<p>'+text+'</p>';
+                html += '</a>';
+                html += '</li>';
+            }
+            document.querySelector("ul").innerHTML = html;
+        }
+    })
+</script>
+<!-- <script>
+    // 1.让异步对象发送请求
+    // 创建对象
+    var xhr = new XMLHttpRequest();
+    // 设置请求行
+    xhr.open("post","./server/nav-xml.php");
+    // 设置请求头
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    // 设置请求体
+    xhr.send(null);
+
+    // 2.让异步对象接收响应
+    // 一个成功的响应包含两个条件  1.服务器成功响应了  2.数据解析完毕可以使用
+    xhr.onreadystatechange = function(){
+        if(xhr.status == 200 && xhr.readyState == 4){
+            // responseText：接收普通字符串
+            // responseXML：专门用来接收服务器返回的xml数据的
+            // var result = xhr.responseText;
+            // responseXML:获取的结果可以理解为一个dom结构，我们可以使用dom的方式来获取这个返回值是的数据
+            var result = xhr.responseXML;
+            // 将获取到的数据生成动态的页面结构
+            // 1.获取返回结果中的所有item元素
+            var items = result.querySelectorAll("item");
+            var html = "";
+            for(var i=0;i<items.length;i++){
+                var src = items[i].querySelector("src").innerHTML;
+                var text = items[i].querySelector("text").innerHTML;
+                console.log(src+":"+text);
+                html += "<li>";
+                html += '<a href="#">';
+                html += '<img src="'+src+'" alt="">';
+                html += '<p>'+text+'</p>';
+                html += '</a>';
+                html += '</li>';
+            }
+            document.querySelector("ul").innerHTML = html;
+        }
+    }
+</script> -->
+</body>
+</html>

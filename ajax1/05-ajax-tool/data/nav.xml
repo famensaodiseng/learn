@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 上面这一句必须是整个xml文档的第一句，否则格式错误 -->
+    <root>
+        <!-- 标签名称 以字母和下划线开头，不能有空格，不能包含特殊字符，区分大小写 -->
+        <items>
+            <!-- 说明下面的内容需要描述为数组 -->
+            <item>
+                <!-- 描述数组中的具体的成员值 -->
+                <src>./images/nav_1.png</src>
+                <text>京东超市</text>
+            </item>
+            <item>
+                <!-- 描述数组中的具体的成员值 -->
+                <src>./images/nav_2.png</src>
+                <text>全球购物</text>
+            </item>
+            <item>
+                <!-- 描述数组中的具体的成员值 -->
+                <src>./images/nav_3.png</src>
+                <text>京东市场123</text>
+            </item>
+        </items>
+    </root>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./form.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./register.php" method="post">
+        <span id="msg">aaa</span> 用户名：
+        <input type="text" name="username" id="username"> 昵称：
+        <input type="text" name="nickname"> 密码： <input type="password" name="password">
+        <input type="submit" value="注册">
+    </form>
+    <div class="showmsg"></div>
+    <script>
+        document.querySelector("#username").onblur=function(){
+            var name = this.value;
+            var xhr = new XMLHttpRequest();
+            xhr.open("get","validate.php?username="+name);
+            xhr.send(null);
+            xhr.onreadystatechange=function(){
+                if(xhr.status==200&&xhr.readyState==4){
+                    console.log(xhr.responseText);
+                    document.querySelector('.showmsg').innerHTML=xhr.responseText;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

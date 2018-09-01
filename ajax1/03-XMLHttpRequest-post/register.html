@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./form.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="./register.php" method="post">     
+        <span id="msg">aaa</span>  
+        用户名：<input type="text" name="username" id="username">
+        昵称：<input type="text" name="nickname" >
+        密码： <input type="password" name="password" >   
+        <input type="submit" value="注册">
+    </form>
+    <div class="showmsg"></div>
+    <script>
+        document.querySelector("#username").onblur = function(){
+            // 1.获取用户数据
+            var name = this.value;
+            // 2. 让异步对象发送post请求
+            // 2.1 创建异步对象
+            var xhr = new XMLHttpRequest();
+            // 2.2 设置请求行 open(请求方式，请求url)
+                // 1.get 需要在url后面拼接参数(如果有参数)
+                // 2.post请求不需要拼接参数
+            xhr.open("post","validate.php");
+            // 2.3 设置请求头:setRequestHeader()
+                // 1.get不需要设置
+                // 2.post需要设置请求头：Content-Type:application/x-www-form-urlencoded
+            // xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");.如果没有设置，参数无法正确的传递到服务器(本质上说，如果没有参数，也不一定需要设置，不会影响请求的发送)
+            // 2.4 设置请求体 send()
+                // 1.get的参数在url拼接了，所以不需要在这个函数中设置
+                // 2.post的参数在这个函数中设置(如果有参数)
+            xhr.send("username="+name);
+
+            // 3.让异步对象接收服务器的响应数据
+            // 一个成功的响应有两个条件：1.服务器成功响应了  2.异步对象的响应状态为4(数据解析完毕可以使用了)
+            // 当异步对象的响应状态发生改变的时候，会触发一个事件：onreadystatechange
+            xhr.onreadystatechange = function(){
+                // 判断服务器是否响应      判断异步对象的响应状态
+                if(xhr.status == 200 && xhr.readyState == 4){
+                    document.querySelector(".showmsg").innerHTML = xhr.responseText;
+                }
+            }
+
+        };
+    </script>
+</body>
+</html>
