@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "mysql": "^2.16.0"
-  },
-  "devDependencies": {
-    "express": "^4.16.3"
-  }
-}
