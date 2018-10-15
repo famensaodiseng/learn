@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+     <script src='lib/vue-2.4.0.js'></script>
+</head>
+<body>
+    <div id='app'> 
+        <p v-for='(user,i) in list'>{{i}}---{{user.name}}---{{user.age}}</p>
+    </div>
+<script>
+    var vm = new Vue({
+    el: '#app',
+    data: {
+        list:[
+            {id:1,name:'zs',age:3},
+            {id:2,name:'ls',age:4},
+            {id:3,name:'ww',age:5},
+            {id:4,name:'zl',age:6}
+        ]
+    },
+    methods: {
+
+    }
+}) 
+</script>
+</body>
+</html>

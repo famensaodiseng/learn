@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="lib/vue-2.4.0.js"></script>
+    <style>
+        .inner {
+            width: 200px;
+            height: 200px;
+            height: 150px;  
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="inner" @click='divc'>
+        <input type="button" value="按钮" @click.stop='inputc' >
+    </div>
+</body>
+<script>
+   var vm =  new Vue({
+       el:'#app',
+       data:{
+           msg:'我是一个小小的小鸟'
+       },
+       methods:{
+           divc() {
+               console.log('触发了div');
+           },
+           inputc() {
+               console.log('触发了input');
+           }
+
+       }
+    })
+</script>
+</html>
