@@ -9,25 +9,28 @@
 </head>
 <body>
     <div id='app'> 
-        <p v-for='item in list'>
-        <input type="checkbox" name="" id="">
-        {{item.id}} -- {{item.name}}
-        </p>
+        
+        <button type="button" @click='add'>button</button>
+        
+        <h3>{{user.name}}</h3>
+        <h3 >{{user.age}}</h3>
+        <hr>
+        {{user.dress}}
     </div>
 <script>
     var vm = new Vue({
     el: '#app',
     data: {
-       list:[
-           {id:1,name:'😔'},
-           {id:2,name:'😆'},
-           {id:3,name:'🤣'},
-           {id:4,name:'🌹'},
-           {id:5,name:'🐎'},
-       ]
+        user:{
+            name:'张三',
+            age:'18'
+        }
     },
     methods: {
-
+        add(){
+        this.$set(this.user,'dress','北京')
+        }
+        
     }
 }) 
 </script>

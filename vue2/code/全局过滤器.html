@@ -9,13 +9,24 @@
 </head>
 <body>
     <div id='app'> 
-        <h1 :style="{color:'red','font-weight':'200'}">这是一个样式</h1>
+        {{msg | magf}}
     </div>
 <script>
+    Vue.filter("magf",(originVal)=>{
+        // return originVal +'000'
+        const date = new Date(originVal);
+        const y = date.getFullYear();
+        const m = date.getMonth() +1;
+        const d = date.getDate();
+
+        return `${y}-${m}-${d}`;
+    })
+
+
     var vm = new Vue({
     el: '#app',
     data: {
-        msg: '法门扫地僧'
+        msg: new Date()
     },
     methods: {
 

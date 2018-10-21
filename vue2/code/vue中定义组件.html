@@ -9,17 +9,31 @@
 </head>
 <body>
     <div id='app'> 
-        {{msg}}
+        <my-con1></my-con1>
     </div>
 <script>
-    var vm = new Vue({
+    //Vue.filter()
+    //定义一个组件
+    // Vue.component("",{
+
+    // })
+
+    Vue.component("my-con1",{
+        template:'<h1>我是一个小石头 </h1>'
+    })
+    const vm = new Vue({
     el: '#app',
     data: {
         msg: '法门扫地僧'
     },
     methods: {
+
+    },
+    filters: {
         
     }
+    //一系列的生命周期函数
+
 }) 
 </script>
 </body>

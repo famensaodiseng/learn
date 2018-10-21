@@ -8,19 +8,17 @@
      <script src='lib/vue-2.4.0.js'></script>
 </head>
 <body>
-    <div id='app'> 
-        <p v-for='(user,i) in list'>{{i}}---{{user.name}}---{{user.age}}</p>
+   <div id='app'>
+   <button type="button"  @click="flag ==!flag">button</button>
+   <h3 v-if='flag'>真</h3>
+   <h3 v-else>假</h3>
     </div>
 <script>
     var vm = new Vue({
     el: '#app',
     data: {
-        list:[
-            {id:1,name:'zs',age:3},
-            {id:2,name:'ls',age:4},
-            {id:3,name:'ww',age:5},
-            {id:4,name:'zl',age:6}
-        ]
+        msg: '法门扫地僧',
+        flag:true
     },
     methods: {
 
