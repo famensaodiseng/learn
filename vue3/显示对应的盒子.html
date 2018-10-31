@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			margin-bottom: 20px;
+			display: none;
+		}
+</style>
+</head>
+<body>
+	<input type="button" name="" value="第一个盒子" id="btn1" onclick="fn('div1')">
+	<input type="button" name="" value="第二个盒子" id="btn2" onclick="fn('div2')">
+	<input type="button" name="" value="第三个盒子" id="btn3" onclick="fn('div3')">
+	<input type="button" name="" value="第四个盒子" id="btn4" onclick="fn('div4')">
+
+	<div id="div1">第一个盒子</div>
+	<div id="div2">第二个盒子</div>
+	<div id="div3">第三个盒子</div>
+	<div id="div4">第四个盒子</div>
+	
+</body>
+<script type="text/javascript">
+	function fn(id) {
+		document.getElementById(id).style.display = 'block';
+	}
+</script>
+</html>
