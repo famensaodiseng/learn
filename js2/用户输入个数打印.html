@@ -8,16 +8,15 @@
 </head>
 <body>
     <script>
-        // var time = prompt('请输入时间');
-        // if (time <= 12) {
-        //     alert("早上好");
-        // }   else if  ( time >=20 ) {
-        //     alert("晚上好");
-        // }
-
-        // 表达式1 ？ 表达式2 ：表达式3
-        
-
+        var num = prompt('请输入个数');
+        var str = '';
+        for (var i=0;i<num;i++){
+            for (var j=0;j<num;j++){
+                str += '🦍';
+            }
+            str +='\n';
+        }
+        console.log(str);
     </script>
 </body>
 </html>
