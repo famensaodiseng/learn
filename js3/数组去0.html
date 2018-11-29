@@ -8,15 +8,14 @@
 </head>
 <body>
     <script>
-        var num = prompt('请输入个数');
-        var str = '';
-        for (var i=0;i<num;i++){
-            for (var j=0;j<num;j++){
-                str += '🦍';
-            }
-            str +='\n';
+        var  arr = [14,53,63,63,62,0,53,50];
+        var newArr = [];
+        for (var i = 0; i<arr.length;i++){
+                if (arr[i]!=0){
+                    newArr[newArr.length] = arr[i];
+                }
         }
-        console.log(str);
+        console.log(newArr);
     </script>
 </body>
 </html>

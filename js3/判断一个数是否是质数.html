@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 质数：只能被1 和 其本身整除的数 -->
+    <script>
+        var num = Number(prompt("判断一个数是不是质数"));
+        var sum = 0; 
+        for (var i = 1; i <= num; i++) {
+            if (num % i == 0) {
+                console.log(i) ;
+                sum += i;
+            }
+        }
+        if (sum == num + 1) {
+            console.log(num + "是质数");
+        } else {
+            console.log(num + "不是质数");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // for (var i = 0; i < 10; i++) {
+        //     for (var j = 0; j < 10; j++) {
+        //     //    console.log('⭐️');
+        //     document.write('⭐️ ');
+        //     }
+        //     document.write('</br>')
+        // }
+
+        // var xin = "";
+        // for (var i = 0;i<10;i++){
+        //     for (var j=0;j-i;j++){
+        //         xin +='💗';
+        //     }
+        //     xin +='\n';
+        // }
+        // console.log(xin);
+        
+var temp;
+var num1 = 1;
+var num2 = 1;
+量重新赋值成为第一个和第二个之和
+for(var i=1;i<=10;i++) { temp=num2; num2=num1 + num2; //3.把存储好的第三个变量赋值给第一个变量。 num1=temp;
+    //4.执行10次。（因为前两项不需要计算，所以只需要执行10次）
+     } alert(num2);
+    </script>
+</body>
+
+</html>

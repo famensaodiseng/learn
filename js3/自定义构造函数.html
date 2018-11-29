@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
     <script>
-        var str = '';
-        for (var i = 1; i <= 9; i++) {
-            for (var j = 1; j <= i; j++) {
-                str += j +'*' +i +'=' +i*j +'\t' ;
+        function Fn(name,age,sayhi){
+            this.name = name;
+            this.age = age;
+            this.sayhi = function(){
+                console.log('你好');
             }
-            str =str +'\n';
         }
-        console.log(str);
+      var fdh =   new Fn('刘德华',19);
+      console.log(fdh.name);
+      console.log(fdh.age);
+      fdh.sayhi();
     </script>
 </body>
-
-</html>
+</html> 

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var money = 100;
+        while (true) {
+            var num = prompt("请输入您要进行的操作" + "\n" + "1.存钱" + "\n" + "2.取钱" + "\n" + "3.显示余额" + "\n" + "4.退出")
+            if (num == 1) {
+                var num1 = prompt("请输入要存的金额");
+                money = parseFloat(num1) + money;
+            } else if (num == 2) {
+                var num2 = prompt("请输入要取的金额");
+                if (money - num2 <= 0) {
+                    alert("多少钱，心里没数吗");
+                } else {
+                    money = money - parseFloat(num2);
+                }
+            } else if (num == 3) {
+                alert("余额" +   money );
+            } else if (num == 4) {
+                alert("确认要退出吗?");
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

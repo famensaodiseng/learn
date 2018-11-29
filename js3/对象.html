@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var obj = {
+            name: '张三',
+            age: 10,
+            address: '西安',
+            sayHi: function () {
+                console.log('哈哈');
+            }
+        }
+        console.log(obj.name);
+        console.log(obj.age);
+        obj.sayHi();
+
+
+
+
+        var dog  = new Object();
+        dog.name = '王可可';
+        dog.age = 18;
+        dog.color = "black";
+        dog.eat = function (){
+            console.log('吃骨头');
+        };
+        
+        dog.dark = function (){
+            console.log('嘿嘿嘿');
+        }
+        console.log(dog.name);
+        console.log(dog['color']);
+
+
+        console.log(dog.color+ '的'+dog.name  );
+
+
+    
+// dog.eat()
+    </script>
+</body>
+
+</html>
