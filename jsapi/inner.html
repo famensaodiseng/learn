@@ -8,16 +8,10 @@
 </head>
 <body>
     <script>
-        function isRun(year){
-            var flag = false;
-            if (year % 4 == 0 && year %100 != 0 || year %400 ==0){
-                // return '闰年';
-                flag = true;
-            }
-            return flag;
-            }
+        // innerHTML获取的时候带有标签。
+        // innerText获取的时候只获取文本信息
+
         
-        console.log(isRun(2008));
     </script>
 </body>
 </html>

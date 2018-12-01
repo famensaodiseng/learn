@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">切换</button>
+    <img id="img" src="images/1-small.jpg" alt="">
+</body>
+<script>
+    var btn = document.getElementById('btn');
+    var img = document.getElementById('img');
+    var flag = true;
+    btn.onclick = function () {
+        if (flag === true) {
+            img.src = 'images/4-small.jpg';
+            flag = false;
+        } else {
+            img.src = 'images/1-small.jpg';
+            flag = true;
+        }
+        i
+    };
+</script>
+
+</html>
