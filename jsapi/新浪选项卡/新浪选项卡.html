@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 360px;
+            height: 160px;
+            margin: 0 auto;
+            /*background-color: red;*/
+        }
+
+        .hd {
+            height: 35px;
+            border-top: 1px solid #DBDEE1;
+            border-left: 1px solid #DBDEE1;
+            margin-bottom: 20px;
+        }
+
+        .hd span {
+            display: inline-block;
+            width: 70px;
+            border-right: 1px solid #DBDEE1;
+            border-bottom: 1px solid #DBDEE1;
+            background: #F6F6F6;
+            float: left;
+            text-align: center;
+            font: 500 14px/34px "宋体";
+            color: #596A7B;
+        }
+
+        .hd .current {
+            border-bottom: none;
+            color: #FF8400;
+        }
+
+        .bd {
+            position: relative;
+            display: none;
+        }
+        .bd.current {
+            display: block;
+        }
+        .bd img {
+            float: left;
+        }
+
+        .bd ul {
+            float: left;
+            margin-left: 26px;
+        }
+
+        .bd li {
+            line-height: 26px;
+            color: #122E67;
+            font-size: 14px;
+        }
+
+        .bd span {
+            width: 105px;
+            height: 20px;
+            background: black;
+            color: white;
+            text-align: center;
+            font: 400 12px/20px "微软雅黑";
+            position: absolute;
+            left: 0;
+            top: 70px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div id="hd" class="hd">
+        <span class="current">应用中心</span>
+        <span>安卓应用</span>
+        <span>安卓游戏</span>
+        <span>装机必备</span>
+        <span>新品上架</span>
+    </div>
+    <div id="bd">
+        <div class="bd current">
+            <img src="01.png" alt=""/>
+            <ul>
+                <li>举起手机你就是焦点：一直播</li>
+                <li>微博电影，带你发现好电影</li>
+                <li>随时随地畅快购物：手机淘宝</li>
+                <li>全面解读体坛风云：新浪体育</li>
+            </ul>
+            <span>随时随地：微博</span>
+        </div>
+        <div class="bd">
+            <img src="02.png" alt=""/>
+            <ul>
+                <li>[拍摄美化] 小咖秀：一起来飙戏</li>
+                <li>[拍摄美化] 秒拍：酷炫的短视频</li>
+                <li>[新闻资讯] 新浪财经：轻松赚钱</li>
+                <li>[网购支付] 天猫：汇聚海量好货</li>
+            </ul>
+            <span>发现头条要闻</span>
+        </div>
+        <div class="bd">
+            <img src="03.png" alt=""/>
+            <ul>
+                <li>[聊天通讯] 有信：免费高清电话</li>
+                <li>[拍摄美化] 图钉：拍摄分享社区</li>
+                <li>[系统工具] WiFi神器：免费安全</li>
+                <li>[影音播放] 视界是如此不同</li>
+            </ul>
+            <span>带你一起看世界</span>
+        </div>
+        <div class="bd">
+            <img src="04.png" alt=""/>
+            <ul>
+                <li>[影音播放] 阿里星球：娱乐中心</li>
+                <li>[影音播放] 优酷：重磅好戏连台</li>
+                <li>[日常生活] 支付宝：生活平台</li>
+                <li>[系统工具] UC浏览器：包罗万象</li>
+            </ul>
+            <span>发现不一样的城市</span>
+        </div>
+        <div class="bd">
+            <img src="05.png" alt=""/>
+            <ul>
+                <li>阿里旅行：让你的世界触手可行</li>
+                <li> 滴滴出行：轻松便捷的打车服务</li>
+                <li>铁路12306：火车购票便捷服务</li>
+                <li> 高德导航：出行必备的离线导航</li>
+            </ul>
+            <span>天气早知道</span>
+        </div>
+    </div>
+</div>
+<script>
+    var hd = document.getElementById("hd");
+    var spans = hd.getElementsByTagName("span");
+    var bd = document.getElementById("bd");
+    var divs = bd.getElementsByTagName("div");
+    for(var i=0;i<spans.length;i++){
+        spans[i].index = i;
+        spans[i].onmouseover = function(){
+            for(var i= 0;i<spans.length;i++){
+                spans[i].className = "";
+                divs[i].className = "bd";
+            }
+            this.className = "current";
+            var index = this.index;
+            divs[index].className = "bd current";
+        };
+    }
+</script>
+</body>
+</html>

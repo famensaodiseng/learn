@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .text {
+            color: aquamarine;
+        }
+        .black {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" value='请输入你银行卡密码' id='txt' class="text">
+    <input type="button" value='按钮' id='button'>
+    <script>
+        var txt = document.getElementById('txt');
+        var button = document.getElementById('button');
+
+        txt.onfocus = function () {
+            if (this.value === '请输入你银行卡密码') {
+                txt.value = "";
+                txt.className = 'black';
+            }
+        }
+
+        txt.onblur = function () {
+            if (this.value === '') {
+                txt.value = "请输入你银行卡密码";
+                txt.className = 'text';
+            }
+
+        }
+    </script>
+</body>
+
+</html>

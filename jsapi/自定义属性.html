@@ -7,11 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        // innerHTML获取的时候带有标签。
-        // innerText获取的时候只获取文本信息
+    <div age ='18' name = '老王' id="box"></div>
 
-        
+    <script>
+        var box = document.getElementById('box');
+        console.log(box.getAttribute('age'));
+
+
+        box.setAttribute('sex','男');
+        box.removeAttribute('id');
     </script>
 </body>
 </html>

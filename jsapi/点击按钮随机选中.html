@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value = '设置' id = 'btn'>
+    <select name="" id="select">
+        <option value="1">北京</option>
+        <option value="2">上海</option>
+        <option value="3">西安</option>
+        <option value="4">宝鸡</option>
+        <option value="5">榆林</option>
+    </select>
+
+    <script>
+        var btn = document.getElementById('btn');
+        var select = document.getElementById('select');
+        var options = select.getElementsByTagName('option');
+        btn.onclick = function(){
+                var randomIndex = parseInt(Math.random()*options.length);
+                var option = options[randomIndex];
+                option.selected = true;
+        }
+    </script>
+</body>
+</html>
