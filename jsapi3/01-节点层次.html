@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <span>span</span>
+    <p>p标签</p>
+    <!-- 这里是注释 -->
+  </div>
+  <script>
+    // var box = document.getElementById('box');
+    // console.dir(box)
+    // 节点的层次结构
+    // 
+    // 父子结构
+    // parentNode  父节点  只有一个
+    // childNodes  子节点  有很多个
+    // children    子元素
+    // 
+   //  var box = document.getElementById('box');
+   //  console.log(box.parentNode);
+   // console.log(box.childNodes);
+
+   // // 属性节点、元素节点、文本节点、注释节点
+   // for (var i = 0; i < box.childNodes.length; i++) {
+   //   // 找到box中所有的子元素
+   //   var node = box.childNodes[i];
+   //   // 判断当前的子节点是否是元素节点
+   //   if (node.nodeType === 1) {
+   //     console.log(node);
+   //   }
+   // }
+   // 有没有能够直接获取子元素的属性？ children
+   var box = document.getElementById('box');
+   console.log(box.children);  // 所有的子元素
+  </script>
+</body>
+</html>

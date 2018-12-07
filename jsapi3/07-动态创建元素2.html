@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮" id="btn">
+  <div id="box"></div>
+  <script>
+    // element.innerHTML 
+    // var box = document.getElementById('box');
+    // box.innerHTML = 'Hello <p>World</p>';
+    
+    // var btn = document.getElementById('btn');
+    // btn.onclick = function () {
+    //   var box = document.getElementById('box');
+    //   box.innerHTML = 'Hello <p>World</p>';
+    // }
+    // 
+    // 
+    // 点击按钮 生成列表，鼠标放上高亮显示的效果
+    
+    // 模拟数据
+    // var datas = ['西施', '貂蝉', '凤姐', '芙蓉姐姐'];
+    // var btn = document.getElementById('btn');
+    // btn.onclick = function () {
+    //   var box = document.getElementById('box');
+    //   box.innerHTML = '<ul>';  // 重新绘制
+
+    //   // 遍历数据
+    //   for (var i = 0; i < datas.length; i++) {
+    //     var data = datas[i];
+    //     box.innerHTML += '<li>' + data + '</li>';   // 重新绘制
+    //   }
+
+    //   // box.innerHTML = box.innerHTML + '</ul>'
+    //   box.innerHTML += '</ul>';  // 重新绘制
+    // }
+    // 
+    // 
+    // 优化1
+    // var datas = ['西施', '貂蝉', '凤姐', '芙蓉姐姐'];
+    // var btn = document.getElementById('btn');
+    // btn.onclick = function () {
+    //   var box = document.getElementById('box');
+    //   var html = '<ul>';    // 重新开辟内存 需要耗费时间
+
+    //   // 遍历数据
+    //   for (var i = 0; i < datas.length; i++) {
+    //     var data = datas[i];
+    //     html += '<li>' + data + '</li>';    // 因为字符串不可变 重新开辟内存 需要耗费时间
+    //   }
+    //   html += '</ul>';   // 因为字符串不可变 重新开辟内存 需要耗费时间
+
+    //   box.innerHTML = html;   // 重新绘制
+    // }
+
+
+    // 优化2
+    var datas = ['西施', '貂蝉', '凤姐', '芙蓉姐姐'];
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+      var box = document.getElementById('box');
+
+      // 使用数组替代字符串拼接
+      var array = [];
+      array.push('<ul>');
+
+      // 遍历数据
+      for (var i = 0; i < datas.length; i++) {
+        var data = datas[i];
+        array.push('<li>' + data + '</li>');
+      }
+      array.push('</ul>');   
+
+      box.innerHTML = array.join('');  
+      // 当li 生成到页面之后，再从页面上查找li 注册事件
+      
+    }
+  </script>
+</body>
+</html>

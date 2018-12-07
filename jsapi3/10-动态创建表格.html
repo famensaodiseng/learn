@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box"></div>
+  <script src="common.js"></script>
+  <script>
+    // var s = {name: 'zs', subject: '语文', score: 90};
+    // 模拟数据
+    var datas = [
+      {name: 'zs', subject: '语文', score: 90},
+      {name: 'ls', subject: '数学', score: 80},
+      {name: 'ww', subject: '英语', score: 99},
+      {name: 'zl', subject: '英语', score: 100},
+      {name: 'xs', subject: '英语', score: 60},
+      {name: 'dc', subject: '英语', score: 70}
+    ];
+
+    // 1 创建table 元素
+    var table = document.createElement('table');
+    my$('box').appendChild(table);
+    // 2 创建表头
+    var thead = document.createElement('thead');
+    table.appendChild(thead);
+
+    var tr = document.createElement('tr');
+    thead.appendChild(tr);
+
+    var th = document.createElement('th');
+    tr.appendChild(th);
+    // th.innerText
+    setInnerText(th, '姓名');
+
+    th = document.createElement('th');
+    tr.appendChild(th);
+    setInnerText(th, '科目');
+
+    th = document.createElement('th');
+    tr.appendChild(th);
+    setInnerText(th, '成绩');
+    
+    // 3 创建数据行
+  </script>
+</body>
+</html>

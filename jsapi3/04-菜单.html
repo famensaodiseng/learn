@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #menu ul li {
+            list-style-type: none;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            background-color:beige;
+            text-align: center;
+            float: left;
+            margin-left: 5px;
+        }
+
+        #menu ul li.current {
+            background-color: burlywood;
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li class="current"><a href="javascript:void(0)">首页</a></li>
+            <li><a href="javascript:undefined">播客</a></li>
+            <li><a href="javascript:void(0)">博客</a></li>
+            <li><a href="javascript:void(0)">相册</a></li>
+            <li><a href="javascript:void(0)">关于</a></li>
+            <li><a href="javascript:void(0)">帮助</a></li>
+        </ul>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+      // void 是运算符   
+      // 执行void后面的表达式，并始终返回undefined
+      
+      var menu = my$('menu');
+      // 获取menu中的ul
+      var ul = getFirstElementChild(menu);
+
+      for (var i = 0; i < ul.children.length; i++) {
+        var li = ul.children[i];
+        // 获取li中的a标签
+        var link = getFirstElementChild(li);
+        // 注意：此时是把函数赋给onclick 而不是函数的调用
+        link.onclick = linkClick;
+      }
+
+      function linkClick() {
+         // 所有的li取消高亮显示 
+         for (var i = 0; i < ul.children.length; i++) {
+           var li = ul.children[i];
+           li.className = '';
+         }
+
+        // 让当前a标签所在的li高亮显示
+        // 
+        // this是当前点击的a标签对应的元素
+        this.parentNode.className = 'current';
+
+        // 取消后续内容的执行
+        return false;
+      }
+
+      // ele.firstChild  
+      // ele.firstElementChild
+
+    </script>
+</body>
+</html>

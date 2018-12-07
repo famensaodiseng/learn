@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <div>111</div>
+  </div>
+  <script>
+    // 在内存中创建一个DOM对象
+    var p = document.createElement('p');
+    // 设置对象的属性
+    p.innerText = 'hello';
+    p.style.color = 'red';
+
+    // 把p元素，放到DOM树上
+    var box = document.getElementById('box');
+    box.appendChild(p);
+
+  </script>
+</body>
+</html>

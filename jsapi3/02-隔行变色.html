@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="mv">
+    <li>西施</li>
+    <li>貂蝉</li>
+    <li>王昭君</li>
+    <li>杨玉环</li>
+    <li>芙蓉姐姐</li>
+  </ul>
+
+  <div>
+    <p></p>
+    <div></div>
+    <span></span>
+  </div>
+  <script>
+    var mv = document.getElementById('mv');
+
+    // mv.getElementsByTagName('li');
+
+    // mv.childNodes  所有子节点
+    // mv.children    所有的子元素
+    // 判断是否有子节点
+    if (mv.hasChildNodes()) {
+      for (var i = 0; i < mv.children.length; i++) {
+        var li = mv.children[i];
+        if (i % 2 === 0) {
+          // 奇数行
+          li.style.backgroundColor = 'red';
+        } else {
+          // 偶数行
+          li.style.backgroundColor = 'green';
+        }
+      }
+    }
+  </script>
+</body>
+</html>

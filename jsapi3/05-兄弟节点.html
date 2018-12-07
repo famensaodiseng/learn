@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box">
+    <div>这是一个区域1</div>
+    <div>这是一个区域2</div>
+    <div id="c3">这是一个区域3</div>
+    <div>这是一个区域4</div>
+    <div>这是一个区域5</div>
+  </div>
+  <script>
+    var c3 = document.getElementById('c3');
+
+    // nextSibling  下一个兄弟节点
+    // nextElementSibling   下一个兄弟元素
+    // 
+    // previousSibling   上一个兄弟节点
+    // previousElementSibling    上一个兄弟元素
+    // console.log(c3.nextSibling);
+    // console.log(c3.previousSibling);
+    // 
+    // console.log(c3.nextElementSibling);
+    // console.log(c3.previousElementSibling);
+
+
+    console.log(getNextElementSibling(c3));
+    // 获取下一个兄弟元素
+   function getNextElementSibling(element) {
+      var el = element;
+      while (el = el.nextSibling) {
+        if (el.nodeType === 1) {
+            return el;
+        }
+      }
+      return null;
+    }
+  </script>
+</body>
+</html>
