@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id = "btn1" value="开始">
+    <input type="button" id = "btn2" value="结束">
+    <script src="prohub.js"></script>
+    <script>
+        var timeId;
+        my$('btn1').onclick  = function(){
+        timeId =   setTimeout(function(){
+                alert('爆炸了💥');
+            },2000);
+        }
+        my$('btn2').onclick = function() {
+            clearTimeout(timeId);
+        }
+    </script>
+</body>
+</html>
