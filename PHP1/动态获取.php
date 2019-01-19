@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?
+    echo date("Y-m-d");
+?>
 </body>
 </html>
