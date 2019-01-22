@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+	<audio src="upload/lisi.mp3" controls></audio>
+	<div class="container">
+		<h1 class=" display-3 py-3">音乐上传</h1>
+		<hr>
+		<!-- 表单结构： -->
+		<form action="" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="title">标题</label>
+				<!-- 下面的所有 is-invalid 均为要判断的类名 -->
+				<input type="text" class="form-control is-invalid" id="title" name="title">
+				<small class="invalid-feedback">这是一个标题</small>
+			</div>
+			<div class="form-group">
+				<label for="geshou">歌手</label>
+				<input type="text" class="form-control is-invalid" id="geshou" name="geshou">
+				<small class="invalid-feedback">歌手的名称</small>
+			</div>
+			<div class="form-group">
+				<label for="zhuanji">专辑</label>
+				<input type="text" class="form-control is-invalid" id="zhuanji" name="zhuanji">
+				<small class="invalid-feedback">专辑名称</small>
+			</div>
+			<div class="form-group">
+				<label for="source">资源文件</label>
+				<!-- accept 用于设置可以接受的文件类型，可以使用MIMEtype,也可以使用后缀名，使用逗号连接 -->
+				<input type="file" class="form-control is-invalid" id="source" name="source" accept=".mp3,.png">
+				<small class="invalid-feedback">文件上传</small>
+			</div>
+			<button class="btn btn-primary btn-block">上传</button>
+		</form>
+	</div>
+</body>
+</html>

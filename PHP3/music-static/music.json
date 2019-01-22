@@ -1,0 +1,26 @@
+[
+    {
+        "title":"张三之歌",
+        "singer":"张三",
+        "album":"张三的歌",
+        "src":"./mp3/See You Again.mp3"
+    },
+    {
+        "title": "李四之歌",
+        "singer": "李四",
+        "album": "李四的歌",
+        "src": "./mp3/See You Again.mp3"
+    },
+    {
+        "title": "王五之歌",
+        "singer": "王五",
+        "album": "王五的歌",
+        "src": "./mp3/See You Again.mp3"
+    },
+    {
+        "title":"赵六之歌",
+        "singer":"赵六",
+        "album":"赵六的歌",
+        "src":"./mp3/See You Again.mp3"
+    }
+]

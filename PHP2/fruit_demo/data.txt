@@ -1,3 +1,0 @@
-img/pineapple1.jpg|菠萝123
-img/pineapple1.jpg|菠萝
-img/apple1.jpg|苹果
