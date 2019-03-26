@@ -1,0 +1,7 @@
+li {
+    list-style: none;
+}
+body {
+    background: url(../image/WX20190326-161114@2x.png) no-repeat;
+    background-size: cover;
+}
