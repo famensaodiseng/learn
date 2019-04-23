@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 300px;
+			height: 300px;
+			background-color:pink;
+			margin: 0 auto;
+			text-align: center
+		}
+	</style>
+</head>
+<body>
+	<div>
+		
+		居中。
+	</div>
+</body>
+<script>
+function fun(n,o){
+console.log(o)
+return {
+	fun:function(m){
+		return fun(m,n);
+	}
+};
+}
+
+// var x= fun(0); a.fun(1);a.fun(2);a.fun(3);
+var y = fun(0).fun(1).fun(2).fun(3);
+var z=fun(0).fun(1); c.fun(2);c.fun(3);
+
+console.log(x);
+console.log(x);
+console.log(z);
+</script>
+</html>
