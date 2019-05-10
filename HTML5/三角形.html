@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+      div {
+          width: 300px;
+          height: 50px;
+          border: 1px solid #000;
+          position: relative;
+      }
+      div::after {
+          content:"";
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 10px;
+          height: 10px;
+          border-right: 1px solid #000;
+          border-bottom:1px solid #000;
+          transform: rotate(45deg); 
+          transition: all .3s;
+      }
+      div:hover::after {
+          transform: rotate(225deg);
+      }
+    </style>
+</head>
+<body>
+    <div class="father">
+          
+    </div>
+  
+</body>
+</html>

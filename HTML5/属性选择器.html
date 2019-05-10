@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 属性选择器 */
+        button[disabled] {
+            cursor: default;
+        }
+        input[type="search"] {
+            background-color: pink;
+        }
+        span[class^=icon] {
+            color: red;
+        }
+
+        span[class$=icon] {
+            color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button disabled>按钮</button>
+    <button disabled>按钮</button>
+
+
+    <input type="text" name="" id="" value="文本">
+    <input type="text" name="" id="" value="文本">
+    <input type="text" name="" id="" value="文本">
+    <input type="search" name="" id="" value="选择">
+    <input type="search" name="" id="" value="选择">
+    <input type="search" name="" id="" value="选择">
+
+
+    <span class="icon1">图标1</span>
+    <span class="icon2">图标2</span>
+    <span class="icon3">图标3</span>
+    <span class="iicon4">图标4</span>
+    <span class="iicon4icon">图标4</span>
+</body>
+
+</html>
