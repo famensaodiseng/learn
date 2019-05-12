@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            overflow: hidden;
+        }
+        div,span {
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            /* border: 1px solid #000; */
+            border-radius: 50px;
+            line-height: 60px;
+            padding: 0 20px;
+            text-align: center;
+            position: relative;
+        }
+        span {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background-color: pink;
+            transition: all 0.2s;
+        }
+        div:hover span{
+            position: absolute;
+            top: 0;
+            z-index: -999;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        苹果耳机
+        <span></span>
+    </div>
+</body>
+</html>
