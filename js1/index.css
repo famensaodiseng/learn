@@ -1,0 +1,14 @@
+header {
+  width: 300px;
+  height: 200px;
+  background-color: pink;
+}
+header a {
+  color: red;
+}
+header a:hover {
+  background-color: blue;
+}
+header h1 {
+  color: yellow;
+}
