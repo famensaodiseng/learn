@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //  使用for循环打印三角形
+        // var str ="";
+        // for (var i =1;i<=10;i++){
+        //     for (var j =1;j<=i;j++) {
+        //         str +="⭐️";
+        //     }
+        //     str +='\n';
+        // }
+        // console.log(str);
+
+
+        // 求1-100偶数和
+        // var odd = 0;
+        // var even =0;
+        // for (var i =1;i<=100;i++) {
+        //     if (i % 2 ===0){
+        //         even +=i;
+        //     } else {
+        //         odd+=i;
+
+        //     }
+        // }
+        // console.log('偶数和是'+even);
+        // console.log('奇数和是'+odd);
+
+
+        // 1-100所有数的和与平均值
+        // var sum = 0;
+        // var average = 0;
+        // for (var i =1;i<=100;i++){
+        //     sum +=i ;
+        // }
+        // average = sum /100;
+        // console.log('累加和'+sum);
+        // console.log('平均数'+average);
+
+        // 1-100中7的倍数的累加和
+        // var sum = 0;
+        // for (var i =1;i<=100;i++) {
+        //     if (i % 7 ===0) {
+        //         sum+=i;
+        //     } 
+        // }   
+        // console.log('7的倍数的累加和'+sum);
+
+
+
+        // 接受用户名admin,密码为123456
+        // var username = prompt('输入你的用户名');
+        // var password = prompt('输入你的密码');
+        // while (username !== 'admin' ||  password !== '123456') {
+        //      alert('用户名或密码错误');
+        //      username = prompt('输入你的用户名');
+        //      password = prompt('输入你的密码');
+        // }
+        // alert('登陆成功');
+
+
+        // 打印矩形 
+        // var str = '';
+        // for (var i =1;i<=5;i++){
+        //     for (var j = 1;j<=5;j++){
+        //         str +="⭐️";
+        //     }
+        //     str +='\n';
+        // }
+        // console.log(str);
+
+        //整数1～100的累加值，但要求跳过所有个位为3的数
+        // var sum = 0;
+        // for (var i = 1;i<=100;i++){
+        //     if (i % 10 ==3){
+        //         continue;
+        //     }else {
+        //         sum +=i;
+        //     }
+        // }
+        // console.log(sum);
+
+        // 简易ATM
+
+        // - 题目描述：
+        // - 里面现存有 100 块钱。
+        // - 如果存钱，就用输入钱数加上先存的钱数, 之后弹出显示余额提示框
+        // - 如果取钱，就减去取的钱数，之后弹出显示余额提示框
+        // - 如果显示余额，就输出余额
+        // - 如果退出，弹出退出信息提示框
+        // 操作界面如下
+        var money = 100;
+        var moneySum = 0;
+        var num = parseInt(prompt('请输入你的操作:' + '\n' +
+            '1.存钱' + '\n' + '2.取钱' + '\n' + '3.显示余额' + '\n' + '4.退出'));;
+        switch (num) {
+            case 1:
+                moneySum = parseInt(money) + parseInt(prompt('请输入你存钱数'));
+                alert("存款：" + moneySum);
+                break;
+            case 2:
+                moneySum = parseInt(money) - parseInt(prompt('请输入你取钱数'));
+                if (parseInt(moneySum) > parseInt(money)) {
+                    alert("取款：" + moneySum);
+                } else {
+                    alert('你没辣么多钱');
+                }
+                break;
+            case 3:
+                alert("余额：" + money);
+                break;
+            case 4:
+                var flag = prompt("是否继续？(Y/N)");
+                // if (flag == "Y" || flag == "y") {
+                // break;
+                // } else {
+                // alert('不退卡');
+                // continue;
+                // }
+                if (flag == "Y" || flag == "y") {
+                    break;
+                } else if (flag == "N" || flag == "n") {
+                    console.log("本次取款结束，请退卡");
+                    // return;
+                }
+                default:
+                    alert("输入错误");
+                    break;
+        }
+    </script>
+</body>
+
+</html>

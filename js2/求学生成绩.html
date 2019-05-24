@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // alert(22);
+        var num = prompt('输入学生数量');
+        var sum = 0;
+        var average = 0;
+        for (var i =1;i<=num;i++){
+            // alert('第'+ i +'个学生成绩');
+            var cj= prompt('第'+ i+'个学生的成绩');
+            sum += parseFloat(cj);
+        }
+        var average = sum / num ;
+        alert('这个班级的平均分是'+average);
+        
+
+
+    </script>
+</body>
+</html>
