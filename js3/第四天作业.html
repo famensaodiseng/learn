@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 写一个函数，用户输入任意两个数字的任意算术运算（简单的计算器小功能），并能弹出运算后的结果。
+        // num1 = prompt('请输入第一个数');
+        // num2 = prompt('请输入第二个数');
+        // function sum(num1,num2) {
+        //     return (parseFloat(num1) + parseFloat(num2));
+        // }
+        // console.log(sum(num1,num2));
+         
+
+        // 写一个函数，用户输入任意两个数字的最大值，并能出弹运算后的结果。
+        // num1 = prompt('请输入第一个数');
+        // num2 = prompt('请输入第二个数');
+        function max(num1,num2) {
+            if (num1 > num2){
+                 alert(num1);
+            } else {
+                alert(num2);
+            }
+        }
+        // max(num1,num2);
+        console.log(max(3,20));
+        
+
+
+
+
+        // 2. 写一个函数，用户输入任意三个不同数字的最大值，并能弹出运算后的结果。
+        // num1 = prompt('请输入第一个数');
+        // num2 = prompt('请输入第二个数');
+        // num3 = prompt('请输入第三个数');
+
+        // function max(num1,num2,num3){
+        //     var max = num1;
+        //    if  (num1>num2 && num1>num3){
+        //        alert(num1);
+        //    }else if (num2 >num1 && num2>num3){
+        //        alert(num2);
+        //    } else {  
+        //        alert(num3);
+        //    }
+        //    return max;
+        // }       
+        // console.log(max(num1,num2,num3));
+        
+
+
+        // 3. 写一个函数，用户输入一个数判断是否是素数，并返弹出回值(又叫质数，只能被1和自身整数的数)
+
+
+
+
+        // 1. 写一个函数，实现反转任意数组。
+        // var arr = prompt('输入一串数组');
+        // var newArr = [];
+        // function fz(arr) {
+        //     // var arr=[1,2,4,5,6,7,8,9];
+            
+        //     for (var i = arr.length - 1; i >= 0; i--) {
+        //         newArr[newArr.length] = arr[i];
+        //     }
+        //     return arr;
+        // }
+        // console.log(fz(newArr));
+        
+        
+        
+        // 2. 写一个函数，实现对数字数组的排序。
+
+        // var arr = [22, 42, 53, 1, 43, 53, 63, 23, 91, 0, -2, 999];
+
+        // function paixu(arr) {
+        //     var newArr = [];
+        //     for (var i = 0; i < arr.length - 1; i++) { //外层管趟数 
+        //         for (var j = 0; j < arr.length - i - 1; j++) {
+        //             if (arr[j] >
+        //                 arr[j + 1]) {
+        //                 var temp = arr[j];
+        //                 arr[j] = arr[j + 1];
+        //                 arr[j + 1] = temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        // // paixu(arr);
+        // console.log(paixu(arr));
+    </script>
+</body>
+
+</html>

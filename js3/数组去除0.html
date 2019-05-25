@@ -8,13 +8,15 @@
 </head>
 <body>
     <script>
-        for (var i =1;i<=5;i++){
-            if (i==3){
-                continue;
+        var arr = [1,43,4,0,6,4,40,0,6];
+        var newArr = [];
+        
+        for (var i =0;i<arr.length;i++){
+            if ( arr[i] !== 0) {
+                newArr[newArr.length] = arr[i];
             }
-            console.log('我正在吃第'+i+'个包子');
         }
-
+        console.log(newArr);
         
     </script>
 </body>
