@@ -8,15 +8,15 @@
 </head>
 <body>
     <script>
-        var arr = [1,43,4,0,6,4,40,0,6];
-        var newArr = [];
-        
-        for (var i =0;i<arr.length;i++){
-            if ( arr[i] !== 0) {
-                newArr[newArr.length] = arr[i];
+        function isyear(year) {
+            if(year %4 ==0 && year %100 !== 100 ||year % 400 ==0){
+                return true;
+            } else {
+                return false; 
             }
         }
-        console.log(newArr);
+
+        console.log(isyear(2019));
         
     </script>
 </body>
