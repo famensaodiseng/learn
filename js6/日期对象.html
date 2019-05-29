@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 日期对象是一个构造函数，必须使用new创造
+        // var arr = new Array();
+        // var obj = new obj();
+    
+        // var Date =new Date();
+        // console.log(Date)
+
+        // var date= new Date(2019,3,2);
+        // var dd = new Date('2001-3-2 8:8:8');
+        // console.log(date,'\n'+dd);
+
+        // var time = new Date();
+        // console.log(time.getFullYear());
+        // console.log(time.getMonth() +1);
+        // console.log(time.getDate());
+        // console.log(time.getDay());
+        
+
+        var time = new Date();
+        var year = time.getFullYear();
+        var month = time.getMonth()+1;
+        var riqi = time.getDate();
+         var arr=['周天','周一','周二','周三','周四','周五','周六'];
+        for (var i = 0;i<=arr.length;i++){
+            // arr[i];
+        }
+        var zhou = time.getDay(arr);
+       
+        console.log('今天是'+year +'年'+month+'月'+riqi +'日'+arr[zhou]);
+        
+        
+        
+    </script>
+</body>
+</html>

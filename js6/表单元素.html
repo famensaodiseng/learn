@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <button>按钮</button>
+        <input type="text" value="请输入银行卡密码" id='inp'>
+    </form>
+</body>
+<script>
+    var form = document.querySelector('form');
+    var button =document.querySelector('button');
+    var inp = document.getElementById('inp');
+    button.onclick =function (){
+        inp.value ='哈哈';
+        button.disabled=true;
+    }
+   
+</script>
+</html>

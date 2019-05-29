@@ -8,17 +8,16 @@
 </head>
 <body>
     <script>
-        function sum(){
-            console.log('哈哈');
-            
-        }
-        sum();
+        var date =new Date();
+        console.log(date.valueOf());
+        console.log(date.getTime());
+        
+        var date1 = +new Date();
+        console.log(date1);
+        
 
-        var age = function (){
-            console.log('嘿嘿');
-            
-        }
-        age();
+        console.log(Date.now());
+        
     </script>
 </body>
 </html>

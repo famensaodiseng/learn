@@ -8,11 +8,15 @@
 </head>
 <body>
     <script>
-        function sayHi() {
-            console.log('哈哈哈');
+        var obj = {
+            name:'张三',
+            age :13,
+            sex:'男'
+        }
+        for (var k in obj){
+            console.log(obj[k]);//k叫做变量
             
         }
-        sayHi();
     </script>
 </body>
 </html>

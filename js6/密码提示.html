@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" placeholder='你不输入你银行卡密码？'> 
+    <span>什么破密码</span>
+</body>
+    <script>
+        var input = document.querySelector('input');
+        var span = document.querySelector('span');
+        input.onblur = function () {
+            span.style.display='none';
+        }
+    </script>
+</html>
