@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr = [3,5,6,32,65,7];
+        // console.log(arr.indexOf('6'));
+        // // 作用就是返回该数组元素的索引号
+        // console.log(arr.lastIndexOf(6));
+
+        var str = 'dijusfijonsjfjejkhsjk';
+        // 求所有o的位置和次数
+        var index =str.indexOf('o');
+        var num =0;
+        // console.log(index);
+        while (index !== -1) {
+                console.log(index);
+                num++;
+               index=  str.indexOf('o',index+1);
+
+        }
+        console.log(num);
+        
+
+        
+    </script>
+</body>
+</html>
