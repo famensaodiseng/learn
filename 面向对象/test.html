@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
     <script>
-        var obj = new Object();
-        obj.name = 'zs';
-        obj.sex = '男';
-        obj.showName = function() {
-            alert('我的名字叫:' + this.name);
+        function fn(){
+            console.log('嘿嘿');
+            
+        };
+        fn();
+
+        var fun = function(){
+            console.log('哈哈');
+            
         }
-        obj.showName();
+        fun();
+
+        var f = new Function('console.log(123)')
+        
+        f();            
     </script>
 </body>
-
 </html>

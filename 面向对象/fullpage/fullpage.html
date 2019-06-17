@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /* .first.current h3{
+            font-size: 100px;
+        } */
+        /*交集选择器：h3当当前元素同时添加了second和current的时候才会有效果*/
+        /* .second.current h3{
+            font-size: 100px;
+        } */
+    </style>
+    <link rel="stylesheet" href="css/myself.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery.fullPage.min.js"></script>
+    
+</head>
+<body>
+<div id="dowebok">
+    <!--每一个section就是一屏-->
+    <div class="section first">
+        第一页
+    </div>
+    <div class="section second">
+        第二页
+        <div class="pic">
+            <img src="1.png" alt="" class="two">
+        </div>
+    </div>
+    <div class="section">
+        第三页
+    </div>
+    <div class="section">
+        第四页
+    </div>
+    <div class="section">
+        第五页
+    </div>
+</div>
+<script>
+    $(function(){
+        $('#dowebok').fullpage({
+            /*设置每一屏的背景色*/
+            // sectionsColor:["red","green","blue","pink","skyBlue"],
+            /*当滚动到某一屏之后调用
+            * index:当前屏的索引，索引从1开始*/
+            // afterLoad:function(anchorLink,index){
+                /*将其它屏的current标记移除*/
+                // $(".section").removeClass("current");
+//                alert(index);
+                /*添加样式,当滚动到某一屏之后，为元素添加样式--标记*/
+                // $(".section").eq(index-1).addClass("current");
+    //         }
+
+                
+
+        // 第二屏动画
+        onLeave: function(index, nextIndex, direction) {
+            if(nextIndex == 2) {
+            // 我们的jquery 里面的animate 是不支持 transform 等
+            // jquery 里面通过 css 和 transition 搭配也能基本实现 类似animate 效果
+            $(".two").css("transform", "translateX(-50%) translateY(-50%) translateZ(0px) scale(1)");
+            } else {
+            $(".two").css("transform", "translateX(-50%) translateY(-50%) translateZ(2000px) scale(1)");
+            }
+
+
+
+        }   
+        });
+    });
+</script>
+</body>
+</html>
