@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+            font-size: 22px;
+
+        }
+        div {
+            width: 300px;
+            height: 300px;
+            margin: 30px 0;
+            background-color: skyblue;
+        }
+        .current {
+            background-color: yellowgreen;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        jQuery(function () {
+            //什么时候用css(): 样式少的时候;
+            //什么时候用类操作: 样式多的时候;
+
+            //(点击按钮，切换背景色)
+            $("button").click(function () {
+                //1.css();  判断当前颜色;
+                //rgb(135, 206, 235)
+//                console.log($("div").css("background-color"));
+//                console.log($("div").css("backgroundColor"));
+//                if($("div").css("background-color") === "rgb(135, 206, 235)"){
+//                    //设置为yellowgreen
+//                    $("div").css("background-color","yellowgreen");
+//                }else{
+//                    //背景色为yellowgreen,那么我们把他改为skyblue；
+//                    var json = {"backgroundColor":"skyblue"};
+//                    $("div").css(json);
+//                }
+
+
+                //2.类操作
+                    //判断有没有类名;
+//                if($("div").hasClass("current")){
+//                    //有就删除
+//                    $("div").removeClass("current");
+//                }else{
+//                    //没有就添加
+//                    $("div").addClass("current");
+//                }
+
+                //优化：
+                $("div").toggleClass("current");
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>切换</button>
+    <div>
+        牡丹虽好空入目，枣花最小结实诚;
+    </div>
+</body>
+</html>
