@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="text-center display-3 py-3">音乐列表</h1>
+		<hr>
+		<a href="./upload.php" class="btn btn-dark">新增歌曲信息</a>
+		<table class="table table-bordered">
+			<thead class="thead-inverse">
+				<tr>
+					<th>标题</th>
+					<th>歌手</th>
+					<th>专辑</th>
+					<th>音乐</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr>
+					<td>李四之歌</td>
+					<td>李四</td>
+					<td>李四的音乐世界</td>
+					<td>
+						<audio src="mp3/zhangsan.mp3" controls></audio>
+					</td>
+					<td>
+						<a href="./edit.php?id=2" class="btn btn-primary">编辑</a>
+						<a href="./delete.php?id=2" class="btn btn-danger">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>王五之歌</td>
+					<td>王五</td>
+					<td>王五的音乐宇宙</td>
+					<td>
+						<audio src="mp3/zhangsan.mp3" controls></audio>
+					</td>
+					<td>
+						<a href="./edit.php?id=3" class="btn btn-primary">编辑</a>
+						<a href="./delete.php?id=3" class="btn btn-danger">删除</a>
+					</td>
+				</tr>
+				<tr>
+					<td>赵六之歌</td>
+					<td>赵六</td>
+					<td>赵六的音乐黑洞</td>
+					<td>
+						<audio src="mp3/zhangsan.mp3" controls></audio>
+					</td>
+					<td>
+						<a href="./edit.php?id=4" class="btn btn-primary">编辑</a>
+						<a href="./delete.php?id=4" class="btn btn-danger">删除</a>
+					</td>
+				</tr> -->
+			</tbody>
+		</table>
+	</div>
+	<script type="text/template" id="musicTemp">
+		{{each items as value index}}
+			{{if index == 0}}
+				<tr bgcolor='red'>
+			{{else if index == 1}}
+				<tr bgcolor='green'>
+			{{else}}
+				<tr bgcolor='blue'>
+			{{/if}}
+				<td>{{items[index].title}}</td>
+				<td>{{value.singer}}</td>
+				<td>{{value.album}}</td>
+				<td>
+					<audio src="{{value.src}}" controls></audio>
+				</td>
+				<td>
+					<a href="./edit.php?id={{value.id}}" class="btn btn-primary">编辑</a>
+					<a href="./delete.php?id={{value.id}}" class="btn btn-danger">删除</a>
+				</td>
+			</tr>
+		{{/each}}
+	</script>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/template.js"></script>
+	<script>
+		// 发送ajax请求
+		$.ajax({
+			url: "./music.php",
+			dataType: 'json',
+			success: function (result) {
+				// 调用模板引擎动态生成页面结构
+				// 如果参数是对象是直接传入对象
+				// 如果参数是数组，就包装为对象
+				var html = template("musicTemp",{"items":result});
+				$("tbody").html(html);
+			}
+		});
+	</script>
+</body>
+
+</html>

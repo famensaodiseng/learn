@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "平凡之路",
+        "singer": "朴树",
+        "album": "平凡的生命",
+        "src": ".\/mp3\/zhangsan.mp3"
+    },
+    {
+        "id": 2,
+        "title": "为了遇见你",
+        "singer": "薜之谦",
+        "album": "为了遇见你",
+        "src": ".\/mp3\/See You Again.mp3"
+    },
+    {
+        "id": 3,
+        "title": "故乡",
+        "singer": "许巍",
+        "album": "许巍-作品全集",
+        "src": ".\/mp3\/See You Again.mp3"
+    }
+]

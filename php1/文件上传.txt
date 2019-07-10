@@ -1,0 +1,34 @@
+一：客户端
+    1、表单的提交的方式设置为post
+    2.需要为表单添加enctype:multipart/form-data
+
+
+二：服务器端：
+    1.$_FILES:可以记录上传文件的相关信息
+    2.使用move_uploaded_file实现文件的移动 
+
+三：补充
+    1.判断用户进行了提交:empty
+    2.限制文件类型
+        a.为表单元素添加属性 accept=".jpg,.png"
+        b.可以在服务器进行判断
+            $type = $_FILES["myfile"]["type"];
+            // strpos(源字符串，搜索字符串):可以获取指定字符串在源字符串中第一次出现的索引值，索引从0开始
+            if(strpos($type,"image/") === 0){
+    3.设置合理的文件名称：
+        1.生成一个随机的文件名称
+            $filename = $_FILES["myfile"]["name"];
+            // 获取当前文件的扩展名 strrchr(源字符串，指定搜索的字符)
+            $extension = strrchr($filename,".");
+            // 生成一个随机的文件名称：获取到一个唯一值
+            $myname = time().rand(1000,9999).$extension;
+            move_uploaded_file($_FILES["myfile"]["tmp_name"],"./upload/".$myname); 
+    4.限制文件上传大小的修改
+        1.upload_max_filesize:这是服务器对上传的文件大小做了限制，默认为2mb,你可以修改这个值，但是要记得重启服务器
+        2.服务器对每一次post请求传递的数据做了限制，默认为8mb,可以在php.ini配置文件中修改post_max_size属性值
+
+    5.同时上传多个文件
+        1.设置多文件选择，但是它只是能够选择多个文件，传递给服务器的文件数据只是后面的那个文件。如果在设置了multiple属性的时候，需要传递多个文件给服务器，那么只需要在name属性值后面添加[]
+        2.也可以添加多个表单元素，同时也需要在名称后面添加[]
+            <input type="file" name="myfile[]">
+            <input type="file" name="myfile[]">

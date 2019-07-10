@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单注册</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #F7F7F7;
+		}
+
+		ul {
+			margin: 0;
+			padding: 50px;
+			list-style: none;
+		}
+
+		.register {
+			width: 800px;
+			margin: 50px auto;
+			background-color: #FFF;
+			border: 1px solid #CCC;
+			border-radius: 5px;
+		}
+
+		li {
+			display: flex;
+			margin: 20px 0;
+		}
+		
+		label, input {
+			display: block;
+			float: left;
+			height: 46px;
+			font-size: 24px;
+			box-sizing: border-box;
+			color: #333;
+		}
+
+		label {
+			width: 200px;
+			line-height: 46px;
+			margin-right: 30px;
+			text-align: right;
+		}
+
+		input {
+			width: 320px;
+			padding: 8px;
+			line-height: 1;
+			outline: none;
+			position: relative;
+		}
+
+		input.code {
+			width: 120px;
+		}
+
+		input.verify {
+			width: 190px;
+			margin-left: 10px;
+		}
+
+		input.disabled {
+			background-color: #CCC !important;
+		}
+
+		input[type=button] {
+			border: none;
+			color: #FFF;
+			background-color: #E64145;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		.tips {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+		}
+
+		.tips p {
+			min-width: 300px;
+			max-width: 400px;
+			line-height: 40px;
+			margin: 0 auto;
+			color: #FFF;
+			display: none;
+			background-color: #C91623;
+		}
+	</style>
+</head>
+<body>
+	<div class="register">
+		<form id="ajaxForm">
+			<ul>
+				<li>
+					<label for="">用户名</label>
+					<input type="text" name="name" class="name">
+				</li>
+				<li>
+					<label for="">请设置密码</label>
+					<input type="password" name="pass" class="pass">
+				</li>
+				<li>
+					<label for="">请确认密码</label>
+					<input type="password" name="repass" class="repass">
+				</li>
+				<li>
+					<label for="">验证手机</label>
+					<input type="text" name="mobile" class="mobile">
+				</li>
+				<li>
+					<label for="">短信验证码</label>
+					<input type="text" name="code" class="code">
+					<input type="button" value="获取验证码" class="verify">
+				</li>
+				<li>
+					<label for=""></label>
+					<input type="button" class="submit " value="立即注册">
+				</li>
+			</ul>
+		</form>
+	</div>
+	<!-- 提示信息 -->
+	<div class="tips">
+		<p>用户名不能为空---</p>
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script>
+		// 获取验证码
+		// 1.为按钮添加单击事件
+		$(".verify").on("click",function(){
+			// 判断本次请求是否正在进行，如果是，则当前操作不响应
+			if($(".verify").hasClass("disabled")){
+				return;
+			}
+			// 2.收集手机号，向服务器发送获取验证码请求
+			var phone = $(".mobile").val();
+			// 发送请求
+			$.ajax({
+				type:'get',
+				url:"./server/getCode.php",
+				data:{"phone":phone},
+				// 请求发送之前的回调函数
+				beforeSend:function(){
+					// 我想在这个函数中来验证手机号是否合法，如果不合法，则return false
+					// 手机号：11位数字 第一位必须是数字 》》正则表达式
+					var reg = /^1\d{10}$/;
+					// 判断手机 号是否与正则匹配
+					// test:就是验证参数值是否与指定的正则表达式匹配
+					if(!reg.test(phone)){
+						// show 让元素显示
+						// $(".tips > p").show().text('请输入合法的手机号');
+						$(".tips > p").fadeIn(1000).delay(2000).fadeOut(1000).text('请输入合法的手机号');
+						return false;
+					}
+					// 既然没有返回，那么就应该发送请求
+					$(".verify").addClass("disabled");
+					// 倒计时
+					var total = 5;
+					var timerId = setInterval(function(){
+						total -- ;
+						$(".verify").val(total+'秒之后重新获取');
+						if(total <= 0){
+							// 一定要记得清除之后添加的禁用样式
+							$(".verify").val('重新获取').removeClass("disabled");
+							// 清除定时器
+							clearInterval(timerId);
+						}
+					},1000);
+				},
+				success:function(result){
+					// 3.接收验证码，给出相应的提示
+					console.log(result);
+				}
+			});
+		});
+
+		// 验证用户名是否存在
+		// 1.添加事件 blur
+		$(".name").on("blur",function(){
+			// 2.收集用户数据，发送请求
+			var name = $(".name").val();
+			$.ajax({
+				type:'get',
+				url:"./server/validateUsername.php",
+				data:{"name":name},
+				// 设置返回值的类型
+				dataType:"json", //说明你希望ajax帮助你将接收到的返回值转换为js对象或者数组
+				// 验证用户是否输入合法
+				beforeSend:function(){},
+				success:function(result){
+					console.log(result);
+					console.log(typeof result);
+					// 判断返回值，是否标记用户名是否存在 
+					if(result && result.code == 0){
+						// 3.接收响应，给出提示
+						$(".tips > p").text(result.msg).fadeIn(1000).delay(2000).fadeOut(1000);
+					}
+				}
+			});
+		});
+
+		// 实现注册功能
+		// 1.添加注册事件
+		// 2.收集用户数据
+		// 3.发起ajax请求
+		// 4.接收响应，给出提示
+		$('.submit').on("click",function(){
+			// 判断当前是否有注册操作正在进行，如果是则不再进行用户的请求
+			if($('.submit').hasClass("disabled")){
+				return;
+			}
+			// var name = "";
+			// var pass = "";
+			// var phone = "";
+			// 可以通过将表单序列化的方式来收集用户数据
+			// 1.这个方法是jq的方式，所以需要使用jq对象来调用
+			// 2.这个方法可以将表单中所有name属性的表单元素的值收集，生成 key=value&key=value...这种格式
+			// 3.在ajax中，支持两种格式的参数(1.对象  2.参数格式字符串)
+			var data = $("#ajaxForm").serialize();
+			$.ajax({
+				type:'post',
+				url:'./server/register.php',
+				data:data,
+				timeout:3000,
+				dataType:'json',
+				beforeSend:function(){
+					// 用户输入的合法性验证
+					// 如果验证通过。开启节流阀。避免用户反复提交
+					$('.submit').addClass("disabled").val('正在注册中');
+				},
+				success:function(result){
+					if(result && result.code == 1){
+						$(".tips > p").text(result.msg).fadeIn(1000).delay(2000).fadeOut(1000);
+					}
+				},
+				error:function(){
+					$(".tips > p").text('注册失败').fadeIn(1000).delay(2000).fadeOut(1000);
+				},
+				// 不管成功还是失败都会执行的回调
+				complete:function(){
+					$('.submit').removeClass("disabled").val('注册');
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="./css/index.css"> -->
+</head>
+<body>
+    <h2>京东商城</h2>
+<ul>
+    <!-- <li>
+        <a href="#">
+            <img src="./images/nav_1.png" alt="">
+            <p>京东超市</p>
+        </a>
+    </li> -->
+</ul>
+<!-- 我们一般会将模板内容创建script标签中
+1.必须添加一个类型，原则上可以设置为任意的浏览器不支持的类型
+2.行业规范。一般会将类型设置text/template
+3.为当前script标签设置唯一id,方便后期的获取 -->
+<script type="text/template" id="navTemp">
+    <li>
+        <a href="#">
+            <img src="<%=src%>" alt="">
+            <p><%=text%></p>
+        </a>
+    </li>
+</script>
+<script>
+    // 数据
+    var obj = {
+        "src":"./images/nav_3.png" ,
+        "text":"京东市场"
+     }
+    // 模板在哪里创建
+        // 1.不能将模板字符串内容直接添加页面结构中，因为它会被浏览器解析 渲染
+        // 2.也不能做成注释，因为我们后期需要获取到这个字符串值，做成注释就无法获取了
+        // 3.我们在script标签中创建
+            // 1.设置了text/template类型，浏览器不会进行解析
+            // 2.设置了id,方便后期的元素内容的获取。script本质上也是一个标签，所以可以通过dom的方式来获取里面的内容
+    // 模板如何创建
+        // 1.占位符可以采用<%=属性名称-值%>
+        // 2.占位符中的值的名称一定要参照数据的属性名称
+    // 如何替换
+        // 1.读取模板内容
+        var str = document.getElementById("navTemp").innerHTML;
+        console.log(str);
+        // <%=src%>
+        var reg = /<%=(\w+)%>/;
+        // exec:如果能够匹配到内容，则返回数组，否则返回null
+        // var match = reg.exec(str);
+        // console.log(match);
+        // // match[0]:<%=src%>
+        // // match[1]:src
+        // // 找到对象中对应名称的属性值
+        // var src = obj[match[1]]; //./images/nav_3.png
+        // console.log(src);
+        // // 进行模板内容字符串的替换
+        // str = str.replace(match[0],src);
+        // console.log(str);
+        var match = null;
+        while(match = reg.exec(str)){
+            str = str.replace(match[0],obj[match[1]]);
+            console.log(str);
+        }
+        document.querySelector("ul").innerHTML = str;
+</script>
+</body>
+</html>

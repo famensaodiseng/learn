@@ -1,0 +1,14 @@
+[
+    {
+       "src":"./images/nav_1.png" ,
+       "text":"京东超市"
+    },
+    {
+        "src":"./images/nav_2.png" ,
+        "text":"全球购物"
+     },
+     {
+        "src":"./images/nav_3.png" ,
+        "text":"京东市场"
+     }
+]

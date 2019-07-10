@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "heima@itcast.cn";
+
+        // 使用正则的方式实现获取源字符串中的指定部分
+        // test():检测字符串是否与指定的正则表达式匹配，如果匹配则返回true,否则返回false。侧重于判断是否匹配
+        // exec():检测字符串是否与指定的正则表达式匹配，同时可以提取某些匹配的部分，侧重于匹配之后的提取
+        // 使用步骤：
+            // 1.创建一个符合源字符串规则的正则表达式
+            // 2.调用exec方法
+            // 3.实现返回值的接收--返回一个数组
+            // 4.如何实现提取：将你想提取的字符串的对应的正则表达式部分用()包含
+        var reg = /(\w+)[@]((\w+)[.](\w+))/;
+        var obj = reg.exec(str);
+
+        console.log(obj);
+    </script>
+</body>
+</html>

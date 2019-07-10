@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <h2>京东商城</h2>
+<ul>
+    <!-- <li>
+        <a href="#">
+            <img src="./images/nav_1.png" alt="">
+            <p>京东超市</p>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="./images/nav_2.png" alt="">
+            <p>全球购物</p>
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <img src="./images/nav_3.png" alt="">
+            <p>京东市场</p>
+        </a>
+    </li> -->
+</ul>
+<!-- <script type="text/template" id="navTemp">
+    <li>
+        <a href="#">
+            <img src="<%=src%>" alt="">
+            <p><%=text%></p>
+        </a>
+    </li>
+</script> -->
+
+<script type="text/template" id="navTemp">
+    <% for(var i=0;i<items.length;i++){ %>
+        <li>
+            <a href="#">
+                <img src="<%=items[i].src%>" alt="">
+                <p><%=items[i].text%></p>
+            </a>
+        </li>
+    <% } %>
+</script>
+<script src="./js/template-native.js"></script>
+<script>
+    // 单个数据的动态结构生成
+    // var obj = {
+    //    "src":"./images/nav_1.png" ,
+    //    "text":"京东超市"
+    // };
+    // // 调用模板引擎中的函数，返回值为替换之后的动态结构
+    // // var html = template(模板id,数据(对象));
+    // var html = template("navTemp",obj);
+    // console.log(html);
+    // document.querySelector("ul").innerHTML = html;
+
+    // 多个数据的动态结构生成
+    var arr = [
+        {
+        "src":"./images/nav_1.png" ,
+        "text":"京东超市"
+        },
+        {
+            "src":"./images/nav_2.png" ,
+            "text":"全球购物"
+        },
+        {
+            "src":"./images/nav_3.png" ,
+            "text":"京东市场"
+        }
+    ];
+    // 如果数据是一个对象，就直接传入对象
+    // 如果数据是一个数组，就包装对对象再传递
+    // 因为在模板中只能使用当前传入的对象的属性，它会根据属性自动的去获取对应的值来使用
+    var html = template("navTemp",{"items":arr});
+    console.log(html);
+    document.querySelector("ul").innerHTML = html;
+</script>
+</body>
+</html>
