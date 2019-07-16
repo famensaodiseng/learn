@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/iconfont.ttf?t=1509892845975') format('truetype');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gouwuche:before { content: "\e600"; }
+

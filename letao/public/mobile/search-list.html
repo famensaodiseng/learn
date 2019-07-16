@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<link rel="stylesheet" href="assets/mui/css/iconfont.css">
+	<link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/search.css">
+	<script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/mui/js/mui.min.js"></script>
+	<script src="assets/artTemplate/template-native.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/searchList.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">搜索中心</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon iconfont icon-gouwuche"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div id="refresh">
+		<div class="container">
+			<div class="mui-row">
+		        <div class="mui-col-xs-6 search-bar" id="priceSort">
+					价格&nbsp;<span class="fa fa-angle-down"></span>
+		        </div>
+		        <div class="mui-col-xs-6 search-bar" id="numSort">
+					销量&nbsp;<span class="fa fa-angle-down"></span>
+		        </div>
+		    </div>
+
+		    <div class="product" >
+		    	<ul class="list mui-clearfix" id="productBox">
+		    		
+		    	</ul>
+		    </div>
+		</div>
+	</div>
+	<script id="productTpl" type="text/html">
+		<% for(var i=0;i<result.data.length;i++){ %>
+			<li>
+				<a href="detail.html?id=<%=result.data[i].id %>">
+					<img src="<%=result.data[i].pic[0].picAddr%>">
+					<span class="name">
+						<%=result.data[i].proName %>
+					</span>
+					<p>
+						<span>¥<%=result.data[i].oldPrice %></span>
+						<span>¥<%=result.data[i].price%></span>
+					</p>
+					<button class="buy-now">立即购买</button>
+				</a>
+			</li>
+		<% } %>
+	</script>
+</body>
+</html>

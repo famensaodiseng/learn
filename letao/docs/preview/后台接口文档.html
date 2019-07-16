@@ -1,0 +1,694 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:后台接口文档</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+		<!-- <link href="toc/css/highlight/agate.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/androidstudio.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/arduino-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/arta.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/ascetic.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-cave-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-cave-light.css" media="all" rel="stylesheet" type="text/css"/> -->
+		<!-- <link href="toc/css/highlight/atelier-dune-dark.css" media="all" rel="stylesheet" type="text/css"/> -->
+		<!-- <link href="toc/css/highlight/atelier-dune-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-estuary-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-estuary-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-forest-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-forest-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-heath-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-heath-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-lakeside-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-lakeside-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-plateau-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-plateau-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-savanna-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-savanna-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-seaside-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-seaside-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-sulphurpool-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atelier-sulphurpool-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atom-one-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/atom-one-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/brown-paper.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/codepen-embed.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/color-brewer.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/darcula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/darkula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/default.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/docco.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/dracula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/far.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/foundation.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/github-gist.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/github.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/googlecode.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/grayscale.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/gruvbox-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/gruvbox-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/hopscotch.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/hybrid.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/idea.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/ir-black.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/kimbie.dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/kimbie.light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/magula.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/mono-blue.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/monokai-sublime.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/monokai.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/obsidian.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/ocean.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/paraiso-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/paraiso-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/pojoaque.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/purebasic.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/qtcreator_dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/qtcreator_light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/railscasts.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/rainbow.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/routeros.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/school-book.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/solarized-dark.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/solarized-light.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/sunburst.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night-blue.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night-bright.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night-eighties.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow-night.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/tomorrow.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/vs.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/vs2015.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/xcode.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/xt256.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/highlight/zenburn.css" media="all" rel="stylesheet" type="text/css"/> -->
+
+		<link href="toc/css/highlight/school-book.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h2 id="-">商城后台接口汇总</h2>
+<h2 id="-">员工模块</h2>
+<h3 id="-">登录接口</h3>
+<ul>
+<li>接口名称
+登录接口</li>
+<li>接口地址
+ /employee/employeeLogin</li>
+<li>请求方式
+  POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+username|是|用户名
+password|是|用户密码</li>
+<li>示例<pre><code class="lang-javascript">{&quot;username&quot;:&quot;root&quot;,&quot;password&quot;,&quot;123456&quot;}
+</code></pre>
+</li>
+<li>返回说明
+参数|说明
+--|--
+success|登录成功
+error|登录失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+//error 1000 用户名错误  1001 密码错误
+</code></pre>
+</li>
+</ul>
+<h3 id="-">登出接口</h3>
+<ul>
+<li>接口名称
+登出接口</li>
+<li>接口地址
+/employee/employeeLogout</li>
+<li>请求方式
+GET</li>
+<li>参数说明
+无</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+</li>
+</ul>
+<h3 id="-">判断员工是否登录</h3>
+<ul>
+<li>接口名称
+判断管理员登录</li>
+<li>接口地址
+ /employee/checkRootLogin</li>
+<li>请求方式
+  GET</li>
+<li>参数说明</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+//error 
+{ &quot;error&quot;: 400, &quot;message&quot;: &quot;未登录！&quot; }
+</code></pre>
+</li>
+</ul>
+<h2 id="-">产品模块</h2>
+<h3 id="-">产品新增(大改动)</h3>
+<ul>
+<li>接口名称
+产品新增 （需要登录）</li>
+<li>接口地址
+/product/addProduct</li>
+<li>请求方式
+POST  </li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+proName|是|产品名称
+oldPrice|是|老价格
+price|是|价格
+proDesc|是|产品描述
+size|是|产品尺寸
+statu|是|产品上下架 1没下架 0下架
+num|是|用户库存
+brandId|是|归属品牌
+pic图片数组[{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;},{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;}]</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">添加产品图片</h3>
+</li>
+<li>接口名称
+上传图片 （需要登录）</li>
+<li>接口地址
+/product/addProductPic</li>
+<li>请求方式
+POST  enctype=&quot;multipart/form-data&quot;</li>
+<li>注意事项<ul>
+<li>jquery-fileupload 插件需要引入三个文件<ul>
+<li>jquery.ui.widget.js</li>
+<li>jquery.iframe-transport.js</li>
+<li>jquery.fileupload.js</li>
+</ul>
+</li>
+<li>上传文件的文件框的名字属性为name=&quot;file&quot;</li>
+<li>data-url=&quot;接口地址&quot;<pre><code class="lang-javascript">$(&#39;#fileUpload&#39;).fileupload({
+  dataType: &#39;json&#39;,
+  done: function (e, data) {
+      var imgUrl= data._response.result.picAddr;
+      $(&quot;#showBrand&quot;).attr(&quot;src&quot;,imgUrl);
+  }
+});
+</code></pre>
+</li>
+</ul>
+</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+pic1图片1
+pic2图片2
+pic3图片3</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+[{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;},{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;}]
+</code></pre>
+<h3 id="-">产品修改(大改动)</h3>
+</li>
+<li>接口名称
+产品修改 （需要登录）</li>
+<li>接口地址
+/product/updateProduct</li>
+<li>请求方式
+POST  </li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+id |是|产品id
+proName|是|产品名称
+oldPrice|是|老价格
+price|是|价格
+proDesc|是|产品描述
+size|是|产品尺寸
+statu|是|产品上下架
+num|是|用户库存
+brandId|是|归属品牌
+pic图片数组[{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;},{&quot;picName&quot;:&quot;24-1.png&quot;,&quot;picAddr&quot;:&quot;product/24-1.png&quot;}]</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">产品列表查询</h3>
+</li>
+<li>接口名称
+产品列表查询 （需要登录）</li>
+<li>接口地址
+/product/queryProductDetailList</li>
+<li>请求方式
+GET</li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页数
+pageSize|是|每页条数</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">//success
+[{
+  &quot;id&quot;: 1,
+  &quot;proName&quot;: &#39;羽绒服&#39;,
+  &quot;oldPrice&quot;: 998,
+  &quot;price&quot;: 600,
+  &quot;proDesc&quot;: &quot;质量好&quot;,
+  &quot;size&quot;: &#39;170-195&#39;,
+  &quot;statu&quot;: 1,
+  &quot;updateTime&quot;: 2012-12-01T04:05:23.000Z,
+  &quot;num&quot;: 1,
+  &quot;brandId&quot;: 1 },
+ {
+  &quot;id&quot;: 2,
+  &quot;proName&quot;: &#39;羽绒服&#39;,
+  &quot;oldPrice&quot;: 998,
+  &quot;price&quot;: 599,
+  &quot;proDesc&quot;: &#39;/样子新&#39;,
+  &quot;size&quot;: &#39;170-195&#39;,
+  &quot;statu&quot;: 1,
+  &quot;updateTime&quot;: 2012-12-01T04:05:23.000Z,
+  &quot;num&quot;: 2,
+  &quot;brandId&quot;: 1 } ]
+</code></pre>
+<h2 id="-">分类模块</h2>
+<h3 id="-">一级分类新增</h3>
+</li>
+<li>接口名称
+添加1级分类 （需要登录）</li>
+<li>接口地址
+/category/addTopCategory</li>
+<li>请求方式
+POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+categoryName|是|分类名称</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">一级分类修改</h3>
+</li>
+<li>接口名称
+更新1级分类 （需要登录）</li>
+<li>接口地址
+/category/addTopCategory</li>
+<li>请求方式
+POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+id|是|分类id
+categoryName|是|分类名称
+isDelete|是|是否启用</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">一级分类查询 （分页  页数、每页条数）</h3>
+</li>
+<li>接口名称
+查询1级分类列表 （需要登录）</li>
+<li>接口地址
+/category/queryTopCategoryPaging</li>
+<li>请求方式
+GET</li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页数
+pageSize|是|每页条数</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">[
+{
+  &quot;id&quot;: 1,
+  &quot;categoryName&quot;: &quot;女装&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 2,
+  &quot;categoryName&quot;: &quot;男装&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 3,
+  &quot;categoryName&quot;: &quot;家电&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 4,
+  &quot;categoryName&quot;: &quot;家具&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 5,
+  &quot;categoryName&quot;: &quot;箱包&quot;,
+  &quot;isDelete&quot;: 1
+},
+{
+  &quot;id&quot;: 6,
+  &quot;categoryName&quot;: &quot;珠宝&quot;,
+  &quot;isDelete&quot;: 1
+}
+]
+</code></pre>
+<h3 id="-">二级分类新增</h3>
+</li>
+<li>接口名称
+添加二级分类 （需要登录）</li>
+<li>接口地址
+/category/addSecondCategory</li>
+<li>请求方式
+POST </li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+brandName|是|品牌名称
+categoryId|是|所属分类id
+brandLogo|是|品牌logo图片地址
+hot|是|火热的品牌 1或0</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">二级分类新增图片</h3>
+</li>
+<li>接口名称
+上传图片 （需要登录）</li>
+<li>接口地址
+/category/addSecondCategoryPic</li>
+<li>请求方式
+POST  enctype=&quot;multipart/form-data&quot;</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+pic1 图片</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;picAddr&quot;:&quot;product/24-1.png&quot;}
+</code></pre>
+<h3 id="-">二级分类修改</h3>
+</li>
+<li>接口名称
+更新2级分类（需要登录）</li>
+<li>接口地址
+/category/updateSecondCategory</li>
+<li>请求方式
+POST  enctype=&quot;multipart/form-data&quot;</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+id|是|品牌id
+brandName|是|品牌名称
+categoryId|是|所属分类id
+brandLogo|是|品牌logo图片 (上传文件)
+isDelete|是|是否启用
+hot|是|火热的品牌</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">二级分类查询 （分页  页数、每页条数）</h3>
+</li>
+<li>接口名称
+查询2级分类 （需要登录）</li>
+<li>接口地址
+/category/querySecondCategoryPaging</li>
+<li>请求方式
+GET</li>
+<li><p>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页数
+pageSize|是|每页条数</p>
+</li>
+<li><p>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</p>
+</li>
+<li>示例<pre><code class="lang-javascript">{
+page: 1,
+size: 5,
+data: 
+ [  {
+     id: 1,
+     brandName: &#39;耐克&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/1.jpg&#39;,
+     isDelete: 1,
+     hot: 1 },
+    {
+     id: 2,
+     brandName: &#39;阿迪&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/2.jpg&#39;,
+     isDelete: 1,
+     hot: 1 },
+    {
+     id: 3,
+     brandName: &#39;新百伦&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/3.jpg&#39;,
+     isDelete: 1,
+     hot: 1 },
+    {
+     id: 4,
+     brandName: &#39;哥伦比亚&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/4.jpg&#39;,
+     isDelete: 1,
+     hot: 0 },
+    {
+     id: 5,
+     brandName: &#39;匡威&#39;,
+     categoryId: 1,
+     brandLogo: &#39;/pic/5.jpg&#39;,
+     isDelete: 1,
+     hot: 1 } ],
+count: 9 }
+</code></pre>
+<h2 id="-">用户模块</h2>
+<h3 id="-">用户查询</h3>
+</li>
+<li>接口名称
+查询用户 （需要登录）</li>
+<li>接口地址
+/user/queryUser</li>
+<li>请求方式
+GET</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+page|是|页码
+pageSize|是|每页条数</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{
+page: 1,
+size: 5,
+data: 
+ [  {
+     id: 1,
+     username: &#39;klt&#39;,
+     password: &#39;456&#39;,
+     mobile: &#39;13902060052&#39;,
+     isDelete: 1 },
+    {
+     id: 2,
+     username: &#39;zhoushugang&#39;,
+     password: &#39;4QrcOUm6Wau+VuBX8g+IPg==&#39;,
+     mobile: &#39;15102324243&#39;,
+     isDelete: 1 },
+    {
+     id: 3,
+     username: &#39;zhoushugang12&#39;,
+     password: &#39;4QrcOUm6Wau+VuBX8g+IPg==&#39;,
+     mobile: &#39;15102334243&#39;,
+     isDelete: 1 } ],
+count: 3 }
+</code></pre>
+<h3 id="-">用户启用停用</h3>
+</li>
+<li>接口名称
+产品修改 （需要登录）</li>
+<li>接口地址
+/user/updateUser</li>
+<li>请求方式
+POST</li>
+<li>参数说明
+参数名称|是否必须|说明
+--|--|--
+id|是|用户id
+isDelete|是|是否启停</li>
+<li>返回说明
+参数|说明
+--|--
+success|注册状态
+error|操作失败</li>
+<li>示例<pre><code class="lang-javascript">//success
+{&quot;success&quot;:true}
+</code></pre>
+<h3 id="-">品牌销量比较    写死</h3>
+</li>
+</ul>
+<h3 id="-">某产品按时间的销量图 写死</h3>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+<script type="text/javascript" src="toc/js/highlight.pack.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+	$('pre code').each(function(i, block) {
+    		hljs.highlightBlock(block);
+  		});
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+
+
+
+
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+
+		
+  		$('#readme a:eq(0)').addClass('list-group-item active');
+});
+//-->
+//
+
+</SCRIPT>

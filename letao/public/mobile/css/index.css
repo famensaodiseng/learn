@@ -1,0 +1,43 @@
+.nav-link{
+	padding:10px;
+}
+
+.nav-link a{
+	display:block;
+	width:33.333%;
+	float:left;
+}
+
+.nav-link a img{
+	width:100%;
+	vertical-align:top;
+}
+
+.brand{
+	padding:0 10px;
+}
+
+.brand .title{
+	width:100%;
+	vertical-align:top;
+}
+
+.brand .list{
+	padding:10px 0;
+}
+
+.brand .list li{
+	width:25%;
+	float:left;
+}
+
+.brand .list a{
+	display:block;
+}
+
+.brand .list img{
+	width:100%;
+}
+
+
+

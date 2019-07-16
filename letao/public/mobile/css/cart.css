@@ -1,0 +1,61 @@
+.price-1{
+	color:#ff3300;
+}
+.price-2{
+	text-decoration:line-through;
+}
+
+.gray{
+	color:#8f8f94;
+}
+
+.total{
+	padding:15px;
+}
+
+.detail-size{
+	padding:10px;
+	border-bottom:1px solid #ccc;
+}
+
+.detail-size span{
+	display:inline-block;
+	width:28px;
+	height:28px;
+	border:1px solid #ccc;
+	line-height:28px;
+	text-align:center;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+.detail-size span.active{
+	background:#fa672d;
+	color:#FFF;
+}
+
+.detail-num{
+	padding:10px;
+}
+
+.detail-num span{
+	display:inline-block;
+	width:28px;
+	height:28px;
+	border:1px solid #ccc;
+	line-height:28px;
+	text-align:center;
+}
+.detail-num input{
+	display:inline-block;
+	width:28px;
+	height:28px;
+	line-height:normal;
+	margin:0;
+	padding:0;
+	border-radius:0;
+	border-left:none;
+	border-right:none;
+	vertical-align:top;
+	text-align:center;
+}

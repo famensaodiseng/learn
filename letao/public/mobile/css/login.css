@@ -1,0 +1,39 @@
+.my-login{
+
+}
+
+.my-login .login-button{
+	height:auto;
+	padding:0 10px;
+}
+
+.my-login .login-button:after{
+	display:none;
+}
+
+.my-login:after{
+	display:none;
+}
+
+.my-login .login-button button{
+	display:block;
+	width:100%;
+	margin-top:20px;
+	background:#006699;
+}
+
+.my-login .register{
+	display:block;
+	text-align:right;
+	padding-right:10px;
+	margin-top:20px;
+	color:#006699;
+}
+
+.my-login .getCode{
+	position:absolute;
+	right:10px;
+	top:50%;
+	color:#006699;
+	transform:translateY(-50%);
+}

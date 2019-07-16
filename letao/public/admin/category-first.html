@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>乐淘-商品管理</title>
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/system.css">
+	<script src="assets/jquery/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/artTemplate/template-native.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/category-first.js"></script>
+</head>
+<body>
+	<div class="system">
+		<div class="aside">
+			<div class="profile">
+				<div class="avatar img-circle">
+					<img src="images/my_logo.jpg">
+				</div>
+				<h4>张学友</h4>
+			</div>
+			<div class="navs">
+				<ul class="list-unstyled">
+					<li>
+						<a href="user.html">
+							<i class="fa fa-user"></i>
+							用户管理
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="fa fa-bars"></i>
+							分类管理
+							<i class="fa fa-angle-right"></i>
+						</a>
+						<ul class="list-unstyled">
+							<li class="active">
+								<a href="category-first.html">一级分类管理</a>
+							</li>
+							<li>
+								<a href="category-second.html">二级分类管理</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="product.html">
+							<i class="fa fa-product-hunt"></i>
+							商品管理
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="header">
+	            <nav class="navbar navbar-custom">
+	                <div class="navbar-header">
+	                    <a href="javascript:;" class="navbar-brand">
+	                        <i class="fa fa-navicon"></i>
+	                    </a>
+	                </div>
+	                <ul class="nav navbar-nav navbar-right">
+	                    <li>
+	                        <a href="javascript:;" class="login_out_bot">
+	                            <i class="fa fa-sign-out"></i> 退出
+	                        </a>
+	                    </li>
+	                </ul>
+	            </nav>
+	        </div>
+	        <div class="body">
+	        	<button class="operation btn btn-primary" data-toggle="modal" data-target=".category-first">添加分类</button>
+	        	<table class="table table-bordered" id="categoryBox">
+	        		
+	        	</table>
+				<div class="btn-group page">
+					<div class="btn btn-default" id="prevBtn">上一页</div>
+					<div class="btn btn-default" id="nextBtn">下一页</div>
+				</div>
+	        </div>
+		</div>
+	</div>
+
+	<div class="modal fade category-first">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+					<h4 class="modal-title" id="myLargeModalLabel">添加分类</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="请输入分类的名称" id="categoryName">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="addCategory">保存</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script id="categoryTpl" type="text/html">
+		<tr>
+			<th>分类的编号</th>
+			<th>分类名称</th>
+		</tr>
+		<% for(var i=0;i<data.rows.length;i++){ %>
+			<tr>
+				<td><%=data.rows[i].id %></td>
+				<td><%=data.rows[i].categoryName %></td>
+			</tr>
+		<% } %>
+	</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<link rel="stylesheet" href="assets/mui/css/iconfont.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/cart.css">
+	<script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/mui/js/mui.min.js"></script>
+	<script src="assets/artTemplate/template-native.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/cart.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">购物车</h1>
+		<a class="mui-icon mui-icon-reload mui-pull-right"></a>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer">
+		<a class="mui-tab-item" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="cart.html">
+			<span class="mui-icon iconfont icon-gouwuche"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			<ul class="mui-table-view" id="cartBox"></ul>
+			<h4 class="total">订单总额：¥110</h4>
+		</div>
+	</div>
+	<script id="cartTpl" type="text/html">
+		<% for(var i=0;i<data.length;i++){ %>
+			<li class="mui-table-view-cell mui-transitioning mui-media">
+				<div class="mui-slider-right mui-disabled">
+					<span class="mui-btn mui-btn-primary editBtn" data-id="<%=data[i].id %>">编辑</span>
+					<span class="mui-btn mui-btn-red deleteBtn" data-id="<%=data[i].id %>">删除</span>
+				</div>
+				<div class="mui-slider-handle">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="images/detail.jpg">
+						<div class="mui-media-body">
+							<p>
+								<%=data[i].proName%>
+							</p>
+							<div class="mui-row">
+						       <div class="mui-col-sm-6">
+						       		<input type="checkbox">
+						           <span class="price-1">¥<%=data[i].price %></span>
+						           <span class="price-2 gray">¥<%=data[i].oldPrice %></span>
+						       </div>
+						       <div class="mui-col-sm-4">
+						           <span class="gray">鞋码：<%=data[i].size %></span>
+						       </div>
+						       <div class="mui-col-sm-2">
+						           <span class="gray">x<%=data[i].num %>双</span>
+						       </div>
+						   </div>
+						</div>
+					</a>	
+				</div>
+			</li>
+		<% } %>
+	</script>
+	<script id="detailTpl" type="text/html">
+		<div class="detail-size">
+			尺码：
+				<% for(var i=0;i<data.customSize.length;i++){ %>
+					<span class="<%=data.size==data.customSize[i]?'active':''%>"><%=data.customSize[i] %></span>
+				<% } %>
+		</div>
+		<div class="detail-num">
+			数量：<span class="reduce">-</span><input type="text" class="num" value="<%=data.num %>"><span class="plus">+</span>
+		</div>
+	</script>
+
+</body>
+</html>

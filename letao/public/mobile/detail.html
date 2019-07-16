@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="assets/mui/css/mui.min.css">
+	<link rel="stylesheet" href="assets/mui/css/iconfont.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="stylesheet" href="css/detail.css">
+	<script src="assets/zepto/zepto.min.js"></script>
+	<script src="assets/mui/js/mui.min.js"></script>
+	<script src="assets/artTemplate/template-native.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/detail.js"></script>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav header">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		<h1 class="mui-title">商品详情</h1>
+	</header>
+	<nav class="mui-bar mui-bar-tab footer">
+		<a class="mui-tab-item mui-active" href="index.html">
+			<span class="mui-icon mui-icon-home"></span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item" href="category.html">
+			<span class="mui-icon mui-icon-bars"></span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="cart.html">
+			<span class="mui-icon iconfont icon-gouwuche"></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="user.html">
+			<span class="mui-icon mui-icon-person"></span>
+			<span class="mui-tab-label">会员中心</span>
+		</a>
+	</nav>
+	<div class="mui-scroll-wrapper">
+		<div class="mui-scroll">
+			
+			<div id="detailBox"></div>
+
+
+			<div class="detail-buttons">
+				<a href="#">查看购物车</a><span id="addCart">加入购物车</span>
+			</div>
+		</div>
+	</div>
+	<script id="detailTpl" type="text/html">
+		<div class="mui-slider">
+			<div class="mui-slider-group mui-slider-loop">
+				<% for(var i=0;i<data.pic.length;i++){ %>
+				<div class="mui-slider-item">
+					<a href="#"><img src="<%=data.pic[i].picAddr %>"/></a>
+				</div>
+				<% } %>
+			</div>
+		</div>
+		<div class="detail-title">
+			<%= data.proName %>
+		</div>
+		<div class="detail-price">
+			价格：<span class="new">¥<%=data.price %></span><span class="old">¥<%=data.oldPrice %></span>
+		</div>
+		<div class="detail-size">
+			尺码：
+				<% for(var i=0;i<data.size.length;i++){ %>
+					<span><%=data.size[i] %></span>
+				<% } %>
+		</div>
+		<div class="detail-num">
+			数量：<span class="reduce">-</span><input type="text" class="num" value="1"><span class="plus">+</span>
+			剩余：<i><%=data.num%></i>件
+		</div>
+	</script>
+</body>
+</html>
