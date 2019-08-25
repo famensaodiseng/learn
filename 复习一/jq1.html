@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id ="cli">按钮</button>
+	<script src="jquery.js"></script>
+	<script>
+		// $(document).ready(function(){
+		// 	$('#cli').click(function(){
+		// 		alert('12'); 
+		// 	})
+		// })
+		$('#cli').bind("click",clic);
+		function clic(e){
+			console.log('22');
+		}
+
+		
+	</script>
+</body>
+</html>
