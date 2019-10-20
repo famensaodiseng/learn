@@ -10,16 +10,14 @@
 
 <body>
     <script>
-        switch (0) {
-            case 2:
-                alert('哈哈')
-                break;
-            case 3:
-                alert('嘿嘿')
-                break;
-            default:
-                alert('没有')
+        var arr = [3, 5, 53, 53, 67, 86];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != arr[i + 1]) {
+                newArr[newArr.length] = arr[i];
+            }
         }
+        console.log(newArr);
     </script>
 </body>
 

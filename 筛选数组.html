@@ -10,14 +10,16 @@
 
 <body>
     <script>
-        // for (var i = 1; i <= 5; i++) {
-        //     if (i == 3) {
-        //         console.log('这个包子有虫');
-        //         continue;
-        //     }
-        //     console.log('我正在吃第' + i + '个包子');
-
-        // }
+        var arr = [3, 5, 3, 5, 77, 53, 6, 37];
+        var newarr = [];
+        var j = 0;
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newarr[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newarr);
     </script>
 </body>
 
