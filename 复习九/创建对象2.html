@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var obj = new Object();
+        // obj.uname = '张三丰';
+        // obj.age = 12;
+        // obj.sayHi = function () {
+        //     console.log('hi');
+
+        // }
+
+        // console.log(obj.uname);
+        // obj.sayHi();
+
+        // 构造函数
+        // 因为我们前面两种创建对象的方式只能创建一个。
+        // 因为这个函数不一样， 因为他里面封装的是对象， 所以叫构造函数，
+        // 四大天王
+        // function Star(uname, age, sex) {
+        //     this.name = uname;
+        //     this.age = age;
+        //     this.sex = sex;
+        // }
+        // var star = new Star('刘德华', 19, '男');
+        // console.log(star);
+        // console.log(star.name);
+        // console.log(star.age);
+
+
+        var object = {
+            name: '张三',
+            age: 12,
+            sayHi: function fn() {
+                console.log('哈哈');
+            }
+        }
+        // console.log(object.name);
+        for (var k in object) {
+            console.log(k);
+            console.log(object[k]);
+
+
+        }
+    </script>
+</body>
+
+</html>

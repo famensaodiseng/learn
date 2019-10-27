@@ -10,16 +10,16 @@
 
 <body>
     <script>
-        var arr = [3, 5, 3, 5, 77, 53, 6, 37];
-        var newarr = [];
-        var j = 0;
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] > 10) {
-                newarr[j] = arr[i];
-                j++;
+        function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
             }
+            return max;
         }
-        console.log(newarr);
+        console.log(getMax(1, 423, 53));
     </script>
 </body>
 
