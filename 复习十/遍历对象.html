@@ -10,16 +10,22 @@
 
 <body>
     <script>
-        function getMax() {
-            var max = arguments[0];
-            for (var i = 1; i < arguments.length; i++) {
-                if (arguments[i] > max) {
-                    max = arguments[i];
-                }
+        var obj = {
+            name: '嘿嘿',
+            age: 12,
+            sex: '男',
+            sayHi: function () {
+                console.log('哈哈');
+
             }
-            return max;
         }
-        console.log(getMax(1, 423, 53));
+
+        for (var k in obj) {
+            // console.log(k);
+            console.log(obj[k]);
+
+
+        }
     </script>
 </body>
 

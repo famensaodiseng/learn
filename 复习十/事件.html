@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div></div> -->
+    <button>显示当前系统时间</button>
+    <div>某个时间</div>
+</body>
+<script>
+    // var div = document.querySelector('div');
+    // div.onclick = function () {
+    //     console.log('哈哈');
+
+    // }
+    var div = document.querySelector('div');
+    var btn = document.querySelector('button');
+
+    btn.onclick = function () {
+        div.innerText = new Date(
+            '2010-2-4 3:33:43'
+        );
+    }
+</script>
+
+</html>
