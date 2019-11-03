@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    width: 600px;
+    height: 600px;
+    background-color: pink;
+}
+
+div img {
+    width: 300px;
+}
