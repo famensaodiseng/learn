@@ -8,27 +8,24 @@
     <title>Document</title>
     <style>
         div {
-            width: 200px;
-            height: 300px;
+            width: 300px;
+            height: 200px;
             background-color: pink;
-        }
-
-        .one {
-            width: 30px;
-            height: 50px;
-            background-color: red;
-            transition: all .3s;
         }
     </style>
 </head>
 
 <body>
-    <div></div>
+    <div id="demo">
+        哈哈
+    </div>
 </body>
 <script>
-    var div = document.querySelector('div');
-    div.onclick = function () {
-        this.className = 'one';
+    var demo = document.querySelector('#demo');
+    demo.onclick = function (e) {
+        console.log('嘿嘿');
+        console.log(e);
+
     }
 </script>
 
