@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div>
-        <img src="./demo.JPG" alt="">
-    </div>
+    <div id="app">{{msg}}</div>
 </body>
-<script src="index.js"></script>
+<script src='./vue.js'></script>
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '啦啦'
+        }
+    })
+</script>
 
 </html>

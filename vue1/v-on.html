@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <button @click="myclick" @mouseover="mymouse">按钮</button>
+    </div>
+</body>
+<script src='vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123'
+        },
+        methods: {
+            myclick: function () {
+                console.log('嘿嘿');
+
+            },
+            mymouse: function () {
+                console.log('啦啦');
+
+            }
+        }
+    })
+</script>
+
+</html>
