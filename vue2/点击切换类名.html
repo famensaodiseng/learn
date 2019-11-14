@@ -6,12 +6,26 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Document</title>
+    <style>
+        .one {
+            width: 300px;
+            height: 200px;
+        }
+
+        .two {
+            border: 1px solid #000;
+        }
+
+        .three {
+            background-color: pink;
+        }
+    </style>
 </head>
 
 <body>
     <div id='app'>
-        <p>{{msg}}</p>
-        <button @click="myclick" @mouseover="mymouse">按钮</button>
+        <div :class="['one','two',flag?'three':'']">哈哈</div>
+        <button @click="demo">toggle</button>
     </div>
 </body>
 <script src='vue.js'></script>
@@ -19,16 +33,11 @@
     let vm = new Vue({
         el: '#app',
         data: {
-            msg: '123'
+            flag: false
         },
         methods: {
-            myclick: function () {
-                console.log('嘿嘿');
-
-            },
-            mymouse: function () {
-                console.log('啦啦');
-
+            demo() {
+                this.flag = !this.flag
             }
         }
     })

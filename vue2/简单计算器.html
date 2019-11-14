@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <input type="text" v-model="n1">
+        <select v-model="opt">
+            <option value="+">加</option>
+            <option value="-">减</option>
+            <option value="*">乘</option>
+            <option value="/">除</option>
+        </select>
+        <input type="text" v-model="n2">
+        <button @click='res'>=</button>
+        <input type="text" v-model="result">
+    </div>
+</body>
+<script src='vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            n1: '',
+            n2: '',
+            result: '',
+            opt: '*'
+        },
+        methods: {
+            res() {
+                switch (this.opt) {
+                    case '+':
+                        this.result = parseInt(this.n1) + parseInt(this.n2)
+                        break;
+                    case '-':
+                        this.result = parseInt(this.n1) - parseInt(this.n2)
+                        break;
+                    case '*':
+                        this.result = parseInt(this.n1) * parseInt(this.n2)
+                        break;
+                    case '/':
+                        this.result = parseInt(this.n1) / parseInt(this.n2)
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    })
+</script>
+
+</html>

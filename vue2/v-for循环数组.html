@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!-- <p>{{msg}}</p> -->
+        <ul>
+            <li v-for="(item,i) in arr">索引{{i}}---{{item}}</li>
+        </ul>
+
+        <hr>
+        <ul>
+            <li v-for="(item1,index) in objarr">索引{{index}}---{{item1}}</li>
+        </ul>
+    </div>
+</body>
+<script src='vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            arr: ['李连杰', '刘德华', '大家都', '嘿嘿'],
+            objarr: [{
+                    id: 1,
+                    name: '啦啦',
+                    age: 10
+                },
+                {
+                    id: 2,
+                    name: '嘿嘿',
+                    age: 43
+                },
+            ]
+        }
+    })
+</script>
+
+</html>

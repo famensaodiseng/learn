@@ -6,18 +6,27 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Document</title>
+    <style>
+        .one {
+            background-color: red;
+        }
+
+        .two {
+            border: 2px solid #000;
+        }
+
+        .three {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    </style>
 </head>
 
 <body>
     <div id='app'>
-        <!-- <p>{{msg}}</p> -->
-        <input type="text" :value="msg">
+        <div class="one two">啦啦</div>
         <hr>
-        <p>{{msg}}</p>
-
-
-        <input type="text" v-model="msg">
-        <p>{{msg}}</p>
+        <div :class="['one', 'two', 'three']">我是另一个啦啦</div>
     </div>
 </body>
 <script src='vue.js'></script>
@@ -25,7 +34,10 @@
     let vm = new Vue({
         el: '#app',
         data: {
-            msg: '一花一世界'
+
+        },
+        methods: {
+
         }
     })
 </script>
