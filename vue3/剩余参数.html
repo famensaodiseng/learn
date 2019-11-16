@@ -9,18 +9,13 @@
 </head>
 
 <body>
-
+    <script>
+        function sum(frist, ...args) {
+            console.log(frist);
+            console.log(args);
+        }
+        sum(10, 20, 30)
+    </script>
 </body>
-<script>
-    const sum = (n1, n2) => n1 + n2;
-    const result = sum(2, 4);
-    console.log(result);
-    //在箭头函数中，如果形参只有一个，那么形参小括号可以省略
-
-    const fn = v => {
-        alert(v);
-    }
-    fn(22);
-</script>
 
 </html>

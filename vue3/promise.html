@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let promise = new promise((resolve, reject) => {
+            setTimeout(() => {
+                if (true) {
+                    resolve({
+                        name: '张三'
+                    })
+                } else {
+                    reject('失败了');
+                }
+            }, 2000);
+        })
+        // promise.then(result => console.log(result);).catch(error => console.log(error);)
+    </script>
+</body>
+
+</html>
