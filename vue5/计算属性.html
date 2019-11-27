@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-11-25 21:18:39
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-11-25 21:30:12
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        姓：<input type="text" placeholder="姓" v-model="firstName"> <br>
+        名：<input type="text" placeholder="名" v-model="lastName"><br>
+        姓名1（单向）:<input type="text" placeholder="姓" v-model="fullName1"><br>
+        姓名2（单向）:<input type="text" placeholder="姓"><br>
+        姓名3（双向）:<input type="text" placeholder="姓">
+        <!-- <p>{{msg}}</p> -->
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            // msg: '123'
+            firstName: "A",
+            lastName: 'B',
+            fullName: 'A B'
+        },
+        computed: {
+
+            //这个方法什么时候执行呢，初始化的时候。
+            //相关的属性发生了改变。
+            fullName1() {
+                return this.firstName + ' ' + this.lastName
+            }
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-11-26 15:43:01
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-11-26 15:50:06
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+    </div>
+    <div id="qq">
+        {{msg}}
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        // el: '#app',
+        data: {
+            msg: '123'
+        }
+    })
+    // vm.$mount('#app');
+    vm.$mount('#qq')
+
+    //为什么只能挂在一个实例
+</script>
+
+</html>

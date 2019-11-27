@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <h3>{{ dt | dtFormat | dastr}}</h3>
+        <!-- 中间的竖线叫管道符 -->
+        <!-- 过滤器有全局的，也有私有的、 -->
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    //定义全局过滤器
+    Vue.filter('dtFormat', function (originVal) {
+        // return originVal + '---'
+        const date = new Date(originVal)
+        const y = date.getFullYear();
+        const m = date.getMonth() + 1;
+        const d = date.getDate();
+
+
+        return `${y}-${m}-${d}`
+    })
+    Vue.filter('dastr', function (originVal) {
+        console.log(originVal);
+        const aa = originVal + '哈哈';
+        return aa;
+    })
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            dt: new Date
+        }
+    })
+</script>
+
+</html>

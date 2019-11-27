@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-11-26 15:45:16
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-11-26 15:46:55
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <button>按钮</button>
+    </div>
+</body>
+<script src='js/vue.js'>
+</script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123'
+        },
+        template: '<h1>哈哈<h1>'
+        //把文本给覆盖了。
+    })
+</script>
+
+</html>

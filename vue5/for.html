@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-11-26 13:04:14
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-11-26 13:27:40
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <ul>
+            <li v-for="(item,i) in list" :key="item.id">编号：{{item.id}}---姓名{{item.name}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(item,i) in list" :ket="item.id"> id:{{item.id}}---姓名{{item.name}}</li>
+        </ul>
+
+
+        <ul>
+            <li v-for="(item, i) in list" :key="item.id">{{item.id}}--{{item.name}}</li>
+        </ul>
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            list: [{
+                id: 1,
+                name: 'zs'
+            }, {
+                id: 2,
+                name: 'ls'
+            }, {
+                id: 3,
+                name: 'ww'
+            }, ]
+        }
+    })
+</script>
+
+</html>

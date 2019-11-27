@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-11-26 14:52:23
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-11-26 15:17:39
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='app'>
+        <p>{{msg}}</p>
+        <button @click="test">添加</button>
+        <input type="text" v-model="user.name">
+        <input type="text" v-model="user.age">
+
+        <hr>
+        {{user.address}}
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            user: {
+                name: 'zs',
+                age: 23
+            }
+        },
+        methods: {
+            test() {
+                // this.user.address = "北京"
+                this.$set(this.user, 'address', '北京')
+            }
+        }
+    })
+</script>
+
+</html>
