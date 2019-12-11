@@ -2,7 +2,7 @@
   "name": "vue",
   "version": "1.0.0",
   "description": "",
-  "main": "async.js",
+  "main": "async和await的使用.js",
   "directories": {
     "lib": "lib"
   },
@@ -11,10 +11,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.0",
-    "json5": "^2.1.1",
-    "mockjs": "^1.1.0"
-  }
+  "license": "ISC"
 }

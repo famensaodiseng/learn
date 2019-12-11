@@ -1,0 +1,63 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-10 15:12:52
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-12-10 15:41:25
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .one {
+        width: 30px;
+        height: 30px;
+        background-color: pink;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="flag=!flag">加入购物车</button>
+      <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter"
+        ><div class="one" v-show="flag"></div
+      ></transition>
+    </div>
+  </body>
+  <script src="lib/vue-2.5.16.js"></script>
+  <script>
+    let vm = new Vue({
+      el: "#app",
+      data: {
+        flag: false
+      },
+      methods: {
+        //入场之前，设置小球的初始状态
+        beforeEnter(el) {
+          el.style.transform = "translate(0,0)";
+          //el他是原生的，表示被动画控制的那个元素
+        },
+        //入场之后，设置小球的中指状态
+        enter(el, done) {
+          el.offsetWidth; //这一行没有实际意义。
+          el.style.transform = "translate(300px,300px)";
+          el.style.transition = "all 2s ease";
+          done();
+          //   done是一个回调函数;
+          //   这个done()就是afterenter函数的一个引用
+        },
+        //动画完成以后，重置相关的动画数据
+
+        afterEnter() {
+          this.flag = false;
+        }
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/animate.css" />
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="flag=!flag">按钮</button>
+      <transition enter-active-class="bounce" leave-active-class="bounceInRight">
+        <h2 v-if="flag" class="animated">我要隐藏</h2>
+      </transition>
+    </div>
+  </body>
+  <script src="lib/vue-2.5.16.js"></script>
+  <script>
+    let vm = new Vue({
+      el: "#app",
+      data: {
+        flag: true
+      }
+    });
+  </script>
+</html>
