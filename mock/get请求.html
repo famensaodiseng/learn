@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-09 16:56:03
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-12-09 18:09:22
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"><button @click="getInfo">get按钮</button></div>
+  </body>
+  <script src="lib/vue-2.5.16.js"></script>
+  <script src="lib/axios-v0.18.0.js"></script>
+  <script>
+    let vm = new Vue({
+      el: "#app",
+      data: {
+        msg: "123"
+      },
+      methods: {
+        //发起一个get请求
+        getInfo() {
+          axios
+            .get("http://www.smallapp.vip/index.php?s=/home/index/homemodel/xpackage/110c8d657ccc16d7/apid/120401.html")
+            .then(res => {
+              console.log(res);
+            });
+        }
+      }
+    });
+  </script>
+</html>
