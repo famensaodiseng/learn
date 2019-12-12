@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-12 10:13:17
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-12-12 10:54:13
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+  </body>
+  <!-- 将非同源的请求地址写在script的src中 -->
+  <script>
+    function fn1(data) {
+      console.log("客户端的fn被调用了");
+      console.log(data);
+    }
+  </script>
+  <!-- <script src="http://localhost:3001/test"></script> -->
+  <script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function() {
+      var script = document.createElement("script");
+      script.src = "http://localhost:3001/better?callback=fn1";
+      document.body.appendChild(script);
+
+      //注意这里需要清除这个script标签。
+      script.onload = function() {
+        document.body.removeChild(script);
+      };
+      // 为script添加onload事件;
+    };
+  </script>
+</html>

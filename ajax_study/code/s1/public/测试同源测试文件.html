@@ -1,0 +1,28 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-12 09:52:57
+ * @github: famensaodiseng
+ * @LastEditTime: 2019-12-12 10:03:01
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script src="./js/ajax.js"></script>
+  <script>
+    ajax({
+      url: "http://localhost:3001/test",
+      type: "get",
+      success: function(result) {
+        console.log(result);
+      }
+    });
+  </script>
+</html>
