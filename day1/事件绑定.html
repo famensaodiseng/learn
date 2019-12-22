@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-18 16:26:01
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-18 16:26:14
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>{{msg}}</p>
+        <button v-on:click="show">事件绑定</button>
+        <button @click="none(666,$event)">消失了,嘚瑟麻线</button>
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123'
+        },
+        methods: {
+            show() {
+                console.log('嘿嘿');
+            },
+            none(p, $event) {
+                console.log(p);
+                console.log(event.target.innerHTML);
+
+                console.log('消失');
+
+            }
+        }
+    })
+</script>
+
+</html>

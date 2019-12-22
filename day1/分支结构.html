@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-19 18:14:13
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-19 18:14:44
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>{{msg}}</p>
+        <div v-if="score>=90">优秀</div>
+        <div v-else-if="score<90 && score>=80">良好</div>
+        <div v-else-if="score<80 && score>=70">一般</div>
+        <div v-else-if="score<70 && score>=60">及格</div>
+        <div v-else>差评</div>
+
+        <hr>
+        <div v-show="flag">测试v-show</div>
+        <button @click="flag = !flag">按钮</button>
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            score: 39,
+            flag: true
+        }
+    })
+</script>
+
+</html>

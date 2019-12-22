@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-18 16:51:41
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-18 16:51:55
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+
+        .father {
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>{{msg}}</p>
+        <a href="http://baidu.com" @click.prevent="del">删除</a>
+        <div class="father" @click="father">
+            <div class="son" @click.stop="son"></div>
+        </div>
+    </div>
+    <hr>
+
+
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123'
+        },
+        methods: {
+            del() {
+                console.log('嘿嘿');
+            },
+            father() {
+                console.log('father');
+
+            },
+            son() {
+                console.log('son');
+
+            }
+        }
+    })
+</script>
+
+</html>

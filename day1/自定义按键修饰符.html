@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-18 21:45:01
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-18 21:45:13
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>{{msg}}</p>
+        <input type="text" @keyup.69="show" v-model="info">
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    Vue.config.keyCodes.e = 112;
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',  
+            info: "",
+        },
+        methods: {
+            show(event) {
+                console.log(
+                    '啦啦啦'
+                );
+
+            }
+        },
+    })
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-18 16:02:18
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-18 16:02:36
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>{{msg}}</p>
+        <h5>vue中的响应式指的是屏幕的响应，而vue的响应是数据的响应。</h5>
+        <input type="text" v-model="one">
+        <h3 v-text="one"></h3>
+        <div v-once>{{info}}</div><!-- 只编译一次 ，显示的信息后期不修改了，就用once。这样节省性能。-->
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            one: '',
+            info: '嘿嘿'
+        }
+    })
+</script>
+<!-- 不需要我们操作dom -->
+
+</html>

@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-20 21:26:28
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-20 21:26:41
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p>{{msg}}</p>
+        <div v-for="(item,index) in arr" :key="item.index">{{item}}</div>
+
+        <div v-if="item.age==23" v-for="(item,index) in obj" :key="item.index">
+            {{item.name}}---{{item.age}}---{{item.adress}}
+        </div>
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            arr: [22, 3, 53, 54, 77, 48, 32],
+            obj: [
+                { name: 'zs', age: 23, adress: '陕西' },
+                { name: 'zlisis', age: 332, adress: '北京' }
+            ]
+        }
+    })
+</script>
+
+</html>

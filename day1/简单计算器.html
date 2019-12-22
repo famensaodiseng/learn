@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-18 22:18:03
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-18 22:18:14
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <input type="text" v-model="n1">
+        <select v-model="opt">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="text" v-model="n2">
+        <input type="button" value="=" @click="results">
+        <input type="text" v-model="result">
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            n1: '',
+            n2: '',
+            result: '',
+            opt: '+'
+        },
+        methods: {
+            results() {
+                switch (this.opt) {
+                    case '+':
+                        this.result = parseInt(this.n1) + parseInt(this.n2)
+                        break;
+                    case '-':
+                        this.result = parseInt(this.n1) - parseInt(this.n2)
+                        break;
+                    case '*':
+                        this.result = parseInt(this.n1) * parseInt(this.n2)
+                        break;
+                    case '/':
+                        this.result = parseInt(this.n1) / parseInt(this.n2)
+                        break;
+
+                }
+            }
+        }
+    })
+</script>
+
+</html>
