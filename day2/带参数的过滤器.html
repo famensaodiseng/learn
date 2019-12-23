@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-18 16:02:18
+ * @Date: 2019-12-21 19:44:53
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-18 16:02:36
+ * @LastEditTime : 2019-12-21 19:52:57
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -23,24 +23,31 @@
 
 <body>
     <div id='app' v-cloak>
-        <p>{{msg}}</p>
-        <h5>vue中的响应式指的是屏幕的响应，而vue的响应是数据的响应。</h5>
-        <input type="text" v-model="one">
-        <h3 v-text="one"></h3>
-        <div v-once>{{info}}</div><!-- 只编译一次 ，显示的信息后期不修改了，就用once。这样节省性能。-->
+        <!-- <p>{{msg}}</p> -->
+        <div>{{date | format('yyyy-MM-DD')}}</div>
     </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
+
+    Vue.filter('format', function (val, arg) {
+        //实现格式化的逻辑
+        // console.log(arg);
+        if (arg == 'yyyy-MM-DD') {
+            let ret = "";
+            ret += val.getFullYear() + '-' + (val.getMonth() + 1) + '-' + val.getDate();
+            return ret
+        }
+
+
+    })
     let vm = new Vue({
         el: '#app',
         data: {
             msg: '123',
-            one: '',
-            info: '嘿嘿'
+            date: new Date()
         }
     })
 </script>
-<!-- 不需要我们操作dom -->
 
 </html>

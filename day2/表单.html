@@ -1,0 +1,79 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-21 18:18:00
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-21 18:49:09
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <!-- <p>{{msg}}</p> -->
+        <form action="http://www.baidu.com">
+            姓名：<input type="text" v-model.trim.lazy="msg"> <br>
+
+            <!-- 失去焦点的时候v-model.trim.lazy -->
+            <div>{{msg}}</div>
+            年龄：<input type="text" v-model.number="age">
+            性别：<input type="radio" value="1" v-model="gender">男<input type="radio" value="0" v-model="gender">女<br>
+            爱好：
+            <input type="checkbox" value="1" v-model="hobby">篮球
+            <input type="checkbox" value="2" v-model="hobby">唱歌
+            <input type="checkbox" value="3" v-model="hobby">写代码 <br>
+            职业：<select name="" id="" v-model="occoption" multiple='true'>
+                <option value="0">请选择职业</option>
+                <option value="1">搬砖</option>
+                <option value="2">医生</option>
+                <option value="3">工人</option>
+            </select>
+            <br>
+            个人简介: <textarea name="" id="" cols="30" rows="10" v-model="text"></textarea>
+            <br>
+            <input type="submit" value="按钮" @click.prevent="handle">
+        </form>
+
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            uname: "lisi",
+            gender: '0',
+            hobby: ['3', '2'],
+            occoption: ['1', '2'],
+            text: '你好',
+            age: 23
+        },
+        methods: {
+            handle() {
+                console.log(this.uname);
+                console.log(this.gender);
+                console.log(this.hobby.toString());
+                console.log(this.occoption);
+                console.log(this.text);
+                console.log(this.age);
+
+            }
+        },
+    })
+</script>
+
+</html>

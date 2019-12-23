@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-18 21:45:01
+ * @Date: 2019-12-21 18:54:21
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-18 21:45:13
+ * @LastEditTime : 2019-12-21 19:14:57
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -24,26 +24,33 @@
 <body>
     <div id='app' v-cloak>
         <p>{{msg}}</p>
-        <input type="text" @keyup.69="show" v-model="info">
+        <input type="text" v-color="msg" v-wh>
     </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
-    Vue.config.keyCodes.e = 112;
+    Vue.directive('color', {
+        bind(el, binding) {
+            console.log(binding);
+            el.style.backgroundColor = binding.value.color;
+        }
+    })
     let vm = new Vue({
         el: '#app',
         data: {
-            msg: '123',  
-            info: "",
-        },
-        methods: {
-            show(event) {
-                console.log(
-                    '啦啦啦'
-                );
-
+            msg: {
+                color: 'blue',
+                width: '200px'
             }
         },
+        //局部指令
+        directives: {
+            wh: {
+                inserted(el) {
+                    el.style.width = "200px"
+                }
+            }
+        }
     })
 </script>
 

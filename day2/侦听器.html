@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-19 17:20:24
+ * @Date: 2019-12-21 19:25:02
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-19 17:20:49
+ * @LastEditTime : 2019-12-21 19:34:29
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -18,24 +18,14 @@
         [v-cloak] {
             display: none;
         }
-
-        .one {
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-        }
-
-        .two {
-            border: 3px solid #000;
-        }
     </style>
 </head>
 
 <body>
     <div id='app' v-cloak>
-        <!-- <p>{{msg}}</p> -->
-        <div :class=[oneClass,twoClass]>123</div>
-        <button @click="handle">按钮</button>
+        姓：<input type="text" v-model="yang">
+        名<input type="text" v-model="ft">
+        <div>{{result}}</div>
     </div>
 </body>
 <script src='js/vue.js'></script>
@@ -44,15 +34,24 @@
         el: '#app',
         data: {
             msg: '123',
-            oneClass: 'one',
-            twoClass: 'two'
+            yang: '',
+            ft: ''
+            // result: 'yang ft'
         },
-        methods: {
-            handle() {
-                this.oneClass = ""
-                // this.twoClass = ""
+        // 通过watch监听变化
+        // watch: {
+        //     yang(val) {
+        //         this.result = val + ' ' + this.ft
+        //     },
+        //     ft(val) {
+        //         this.result = this.yang + ' ' + val
+        //     }
+        // },
+        computed: {
+            result() {
+                return this.yang + ' ' + this.ft
             }
-        },
+        }
     })
 </script>
 

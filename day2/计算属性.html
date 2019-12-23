@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-18 16:26:01
+ * @Date: 2019-12-21 19:15:51
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-18 16:26:14
+ * @LastEditTime : 2019-12-21 19:19:29
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -24,9 +24,7 @@
 <body>
     <div id='app' v-cloak>
         <p>{{msg}}</p>
-        <button v-on:click="show">事件绑定</button>
-        <button @click="none(666,$event)">消失了,嘚瑟麻线</button>
-    </div>
+        <p>{{reverserString}}</p>
 </body>
 <script src='js/vue.js'></script>
 <script>
@@ -35,18 +33,12 @@
         data: {
             msg: '123'
         },
-        methods: {
-            show() {
-                console.log('嘿嘿');
-            },
-            none(p, $event) {
-                console.log(p);
-                console.log(event.target.innerHTML);
-
-                console.log('消失');
-
+        computed: {
+            // 把复杂的东西抽离出来
+            reverserString() {
+                return this.msg.split('').reverse().join("");
             }
-        }
+        },
     })
 </script>
 
