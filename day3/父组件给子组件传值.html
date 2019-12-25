@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-21 18:54:21
+ * @Date: 2019-12-22 10:45:48
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-21 19:14:57
+ * @LastEditTime : 2019-12-22 11:03:38
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -24,32 +24,28 @@
 <body>
     <div id='app' v-cloak>
         <p>{{msg}}</p>
-        <input type="text" v-color="msg" v-wh>
+        <menu-item title="来自父组件的值"> </menu-item>
+        <menu-item :menu-title="ptitle"> </menu-item>
     </div>
 </body>
-<script src='js/vue.js'></script>
+<script src='js/vue.js'>
+</script>
 <script>
-    Vue.directive('color', {
-        bind(el, binding) {
-            console.log(binding);
-            el.style.backgroundColor = binding.value.color;
-        }
+    //定义一个子组件
+    Vue.component('menu-item', {
+        props: ['MenuTitle'],
+        data() {
+            return {
+                sonmsg: '子组件的本身内容'
+            }
+        },
+        template: '<div>{{sonmsg+"----"+MenuTitle}}</div>'
     })
     let vm = new Vue({
         el: '#app',
         data: {
-            msg: {
-                color: 'blue',
-                width: '200px'
-            }
-        },
-        //局部指令
-        directives: {
-            wh: {
-                inserted(el) {
-                    el.style.width = "200px"
-                }
-            }
+            msg: '我是父组件中的内容',
+            ptitle: '我是父组件的内容第二次用法'
         }
     })
 </script>

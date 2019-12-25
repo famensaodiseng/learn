@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-21 19:15:51
+ * @Date: 2019-12-22 13:50:39
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-21 19:19:29
+ * @LastEditTime : 2019-12-22 13:54:00
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -24,21 +24,36 @@
 <body>
     <div id='app' v-cloak>
         <p>{{msg}}</p>
-        <p>{{reverserString}}</p>
+        <base-layout>
+            <p slot="header">标题信息</p>
+            <p slot="header">主要内容</p>
+            <p slot="footer">底部信息</p>
+        </base-layout>
+    </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
+    Vue.component('base-layout', {
+        template:
+            `
+        <div>
+        <header>
+            <slot name = 'header'></slot>
+        </header>
+        <main>
+            <slot name = 'main'></slot>
+        </main>
+        <footer>
+            <slot name = 'footer'></slot>
+        </footer>
+        </div>
+        `
+    })
     let vm = new Vue({
         el: '#app',
         data: {
             msg: '123'
-        },
-        computed: {
-            // 把复杂的东西抽离出来
-            reverserString() {
-                return this.msg.split('').reverse().join("");
-            }
-        },
+        }
     })
 </script>
 

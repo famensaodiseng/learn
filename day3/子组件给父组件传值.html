@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2019-12-22 11:21:44
+ * @github: famensaodiseng
+ * @LastEditTime : 2019-12-22 11:42:08
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app' v-cloak>
+        <p :style="{fontSize:fontSize + 'px'}">{{msg}}</p>
+        <menu-item :list="list" @enlarge-text="handle($event)"></menu-item>
+    </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+    Vue.component('menu-item', {
+        props: ['list'],
+        // props传数据是单向数据流。
+        template: `
+        <div>
+            <ul >
+                <li v-for="(item,index) in list" :key="item.index">{{item}}</li>
+            </ul>
+            <button @click="list.push('陈红喜')">点击</button>
+            <button @click='$emit("enlarge-text",5)'>扩大父组件中字体大小</button> 
+             <button @click='$emit("enlarge-text",20)'>扩大父组件中字体大小</button> 
+        </div> 
+        `,
+
+    })
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '123',
+            list: ['苹果', '香蕉', '菠萝'],
+            fontSize: 10
+        }, methods: {
+            handle(val) {
+                this.fontSize += val;
+            }
+        },
+    })
+</script>
+
+</html>

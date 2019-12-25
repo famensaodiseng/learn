@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-21 19:35:35
+ * @Date: 2019-12-22 13:45:42
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-21 19:40:19
+ * @LastEditTime : 2019-12-22 13:49:33
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -23,20 +23,27 @@
 
 <body>
     <div id='app' v-cloak>
-        <!-- <p>{{msg}}</p> -->
-        <input type="text" v-model="msg">
-        <div>{{msg | upper}}</div>
+        <p>{{msg}}</p>
+        <alert-box>有bug</alert-box>
+        <alert-box>有错误警告</alert-box>
+        <alert-box></alert-box>
     </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
-    Vue.filter('upper', function (val) {
-        return val.charAt(0).toUpperCase() + val.slice(1);
+    Vue.component('alert-box', {
+        template: `
+            <div>
+                <strong>ERROR:</strong>
+               
+                   <slot>有默认内容</slot> 
+            </div>
+        `
     })
     let vm = new Vue({
         el: '#app',
         data: {
-            msg: ''
+            msg: '123'
         }
     })
 </script>
