@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2019-12-22 13:45:42
+ * @Date: 2019-12-22 15:10:14
  * @github: famensaodiseng
- * @LastEditTime : 2019-12-22 13:49:33
+ * @LastEditTime : 2019-12-22 15:32:23
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -23,28 +23,29 @@
 
 <body>
     <div id='app' v-cloak>
-        <p>{{msg}}</p>
-        <alert-box>有bug</alert-box>
-        <alert-box>有错误警告</alert-box>
-        <alert-box></alert-box>
+
     </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
-    Vue.component('alert-box', {
-        template: `
-            <div>
-                <strong>ERROR:</strong>
-               
-                   <slot>有默认内容</slot> 
-            </div>
-        `
+    let p = new Promise(function (resolve, reject) {
+        //这里用于实现异步任务
+        setTimeout(() => {
+            let flag = false;
+            if (flag) {
+                //正常情况
+                resolve('hello')
+            } else {
+                reject('出错了')
+            }
+        }, 100);
     })
-    let vm = new Vue({
-        el: '#app',
-        data: {
-            msg: '123'
-        }
+    p.then(function (data) {
+        console.log(data);
+
+    }, function (info) {
+        console.log(info);
+
     })
 </script>
 
