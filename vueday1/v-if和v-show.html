@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-08 22:44:02
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-08 22:49:26
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <input type="button" @click="toggle" value="按钮">
+    <h3 v-if="flag">这是用v-if控制元素</h3>
+
+    <h3 v-show="flag">这是用v-show控制元素</h3>
+
+
+    <h3>v-if的特点是每次都会重新删除或者创建元素，
+      有较高的切换性能消耗，如果频繁的切换，就不要用v-if
+    </h3>
+    <h3>v-show的特点是每次都会显示或者隐藏元素，有较高的初始渲染消耗</h3>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123',
+      flag: true
+    },
+    methods: {
+      toggle() {
+        this.flag = !this.flag
+      }
+
+    },
+  })
+</script>
+
+</html>

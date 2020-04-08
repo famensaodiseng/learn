@@ -1,0 +1,77 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-08 21:24:28
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-08 21:38:39
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    div {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- .stop就是阻止冒泡 -->
+    <!-- <div @click="divHandler">
+      <input type="button" value="按钮" @click.stop="btnHandler"> -->
+
+    <!-- prevent阻止默认行为的 -->
+    <!-- <a href="http://www.baidu.com" @click.prevent="baidu">百度一下</a> -->
+
+
+    <!-- .capture就是捕获机制。 -->
+    <!-- <div @click.capture="divHandler">
+      <input type="button" value="按钮" @click.stop="btnHandler"> -->
+
+    <!-- .self点自己才触发 -->
+    <!-- <div @click.self="divHandler">
+      <input type="button" value="按钮" @click="btnHandler"> -->
+
+    <!-- 只触发一次 -->
+    <!-- <a href="http://www.baidu.com" @click.once="baidu">百度一下</a> -->
+
+  </div>
+
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    },
+    methods: {
+      divHandler: function () {
+        console.log('触发了div的事件');
+      },
+      btnHandler: function () {
+        console.log('触发了按钮的事件');
+      },
+      baidu: function () {
+        console.log('百度了');
+
+      }
+    },
+  })
+</script>
+
+</html>

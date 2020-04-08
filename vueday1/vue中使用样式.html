@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-08 22:10:57
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-08 22:22:07
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .thin {
+      font-weight: 200;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <h1 :class="['thin']">这是一个h1标签</h1>
+    <!-- 注意：必须要将类名用引号隐起来 -->
+
+
+    <h1 :class="['thin',flag?'red':'']">这是一个普通的h1标签</h1>
+    <!-- 在数组中使用三元表达式 -->
+    <h1 :class="['thin',{'red':falg}]">这是一个特殊的h1标签</h1>
+    <!-- 直接使用对象 -->
+    <h1 :class="{thin:true,red:true}">这是一个特殊的h1标签</h1>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123',
+      flag: true,
+      falg: false
+    }
+  })
+</script>
+
+</html>

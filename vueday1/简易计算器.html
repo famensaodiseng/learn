@@ -1,0 +1,72 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-08 21:56:55
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-08 22:09:57
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <input type="text" v-model="n1">
+
+    <select name="" id="" v-model="opt">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="text" v-model="n2" @blur="calc">
+    <input type="button" value="=">
+    <input type="text" v-model="result">
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      n1: '',
+      n2: '',
+      result: '',
+      opt: "+"
+    },
+    methods: {
+      calc() {  //计算器算数方法
+        switch (this.opt) {
+          case '+':
+            this.result = parseInt(this.n1) + parseInt(this.n2)
+            break;
+          case '-':
+            this.result = parseInt(this.n1) - parseInt(this.n2)
+            break;
+          case '*':
+            this.result = parseInt(this.n1) * parseInt(this.n2)
+            break;
+          case '/':
+            this.result = parseInt(this.n1) / parseInt(this.n2)
+            break;
+          default:
+            break;
+        }
+      }
+    }
+  })
+</script>
+
+</html>
