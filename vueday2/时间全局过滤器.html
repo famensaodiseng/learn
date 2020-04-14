@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-14 16:27:53
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-14 16:48:14
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <p>{{msg |dateFormat}}</p>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  Vue.filter('dateFormat', function (dateStr, pattern = '') {
+    var dt = new Date(dateStr)
+    //根据给定的字符串，得到特定的时间
+    //yyyy-mm-dd
+    var y = dt.getFullYear()
+    var m = (dt.getMonth() + 1).toString().padStart(2, '0')
+    var d = dt.getDate().toString().padStart(2, '0')
+
+
+    if (pattern.toLowerCase() === 'yyyy-mm-dd') {
+      return `${y}-${m}-${d}`
+    } else {
+      var hh = dt.getHours().toString().padStart(2, '0')
+      var mm = dt.getMinutes().toString().padStart(2, '0')
+      var ss = dt.getSeconds().toString().padStart(2, '0')
+      return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+    }
+  })
+
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: new Date()
+    }
+  })
+
+  //过滤器调用的时候，采用的是就近原则，如果私有过滤器和全局过滤器名字一样了。
+  //这时候优先调用私有过滤器
+</script>
+
+</html>

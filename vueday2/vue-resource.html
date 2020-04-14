@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-14 20:45:13
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-14 21:07:14
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <p>{{msg}}</p>
+    <input type="button" value="get请求" @click="getInfo">
+    <input type="button" value="post请求" @click="postInfo">
+    <input type="button" value="jsonp请求" @click="jsonpInfo">
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script src="./js/vue-resource-1.3.4.js"></script>
+<!-- vue-resource 依赖于vue -->
+<!-- this.$http -->
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '测试'
+    },
+    methods: {
+      getInfo() { //发起get请求
+        this.$http.get('http://www.liulongbin.top:3005/api/getlunbo').then(function (res) {
+          console.log(res);
+          console.log(res.body.message[0].url);
+        })
+
+      },
+      postInfo() {
+        //发起post请求，默认是表单格式。手动发起的post请求没有表单格式。
+        //有时候有的服务器是处理不了的、
+        //通过设置post方法的第三个参数，设置提交的内容类型未普通表单。
+        this.$http.post('http://www.liulongbin.top:3005/api/post', {}, { emulateJSON: true }).then(res => {
+          console.log(res);
+        })
+      },
+      jsonpInfo() {
+        //发起post请求，默认是表单格式。手动发起的post请求没有表单格式。
+        //有时候有的服务器是处理不了的、
+        //通过设置post方法的第三个参数，设置提交的内容类型未普通表单。
+        this.$http.jsonp('http://www.liulongbin.top:3005/api/jsonp', {}).then(res => {
+          console.log(res);
+          console.log(res.body);
+        })
+      }
+    },
+  })
+</script>
+
+</html>

@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2020-04-08 21:43:47
+ * @Date: 2020-04-14 11:49:18
  * @github: famensaodiseng
- * @LastEditTime: 2020-04-08 21:50:10
+ * @LastEditTime: 2020-04-14 11:58:05
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -23,17 +23,19 @@
 
 <body>
   <div id='app' v-cloak>
-    <h4>{{msg}}</h4>
-    <input type="text" v-model="msg">
-
+    <p>{{msg | msgFormat('疯狂','123')}}</p>
   </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
+  Vue.filter('msgFormat', function (msg, arg, arg1) {
+    //replace第一个除了可以写字符串，还可以写一个正在
+    return msg.replace(/单纯/g, arg + arg1)
+  })
   let vm = new Vue({
     el: '#app',
     data: {
-      msg: '123'
+      msg: '曾经我也是一个单纯的傻傻少年,我单纯的问，谁是最单纯的人'
     }
   })
 </script>
