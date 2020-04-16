@@ -1,0 +1,111 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 20:23:15
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 21:00:22
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    li {
+      margin: 10px 0;
+      list-style-type: none;
+      border: 1px dashed #000;
+      padding: 10px;
+      width: 100%;
+    }
+
+    li:hover {
+      background-color: hotpink;
+      transition: all 1s ease;
+    }
+
+    .v-enter,
+    .v-leave-to {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: all 0.6s ease;
+    }
+
+    /* 下面的.v-move和.v-move一起使用  */
+    .v-move {
+      transition: all 0.6s ease;
+    }
+
+    .v-leave-active {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <label class="" for="">
+      ID:
+      <input type="text" v-model="id">
+    </label>
+    <label class="" for="">
+      Name:
+      <input type="text" v-model="name">
+    </label>
+    <input type="button" value="添加" @click="add">
+
+
+    <!-- 注意：在实现列表过渡的时候，如果需要过渡的元素，是通过v-for循环渲染出来的。
+      不能使用transition 包裹，需要使用transitionGroup -->
+    <!-- appear实现页面入场效果 -->
+    <!-- 通过tag属性将我们的transition-group渲染成ul -->
+    <!-- 如果不指定，那么transition-group默认是span -->
+    <transition-group appear tag="ul">
+      <li v-for="(item,i) in list" :key="item.id" @click='del(i)'>
+        序号:{{item.id}}姓名:{{item.name}}
+      </li>
+    </transition-group>
+
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123',
+      id: '',
+      name: '',
+      list: [
+        { id: 1, name: '嘿嘿' },
+        { id: 2, name: '哈哈' },
+        { id: 3, name: '呵呵' },
+        { id: 4, name: '啦啦' },
+      ]
+    },
+    methods: {
+      add() {
+        this.list.push({ id: this.id, name: this.name })
+        this.id = this.name = ""
+      },
+      del(i) {
+        //珊瑚
+        this.list.splice(i, 1)
+      }
+    }
+  })
+</script>
+
+</html>

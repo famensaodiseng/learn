@@ -1,0 +1,73 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 16:03:51
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 20:21:08
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    .ball {
+      width: 30px;
+      height: 30px;
+      background-color: skyblue;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <button @click="flag=!flag">按钮</button>
+    <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+      <div class="ball" v-if='flag'></div>
+    </transition>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123',
+      flag: true
+    },
+    methods: {
+      //动画钩子函数的第一个参数：el表示要执行动画的那个dom元素，是个原生的js对象
+      // 这里的el是原生的dom对象。
+      beforeEnter(el) {
+        //动画入场之前
+        //设置小球起始位置
+        el.style.transform = "translate(0,0)"
+      },
+      enter(el, done) {
+        //动画开始之后的样式
+        el.offsetWidth
+        // el.offSetWidth，没有实际效果，但是不写这句话就没作用。
+        el.style.transform = "translate(100px,450px)"
+        el.style.transition = 'all 1s ease'
+        done()
+        //这里的done可以让动画立即消失。
+        //这里的done是afterEnter这个函数的调用。
+      },
+      afterEnter(el) {
+        //动画完成之后
+        this.flag = !this.flag
+      }
+    }
+  })
+</script>
+
+</html>
