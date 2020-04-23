@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 14:20:41
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 14:32:44
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- <p>{{msg}}</p> -->
+    <!-- 如果再路由中，使用查询字符串，给路由传参，不需要修改路由属性。 -->
+    <router-link to="/login?id=100">登陆</router-link>
+    <router-link to="/register">注册</router-link>
+    <router-view></router-view>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script src="js/vue-router-3.0.1.js"></script>
+<script>
+  var login = {
+    template: "<h2>{{$route.query.id}}</h2>",
+    data() {
+      return {
+        msg: "123"
+      }
+    },
+    created() {
+      console.log(this.$route.query.id);
+
+    }
+  }
+  var register = {
+    template: "<h2>注册</h2>"
+  }
+  var router = new VueRouter({
+    routes: [
+      { path: '/', redirect: '/login' },
+      { path: '/login', component: login },
+      { path: '/register', component: register },
+    ]
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    },
+    router
+  })
+</script>
+
+</html>

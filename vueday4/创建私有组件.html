@@ -2,9 +2,9 @@
  * @Descripttion: 
  * @version: 
  * @Author: yang_ft
- * @Date: 2020-04-16 15:34:06
+ * @Date: 2020-04-17 11:15:54
  * @github: famensaodiseng
- * @LastEditTime: 2020-04-16 15:41:55
+ * @LastEditTime: 2020-04-17 11:21:55
  -->
 <!DOCTYPE html>
 <html lang='en'>
@@ -14,7 +14,6 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
   <title>Document</title>
-  <link rel="stylesheet" href="./js/animate.css">
   <style>
     [v-cloak] {
       display: none;
@@ -24,24 +23,23 @@
 
 <body>
   <div id='app' v-cloak>
-    <!-- 使用:duration来统一设置入场和离场的动画时长 -->
-    <input type="button" value="出来" @click="flag=!flag">
-    <transition enter-active-class="bounceIn" leave-active-class="bounceOut" :duration="200">
-      <h3 v-if='flag' class="animated">五一快乐</h3>
-    </transition>
+    <mylogin></mylogin>
   </div>
 </body>
 <script src='js/vue.js'></script>
 <script>
+  var login = {
+    template: '<h1>我是私有组件</h1>'
+  }
   let vm = new Vue({
     el: '#app',
     data: {
-      msg: '123',
-      flag: true
+      msg: '123'
     },
-    methods: {
-
-    },
+    components: {
+      // '组件的名称': 组件的模版对象
+      'mylogin': login
+    }
   })
 </script>
 

@@ -1,0 +1,68 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 19:20:34
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 20:13:43
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <router-link to="/login">登陆</router-link>
+    <router-link to="/register">注册</router-link>
+    <router-view></router-view>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script src="js/vue-router-3.0.1.js"></script>
+<script>
+  var login = {
+    template: "<h1>登陆</h1>"
+  }
+  var register = {
+    template: "<h1>注册</h1>"
+  }
+  var router = new VueRouter({
+    routes: [
+      { path: '/', redirect: '/login' },
+      {
+        path: '/login', component: login
+      },
+      { path: '/register', component: register }
+    ]
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    },
+    router,
+    watch: {
+      '$route.path'(newVal, oldVal) {
+        // console.log(newVal + '-' + oldVal);
+        if (newVal === '/login') {
+          console.log('欢迎进入登陆页面');
+        } else {
+          console.log('欢迎进入注册页面');
+        }
+      }
+    }
+  })
+</script>
+
+</html>

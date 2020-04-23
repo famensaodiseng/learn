@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 22:39:31
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 22:59:31
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    .v-enter,
+    .v-leave-tp {
+      opacity: 0;
+      transform: translateX(80px);
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: all .8s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <a href="" @click.prevent="comName='login'">登陆组件</a>
+    <a href="" @click.prevent="comName='register'">注册组件</a>
+    <!-- component是一个占位符，:is是属性，可以用来指定要展示组件的名称，这里组件名称是字符串 -->
+    <transition mode="out-in">
+      <!-- 通过mode来切换动画的先后顺序 -->
+      <component :is="comName"></component>
+    </transition>
+
+  </div>
+  <template id="login">
+    <h3>登陆组件</h3>
+  </template>
+  <template id="register">
+    <h3>注册组件</h3>
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  Vue.component('login', {
+    template: "#login",
+  })
+  Vue.component('register', {
+    template: "#register",
+
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      comName: 'login'
+      //当前component中:is绑定的组件的名称
+    }
+  })
+</script>
+
+</html>

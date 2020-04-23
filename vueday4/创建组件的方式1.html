@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 21:05:26
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 21:45:34
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- 如果要使用组件,直接吧组件的名称，以html标签的形式，映入到页面中即可。 -->
+    <my-com1></my-com1>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  //1.1使用Vue.extend来创建全局的vue组件
+  var com1 = Vue.extend({
+    template: '<h3>这是使用vue.extend创建的组件</h3>'  //通过template属性，指令了组件要展示的html结构
+  })
+  //1.2 使用vue.component ('组件的名称',创建出来的的组件模版对象)
+  Vue.component('myCom1', com1)
+  //如果使用Vue.component定义全局组件的时候，组件名称使用了驼峰命名，则再引用组件的时候，需要把大写的驼峰改为小写的字母
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    }
+  })
+</script>
+
+</html>

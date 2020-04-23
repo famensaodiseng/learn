@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-17 11:26:36
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-17 12:02:15
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- 父组件可以在引用子组件的时候，通过属性绑定（v-bind）的形式，吧需要传递给子主见的数据，
+    以属性绑定的形式，传递到子组件内部，供子组件使用。 -->
+    <mylogin :parentmsg="msg"></mylogin>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123我是父组件中的数据'
+    },
+    components: {
+
+      //经过演示，子组件中，默认无法访问到父组件中data上的数据和methods方法
+      mylogin: {
+        data() {    //子组件中的data数据，并不是通过父组件传递过来的。而是子组件私有的，
+          // 比如说子组件通过ajax请求回来的数据，都可以放在data身上
+          //data上的数据都是可读可写的。
+          return {
+            title: 'sonson'
+          }
+        },
+        template: '<h3>我是子组件{{title}}----{{parentmsg}}</h3>',
+        props: ['parentmsg']//把父组件传递过来的parentmsg属性，先再props数据中定义一下，才可以使用
+        //props上的数据都是只读的，无法重新赋值。
+      }
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,101 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 16:21:37
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 16:37:39
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      width: 100%;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .box {
+      display: flex;
+      height: 600px;
+    }
+
+    .left {
+      width: 300px;
+      background-color: yellow;
+      flex: 2;
+    }
+
+    .main {
+      width: 100%;
+      background-color: green;
+      flex: 8;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <router-view></router-view>
+    <div class="box">
+      <router-view name="lefter"></router-view>
+      <router-view name="mainbox"></router-view>
+    </div>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script src="js/vue-router-3.0.1.js"></script>
+<script>
+
+  var header = {
+    template: '<header class="header">header头部</header>'
+  }
+
+  var lefter = {
+    template: '<header class="left">left左侧</header>'
+  }
+  var mainbox = {
+    template: '<header class="main">mainbox主体</header>'
+  }
+  //创建路由对象
+  var router = new VueRouter({
+    routes: [
+      // { path: '/', component: header },
+      // { path: 'lefter', component: lefter },
+      // { path: 'mainbox', component: mainbox },
+
+      //上面的方法肯定是不行的。、
+      {
+        path: '/', components: {
+          'default': header,
+          'lefter': lefter,
+          'mainbox': mainbox
+        }
+      },
+    ]
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      // msg: '123'
+    },
+    router
+  })
+</script>
+
+</html>

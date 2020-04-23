@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 23:32:56
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 23:37:28
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <h3 ref="myh3">今天的天气好好哦。</h3>
+    <input type="button" value="获取元素" @click="getElement">
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    },
+    methods: {
+      getElement() {
+        console.log(this.$refs.myh3.innerText);
+
+      }
+    }
+  })
+</script>
+
+</html>

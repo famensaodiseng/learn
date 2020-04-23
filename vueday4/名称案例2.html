@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 16:47:48
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 17:01:01
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <input type="text" v-model="firstname">
+    +
+    <input type="text" v-model="lastname">
+    =
+    <input type="text" v-model="fullname">
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      firstname: '',
+      lastname: '',
+      fullname: ''
+    },
+    //watch可以监听数据
+    watch: {
+      firstname(newVal) {
+        // console.log('坚持到了frist变化');
+        // this.fullname = this.firstname + this.lastname
+
+        // console.log(newVal + '-' + oldVal);
+        this.fullname = newVal + '-' + this.lastname
+      },
+      lastname(newVal) {
+        this.fullname = this.firstname + '-' + newVal
+      }
+    },
+    methods: {
+
+    }
+  })
+</script>
+
+</html>

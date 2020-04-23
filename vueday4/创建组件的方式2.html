@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 21:46:04
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 21:52:19
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- <p>{{msg}}</p> -->
+    <mycom2></mycom2>
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  Vue.component('mycom2', {
+    template: '<h2>这是直接使用component创建出来的组局</h2>'
+    //注意，无论是那种方式创建出来的组件， 组件的template属性指向的模版内容，必修有且只能有唯一的一个跟属性。
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 21:52:41
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 21:56:50
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <my-com3></my-com3>
+  </div>
+  <!-- 在被控制的#app外面，使用template元素，定义组局的html模版结构 -->
+  <template id="tmpl">
+    <div>
+      <h4>这是通过template元素，在外部定义的组件结构</h4>
+    </div>
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  Vue.component('myCom3', {
+    template: '#tmpl'
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,74 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 15:26:19
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 16:20:39
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <router-link to="/account">Account</router-link>
+    <router-view></router-view>
+
+  </div>
+  <template id="tmp1">
+    <div>
+      <h1>Account组件</h1>
+      <router-link to="/account/login">登陆</router-link>
+      <router-link to="/account/register">注册</router-link>
+      <router-view></router-view>
+    </div>
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script src="js/vue-router-3.0.1.js"></script>
+<script>
+  var account = {
+    template: "#tmp1"
+  }
+  var login = {
+    template: "<h6>我是login组件</h6>"
+  }
+  var register = {
+    template: "<h6>我是register组件</h6>"
+  }
+  var router = new VueRouter({
+    routes: [
+      {
+        path: '/account', component: account,
+        //通过children 来实现子路由的嵌套。
+        children: [
+          //注意，这里不能加/。不然的话是以根路径请求。
+          { path: 'login', component: login },
+          { path: 'register', component: register }
+        ]
+      }
+
+    ]
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    },
+    router
+  })
+</script>
+
+</html>

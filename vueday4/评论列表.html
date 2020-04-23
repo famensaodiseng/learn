@@ -1,0 +1,118 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 20:35:19
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 23:31:17
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <link rel="stylesheet" href="./js/bootstrap-3.3.7.css">
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <cmt-box @func="loadComments"></cmt-box>
+    <ul class="list-group">
+      <li class="list-group-item" v-for="(item, i) in list" :key="item.id">
+        <span class="badge">评论人:{{item.user}}</span>
+        {{item.content}}
+      </li>
+    </ul>
+
+  </div>
+  <template id="temp1">
+    <div>
+      <div class="form-group">
+        <label class="" for="">
+          评论人
+        </label>
+        <input type="text" class="form-control" v-model="user">
+      </div>
+      <div class="form-group">
+        <label class="" for="">
+          评论内容
+        </label>
+        <textarea class="form-control" v-model="content">
+        </textarea>
+      </div>
+      <div class="form-group">
+
+        <input type="button" value="发表评论" class="btn btn-primary" @click="postComment">
+      </div>
+    </div>
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  var commentBox = {
+    template: '#temp1',
+    data() {
+      return {
+        user: '',
+        content: '',
+      }
+    },
+    methods: {
+      //发表评论的方法
+      //分析业务逻辑
+      // 1.数据存在哪里去   localhost
+
+
+      //先组织出一个最新的评论数据对象
+
+      //想办法，把第二步中得到的对象评论。保存到localstorage 中
+      //localhost只支持存放字符串数据，要先调用json.stringify
+      postComment() {
+        var comment = { id: Date.now(), user: this.user, content: this.content }
+        // 从localStorage中获取所有的评论
+        var list = JSON.parse(localStorage.getItem('cmts') || '[]')
+        list.push(comment)
+        //重新保存最新的评论数据
+        localStorage.setItem('cmts', JSON.stringify(list))
+        this.user = this.content = ""
+        this.$emit('func')
+      }
+
+    },
+  }
+
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      list: [
+        { id: Date.now(), user: '李白', content: '千金散尽还复来' },
+        { id: Date.now(), user: '杜普', content: '嘿嘿嘿嘿嘿嘿嘿' },
+        { id: Date.now(), user: '杜普', content: '嘿嘿嘿嘿嘿嘿嘿' },
+        { id: Date.now(), user: '杜普', content: '嘿嘿嘿嘿嘿嘿嘿' }
+      ]
+    },
+    created() {
+      this.loadComments()
+    },
+    methods: {
+      loadComments() {
+        // 从子组件里面加载数据列表
+        var list = JSON.parse(localStorage.getItem('cmts') || '[]')
+        this.list = list
+      }
+    },
+    components: {
+      'cmt-box': commentBox
+    }
+  })
+</script>
+
+</html>

@@ -1,0 +1,58 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 16:47:48
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 20:20:44
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <input type="text" v-model="firstname" @keyup="add">
+    +
+    <input type="text" v-model="lastname" @keyup="add">
+    =
+    <input type="text" v-model="fullname">
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      firstname: '',
+      lastname: '',
+    },
+    methods: {
+
+    },
+    computed: { //计算属性，本质就是一个方法
+      //只不过我们再使用这些计算属性的时候，是吧他们的名称当做属性来使用的。
+      //并不会吧计算属性当做方法去调用
+      'fullname'() {
+        return this.firstname + '-' + this.lastname
+      }
+      //注意，计算属性再引用的时候一定不要加小括号。直接吧他当做普通属性去使用就可以了。
+      //只要计算属性内部中的data发生任何变化，就会重新计算这个计算属性的值。
+
+      //
+    },
+  })
+</script>
+
+</html>

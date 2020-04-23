@@ -1,0 +1,89 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-22 22:34:05
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 14:19:12
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+
+    .myactive {
+      color: red;
+      font-size: 36px;
+    }
+
+    .v-enter,
+    .v-leave-to {
+      opacity: 0;
+      transform: translateX(140px);
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+      transition: all 0.5s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- <p>{{msg}}</p> -->
+    <!-- <a href="#/login">登陆</a>
+    <a href="#/register">注册</a> -->
+    <router-link to="/login">登陆</router-link>
+    <router-link to="/register">注册</router-link>
+    <!-- router-link默认渲染成a标签 -->
+    <transition mode="out-in">
+      <router-view></router-view>
+    </transition>
+    <!-- 这是vue-router提供的元素，专门用来当做占位符的 -->
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script src="js/vue-router-3.0.1.js"></script>
+<script>
+  //组件的模版对象
+  var login = {
+    template: '<h2>login组件</h2>'
+  }
+  var register = {
+    template: '<h2>register组件</h2>'
+  }
+  //创建一个路由对象，当导入vue-router包以后，在window全局对象中，就有了一个路由的构造函数。
+  var routerObj = new VueRouter({
+    linkActiveClass: 'myactive',
+    //route 这个配置对象中的route表示路由匹配规则的意思
+    //属性1 是path ,表示监听那个路由连接地址
+    //属性2 是component 表示component属性对应的那个组件
+    routes: [
+      {
+        path: '/', redirect: '/login'
+      },
+      {
+        path: '/login', component: login
+      },
+      { path: '/register', component: register },
+    ]
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    },
+    router: routerObj
+  })
+</script>
+
+</html>

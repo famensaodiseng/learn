@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-21 13:35:39
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-22 16:38:59
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <!-- 父组件向子组件传递方法，使用的是事件绑定机制，
+    v-on当我们自定义了一个事件实行之后，那么子组件就能够，通过某些方式，来调用传递进去的这个方法了。 -->
+    <com2 @func="show"></com2>
+  </div>
+  <template id="tmp1">
+    <div>
+      <h3>这是子组件</h3>
+      <input type="button" value="子组件中的按钮" @click="myclick">
+    </div>
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  var com2 = {
+    template: '#tmp1',
+    data() {
+      return {
+        sonmsg: { name: '123', age: 44 }
+      }
+    },
+    methods: {
+      myclick() {
+        //当点击子组件的时候，如何拿到父组件传过来的func方法。并且调用这个方法？
+        this.$emit('func', this.sonmsg)
+      }
+    }
+  }
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      datamsgFormSon: null
+    },
+    components: {
+      com2: com2
+    },
+    methods: {
+      show(data) {
+        // console.log('调用了父组件上的show----' + data);
+        console.log(data);
+        this.datamsgFormSon = data  
+      }
+    },
+  })
+</script>
+
+</html>

@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-23 16:47:48
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-23 16:53:29
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <input type="text" v-model="firstname" @keyup="add">
+    +
+    <input type="text" v-model="lastname" @keyup="add">
+    =
+    <input type="text" v-model="fullname">
+  </div>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      firstname: '',
+      lastname: '',
+      fullname: ''
+    },
+    methods: {
+      add() {
+        this.fullname = this.firstname + '-' + this.lastname
+      }
+    },
+  })
+</script>
+
+</html>

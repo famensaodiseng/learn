@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 21:58:31
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 22:05:53
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='app' v-cloak>
+    <mycom></mycom>
+  </div>
+  <template id="tmpl">
+    <h3>这是全局组件---{{msg}}</h3>
+
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  //组件可以有自己的data函数
+  //组件的data和实例的data有点不一样，实例中的data可以是一个对象，但是组件中的data必修是一个方法。
+  //组件中的data除了必修是一个方法之前，这个方法内部还必须返回一个对象。
+  //组件中data数据使用方式和实例中的data使用方式完全一样。
+  Vue.component('mycom', {
+    template: '#tmpl',
+    data() {
+      return {
+        msg: "这是组件中中data定义的数据"
+      }
+    }
+    //组件中的data应该是一个函数
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    }
+  })
+</script>
+
+</html>

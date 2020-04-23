@@ -1,0 +1,64 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yang_ft
+ * @Date: 2020-04-16 22:06:22
+ * @github: famensaodiseng
+ * @LastEditTime: 2020-04-16 22:20:14
+ -->
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id='app' v-cloak>
+    <!-- 虽然你有一个组件，但是会影响其他的组件，如果在函数内部的话，就不会影响了。 -->
+    <counter></counter>
+    <hr>
+    <counter></counter>
+    <hr>
+    <counter></counter>
+    <hr>
+  </div>
+  <template id="templ">
+    <div><input type="button" value="+1" @click="increment">
+      <h3>{{count}}</h3>
+    </div>
+  </template>
+</body>
+<script src='js/vue.js'></script>
+<script>
+  var dataObj = { count: 0 }    //不要将这个放在外面。
+  //这是一个计数器的组件，身上有个按钮，没当点击按钮，让data中 的count值+1
+  Vue.component('counter', {
+    template: "#templ",
+    data() {
+      return dataObj
+    },
+    methods: {
+      increment() {
+        this.count++
+      }
+    },
+  })
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      msg: '123'
+    }
+  })
+</script>
+
+</html>
